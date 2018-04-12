@@ -1,0 +1,115 @@
+select to_char(create_date,'yyyyMMdd'),org_name,prop_name,order_id,state order_name from hbsale.sale_order_t where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+
+
+select * from hbsale.sale_order_t o left join hbsale.sale_main_t m on o.order_id=m.order_id where o.order_id=36701
+
+
+select o.*,m.id,m.sale_main_name from hbsale.sale_order_t o left join hbsale.sale_main_t m on o.order_id=m.order_id
+left join hbsale.sale_detail_t d on m.id=d.id where o.order_id=36701
+
+24884
+
+
+select to_char(create_date,'yyyyMMdd'),o.org_name,o.prop_name,o.order_id,o.state, o.order_name from hbsale.sale_order_t o
+left join (select m.id,m.sale_main_name,m.content from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.id) t1 on o.order_id=t1.order_id  where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+
+
+select to_char(create_date,'yyyyMMdd') begin_time,o.org_name,o.prop_name,o.order_id,o.state, o.order_name from hbsale.sale_order_t o
+left join (select m.order_id,m.id,m.sale_main_name,m.content from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.id) t1 on o.order_id=t1.order_id  where o.begin_time > '20171331' and is_delete is null
+
+
+select to_char(create_date,'yyyyMMdd') begin_time,o.org_name,o.prop_name,o.order_id,o.state, o.order_name from hbsale.sale_order_t o
+left join (select m.order_id,m.id,m.sale_main_name,m.content from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.id) t1 on o.order_id=t1.order_id
+
+
+
+
+select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,o.state, o.order_name,t1.* from hbsale.sale_order_t o
+left join (select m.order_id,m.id,m.sale_main_name,m.content,m.begin_time d.sale_id,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.id) t1 on o.order_id=t1.order_id  where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+order by o.order_id
+
+
+select * from hbsale.sale_order_t fetch first 10 rows only
+
+
+select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,o.state, o.order_name,t1.* from hbsale.sale_order_t o
+left join (select m.order_id,m.id,m.sale_main_name,m.content,m.begin_time,d.sale_id,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.sale_id) t1 on o.order_id=t1.order_id  where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+order by o.order_id
+
+
+
+
+select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,o.state, o.order_name,t1.* from hbsale.sale_order_t o
+left join (select m.sale_main_code,m.id,m.sale_main_name,m.content,m.begin_time,d.sql_active_code,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.sale_id) t1 on o.order_id=t1.order_id  where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+and o.order_id=36188 order by o.order_id
+
+
+
+select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,
+case when o.state=1 then '已保存'
+when o.state=2 then '审核中'
+when o.state=3 then '审核通过'
+when o.state=4 then '审核不通过'
+end , o.order_name,t1.* from hbsale.sale_order_t o
+left join (select m.order_id,m.sale_main_code,m.id,m.sale_main_name,m.content,m.begin_time,d.sale_active_code,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.sale_id) t1
+on o.order_id=t1.order_id
+left join (select case when area_name is null then '省公司'else area_name end as area_name from
+(select t.*,o.AREA_NAME from (SELECT organize_id,case when length(code) > 4 then substr(code,1,5) end as scode FROM SECHB.SEC_ORGANIZE s ) t left join MK.BT_AREA o on t.scode = o.AREA_CODE) a) b
+on b.organize_id = o.org_id
+where to_char(create_date,'yyyyMMdd') > '20171331' and is_delete is null
+order by o.order_id
+
+
+
+t.org_id
+
+select t.*,o.AREA_NAME from (SELECT
+case when length(code) > 4 then substr(code,1,5)
+end as scode
+FROM SECHB.SEC_ORGANIZE s ) t left join MK.BT_AREA o on t.scode = o.AREA_CODE
+
+
+
+
+
+select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,
+case when o.state=1 then '已保存'
+when o.state=2 then '审核中'
+when o.state=3 then '审核通过'
+when o.state=4 then '审核不通过'
+end , o.order_name,t1.*,t2.* from hbsale.sale_order_t o
+left join (select m.order_id,m.sale_main_code,m.id,m.sale_main_name,m.content,to_char(m.begin_time,'yyyyMMdd'),d.sale_active_code,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.sale_id) t1
+on o.order_id=t1.order_id
+left join (select a.organize_id,case when area_name is null then '省公司'else area_name end as area_name from
+(select t.*,o.AREA_NAME from (SELECT organize_id,case when length(code) > 4 then substr(code,1,5) end as scode FROM SECHB.SEC_ORGANIZE s ) t left join MK.BT_AREA o on t.scode = o.AREA_CODE) a) t2
+on t2.organize_id = o.org_id
+where to_char(create_date,'yyyyMMdd') > '20171231' and is_delete is null
+order by o.order_id desc
+
+
+db2 "export to result1.csv of del select to_char(create_date,'yyyyMMdd') create_time,o.org_name,o.prop_name,o.order_id,
+case when o.state=1 then '已保存'
+when o.state=2 then '审核中'
+when o.state=3 then '审核通过'
+when o.state=4 then '审核不通过'
+end , o.order_name,t1.*,t2.* from hbsale.sale_order_t o
+left join (select m.order_id,m.sale_main_code,m.id,m.sale_main_name,m.content,to_char(m.begin_time,'yyyyMMdd'),d.sale_active_code,d.sale_active_Name from hbsale.sale_main_t m left join hbsale.sale_detail_t d on m.id=d.sale_id) t1
+on o.order_id=t1.order_id
+left join (select a.organize_id,case when area_name is null then '省公司'else area_name end as area_name from
+(select t.*,o.AREA_NAME from (SELECT organize_id,case when length(code) > 4 then substr(code,1,5) end as scode FROM SECHB.SEC_ORGANIZE s ) t left join MK.BT_AREA o on t.scode = o.AREA_CODE) a) t2
+on t2.organize_id = o.org_id
+where to_char(create_date,'yyyyMMdd') > '20171231' and is_delete is null
+order by o.order_id desc"
+
+select  c.busi_id,c.apply_name,c.prop_staff,c.org_name,c.prop_time,c.description,
+case when c.state=1 then '已保存'
+when c.state=2 then '审核中'
+when c.state=3 then '审核通过'
+when c.state=4 then '审核不通过'
+end as type,
+d.act_code,d.act_name,d.lev_code,d.lev_name,t1.* from hbsale.busi_change_t c left join hbsale.busi_change_detail_t d
+on c.busi_id = d.busi_id
+left join (select a.organize_id,case when area_name is null then '省公司'else area_name end as area_name from
+(select t.*,o.AREA_NAME from (SELECT organize_id,case when length(code) > 4 then substr(code,1,5) end as scode FROM SECHB.SEC_ORGANIZE s ) t left join MK.BT_AREA o on t.scode = o.AREA_CODE) a) t1
+on t1.organize_id = c.org
+where d.change_object = 'sale' and to_char(prop_time,'yyyyMMdd') >'20171231'

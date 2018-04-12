@@ -1,0 +1,160 @@
+10.25.124.213
+user:asiainfo pswd:Jyhl729%
+ipd Lccg723$
+
+cd /expmonth/Exec
+--217ݿ
+delete from nwh.jxyx_zf_tmp1;
+
+insert into nwh.jxyx_zf_tmp1(month_id,prod_id,priv_id,prod_name,priv_name,lsby,region)
+select time_id,dim1,dim2,dim5,dim6,ind1,'HB.EZ' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind1>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind2,'HB.ES' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind2>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind3,'HB.HG' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind3>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind4,'HB.HS' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind4>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind5,'HB.JH' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind5>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind6,'HB.JM' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind6>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind7,'HB.JZ' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind7>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind8,'HB.QJ' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind8>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind9,'HB.SY' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind9>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind10,'HB.SZ' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind10>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind11,'HB.TM' region from pt.report_total
+where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind11>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind12,'HB.WH' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind12>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind13,'HB.XN' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind13>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind14,'HB.XF' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind14>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind15,'HB.XG' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind15>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind16,'HB.YC' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind16>0
+union all
+select time_id,dim1,dim2,dim5,dim6,ind17,'HB' region from pt.report_total
+ where time_id='&PTASK_ID' and report_code='yxhd_report_m3' and ind17>0
+with ur;
+
+delete from hbsale.jxyx_act_info;
+insert into hbsale.jxyx_act_info(level_code,valid_date,expire_date,weapon_name,targ_desc,prop_name,prop_code,prop_tel,rs1)
+select substr(sd.level_code,1,24) level_code,
+       date (sm.begin_time) begin_time,
+       date (sm.end_time) end_time,
+       sw.weapon_name,
+       sm.aim,
+       so.prop_name,
+       sec_op.code,
+       staff.bill_id,
+       '营销活动'
+  from hbsale.sale_detail_t sd
+       left join hbsale.sale_main_t sm
+          on int (sd.sale_id) = int (sm.id)
+       left join hbsale.sale_order_t so
+          on so.order_id = sm.order_id
+       left join hbsale.sale_weapon_t sw
+          on sd.weapon_id = sw.id
+       left join sechb.sec_operator sec_op
+          on so.principle = sec_op.operator_id
+       left join sechb.sec_staff staff
+          on sec_op.staff_id = staff.staff_id
+union all
+select substr(sd.inadd_user_count,1,24) level_code,
+       date (sm.apply_time),
+       date (sm.apply_end_time),
+       sd.ext5,
+       sm.consume_analyse,
+       so.reamrk_2,
+       sec_op.code,
+       staff.bill_id,
+       '资费'
+  from hbsale.charge_info_t sd
+       left join hbsale.charge_apply_main_t sm
+          on int (sd.apply_id) = int (sm.apply_id)
+       left join hbsale.charge_main_t so
+          on so.main_id = sm.main_id
+       left join sechb.sec_operator sec_op
+          on so.principle = sec_op.operator_id
+       left join sechb.sec_staff staff
+          on sec_op.staff_id = staff.staff_id
+with ur;
+
+
+--213
+/db2home/ipd/proghome/bin/MoveTab -t nwh.jxyx_zf_tmp1 -s wbdb -e hisdb -d bas_his1
+/db2home/ipd/proghome/bin/MoveTab -t nmk.gmi_zffx_info -s dwdb -e hisdb -d bas_tmp
+
+--213ݿ
+insert into nwh.jxyx_zf_tmp1(month_id,prod_id,priv_id,prod_name,priv_name,lsby,region)
+select substr(time_id,1,6),null,nbilling_tid,null,null,dd_num,channel_code from  NMK.GMI_ZFFX_INFO
+where time_id='&PTASK_ID'
+union all
+select substr(time_id,1,6),null,nbilling_tid,null,null,sum(dd_num),'HB' from  NMK.GMI_ZFFX_INFO
+where time_id='&PTASK_ID'
+group by time_id,nbilling_tid
+with ur;
+
+--213
+/db2home/ipd/proghome/bin/MoveTab -t mmp.mtl_camp_feedback -s wbdb -e hisdb -d bas_tmp
+/db2home/ipd/proghome/bin/MoveTab -t mmp.mtl_camp_seginfo -s wbdb -e hisdb -d bas_tmp
+/db2home/ipd/proghome/bin/MoveTab -t mmp.mtl_prod_priv -s wbdb -e hisdb -d bas_tmp
+
+--213ݿ
+grant all on table mmp.mtl_camp_feedback to group DEV;
+grant all on table mmp.mtl_camp_seginfo to group DEV;
+grant all on table mmp.mtl_prod_priv to group DEV;
+grant all on table nmk.gmi_zffx_info to group DEV;
+grant all on table nwh.jxyx_zf_tmp1 to group DEV;
+---------grant all on table NWH.JXYX_ZF_TMP2 to group DEV;-----不需要
+ls -lrt /expmonth/toboss/MZS0010201*
+--213
+delete table nmk.jxyx_zf_t1;
+delete table nmk.jxyx_zf_t2;
+-----/expmonth/Exec/Execstepsql -f ZfSaleDispatch -t 201609 -s 126-----此shell命令取消
+ipdbin
+Execstepsql -f ZfSaleDispatch -t 201612 -s 126
+
+/db2home/ipd/proghome/bin/MoveTab -t hbsale.jxyx_act_info -z nwh.jxyx_zf_tmp2 -s WBDB -e hisdb  -d bas_his1;
+
+--213ݿ
+export to E:/hxy/sheet1.del of del
+select month_id,level_code,act_type,act_name,sale_reg,analy_dim,lsby,targ_num,recom_num,crm_rnum,proxy_rnum,deny_num,dealed_num,consid_num,act_state,unit,rs1,rs2,rs3,rs4,rs5,rs6 from (select a.*,row_number() over(partition by level_code,sale_reg order by lsby desc) as rn from nmk.jxyx_zf_t1 a) b where rn = 1 with ur;
+
+export to E:/hxy/sheet2.del of del
+select month_id,level_code,act_type,act_name,sale_reg,valid_date date,expire_date date,compo_factor,targ_desc,prop_name,prop_code,prop_tel,rs1,rs2,rs3,rs4,rs5,rs6 from (select a.*,row_number() over(partition by level_code,sale_reg) as rn from nmk.jxyx_zf_t2 a) b where rn = 1 with ur;
+
+--清空表
+drop table nwh.jxyx_zf_tmp1;
+drop table nwh.jxyx_zf_tmp2;
+
+
+
+备注:提取12月份文件
+1.&PTASK_ID=201611
+2./expmonth/Exec/Execstepsql -f ZfSaleDispatch -t 201612 -s 126
+3.文件格式
+sheet1------》MZS001020161200020100.AVL
+sheet2------》MZS001020161200010100.AVL

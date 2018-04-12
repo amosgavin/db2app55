@@ -1,0 +1,30 @@
+1.重要表备份
+将"关键表备份.sql"里面的sql粘贴到quest中执行备份,主要查看是否都执行成功.
+2.备份正式环境
+telnet 10.25.124.112
+用户名:root
+密码:ganlv112w
+cd /bass/Node1/webapps/db2app55
+tar -cvf db2app55_当天日期.tar db2app55
+3.删除掉最旧的备份文件(文件系统空间有限)
+rm db2app55_20150625.tar 选择日期最远的那个文件
+4.停掉110,112上相应服务
+5.执行数据库修改脚本
+6.将tar文件加压到110tomcat项目下
+tar -zxvf 
+7.启动110服务前,先需要执行
+  delete from    hbsale.QRTZ_JOB_LISTENERS;
+	delete from    hbsale.QRTZ_TRIGGER_LISTENERS;
+	delete from    hbsale.QRTZ_FIRED_TRIGGERS;
+	delete from    hbsale.QRTZ_PAUSED_TRIGGER_GRPS;
+	delete from    hbsale.QRTZ_SCHEDULER_STATE;
+	delete from    hbsale.QRTZ_SIMPLE_TRIGGERS;
+	delete from    hbsale.QRTZ_CRON_TRIGGERS;
+	delete from    hbsale.QRTZ_TRIGGERS;
+	delete from    hbsale.QRTZ_JOB_DETAILS;
+	delete from    hbsale.QRTZ_CALENDARS;
+	delete from    hbsale.QRTZ_BLOB_TRIGGERS;
+8.启动110上所有服务
+9.110上tomcat服务没问题,将tar文件上传到112解压,启动112上tomcat服务.
+
+find ./ -type f -ctime -2 -exec tar -rvf 20160731.tar {} \;

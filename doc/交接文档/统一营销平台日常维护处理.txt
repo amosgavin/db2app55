@@ -1,0 +1,32 @@
+1、工单回退（工作台）
+	页面处理：1、查看上一步处理人,查询上一步处理人的工号,进入系统
+						2、在已办未结事项查询要回退的工单，点击任务回退
+						3、继续1，2两操作，直至回退到指定环节
+						注：涉及到会签的回退，无法使用此方法回退
+	数据库处理:
+						修改流程：
+						select * from vm_wf where workflow_object_id='22410';--根据工单号查询workflow_id
+						select * from vm_task where workflow_id='HB^11^0000000000000006762' order by create_date;--根据workflow_id查询工单流转信息,获取task_id
+						
+						注：删除会签步需删除对应的vm_task_ts信息，操作如下
+						create table vm_task_ts_bak like vm_task_ts; insert into vm_task_ts_bak select * from vm_task_ts where parent_task_id='HB^11^0000000000000039810';
+						--表备份						
+						delete from vm_task_ts where parent_task_id='HB^11^0000000000000039810';--vm_task_ts表为工单流转会签的会签信息，parent_task_id为vm_task的task_id
+						create table vm_task_bak like vm_task; insert into vm_task_bak select * from vm_task where task_id in('HB^11^0000000000000039809','HB^11^0000000000000039810');
+						--表备份
+						
+						delete from vm_task where task_id in('HB^11^0000000000000039809','HB^11^0000000000000039810');--回退几部就删除几步
+						update vm_task set state=5 where task_id='HB^11^0000000000000036733';5=等待办理,3=已经完成，10=协办，6=回退;将状态设置为5
+						is_current_task=null
+						
+						
+2、设置代理
+    1.登录被代理人帐号
+    2.点击代理，打开代理页面
+    3.选择下级代理人
+
+
+3、分配帐号：
+   1.操作员管理-->分配帐号
+   2.上岗授权-->分配权限，一般没有指明是经理或者特殊权限的。暂时分配"业务申请人员"
+   

@@ -1,0 +1,37 @@
+SELECT *
+  FROM (SELECT OPST.OP_STATION_ID,
+               OP.OPERATOR_ID,
+               OP.CODE,
+               S.STAFF_NAME,
+               ST.STATION_ID,
+               ST.NAME AS STATION_NAME,
+               OPST.IS_BASE_STATION,
+               OPST.STATE,
+               ORG.CODE AS ORG_CODE,
+               ORG.ORGANIZE_ID,
+               ORG.ORGANIZE_NAME,
+               ORG.DISTRICT_ID,
+               ORG.COUNTY_ID,
+               OPST.CREATE_DATE
+          FROM SEC_OPERATOR OP,
+               SEC_STAFF S,
+               SEC_STATION ST,
+               SEC_ORGANIZE ORG,
+               SEC_OP_STATION OPST
+         WHERE     OPST.STATION_ID = ST.STATION_ID
+               AND ST.ORGANIZE_ID = ORG.ORGANIZE_ID
+               AND OPST.OPERATOR_ID = OP.OPERATOR_ID
+               AND OP.STAFF_ID = S.STAFF_ID
+               AND OP.STATE = 1
+               AND S.STATE = 1
+               AND ST.STATE = 1
+               AND ORG.STATE = 1
+               AND OPST.STATE = 1
+        ORDER BY OP.CODE ASC) AS data
+ WHERE OP_STATION_ID in (SELECT 
+       A.OP_STATION_ID
+  FROM SEC_ROLE R, SEC_AUTHOR A
+ WHERE     R.STATE = 1
+       AND A.STATE = 1
+       AND R.ROLE_ID = A.ROLE_ID
+       AND R.ROLE_NAME='货品管理')

@@ -1,0 +1,42 @@
+10.25.124.110(连的web库,其中放了一个工作流调度进程)
+帐号：hbbiinst
+密码：hbbiinst!110
+账号：root
+密码：XOditEtuR!
+http://10.25.124.110:8088/db2app55/jF1sdkljf34jDFjke4352jfj.jsp
+密码为:111
+上线时先把修改的文件上传到110，经过测试没问题后再上传到112。
+110、112连的都是217,里面的数据不要随意修改。
+
+10.25.124.112(客户用的环境)
+帐号：root
+密码ganlv112w
+http://10.25.124.29:8088/db2app55/indexBi.jsp?userId=ED2705F227C3C80B&ailk_autoLogin_userId=8C73543DB4731614AF024B27216138B7                     admin
+http://10.25.124.29:8088/db2app55/Ssologin.jsp?Token=ff808081554f697d01556bd746f36c371466393118451@zhangjiang
+
+10.25.124.115 
+帐号：administrator
+密码：samsung714
+mmp工程需要下线、工程放在D盘WebServer
+mmp_quartz工程目前主要放了个终端类型档次的处理任务,现在定的是每月2号触发。其他任务都没用了,
+建议把该任务调到云化的quartz项目上,统一管理(本月需要整改)
+
+工作流引擎扫描程序：startQueue.sh 
+测试环境：10.25.125.171  /usr/all_startqueue_shell/startQueue.sh   
+帐号：pt
+密码：pt哌
+ps -ef|grep java 两个进程(一个工作流、一个tomcat)有没启动、db2数据库有没启动
+http://10.25.125.171:808/db2app55
+
+正式环境：10.25.124.110  /home/hbbiinst/all_startqueue_shell/startQueue.sh
+启动命令：nohup ./startQueue.sh &
+日志文件在nohup.out
+
+数据库 10.25.124.217
+用户名:hbsale
+密码:123abc**
+
+工具:
+D:\211-back\55\appframe_configtool\Main.bat
+流程图工具：
+D:\salemanageX\studio\eclipse.exe
