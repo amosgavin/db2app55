@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETRoleOp" BOName="com.asiainfo.task.bo.BORoleOp" MainField="ROLE_ID" Title="com.asiainfo.task.bo.BORoleOp" ActBOName="com.asiainfo.task.bo.BORoleOp" Package="com.asiainfo.task.bo">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>OPERATOR_ID</Name>
+        <BOAttrName>OPERATOR_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPERATOR_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.task.bo.BORoleOp" Attr="OPERATOR_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>OP_STATION_ID</Name>
+        <BOAttrName>OP_STATION_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OP_STATION_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.task.bo.BORoleOp" Attr="OP_STATION_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ROLE_ID</Name>
+        <BOAttrName>ROLE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.task.bo.BORoleOp" Attr="ROLE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>STATION_ID</Name>
+        <BOAttrName>STATION_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATION_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.task.bo.BORoleOp" Attr="STATION_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

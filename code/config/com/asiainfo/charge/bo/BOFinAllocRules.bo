@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOFinAllocRules" mainattr="ID">
+    <mapingenty type="table">CHARGE_ALLOCATION_RULES</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_ID" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHARGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CALLING_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CALLING_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MONTHFIXED_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MONTHFIXED_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INCOMINGSHOW_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">INCOMINGSHOW_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RINGTONES_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RINGTONES_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPGPRS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPGPRS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPSMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPSMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GLOABALCALLING_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GLOABALCALLING_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MOBILESECRETARY_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MOBILESECRETARY_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CALLTRANSFER_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CALLTRANSFER_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ELINE_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ELINE_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS" maxlength="400" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

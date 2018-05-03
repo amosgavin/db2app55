@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSaleStaticDate" BOName="com.asiainfo.sale.common.bo.BOSaleStaticData" MainField="CODE_TYPE" Title="com.asiainfo.sale.common.bo.BOSaleStaticData" ActBOName="com.asiainfo.sale.common.bo.BOSaleStaticData" Package="com.asiainfo.sale.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>CODE_ID</Name>
+        <BOAttrName>CODE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE_ID</ID>
+        <Title>存储值</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="CODE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CODE_NAME</Name>
+        <BOAttrName>CODE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE_NAME</ID>
+        <Title>展现名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="CODE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CODE_NAME_NLS</Name>
+        <BOAttrName>CODE_NAME_NLS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE_NAME_NLS</ID>
+        <Title>类型说明</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="CODE_NAME_NLS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CODE_TYPE</Name>
+        <BOAttrName>CODE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE_TYPE</ID>
+        <Title>类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="CODE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>EXTERN_CODE</Name>
+        <BOAttrName>EXTERN_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXTERN_CODE</ID>
+        <Title>外部系统对应编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="EXTERN_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>IS_USED</Name>
+        <BOAttrName>IS_USED</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_USED</ID>
+        <Title>是否使用 0 不使用 1使用</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="IS_USED" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>SORT_ID</Name>
+        <BOAttrName>SORT_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SORT_ID</ID>
+        <Title>排序ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOSaleStaticData" Attr="SORT_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

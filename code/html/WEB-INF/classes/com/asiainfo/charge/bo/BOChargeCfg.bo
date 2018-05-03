@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeCfg" mainattr="CFID">
+    <mapingenty type="table">CHARGE_CONF_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CFID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">CFID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CHARGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BATCH_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BATCH_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BATCH_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BATCH_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNTS_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCOUNTS_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNTS_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCOUNTS_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COURSE_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COURSE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COURSE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COURSE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_GROUP_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEE_GROUP_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_GROUP_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEE_GROUP_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SET_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SET_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SET_NM" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SET_NM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAP_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MAP_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAP_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MAP_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRODUCT_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRODUCT_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRODUCT_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRODUCT_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_FEEGROUP_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_FEEGROUP_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_FEEGROUP_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_FEEGROUP_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEEGROUP_MODIFY_REASON" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEEGROUP_MODIFY_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_SET_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_SET_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_SET_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_SET_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SET_MODIFY_REASON" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SET_MODIFY_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_MAP_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_MAP_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELA_MAP_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RELA_MAP_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAP_MODIFY_REASON" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MAP_MODIFY_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK1" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK2" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK3" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK4" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK5" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK6" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK6</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REAMRK7" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REAMRK7</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

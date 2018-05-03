@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChannelInfo" mainattr="ID">
+    <mapingenty type="table">SALE_CHANNEL_INFO</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REL_ID" maxlength="4" datatype="Integer" type="COL" remark="关联活动批次或档次ID">
+        <mapingcol datatype="INTEGER">REL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REL_TYPE" maxlength="5" datatype="String" type="COL" remark="关联的是批次/档次">
+        <mapingcol datatype="VARCHAR">REL_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHANNEL_CODE" maxlength="20" datatype="String" type="COL" remark="渠道编码">
+        <mapingcol datatype="VARCHAR">CHANNEL_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPERATION" maxlength="20" datatype="String" type="COL" remark="操作类型">
+        <mapingcol datatype="VARCHAR">OPERATION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION" maxlength="10" datatype="String" type="COL" remark="地市">
+        <mapingcol datatype="VARCHAR">REGION</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

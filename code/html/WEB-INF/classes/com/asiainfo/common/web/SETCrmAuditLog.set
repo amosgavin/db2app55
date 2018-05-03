@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETCrmAuditLog" BOName="com.asiainfo.common.bo.BOCrmAuditLog" MainField="ID" Title="com.asiainfo.common.bo.BOCrmAuditLog" ActBOName="com.asiainfo.common.bo.BOCrmAuditLog" Package="com.asiainfo.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>AUDIT_DATE</Name>
+        <BOAttrName>AUDIT_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AUDIT_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="6">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="AUDIT_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>AUDIT_FLAG</Name>
+        <BOAttrName>AUDIT_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AUDIT_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="AUDIT_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CONTENT</Name>
+        <BOAttrName>CONTENT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONTENT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="CONTENT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BOSS_CODE</Name>
+        <BOAttrName>BOSS_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BOSS_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="BOSS_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>INTERFACE_ID</Name>
+        <BOAttrName>INTERFACE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INTERFACE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="INTERFACE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>MODE_ID</Name>
+        <BOAttrName>MODE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MODE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.common.bo.BOCrmAuditLog" Attr="MODE_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

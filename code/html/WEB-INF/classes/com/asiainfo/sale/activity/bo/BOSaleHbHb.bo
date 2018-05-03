@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleHbHb" mainattr="ID">
+    <mapingenty type="table">SALE_HBHB_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="11" datatype="Long" type="PK" remark="id">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MID" maxlength="20" datatype="String" type="COL" remark="活动ID">
+        <mapingcol datatype="VARCHAR">MID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_NAME" maxlength="200" datatype="String" type="COL" remark="活动名称">
+        <mapingcol datatype="VARCHAR">SALE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EIT_NAME" maxlength="200" datatype="String" type="COL" remark="活动简称">
+        <mapingcol datatype="VARCHAR">EIT_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_WHOLESALE_NUM" maxlength="16" datatype="Long" type="COL" remark="发行总额">
+        <mapingcol datatype="DECIMAL">PROVIDE_WHOLESALE_NUM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK3" maxlength="16" datatype="Long" type="COL" remark="单笔最大金额">
+        <mapingcol datatype="DECIMAL">REMARK3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_CALL" maxlength="200" datatype="String" type="COL" remark="发行方\出资方">
+        <mapingcol datatype="VARCHAR">PROVIDE_CALL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_AREA" maxlength="200" datatype="String" type="COL" remark="发行范围">
+        <mapingcol datatype="VARCHAR">PROVIDE_AREA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK4" maxlength="1000" datatype="String" type="COL" remark="活动描述">
+        <mapingcol datatype="VARCHAR">REMARK4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_BEGIN_DATE" maxlength="26" datatype="DateTime" type="COL" remark="活动开始时间">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_BEGIN_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_END_DATE" maxlength="26" datatype="DateTime" type="COL" remark="活动结束时间">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_END_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAKE_EFFECT_TIME" maxlength="26" datatype="DateTime" type="COL" remark="生效时间 ">
+        <mapingcol datatype="TIMESTAMP">TAKE_EFFECT_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LOSE_EFFECT_TIME" maxlength="26" datatype="DateTime" type="COL" remark="失效时间">
+        <mapingcol datatype="TIMESTAMP">LOSE_EFFECT_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ARRIVE_OF_MONEY_SMS" maxlength="1" datatype="String" type="COL" remark="是否需要到账短信">
+        <mapingcol datatype="CHAR">ARRIVE_OF_MONEY_SMS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AOM_SMS_CONTENT" maxlength="500" datatype="String" type="COL" remark="到账短信内容">
+        <mapingcol datatype="VARCHAR">AOM_SMS_CONTENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK1" maxlength="1000" datatype="String" type="COL" remark="备注">
+        <mapingcol datatype="VARCHAR">REMARK1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK2" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK2</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETChargeCfg" BOName="com.asiainfo.charge.bo.BOChargeCfg" MainField="CFID" Title="com.asiainfo.charge.bo.BOChargeCfg" ActBOName="com.asiainfo.charge.bo.BOChargeCfg" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ACCOUNTS_CODE</Name>
+        <BOAttrName>ACCOUNTS_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACCOUNTS_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="ACCOUNTS_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>ACCOUNTS_NAME</Name>
+        <BOAttrName>ACCOUNTS_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACCOUNTS_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="ACCOUNTS_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BATCH_NAME</Name>
+        <BOAttrName>BATCH_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BATCH_NAME</ID>
+        <Title>资费批次名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="BATCH_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BATCH_CODE</Name>
+        <BOAttrName>BATCH_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BATCH_CODE</ID>
+        <Title>资费批次编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="BATCH_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CFID</Name>
+        <BOAttrName>CFID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CFID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="CFID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>CHARGE_ID</Name>
+        <BOAttrName>CHARGE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="CHARGE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>COURSE_CODE</Name>
+        <BOAttrName>COURSE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COURSE_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="COURSE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>COURSE_NAME</Name>
+        <BOAttrName>COURSE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COURSE_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="COURSE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>FEEGROUP_MODIFY_REASON</Name>
+        <BOAttrName>FEEGROUP_MODIFY_REASON</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEEGROUP_MODIFY_REASON</ID>
+        <Title>修改理由</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="FEEGROUP_MODIFY_REASON" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>FEE_GROUP_CODE</Name>
+        <BOAttrName>FEE_GROUP_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEE_GROUP_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="FEE_GROUP_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>FEE_GROUP_NAME</Name>
+        <BOAttrName>FEE_GROUP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEE_GROUP_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="FEE_GROUP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>CFG_FLAG</Name>
+        <BOAttrName>FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CFG_FLAG</ID>
+        <Title>配置标识</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>MAP_CODE</Name>
+        <BOAttrName>MAP_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAP_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="MAP_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>MAP_MODIFY_REASON</Name>
+        <BOAttrName>MAP_MODIFY_REASON</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAP_MODIFY_REASON</ID>
+        <Title>修改理由</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="MAP_MODIFY_REASON" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>MAP_NAME</Name>
+        <BOAttrName>MAP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAP_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="MAP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>PRE_CODE</Name>
+        <BOAttrName>PRE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRE_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="PRE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>PRE_NAME</Name>
+        <BOAttrName>PRE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRE_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="PRE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>PRODUCT_CODE</Name>
+        <BOAttrName>PRODUCT_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRODUCT_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="PRODUCT_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>PRODUCT_NAME</Name>
+        <BOAttrName>PRODUCT_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRODUCT_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="PRODUCT_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>REAMRK7</Name>
+        <BOAttrName>REAMRK7</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REAMRK7</ID>
+        <Title>风险评估描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REAMRK7" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>RELA_FEEGROUP_CODE</Name>
+        <BOAttrName>RELA_FEEGROUP_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_FEEGROUP_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_FEEGROUP_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>RELA_FEEGROUP_NAME</Name>
+        <BOAttrName>RELA_FEEGROUP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_FEEGROUP_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_FEEGROUP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>RELA_MAP_CODE</Name>
+        <BOAttrName>RELA_MAP_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_MAP_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_MAP_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>RELA_MAP_NAME</Name>
+        <BOAttrName>RELA_MAP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_MAP_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_MAP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>RELA_SET_CODE</Name>
+        <BOAttrName>RELA_SET_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_SET_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_SET_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>RELA_SET_NAME</Name>
+        <BOAttrName>RELA_SET_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELA_SET_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="RELA_SET_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>REMARK1</Name>
+        <BOAttrName>REMARK1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK1</ID>
+        <Title>资费号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="28" IsEnabled="Y">
+        <Name>REMARK2</Name>
+        <BOAttrName>REMARK2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK2</ID>
+        <Title>资费名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="29" IsEnabled="Y">
+        <Name>REMARK3</Name>
+        <BOAttrName>REMARK3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK3</ID>
+        <Title>风险等级</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="danger_lev" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="30" IsEnabled="Y">
+        <Name>REMARK4</Name>
+        <BOAttrName>REMARK4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK4</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="31" IsEnabled="Y">
+        <Name>REMARK5</Name>
+        <BOAttrName>REMARK5</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK5</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK5" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="32" IsEnabled="Y">
+        <Name>REMARK6</Name>
+        <BOAttrName>REMARK6</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK6</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="REMARK6" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="33" IsEnabled="Y">
+        <Name>SET_CODE</Name>
+        <BOAttrName>SET_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SET_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="SET_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="34" IsEnabled="Y">
+        <Name>SET_MODIFY_REASON</Name>
+        <BOAttrName>SET_MODIFY_REASON</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SET_MODIFY_REASON</ID>
+        <Title>修改理由</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="SET_MODIFY_REASON" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="35" IsEnabled="Y">
+        <Name>SET_NM</Name>
+        <BOAttrName>SET_NM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SET_NM</ID>
+        <Title>集合名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeCfg" Attr="SET_NM" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

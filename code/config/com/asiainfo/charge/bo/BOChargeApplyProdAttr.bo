@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeApplyProdAttr" mainattr="APPLY_ID">
+    <mapingenty type="table">CHARGE_APPLY_PROD_ATTR_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="APPLY_ID" maxlength="100" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">APPLY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_ID" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHARGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_MAIN_ID" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_MAIN_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROD_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_NAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROD_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_NAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA_NAME</mapingcol>
+      </attr>
+      <attr floatlength="2" name="UNIT_PRICE" maxlength="14" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">UNIT_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GIVES_AMOUNT" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GIVES_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GIVES_AMOUNT_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GIVES_AMOUNT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_ITEM_A" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_ITEM_A</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_ITEM_B" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_ITEM_B</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_ITEM_C" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_ITEM_C</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_PRINCIPAL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARKS" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARKS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT1" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT2" maxlength="1024" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT3" maxlength="1024" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT4" maxlength="1024" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT5" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">EXT5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT6" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">EXT6</mapingcol>
+      </attr>
+      <attr floatlength="2" name="EXT7" maxlength="14" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">EXT7</mapingcol>
+      </attr>
+      <attr floatlength="2" name="EXT8" maxlength="14" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">EXT8</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

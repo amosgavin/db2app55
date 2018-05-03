@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSEChannelBear</Name>
+  <Package>com.asiainfo.charge.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="01">是</OptionList>
+    <OptionList value="02">否</OptionList>
+  </DataSet>
+</UIDataSrc>

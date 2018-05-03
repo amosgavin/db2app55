@@ -1,0 +1,71 @@
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+<taglib>
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+
+    This tag library contains functionality specific to the Struts
+
+    Example Application.
+
+  </info>
+
+<!-- 菜单条TAG -->
+<tag>
+<name>menubar</name>
+<tagclass>com.ai.appframe2.web.tag.menu.AIMenuBarTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>invoke_type</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>invoke_name</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>invoke_method</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+<!-- 一级菜单TAG -->
+<tag>
+<name>menulvl1</name>
+<tagclass>com.ai.appframe2.web.tag.menu.AIMenuLevel1Tag</tagclass>
+<bodycontent>JSP</bodycontent>
+<attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>isSelected</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>cssName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+
+<!-- 二级菜单项TAG -->
+<tag>
+<name>menuitem</name>
+<tagclass>com.ai.appframe2.web.tag.menu.AIMenuItemTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>cssName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+
+<!-- 固定在菜单上的快捷菜单项TAG -->
+<tag>
+<name>staplemenuitem</name>
+<tagclass>com.ai.appframe2.web.tag.menu.AIStapleMenuItemTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>cssName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+
+</taglib>

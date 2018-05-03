@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOBusiSupportS" mainattr="STAFF_NAME">
+    <mapingenty type="query">SELECT staff_name, count (staff_name) total, sum (CASE WHEN STATE = '1' THEN 1 ELSE 0 END) AS totalY, sum (CASE WHEN state = '1' AND itemtype = 'sale' THEN 1 ELSE 0 END) AS saleY, sum (CASE WHEN STATE = '1' AND itemtype = 'charge' THEN 1 ELSE 0 END) AS chargeY, sum (CASE WHEN STATE = '1' AND itemtype = 'busi' THEN 1 ELSE 0 END) AS busiY, sum (CASE WHEN STATE = '1' AND itemtype = 'weapon' THEN 1 ELSE 0 END) AS weaponY, sum (CASE WHEN STATE = '0' THEN 1 ELSE 0 END) AS totalN, sum (CASE WHEN STATE = '0' AND itemtype = 'sale' THEN 1 ELSE 0 END) AS saleN, sum (CASE WHEN STATE = '0' AND itemtype = 'charge' THEN 1 ELSE 0 END) AS chargeN, sum (CASE WHEN STATE = '0' AND itemtype = 'busi' THEN 1 ELSE 0 END) AS busiN, sum (CASE WHEN STATE = '0' AND itemtype = 'weapon' THEN 1 ELSE 0 END) AS weaponN, sum (CASE WHEN diffday &gt;= 1 AND diffday &lt; 15 THEN 1 ELSE 0 END) AS diffls15, sum (CASE WHEN diffday &gt;= 15 AND diffday &lt; 30 THEN 1 ELSE 0 END) AS diff15to30, sum (CASE WHEN diffday &gt;= 30 THEN 1 ELSE 0 END) AS diffgt30 FROM hbsale.view_item_busisuppor WHERE dispatch_date IS NOT NULL GROUP BY staff_name</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTAL" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">TOTAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTALY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">TOTALY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALEY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SALEY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGEY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">CHARGEY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSIY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">BUSIY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WEAPONY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">WEAPONY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTALN" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">TOTALN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALEN" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SALEN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGEN" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">CHARGEN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSIN" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">BUSIN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WEAPONN" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">WEAPONN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DIFFLS15" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">DIFFLS15</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DIFF15TO30" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">DIFF15TO30</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DIFFGT30" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">DIFFGT30</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

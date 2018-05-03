@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOResourceChangeDetail" mainattr="RESOURCED_ID">
+    <mapingenty type="table">RESOURCE_CHANGE_DETAIL_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="RESOURCED_ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">RESOURCED_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESOURCE_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">RESOURCE_ID</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_TERM" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">P_TERM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_DISC" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">P_DISC</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_POINTS" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">P_POINTS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_PROMT" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">P_PROMT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_TERM" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">L_TERM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_DISC" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">L_DISC</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_POINTS" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">L_POINTS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_PROMT" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">L_PROMT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="C_TERM" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">C_TERM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="C_DISC" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">C_DISC</mapingcol>
+      </attr>
+      <attr floatlength="2" name="C_POINTS" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">C_POINTS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="C_PROMT" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">C_PROMT</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,59 @@
+--注意sybase对于表名和列名都是区分大小写的
+--目前系统中对于cfg_和sys_开头的表和字段都是小写处理的，对于业务的表和字段都是大写处理的
+
+--创建数据库
+create database njdev
+
+--增加用户
+sp_addlogin 'yanghua','yanghua','njdev'
+
+--将数据库和用户关联起来
+use njdev
+
+sp_adduser  'yanghua'
+
+--使用sa授权
+grant create default,create procedure,create rule,create table,create view to yanghua
+
+
+--获得当前系统时间
+select getdate()
+
+--查询用户下的表
+select name from sysobjects where  type= 'U'
+
+--查询表结构
+sp_help t1
+
+--jdbc:sybase:Tds:10.11.16.25:5000?ServiceName=njdev&charset=eucgb 为jdbc采用中文
+--SQL Advatage 连接时候，必须设置选项的字符集为eucgb(原来默认为iso_1)
+
+insert into cfg_db_acct (db_acct_code,username,password,host,port,sid,default_conn_min,default_conn_max,state,remarks)values('base','base','base111','SYBASE_JDBC',0,'jdbc:sybase:Tds:10.11.16.25:5000?ServiceName=njdev&charset=eucgb',1,1,'U','')
+
+insert into cfg_db_acct (db_acct_code,username,password,host,port,sid,default_conn_min,default_conn_max,state,remarks)values('so1','so1','so1111','SYBASE_JDBC',0,'jdbc:sybase:Tds:10.11.16.25:5000?ServiceName=njdev&charset=eucgb',1,1,'U','')
+
+insert into cfg_db_acct (db_acct_code,username,password,host,port,sid,default_conn_min,default_conn_max,state,remarks)values('so2','so2','so2111','SYBASE_JDBC',0,'jdbc:sybase:Tds:10.11.16.25:5000?ServiceName=njdev&charset=eucgb',1,1,'U','')
+
+insert into cfg_db_acct (db_acct_code,username,password,host,port,sid,default_conn_min,default_conn_max,state,remarks)values('channel','channel','channel111','SYBASE_JDBC',0,'jdbc:sybase:Tds:10.11.16.25:5000?ServiceName=njdev&charset=eucgb',1,1,'U','')
+
+insert into cfg_id_generator (table_name,domain_id,generator_type,sequence_name) values('EXAMPLE_CHANNEL',11,'S','EXAMPLE_CHANNEL$SEQ')
+
+
+create table sys_sequences (
+  sequence_name varchar(20) not null,
+  start_by numeric(20) not null,
+  increment_by numeric(10) not null,
+  last_number numeric(20) not null,
+  primary key  (sequence_name)
+) 
+
+insert into sys_sequences values('EXAMPLE_CHANNEL$SEQ',1,1,0)
+
+--alter table sys_sequences lock datarows
+--alter table sys_sequences unlock datarows
+
+--清除事务日志
+dump transaction njdev with truncate_only
+
+--执行存储过程
+sybase_query_page "select * from EXAMPLE_CHANNEL",1,10

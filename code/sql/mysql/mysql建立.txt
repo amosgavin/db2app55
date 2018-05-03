@@ -1,0 +1,67 @@
+#建立数据库
+
+
+create database base;
+create database so1;
+create database so2;
+create database channel;
+
+
+#授权
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON base.* 		TO base@"%" 	IDENTIFIED BY 'base';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON so1.* 		TO so1@"%" 		IDENTIFIED BY 'so1';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON so2.* 		TO so2@"%" 		IDENTIFIED BY 'so2';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON channel.* TO channel@"%" IDENTIFIED BY 'channel';
+
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON base.* 		TO base@"localhost" 	IDENTIFIED BY 'base';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON so1.* 		TO so1@"localhost" 		IDENTIFIED BY 'so1';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON so2.* 		TO so2@"localhost" 		IDENTIFIED BY 'so2';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,INDEX,execute  ON channel.* TO channel@"localhost" IDENTIFIED BY 'channel';
+flush privileges;
+
+#在每个数据库下建立sequence的表和函数
+
+mysql -u root -p
+
+use base;
+
+#如果打开复制,需要执行下面这行语句
+#set global log_bin_trust_function_creators=1;
+
+delimiter //
+CREATE FUNCTION seq_nextval(seq_name char (30)) returns int
+begin
+ UPDATE sys_sequences SET LAST_NUMBER= case last_number when 0 THEN last_insert_id(START_BY) else last_insert_id(LAST_NUMBER+INCREMENT_BY) end WHERE SEQUENCE_NAME=seq_name;
+ RETURN last_insert_id();
+end
+//
+delimiter ;
+
+delimiter //
+CREATE FUNCTION seq_curval(seq_name char (30)) returns int
+begin
+ DECLARE cur  int;
+ select LAST_NUMBER into cur from sys_sequences WHERE SEQUENCE_NAME=seq_name;
+ RETURN  cur;
+end
+//
+delimiter ;
+ 
+
+CREATE TABLE `sys_sequences` (
+  `SEQUENCE_NAME` varchar(30) NOT NULL,
+  `START_BY` BIGINT(20) UNSIGNED NOT NULL,
+  `INCREMENT_BY` BIGINT(10) UNSIGNED NOT NULL,
+  `LAST_NUMBER` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY  (`SEQUENCE_NAME`)
+) ENGINE=MyISAM ; 
+
+
+insert into CFG_SERVICE_CONTROL (SERVER_NAME, SERVICE_NAME, METHOD_NAME, LIMIT_COUNT, STATE, REMARKS)
+values ('DEFAULT', 'DEFAULT', 'DEFAULT', 100, 'U', '默认');
+insert into CFG_SERVICE_CONTROL (SERVER_NAME, SERVICE_NAME, METHOD_NAME, LIMIT_COUNT, STATE, REMARKS)
+values ('yanghua1', 'example.channel.service', null, 0, 'U', null);
+insert into CFG_SERVICE_CONTROL (SERVER_NAME, SERVICE_NAME, METHOD_NAME, LIMIT_COUNT, STATE, REMARKS)
+values ('yanghua2', 'com.asiainfo.boss.ams.balance', null, 30, 'U', null);
+insert into CFG_SERVICE_CONTROL (SERVER_NAME, SERVICE_NAME, METHOD_NAME, LIMIT_COUNT, STATE, REMARKS)
+values ('yanghua3', 'com.asiainfo.boss.ams', 'getAccount', 20, 'U', null);

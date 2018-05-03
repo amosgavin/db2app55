@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSendWarnLog" mainattr="LOG_ID">
+    <mapingenty type="table">SEND_WARN_LOG</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="LOG_ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">LOG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_ID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TARGET" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TARGET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GRADE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">GRADE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EMAIL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EMAIL</mapingcol>
+      </attr>
+      <attr floatlength="2" name="LINE1_VALUE" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">LINE1_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="LINE2_VALUES" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">LINE2_VALUES</mapingcol>
+      </attr>
+      <attr floatlength="2" name="LINE3_VALUE" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">LINE3_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTENT" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CONTENT</mapingcol>
+      </attr>
+      <attr floatlength="6" name="INSERT_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">INSERT_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERVE1" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERVE1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERVE2" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERVE2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERVE3" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERVE3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SESERVE4" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SESERVE4</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

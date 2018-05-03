@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETApplyInfo" BOName="com.asiainfo.sale.common.bo.BOApplyInfo" MainField="RECORDID" Title="com.asiainfo.sale.common.bo.BOApplyInfo" ActBOName="com.asiainfo.sale.common.bo.BOApplyInfo" Package="com.asiainfo.sale.common.bo">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>APPLY_NAME</Name>
+        <BOAttrName>APPLY_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="180" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="APPLY_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CREATE_STAFF_NAME</Name>
+        <BOAttrName>CREATE_STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_STAFF_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="CREATE_STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CREATE_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_TIME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>PRINCIPAL</Name>
+        <BOAttrName>PRINCIPAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRINCIPAL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="PRINCIPAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>RECORDID</Name>
+        <BOAttrName>RECORDID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECORDID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="RECORDID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ORGNAME</Name>
+        <BOAttrName>ORGNAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGNAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOApplyInfo" Attr="ORGNAME" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

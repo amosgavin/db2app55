@@ -1,0 +1,364 @@
+/**
+ * 
+ * @author:shigm
+ * @date : 2014-9-1
+ */
+ 
+.flow_step {
+
+	white-space:nowrap;  PADDING-BOTTOM: 0px; margin: 5px 5px 5px 5px;PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; HEIGHT: 20px; OVERFLOW: hidden; PADDING-TOP: 0px
+
+}
+
+.flow_step OL {
+
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 110%; PADDING-RIGHT: 0px; PADDING-TOP: 0px;LIST-STYLE-TYPE: none
+}
+
+
+.flow_step LI {
+
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 15px; FONT: 700 14px/25px ; BACKGROUND: url(../images/flow_step_bg.png) #e6e6e6 no-repeat 100% -50px; FLOAT: left; COLOR: #333333; PADDING-TOP: 0px
+
+}
+
+.flow_step .cols3 LI {
+
+	WIDTH: 301px
+
+}
+
+.flow_step .cols4 LI {
+
+	WIDTH: 222px
+
+}
+
+.flow_step .cols5 LI {
+
+	WIDTH: 175px
+
+}
+
+.flow_step .cols6 LI {
+
+	WIDTH: 143px
+
+}
+.flow_step .cols7 LI {
+
+	WIDTH: 143px
+
+}
+.flow_step_no1 .step_1 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no2 .step_2 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no3 .step_3 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no4 .step_4 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no5 .step_5 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no6 .step_6 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.flow_step_no7 .step_7 {
+
+	BACKGROUND-COLOR: #ff5500; BACKGROUND-POSITION: 100% -50px; COLOR: #ffffff
+
+}
+
+.cols3 .step_3 {
+
+	BACKGROUND-IMAGE: none
+
+}
+
+.cols4 .step_4 {
+
+	BACKGROUND-IMAGE: none
+
+}
+
+.cols5 .step_5 {
+
+	BACKGROUND-IMAGE: none
+
+}
+
+.cols6 .step_6 {
+
+	BACKGROUND-IMAGE: none
+
+}
+
+.cols7 .step_7 {
+
+	BACKGROUND-IMAGE: none
+
+}
+
+.flow_step_no2 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+
+.flow_step_no3 .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+
+.flow_step_no4 .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+
+.flow_step_no5 .step_4 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+
+.flow_step_no6 .step_5 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+.flow_step_no7 .step_6 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -25px; COLOR: #ff6600
+
+}
+
+.flow_step_no3 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no4 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no4 .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no5 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no5 .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no5 .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no6 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no6 .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no6 .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no6 .step_4 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no7 .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no7 .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no7 .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+.flow_step_no7 .step_4 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+.flow_step_no7 .step_5 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% 0px; COLOR: #ff6600
+
+}
+
+
+///////////////////////////////////////////
+
+.flow_step_no3 .cols3 .step_3 {
+
+	BACKGROUND-COLOR: #ff5500; COLOR: #ffffff
+
+}
+
+.flow_step_no4 .cols4 .step_4 {
+
+	BACKGROUND-COLOR: #ff5500; COLOR: #ffffff
+
+}
+
+.flow_step_no5 .cols5 .step_5 {
+
+	BACKGROUND-COLOR: #ff5500; COLOR: #ffffff
+
+}
+
+.flow_step_no6 .cols6 .step_6 {
+
+	BACKGROUND-COLOR: #ff5500; COLOR: #ffffff
+
+}
+
+.flow_step_no1_n .step_1 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no2_n .step_2 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no3_n .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no4_n .step_4 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no5_n .step_5 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no6_n .step_6 {
+
+	BACKGROUND-COLOR: #ffd98d; BACKGROUND-POSITION: 100% -50px; COLOR: #ff6600
+
+}
+
+.flow_step_no2_n .step_1 {
+
+	BACKGROUND-POSITION: 100% 0px
+
+}
+
+.flow_step_no3_n .step_2 {
+
+	BACKGROUND-POSITION: 100% 0px
+
+}
+
+.flow_step_no4_n .step_3 {
+
+	BACKGROUND-POSITION: 100% 0px
+
+}
+
+.flow_step_no5_n .step_4 {
+
+	BACKGROUND-POSITION: 100% 0px
+
+}
+
+.flow_step_no6_n .step_5 {
+
+	BACKGROUND-POSITION: 100% 0px
+
+}
+
+.flow_step_no3_n .cols3 .step_3 {
+
+	BACKGROUND-COLOR: #ffd98d; COLOR: #ff6600
+
+}
+
+.flow_step_no4_n .cols4 .step_4 {
+
+	BACKGROUND-COLOR: #ffd98d; COLOR: #ff6600
+
+}
+
+.flow_step_no5_n .cols5 .step_5 {
+
+	BACKGROUND-COLOR: #ffd98d; COLOR: #ff6600
+
+}
+
+.flow_step_no6_n .cols6 .step_6 {
+
+	BACKGROUND-COLOR: #ffd98d; COLOR: #ff6600
+
+}

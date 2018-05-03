@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOOrderComplainsDetail" mainattr="ID">
+    <mapingenty type="table">ORDER_COMPLAINS_DETAIL_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLAINS_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">COMPLAINS_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORDER_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_STAFF" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORDER_STAFF</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLAINS_REASON" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COMPLAINS_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BOSS_ID" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BOSS_ID</mapingcol>
+      </attr>
+      <attr floatlength="6" name="ORDER_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">ORDER_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="CREATE_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLAINS_TYPE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">COMPLAINS_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPLE" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPLE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DELETE" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_DELETE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

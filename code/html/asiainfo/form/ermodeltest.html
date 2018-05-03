@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:fc xmlns:v="urn:schemas-microsoft-com:vml">
+<HEAD> <STYLE> .userData{behavior:url(#default#userData);}
+	@import url(../css/dj.css); 
+	</STYLE>
+<script src='ermodel.js'></script>
+<script>
+	
+
+function uf_open() {
+	document.execCommand("2D-Position", true, true);	
+	
+	 
+	divMain.onmousedown=tab_mouse_down;
+	divMain.onmousemove=tab_mouse_move;
+	divMain.onmouseup=tab_mouse_up;
+	divMain.ondblclick=tab_dblclick;
+	 
+	_addOneTable('mytab');
+	_addOneTable('mytab2');
+	 
+	
+}
+function uf_ok(){
+	var sRet = new Eapi.Str().trim(txtSql.value);
+	if(sRet == "" || divSql.style.display=="none"){
+		var s = _PreCheck();
+		if(s!=""){
+			alert(s);
+			return;
+		}
+		txtSql.value = _GenSql();
+	}
+	sRet = new Eapi.Str().trim(txtSql.value);
+	if(sRet == ""){
+		alert("生成的SQL语句为空!");
+		return;
+	}
+	window.returnValue = sRet;
+	CloseBill();
+}
+
+function uf_addTable() {
+	if(lstTables.selectedIndex<0) return;
+	var tableName = lstTables.options(lstTables.selectedIndex).text;
+	_addOneTable(tableName);
+	
+}
+//页签控件的点击事件
+ 
+function uf_showsql() {
+	var msg1 = "查看SQL语句";
+	var msg2 = "返回设计界面";
+	if(cmdShow.value ==msg1){
+		var s = _PreCheck();
+		if(s!=""){
+			alert(s);
+			return;
+		}
+		txtSql.value = _GenSql();
+		divSql.style.display="";
+		divMain.style.display="none";
+		lstTables.style.display="none";
+		cmdShow.value = msg2;
+	}else{
+		divSql.style.display='none';
+		divMain.style.display='';
+		lstTables.style.display='';	
+		cmdShow.value = msg1;
+	}
+}
+function uf_runsql() {
+	 
+}
+</script>	 		
+</HEAD>
+<body>
+ <div>
+  <input type=button value='addLink' onclick=addLink() />
+  <input type=button value='addTable' onclick=addTable() />
+  <input type=button value='delTable' onclick=delTable() />
+  <input type="text" id="input1" value="">
+  <input type=button value='gettabhtml' onclick=gettabhtml() />
+  <input type=button value='resttab' onclick=resttab() />
+  <input type=button value='ChangeTableName' onclick=ChangeTableName() />
+  
+  <input type=button value='delField' onclick=delField() />
+</div>
+<DIV id=divMain style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; OVERFLOW-Y: auto; LEFT: 0px; OVERFLOW-X: auto; OVERFLOW: auto; BORDER-LEFT: black 0px solid;   BORDER-BOTTOM: black 1px solid; POSITION: absolute; TOP: 59px; width:100%;height:1200; BACKGROUND-COLOR: #ffffff" controltype="div" NotBg="否">
+</DIV>
+ <link type='text/css' rel='stylesheet' href='../css/shape.css'  />
+
+</body>
+<script>
+	uf_open()
+	function addLink(){
+	   _addLink("mytab","name","mytab2","name"); 
+	};
+	function addTable(tablename){
+		_addOneTable('mytab3');	 
+	};
+	function delTable(tablename){
+		_DelOneTable('mytab3');	 
+	};
+	function gettabhtml(){
+		 var tabobj=document.getElementById("tab_"+"mytab");
+		document.getElementById("input1").value=tabobj.innerText;
+	};
+	function ChangeTableName(){
+		 var tabobj=document.getElementById("tab_"+"mytab");
+		 tabobj.firstChild.firstChild.nodeValue='wqs';
+		 alert(tabobj.firstChild.firstChild.nodeValue +','+tabobj.firstChild.nodeValue);
+		 _ChangeTableName(tabobj,'wqs');
+	};
+	function resttab(){
+	   document.getElementById("tab_"+"mytab").outerHTML =document.getElementById("input1").value;
+	 
+	};
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleWeaponStaticData" mainattr="CODE_TYPE">
+    <mapingenty type="table">SALE_WEAPON_STATIC_DATE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CODE_TYPE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CODE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET_TYPE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKET_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE_ID" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">CODE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CODE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE_NAME_NLS" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CODE_NAME_NLS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SORT_ID" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">SORT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_USED" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">IS_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTERN_CODE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXTERN_CODE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

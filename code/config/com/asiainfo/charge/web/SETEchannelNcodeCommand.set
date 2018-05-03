@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETEchannelNcodeCommand" BOName="com.asiainfo.charge.bo.BOEchannelNcodeCommand" MainField="ID" Title="com.asiainfo.charge.bo.BOEchannelNcodeCommand" ActBOName="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ADD_ATTR</Name>
+        <BOAttrName>ADD_ATTR</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ADD_ATTR</ID>
+        <Title>附加属性 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="ADD_ATTR" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BASE_PRODUCT</Name>
+        <BOAttrName>BASE_PRODUCT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BASE_PRODUCT</ID>
+        <Title>基础产品 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="16" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="BASE_PRODUCT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BUSI_RULE</Name>
+        <BOAttrName>BUSI_RULE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BUSI_RULE</ID>
+        <Title>业务规则 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="BUSI_RULE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CANCEL_COMMAND</Name>
+        <BOAttrName>CANCEL_COMMAND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CANCEL_COMMAND</ID>
+        <Title>取消指令 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="16" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="CANCEL_COMMAND" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>G_PRODUCT</Name>
+        <BOAttrName>G_PRODUCT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>G_PRODUCT</ID>
+        <Title>增值产品 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="G_PRODUCT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ID</ID>
+        <Title>ID </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>INFO_TYPE</Name>
+        <BOAttrName>INFO_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INFO_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="8" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="INFO_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>NAME</Name>
+        <BOAttrName>NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NAME</ID>
+        <Title>名称 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>NCODE</Name>
+        <BOAttrName>NCODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NCODE</ID>
+        <Title>NCODE </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="16" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="NCODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>OPEN_COMMAND</Name>
+        <BOAttrName>OPEN_COMMAND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPEN_COMMAND</ID>
+        <Title>开通指令 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="16" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="OPEN_COMMAND" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>PRI_TARIFF</Name>
+        <BOAttrName>PRI_TARIFF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRI_TARIFF</ID>
+        <Title>主体资费 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="PRI_TARIFF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>PROD_PACKAGE</Name>
+        <BOAttrName>PROD_PACKAGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROD_PACKAGE</ID>
+        <Title>产品包 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="PROD_PACKAGE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>PROD_PACKAGE2</Name>
+        <BOAttrName>PROD_PACKAGE2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROD_PACKAGE2</ID>
+        <Title>产品包 </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="PROD_PACKAGE2" />
+      </Field>
+	  <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>REL_ID</Name>
+        <BOAttrName>REL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REL_ID</ID>
+        <Title>REL_ID </Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOEchannelNcodeCommand" Attr="REL_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

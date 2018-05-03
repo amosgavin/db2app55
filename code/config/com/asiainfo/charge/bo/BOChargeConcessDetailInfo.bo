@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeConcessDetailInfo" mainattr="ID">
+    <mapingenty type="table">CHARGE_CONCESS_DETAIL_INFO_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONSSID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CONSSID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DETAIL_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DETAIL_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_IN" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CHARGE_IN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_OUT" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CHARGE_OUT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRICE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CNT" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="UNIT" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">UNIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

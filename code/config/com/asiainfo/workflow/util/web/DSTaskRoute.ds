@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSTaskRoute</Name>
+  <Package>com.asiainfo.workflow.util.web</Package>
+  <DataSet SetType="SERVICE">
+    <ValueAttr>CONDITION</ValueAttr>
+    <TextAttr>LABLE</TextAttr>
+    <ClassName>com.asiainfo.workflow.util.server.interfaces.ITaskUtilSV</ClassName>
+    <FunctionName>getRoute4TaskTemplate</FunctionName>
+  </DataSet>
+  <Parameter name="templateCode" DataType="String" />
+  <Parameter name="taskId" DataType="long" />
+</UIDataSrc>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="warn_configure" mainattr="CITY">
+    <mapingenty type="table">WARN_CONFIGURE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY" maxlength="255" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">CITY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFFID" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFFID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFFNAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFFNAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUMEN" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BUMEN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TELPHONE" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TELPHONE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

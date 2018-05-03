@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>staff</Name>
+  <Package>com.asiainfo.crm.exercise.staff.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="0">可用</OptionList>
+    <OptionList value="1">不可用</OptionList>
+    <OptionList value="2">未知</OptionList>
+  </DataSet>
+</UIDataSrc>

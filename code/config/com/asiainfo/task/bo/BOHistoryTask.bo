@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOHistoryTask" mainattr="WORKFLOW_ID">
+    <mapingenty type="query">SELECT WORKFLOW_ID,
+       TEMPLATE_TAG,
+       TASK_TAG,
+       WORKFLOW_OBJECT_TYPE,
+       OBJECT_TYPE_NAME,
+       WORKFLOW_OBJECT_ID,
+       CREATE_DATE,
+       LABEL,
+       TASK_ID,
+       TLABEL,
+       TASK_DATE,
+       STATE_NAME,
+       STATE,
+       STATION_ID,
+       TASK_STAFF_ID,
+       TASK_STAFF_NAME,
+       ERROR_MESSAGE,
+       task_template_id,
+       STAFF_NAME,
+       FINISH_STAFF_ID,
+       FINISH_DATE,
+       description,
+       REGION_ID,
+       ORG_NAME,
+       create_staff_name,
+       create_time,
+       apply_name,
+       create_staff_id,
+       corporation,
+       create_corporation
+  FROM (SELECT WORKFLOW_ID,
+               TEMPLATE_TAG,
+               TASK_TAG,
+               WORKFLOW_OBJECT_TYPE,
+               OBJECT_TYPE_NAME,
+               WORKFLOW_OBJECT_ID,
+               CREATE_DATE,
+               LABEL,
+               TASK_ID,
+               (CASE
+                   WHEN TLABEL LIKE '%~%'
+                   THEN
+                      substr (TLABEL, 1, locate ('~', TLABEL, 1) - 1)
+                   ELSE
+                      TLABEL
+                END)
+                  TLABEL,
+               TASK_DATE,
+               STATE_NAME,
+               STATE,
+               STATION_ID,
+               TASK_STAFF_ID,
+               TASK_STAFF_NAME,
+               ERROR_MESSAGE,
+               task_template_id,
+               STAFF_NAME,
+               FINISH_STAFF_ID,
+               FINISH_DATE,
+               description,
+               REGION_ID,
+               ORG_NAME,
+               create_staff_id,
+               (CASE
+                   WHEN corporation1 IS NULL THEN create_corporation
+                   ELSE corporation1
+                END)
+                  corporation,
+               create_corporation
+          FROM (SELECT a.WORKFLOW_ID,
+                       a.TEMPLATE_TAG,
+                       b.TASK_TAG,
+                       (CASE
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'weaponCase'
+                           THEN
+                              '武器申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'tagCase'
+                           THEN
+                              '促销标签申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCase'
+                           THEN
+                              '省公司营销活动申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCaseT'
+                           THEN
+                              '市公司营销活动申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'chargeCaseT'
+                           THEN
+                              '市公司资费案申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'chargeCase'
+                           THEN
+                              '省公司资费案申请'
+                           ELSE
+                              '其他'
+                        END)
+                          WORKFLOW_OBJECT_TYPE,
+                       a.WORKFLOW_OBJECT_TYPE OBJECT_TYPE_NAME,
+                       a.WORKFLOW_OBJECT_ID,
+                       a.CREATE_DATE,
+                       a.LABEL,
+                       b.TASK_ID,
+                       b.LABEL AS TLABEL,
+                       b.CREATE_DATE AS TASK_DATE,
+                       (CASE
+                           WHEN b.STATE = '5' THEN '等待办理'
+                           WHEN b.STATE = '3' THEN '已经完成'
+                           WHEN b.STATE = '2' THEN '可调度'
+                           WHEN b.STATE = '1' THEN '不能调度'
+                           WHEN b.STATE = '4' THEN '终止'
+                           WHEN b.STATE = '6' THEN '任务回退'
+                           WHEN b.STATE = '10' THEN '任务转派'
+                           WHEN b.STATE = '11' THEN '异常结束'
+                           ELSE '其他状态'
+                        END)
+                          STATE_NAME,
+                       b.STATE,
+                       b.STATION_ID,
+                       b.TASK_STAFF_ID,
+                       (CASE
+                           WHEN task_type = 'user'
+                           THEN
+                              (SELECT value (sta.STAFF_NAME, '')
+                                 FROM SECHB.SEC_STAFF sta,
+                                      SECHB.SEC_OPERATOR ope
+                                WHERE sta.STAFF_ID = ope.STAFF_ID
+                                      AND char (ope.OPERATOR_ID) =
+                                             value (b.TASK_STAFF_ID, '0'))
+                           WHEN task_type = 'start'
+                           THEN
+                              (SELECT value (sta.STAFF_NAME, '')
+                                 FROM SECHB.SEC_STAFF sta,
+                                      SECHB.SEC_OPERATOR ope
+                                WHERE sta.STAFF_ID = ope.STAFF_ID
+                                      AND char (ope.OPERATOR_ID) =
+                                             value (a.create_staff_id, '0'))
+                           ELSE
+                              ' '
+                        END)
+                          TASK_STAFF_NAME,
+                       b.description ERROR_MESSAGE,
+                       b.task_template_id,
+                       b.FINISH_STAFF_ID,
+                       (SELECT value (sta.STAFF_NAME, '')
+                          FROM SECHB.SEC_STAFF sta, SECHB.SEC_OPERATOR ope
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.FINISH_STAFF_ID, '0'))
+                          STAFF_NAME,
+                       b.FINISH_DATE,
+                       b.description,
+                       a.REGION_ID,
+                       (CASE
+                           WHEN task_type = 'user'
+                           THEN
+                              (SELECT value (org.organize_name, '')
+                                 FROM SECHB.SEC_STAFF sta,
+                                      SECHB.SEC_OPERATOR ope,
+                                      SECHB.SEC_ORGANIZE org
+                                WHERE sta.STAFF_ID = ope.STAFF_ID
+                                      AND char (ope.OPERATOR_ID) =
+                                             value (b.TASK_STAFF_ID, '0')
+                                      AND sta.organize_id = org.organize_id)
+                           WHEN task_type = 'start'
+                           THEN
+                              (SELECT value (org.organize_name, '')
+                                 FROM SECHB.SEC_STAFF sta,
+                                      SECHB.SEC_OPERATOR ope,
+                                      SECHB.SEC_ORGANIZE org
+                                WHERE sta.STAFF_ID = ope.STAFF_ID
+                                      AND char (ope.OPERATOR_ID) =
+                                             value (a.create_staff_id, '0')
+                                      AND sta.organize_id = org.organize_id)
+                           ELSE
+                              ' '
+                        END)
+                          ORG_NAME,
+                       a.create_staff_id,
+                       (SELECT value (org.organize_name, '')
+                          FROM SECHB.SEC_STAFF sta,
+                               SECHB.SEC_OPERATOR ope,
+                               SECHB.SEC_ORGANIZE org
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.TASK_STAFF_ID, '0')
+                               AND substr (sta.organize_id, 1, 2) =
+                                      org.organize_id)
+                          corporation1,
+                       (SELECT nvl (organize_name, '--')
+                          FROM sechb.sec_organize c
+                         WHERE c.organize_id = a.region_id)
+                          create_corporation
+                  FROM h_vm_wf a, h_VM_TASK b
+                 WHERE a.WORKFLOW_ID = b.WORKFLOW_ID
+                       AND task_type IN ('user', 'start')
+                UNION ALL
+                SELECT a.WORKFLOW_ID,
+                       a.TEMPLATE_TAG,
+                       b.TASK_TAG,
+                       (CASE
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'weaponCase'
+                           THEN
+                              '武器申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'tagCase'
+                           THEN
+                              '促销标签申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCase'
+                           THEN
+                              '省公司营销活动申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCaseT'
+                           THEN
+                              '市公司营销活动申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'chargeCaseT'
+                           THEN
+                              '市公司资费案申请'
+                           WHEN a.WORKFLOW_OBJECT_TYPE = 'chargeCase'
+                           THEN
+                              '省公司资费案申请'
+                           ELSE
+                              '其他'
+                        END)
+                          WORKFLOW_OBJECT_TYPE,
+                       a.WORKFLOW_OBJECT_TYPE OBJECT_TYPE_NAME,
+                       a.WORKFLOW_OBJECT_ID,
+                       a.CREATE_DATE,
+                       a.LABEL,
+                       b.TASK_ID,
+                       b.LABEL AS TLABEL,
+                       b.CREATE_DATE AS TASK_DATE,
+                       (CASE
+                           WHEN b.STATE = '5' THEN '等待办理'
+                           WHEN b.STATE = '3' THEN '已经完成'
+                           WHEN b.STATE = '2' THEN '可调度'
+                           WHEN b.STATE = '1' THEN '不能调度'
+                           WHEN b.STATE = '4' THEN '终止'
+                           WHEN b.STATE = '6' THEN '任务回退'
+                           WHEN b.STATE = '10' THEN '任务转派'
+                           WHEN b.STATE = '11' THEN '异常结束'
+                           ELSE '其他状态'
+                        END)
+                          STATE_NAME,
+                       b.STATE,
+                       b.STATION_ID,
+                       b.TASK_STAFF_ID,
+                       (SELECT value (sta.STAFF_NAME, '')
+                          FROM SECHB.SEC_STAFF sta, SECHB.SEC_OPERATOR ope
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.TASK_STAFF_ID, '0'))
+                          TASK_STAFF_NAME,
+                       b.ERROR_MESSAGE,
+                       b.task_template_id,
+                       b.FINISH_STAFF_ID,
+                       (SELECT value (sta.STAFF_NAME, '')
+                          FROM SECHB.SEC_STAFF sta, SECHB.SEC_OPERATOR ope
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.FINISH_STAFF_ID, '0'))
+                          STAFF_NAME,
+                       b.FINISH_DATE,
+                       b.ERROR_MESSAGE description,
+                       a.REGION_ID,
+                       (SELECT value (org.organize_name, '')
+                          FROM SECHB.SEC_STAFF sta,
+                               SECHB.SEC_OPERATOR ope,
+                               SECHB.SEC_ORGANIZE org
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.TASK_STAFF_ID, '0')
+                               AND sta.organize_id = org.organize_id)
+                          ORG_NAME,
+                       a.create_staff_id,
+                       (SELECT value (org.organize_name, '')
+                          FROM SECHB.SEC_STAFF sta,
+                               SECHB.SEC_OPERATOR ope,
+                               SECHB.SEC_ORGANIZE org
+                         WHERE sta.STAFF_ID = ope.STAFF_ID
+                               AND char (ope.OPERATOR_ID) =
+                                      value (b.TASK_STAFF_ID, '0')
+                               AND substr (sta.organize_id, 1, 2) =
+                                      org.organize_id)
+                          corporation1,
+                       (SELECT nvl (organize_name, '--')
+                          FROM sechb.sec_organize c
+                         WHERE c.organize_id = a.region_id)
+                          create_corporation
+                  FROM h_vm_wf a, h_VM_TASK_TS b
+                 WHERE a.WORKFLOW_ID = b.WORKFLOW_ID
+                       AND task_type IN ('user', 'sign')
+                       AND ( (FINISH_STAFF_ID = TASK_STAFF_ID)
+                            OR FINISH_STAFF_ID IS NULL)) c
+        ORDER BY CREATE_DATE DESC) data01,
+       (SELECT id recordId,
+               apply_name,
+               principal,
+               create_time,
+               sta.staff_name create_staff_name
+          FROM SALE_WEAPON_MAIN_T sw,
+               SECHB.SEC_STAFF sta,
+               SECHB.SEC_OPERATOR ope
+         WHERE sw.PRINCIPAL = to_char (ope.OPERATOR_ID)
+               AND to_char (ope.STAFF_ID) = to_char (sta.STAFF_ID)
+        UNION ALL
+        SELECT id recordId,
+               sale_main_name apply_name,
+               principal,
+               create_time,
+               sta.staff_name create_staff_name
+          FROM sale_main_t sm, SECHB.SEC_STAFF sta, SECHB.SEC_OPERATOR ope
+         WHERE sm.PRINCIPAL = to_char (ope.OPERATOR_ID)
+               AND to_char (sta.STAFF_ID) = to_char (ope.STAFF_ID)
+        UNION ALL
+        SELECT APPLY_ID recordId,
+               APPLY_NAME apply_name,
+               principle principal,
+               APPLY_TIME,
+               sta.staff_name create_staff_name
+          FROM charge_apply_main_t sm,
+               SECHB.SEC_STAFF sta,
+               SECHB.SEC_OPERATOR ope
+         WHERE sm.principle = to_char (ope.OPERATOR_ID)
+               AND to_char (sta.STAFF_ID) = to_char (ope.STAFF_ID)) data02
+ WHERE data01.WORKFLOW_OBJECT_ID = data02.recordId
+ORDER BY task_id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="WORKFLOW_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEMPLATE_TAG" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEMPLATE_TAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TAG" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_TAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_TYPE" maxlength="27" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OBJECT_TYPE_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OBJECT_TYPE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_ID" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TLABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TLABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">TASK_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE_NAME" maxlength="12" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATION_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ERROR_MESSAGE" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ERROR_MESSAGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TEMPLATE_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">TASK_TEMPLATE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FINISH_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FINISH_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FINISH_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">FINISH_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DESCRIPTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORG_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CORPORATION" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CORPORATION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_CORPORATION" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_CORPORATION</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

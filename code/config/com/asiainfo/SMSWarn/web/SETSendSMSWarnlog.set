@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSendSMSWarnlog" BOName="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" MainField="LOG_ID" Title="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" ActBOName="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Package="com.asiainfo.SMSWarn.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BILL_ID</Name>
+        <BOAttrName>BILL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILL_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="BILL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CITY_ID</Name>
+        <BOAttrName>CITY_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CITY_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="CITY_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CONTENT</Name>
+        <BOAttrName>CONTENT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONTENT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="CONTENT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>COUNT</Name>
+        <BOAttrName>COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COUNT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="COUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>EMAIL</Name>
+        <BOAttrName>EMAIL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMAIL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="EMAIL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>GRADE</Name>
+        <BOAttrName>GRADE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GRADE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="GRADE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>INSERT_TIME</Name>
+        <BOAttrName>INSERT_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INSERT_TIME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="6">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="INSERT_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>LEVEL_ID</Name>
+        <BOAttrName>LEVEL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LEVEL_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="LEVEL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>LOG_ID</Name>
+        <BOAttrName>LOG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LOG_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="LOG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>RESERVE1</Name>
+        <BOAttrName>RESERVE1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERVE1</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="RESERVE1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>RESERVE2</Name>
+        <BOAttrName>RESERVE2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERVE2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="RESERVE2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>RESERVE3</Name>
+        <BOAttrName>RESERVE3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERVE3</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="RESERVE3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>SESERVE4</Name>
+        <BOAttrName>SESERVE4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SESERVE4</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="SESERVE4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>TARGET</Name>
+        <BOAttrName>TARGET</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TARGET</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="TARGET" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>TYPE_CHANGE_COUNT</Name>
+        <BOAttrName>TYPE_CHANGE_COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TYPE_CHANGE_COUNT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="TYPE_CHANGE_COUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>TYPE_SALE_COUNT</Name>
+        <BOAttrName>TYPE_SALE_COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TYPE_SALE_COUNT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="TYPE_SALE_COUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>TYPE_WEAPON_COUNT</Name>
+        <BOAttrName>TYPE_WEAPON_COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TYPE_WEAPON_COUNT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.SMSWarn.bo.BOSendSMSWarnlog" Attr="TYPE_WEAPON_COUNT" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

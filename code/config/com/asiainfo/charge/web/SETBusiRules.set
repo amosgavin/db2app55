@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETBusiRules" BOName="com.asiainfo.charge.bo.BOBusiRules" MainField="BILLING_RULES" Title="com.asiainfo.charge.bo.BOBusiRules" ActBOName="com.asiainfo.charge.bo.BOBusiRules" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BILLING_RULES</Name>
+        <BOAttrName>BILLING_RULES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILLING_RULES</ID>
+        <Title>可选叠加包</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOBusiRules" Attr="BILLING_RULES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>EFFECTIVE_RULES</Name>
+        <BOAttrName>EFFECTIVE_RULES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EFFECTIVE_RULES</ID>
+        <Title>生效规则</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOBusiRules" Attr="EFFECTIVE_RULES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BUSIRULES_ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BUSIRULES_ID</ID>
+        <Title>代理 主键</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBusiRules" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>OVERLAPPED_PACKAGE</Name>
+        <BOAttrName>OVERLAPPED_PACKAGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OVERLAPPED_PACKAGE</ID>
+        <Title>套餐费计费规则</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="800" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOBusiRules" Attr="OVERLAPPED_PACKAGE" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

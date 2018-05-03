@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+ <sysbo datasource="base" name="Text2Bo" mainattr="">
+  <mapingenty type="table">TEXT2_BO</mapingenty>
+  <datafilter />
+  <attrlist>
+   <attr floatlength="0" name="NUMBER" maxlength="4" datatype="" type="COL" remark="">
+    <mapingcol datatype="INTEGER">NUMBER</mapingcol>
+   </attr>
+   <attr floatlength="0" name="NAME" maxlength="255" datatype="String" type="COL" remark="">
+    <mapingcol datatype="VARCHAR">NAME</mapingcol>
+   </attr>
+   <attr floatlength="0" name="HEIGHT" maxlength="4" datatype="" type="COL" remark="">
+    <mapingcol datatype="INTEGER">HEIGHT</mapingcol>
+   </attr>
+   <attr floatlength="0" name="SCORE" maxlength="4" datatype="" type="COL" remark="">
+    <mapingcol datatype="INTEGER">SCORE</mapingcol>
+   </attr>
+  </attrlist>
+ </sysbo>
+</sysbolist>

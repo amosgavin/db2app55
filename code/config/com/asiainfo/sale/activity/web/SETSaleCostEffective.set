@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSaleCostEffective" BOName="com.asiainfo.sale.activity.bo.BOSaleCostEffective" MainField="COL_ALIAS_1" Title="com.asiainfo.sale.activity.bo.BOSaleCostEffective" ActBOName="com.asiainfo.sale.activity.bo.BOSaleCostEffective" Package="com.asiainfo.sale.activity.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>COL_ALIAS_1</Name>
+        <BOAttrName>COL_ALIAS_1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COL_ALIAS_1</ID>
+        <Title>营销活动名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOSaleCostEffective" Attr="COL_ALIAS_1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>COL_ALIAS_13</Name>
+        <BOAttrName>COL_ALIAS_13</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COL_ALIAS_13</ID>
+        <Title>投入产出比</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="4">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOSaleCostEffective" Attr="COL_ALIAS_13" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>COL_ALIAS_12</Name>
+        <BOAttrName>COL_ALIAS_12</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COL_ALIAS_12</ID>
+        <Title>营销活动效益</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="4">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>COL_ALIAS_2</Name>
+        <BOAttrName>COL_ALIAS_2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COL_ALIAS_2</ID>
+        <Title>地市</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="city_code" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>COL_ALIAS_4</Name>
+        <BOAttrName>COL_ALIAS_4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COL_ALIAS_4</ID>
+        <Title>活动类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="activityType" LSPType="Const" />
+        </ListDataSource>
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>DATE_TIME</Name>
+        <BOAttrName />
+        <BODisplayAttrName>DATE_TIME</BODisplayAttrName>
+        <ID>DATE_TIME</ID>
+        <Title>时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="12" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0">String</IDDataType>
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="datetime" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

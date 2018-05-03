@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOAccessChange" mainattr="ACCESS_ID">
+    <mapingenty type="table">ACCESS_CHANGE_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ACCESS_ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ACCESS_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPLE" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPLE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEL" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEP" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DEP</mapingcol>
+      </attr>
+      <attr floatlength="6" name="B_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">B_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="E_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">E_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="O_OBJECT" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">O_OBJECT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SCALE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SCALE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="O_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">O_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCES_DETAIL" maxlength="2001" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCES_DETAIL</mapingcol>
+      </attr>
+      <attr floatlength="6" name="CREATE_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OLD_BAND" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OLD_BAND</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NEW_BAND" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NEW_BAND</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

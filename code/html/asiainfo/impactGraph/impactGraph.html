@@ -1,0 +1,312 @@
+<!--
+  $Id: hierarchicallayout.html,v 1.8 2008/10/06 10:58:28 gaudenz Exp $
+  Copyright (c) 2006, Gaudenz Alder
+  
+  Hierarchical Layout example for mxGraph. This example demonstrates the
+  use of the hierarchical and organic layouts. Note that the hierarchical
+  layout requires another script tag in the head of the page.
+-->
+<html>
+<head>
+	<title>Hierarchical Layout example for mxGraph</title>
+  <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css" />
+	<link rel="stylesheet" type="text/css" href="../../ext/resources/css/xtheme-default.css" />
+	<script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="../../ext/ext-all.js"></script>
+	<script type="text/javascript" src="../Asiainfo.js"></script>
+	<!-- Sets the basepath for the library if not in same directory -->
+	<script type="text/javascript">
+		mxBasePath = './';
+	</script>
+
+	<!-- Loads and initiaizes the library -->
+	<!--<script type="text/javascript" src="mxclient.js"></script>-->
+	<script type="text/javascript">
+		if (typeof(mxClient) == 'undefined')
+		{
+			if (navigator.appName.toUpperCase() == 'MICROSOFT INTERNET EXPLORER')
+			{
+				document.write('<script src="mxclient_ie.js" type="text/javascript"></'+'script>');
+			}
+			else
+			{
+				var script = document.createElement('script');
+				
+				script.setAttribute('type', 'text/javascript');
+				script.setAttribute('src', 'mxClient.js');
+	
+				var head = document.getElementsByTagName('head')[0];
+		   		head.appendChild(script);
+		   	}
+		} 
+	</script>
+	<script type="text/javascript" src="contentAreaUtils.js"></script>
+	<link rel="stylesheet" href="./css/common.css" charset="UTF-8" type="text/css">
+	<!-- Example code -->
+	<script type="text/javascript">
+    
+		// Program starts here. Creates a sample graph in the
+		// DOM node with the specified ID. This function is invoked
+		// from the onLoad event handler of the document (see below).
+		function main(container)
+		{
+		  
+			// Checks if browser is supported
+			if (!mxClient.isBrowserSupported())
+			{ 
+				// Displays an error message if the browser is
+				// not supported.
+				mxUtils.error('Browser is not supported!', 200, false);
+			}
+			else
+			{	
+				// Creates the graph inside the given container
+				var graph = new mxGraph(container);
+				
+				// Adds rubberband selection
+				new mxRubberband(graph);
+				
+				// Changes the default vertex style in-place
+				var style = graph.getStylesheet().getDefaultVertexStyle();
+				style[mxConstants.STYLE_PERIMETER] = mxPerimeter.RectanglePerimeter;
+				style[mxConstants.STYLE_GRADIENTCOLOR] = 'white';
+				style[mxConstants.STYLE_PERIMETER_SPACING] = 6;
+				style[mxConstants.STYLE_ROUNDED] = true;
+				style[mxConstants.STYLE_SHADOW] = true;
+				
+				style = graph.getStylesheet().getDefaultEdgeStyle();
+				style[mxConstants.STYLE_ROUNDED] = true;
+
+
+
+				// Creates a layout algorithm to be used
+				// with the graph
+				var layout = new mxHierarchicalLayout(graph);
+				var organic = new mxFastOrganicLayout(graph);
+				organic.forceConstant = 120;
+				
+				var parent = graph.getDefaultParent();
+			
+				// Adds a button to execute the layout
+				var button = document.createElement('button');
+				mxUtils.write(button, 'Hierarchical');
+				mxEvent.addListener(button, 'click', function(evt)
+				{
+					layout.execute(parent);
+				});
+				document.body.appendChild(button);
+
+				// Adds a button to execute the layout
+				var button = document.createElement('button');
+				mxUtils.write(button, 'Organic');
+				
+				mxEvent.addListener(button, 'click', function(evt)
+				{
+					organic.execute(parent);
+				});
+				document.body.appendChild(button);
+				//Get vertex by value(value means the text displayed on the vertex)
+				function getVertexByValue(vertexArry,value)
+				{
+					var result=null;
+					for (var i=0;i<vertexArry.length;i++)
+					{
+						if (vertexArry[i].getValue()==value)
+						{
+							result=vertexArry[i];
+							break;
+						}
+				  }
+				  return result;
+				}
+				//Get Link by value(value means the text displayed on the line)
+				function getEdgeByValue(edgeArry,value)
+				{
+					var result=null;
+					for (var i=0;i<edgeArry.length;i++)
+					{
+						if (edgeArry[i].getValue()==value)
+						{
+							result=edgeArry[i];
+							break;
+						}
+				  }
+				 
+				  return result;
+				}
+				//Get links with the same value and same source vertex
+				function getSSLink(vertex,edgeArr)
+				{
+					var result=null;
+					var tmpArr=new Array();
+					for (var i=0;i<edgeArr.length;i++)
+					{
+						if (edgeArr[i].getSource().getValue()==vertex.getValue())tmpArr.push(edgeArr[i]);
+					}
+					if (tmpArr.length>1)result=getSLink(tmpArr);
+					return result;
+					
+				}
+				//Set the same source link
+				function setSSLink(vertex,sslink)
+				{
+          if (sslink!=null && sslink.length!=0)
+	           	{
+	           		for (var j=0;j<sslink.length;j++)
+		           	{
+			           		tmpNode=graph.insertVertex(parent, null,sslink[j][0].getValue(), 0, 0, 70, 30,'ellipseStyle');
+			           		//tmpLink=graph.insertEdge(parent,null,sslink[j][0].getValue(),vertex,tmpNode);
+			           		tmpLink=graph.insertEdge(parent,null,'',vertex,tmpNode);
+			           		for (var k=0;k<sslink[j].length;k++)
+			           		{
+			           			 sslink[j][k].setVisible(false);
+			           			// graph.insertEdge(parent,null,sslink[j][k].getValue(),tmpNode,sslink[j][k].getTarget());
+			           			 graph.insertEdge(parent,null,'',tmpNode,sslink[j][k].getTarget());
+			           	  }
+		           	}
+	           	}					
+				}
+				//Set the same target link
+				function setSTLink(vertex,stlink)
+				{
+					if (stlink!=null && stlink.length!=0)
+	           	{
+	           		for (var j=0;j<stlink.length;j++)
+		           	{
+			           		tmpNode=graph.insertVertex(parent, null,stlink[j][0].getValue(), 0, 0, 70, 30,'ellipseStyle');
+			           		//tmpLink=graph.insertEdge(parent,null,stlink[j][0].getValue(),tmpNode,vertex);
+			           		tmpLink=graph.insertEdge(parent,null,'',tmpNode,vertex);
+			           		for (var k=0;k<stlink[j].length;k++)
+			           		{
+			           			 stlink[j][k].setVisible(false);
+			           			 //graph.insertEdge(parent,null,stlink[j][k].getValue(),stlink[j][k].getSource(),tmpNode);      
+			           			 graph.insertEdge(parent,null,'',stlink[j][k].getSource(),tmpNode);
+			           	  }
+		           	}
+	           	}					
+				}
+				//Get links with the same value and same target vertex
+				function getSTLink(vertex,edgeArr)
+				{
+					var result=null;
+					var tmpArr=new Array();
+					for (var i=0;i<edgeArr.length;i++)
+					{
+						if (edgeArr[i].getTarget().getValue()==vertex.getValue())tmpArr.push(edgeArr[i]);
+					}
+					if (tmpArr.length>1)result=getSLink(tmpArr);
+					return result;
+				}
+				//Get link groups with the same value 
+				function getSLink(linkArr)
+				{
+					var result=new Array();
+					for (var i=0;i<linkArr.length;i++)
+					{
+						var flag=true;
+						for (var j=0;j<result.length;j++) if (result[j][0].getValue()==linkArr[i].getValue()) flag=false;
+						if (flag)
+						{
+							var slinks=getSLinkByLink(linkArr[i],linkArr);
+							if (slinks.length>1)result.push(slinks);
+						}
+						
+					}
+					for (var i=0;i<result.length;i++)
+					{
+						var tmpStr='';
+						for (var j=0;j<result[i].length;j++)tmpStr+=result[i][j].getValue()+',';
+						//alert(tmpStr);
+					}
+				  return result;
+				}
+				//get same link by a link
+				function getSLinkByLink(link,linkArr)
+				{
+					var result=new Array();
+					for (var i=0;i<linkArr.length;i++)
+					{
+						if (link.getValue()==linkArr[i].getValue()) result.push(linkArr[i]);
+					}
+					
+					return result;
+				}
+				// Load cells and layouts the graph
+				graph.getModel().beginUpdate();
+				try
+				{
+				var style = new Object();
+				style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_ELLIPSE;
+				style[mxConstants.STYLE_VERTICAL_ALIGN]=mxConstants.ALIGN_MIDDLE;
+        style[mxConstants.STYLE_ALIGN]=mxConstants.ALIGN_CENTER;
+        style[mxConstants.STYLE_FILLCOLOR]='#C3D9FF';
+        style[mxConstants.STYLE_STROKECOLOR]='#6482B9';
+        style[mxConstants.STYLE_FONTCOLOR]='#774400';
+				graph.getStylesheet().putCellStyle('ellipseStyle', style);
+				/*annyType:DATA or ETL,must be in capitals 
+				  relaName:table name or relation name,must be in capitals
+				  annyDirection:Up Down and All, the initial letter must be in capital 
+				  level:must be int
+				  granularity:use in the future
+				  control:1 means get the original data without circle nodes, 2 means get the data with circle nodes
+				*/
+				  var url = '../../RelaAnnyServ?annyType=DATA&relaName=DB2INFO.CDR_GPRS_YYYYMMDD&annyDirection=All&level=3&granularity=0&control=1';
+					var result=Ext.decode(Asiainfo.remoteData(url,false));
+					var vertexArr=new Array();
+					var edgeArr=new Array();
+					var edgeCellArr=new Array();
+				  for (var i=0;i<result.length;i++)
+				  {
+				  	if (result[i].OBJTYPE==0)
+				  	{
+  				  	if (result[i].SHAPE=='ellipse') 
+  				  	   vertexArr.push(graph.insertVertex(parent, null,result[i].OBJNAME, 0, 0, 70, 30,'ellipseStyle'));
+  				  	else
+  				  	   vertexArr.push(graph.insertVertex(parent, null,result[i].OBJNAME, 0, 0, 130, 30));
+				    }
+				    else
+				    	edgeArr.push(result[i]);
+				  }
+				  for (var i=0;i<edgeArr.length;i++)
+				  {
+				  	
+				  	edgeCellArr.push(graph.insertEdge(parent,null,edgeArr[i].OBJNAME ,getVertexByValue(vertexArr,edgeArr[i].SOURCE),getVertexByValue(vertexArr,edgeArr[i].TARGET)));
+				  	//if (i==79){alert(edgeArr[i+1].OBJNAME+','+edgeArr[i+1].SOURCE+','+edgeArr[i+1].TARGET); break;}
+				  }
+           for (var i=0;i<vertexArr.length;i++)
+           {
+           	var sslink=getSSLink(vertexArr[i],edgeCellArr);
+           	var stlink=getSTLink(vertexArr[i],edgeCellArr);
+           	setSSLink(vertexArr[i],sslink);	
+	          setSTLink(vertexArr[i],stlink);
+           }					
+				  alert('Load success');
+					// Executes the layout
+					layout.execute(parent);
+					 
+				}
+				finally
+				{
+					// Updates the display
+					graph.getModel().endUpdate();
+				}
+       
+				if (mxClient.IS_IE)
+				{
+					new mxDivResizer(container);
+				}
+			}
+		};
+	</script>
+</head>
+
+<!-- Page passes the container for the graph to the grogram -->
+<body onload="main(document.getElementById('graphContainer'))">
+
+	<!-- Creates a container for the graph with a grid wallpaper. Make sure to define the position
+		and overflow attributes! See comments on the adding of the size-listener on line 54 ff!  -->
+	<div id="graphContainer"
+		style="position:absolute;overflow:auto;top:44px;bottom:20px;left:20px;right:20px;">
+	</div>
+</body>
+</html>

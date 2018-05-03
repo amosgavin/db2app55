@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="text2" mainattr="NUMBER">
+    <mapingenty type="table">TEXT2_BO</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="NUMBER" maxlength="255" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">NUMBER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HEIGHT" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">HEIGHT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SCORE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">SCORE</mapingcol>
+      </attr>
+      <attr floatlength="6" name="TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADDRESS" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ADDRESS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DELETE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_DELETE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

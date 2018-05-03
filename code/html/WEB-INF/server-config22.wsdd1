@@ -1,0 +1,134 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="D:\development\workspace\workspace_j2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\hacs_ws_dev\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:service name="CRMProcessSheet" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="isAlive" qname="ns1:isAlive" returnQName="ns1:isAliveReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://soap.eoms.inter.ngcs.boss.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:serSupplier" type="xsd:string"/>
+   <ns2:parameter qname="ns1:callTime" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:operation name="confirmWorkSheet" qname="ns2:confirmWorkSheet" returnQName="ns2:confirmWorkSheetReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://soap.eoms.inter.ngcs.boss.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:sheetType" type="xsd:int"/>
+   <ns1:parameter qname="ns2:serviceType" type="xsd:int"/>
+   <ns1:parameter qname="ns2:serialNo" type="xsd:string"/>
+   <ns1:parameter qname="ns2:serSupplier" type="xsd:string"/>
+   <ns1:parameter qname="ns2:serCaller" type="xsd:string"/>
+   <ns1:parameter qname="ns2:callerPwd" type="xsd:string"/>
+   <ns1:parameter qname="ns2:callTime" type="xsd:string"/>
+   <ns1:parameter qname="ns2:attachRef" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opPerson" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opCorp" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opDepart" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opContact" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opTime" type="xsd:string"/>
+   <ns1:parameter qname="ns2:opDetail" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="notifyWorkSheet" qname="ns3:notifyWorkSheet" returnQName="ns3:notifyWorkSheetReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://soap.eoms.inter.ngcs.boss.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:sheetType" type="xsd:int"/>
+   <ns1:parameter qname="ns3:serviceType" type="xsd:int"/>
+   <ns1:parameter qname="ns3:serialNo" type="xsd:string"/>
+   <ns1:parameter qname="ns3:serSupplier" type="xsd:string"/>
+   <ns1:parameter qname="ns3:serCaller" type="xsd:string"/>
+   <ns1:parameter qname="ns3:callerPwd" type="xsd:string"/>
+   <ns1:parameter qname="ns3:callTime" type="xsd:string"/>
+   <ns1:parameter qname="ns3:attachRef" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opPerson" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opCorp" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opDepart" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opContact" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opTime" type="xsd:string"/>
+   <ns1:parameter qname="ns3:opDetail" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="replyWorkSheet" qname="ns4:replyWorkSheet" returnQName="ns4:replyWorkSheetReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://soap.eoms.inter.ngcs.boss.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:sheetType" type="xsd:int"/>
+   <ns1:parameter qname="ns4:serviceType" type="xsd:int"/>
+   <ns1:parameter qname="ns4:serialNo" type="xsd:string"/>
+   <ns1:parameter qname="ns4:serSupplier" type="xsd:string"/>
+   <ns1:parameter qname="ns4:serCaller" type="xsd:string"/>
+   <ns1:parameter qname="ns4:callerPwd" type="xsd:string"/>
+   <ns1:parameter qname="ns4:callTime" type="xsd:string"/>
+   <ns1:parameter qname="ns4:attachRef" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opPerson" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opCorp" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opDepart" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opContact" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opTime" type="xsd:string"/>
+   <ns1:parameter qname="ns4:opDetail" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="withdrawWorkSheet" qname="ns5:withdrawWorkSheet" returnQName="ns5:withdrawWorkSheetReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://soap.eoms.inter.ngcs.boss.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:sheetType" type="xsd:int"/>
+   <ns1:parameter qname="ns5:serviceType" type="xsd:int"/>
+   <ns1:parameter qname="ns5:serialNo" type="xsd:string"/>
+   <ns1:parameter qname="ns5:serSupplier" type="xsd:string"/>
+   <ns1:parameter qname="ns5:serCaller" type="xsd:string"/>
+   <ns1:parameter qname="ns5:callerPwd" type="xsd:string"/>
+   <ns1:parameter qname="ns5:callTime" type="xsd:string"/>
+   <ns1:parameter qname="ns5:attachRef" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opPerson" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opCorp" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opDepart" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opContact" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opTime" type="xsd:string"/>
+   <ns1:parameter qname="ns5:opDetail" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="replyWorkSheet notifyWorkSheet withdrawWorkSheet isAlive confirmWorkSheet"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="CRMProcessSheet"/>
+  <ns1:parameter name="className" value="com.asiainfo.boss.ngcs.inter.eoms.soap.CRMProcessSheetImpl"/>
+  <ns1:parameter name="wsdlServicePort" value="CRMProcessSheet"/>
+  <ns1:parameter name="schemaQualified" value="http://soap.eoms.inter.ngcs.boss.asiainfo.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://soap.eoms.inter.ngcs.boss.asiainfo.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="CRMProcessSheetService"/>
+ </ns1:service>
+ <service name="AccountModify" provider="java:RPC">
+  <parameter name="allowedMethods" value="UpdateAppAcctSoap"/>
+  <parameter name="className" value="com.ai.secframe.service.sysmgr.impl.AccountModifyImpl"/>
+ </service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

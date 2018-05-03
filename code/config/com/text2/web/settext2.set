@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="settext2" BOName="com.text2.bo.text2" MainField="NUMBER" Title="com.text2.bo.text2" ActBOName="com.text2.bo.text2" Package="com.text2.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>HEIGHT</Name>
+        <BOAttrName>HEIGHT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HEIGHT</ID>
+        <Title>身高</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.text2.bo.text2" Attr="HEIGHT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>NAME</Name>
+        <BOAttrName>NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NAME</ID>
+        <Title>姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.text2.bo.text2" Attr="NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>NUMBER</Name>
+        <BOAttrName>NUMBER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NUMBER</ID>
+        <Title>学号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.text2.bo.text2" Attr="NUMBER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>SCORE</Name>
+        <BOAttrName>SCORE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SCORE</ID>
+        <Title>成绩</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.text2.bo.text2" Attr="SCORE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>TIME</Name>
+        <BOAttrName>TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TIME</ID>
+        <Title>时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDate</EditType>
+        <DataType MaxLength="10" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.text2.bo.text2" Attr="TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ADDRESS</Name>
+        <BOAttrName>ADDRESS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ADDRESS</ID>
+        <Title>地址</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="test" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOMainDetailContract" mainattr="SALE_MAIN_CODE">
+    <mapingenty type="table">MAIN_DETAIL_CONTRACT</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="SALE_MAIN_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_MAIN_NAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_CODE" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_NAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_CONTRACT" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_CONTRACT</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

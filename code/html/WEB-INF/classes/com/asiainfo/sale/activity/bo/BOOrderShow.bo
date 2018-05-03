@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOOrderShow" mainattr="LEVEL_ID">
+    <mapingenty type="query">SELECT sd.ID level_id, sd.SALE_ID batch_id, sm.sale_main_name batch_name, sm.sale_main_code,
+    sd.sale_active_name level_name, sd.sale_active_code,sd.level_code, sm.begin_time, sm.end_time,
+    sm.exearea, sm.marktype, sd.SALE_FLAG,
+    CASE
+      WHEN weapon.prestore_fee IS NULL
+        THEN '0'
+      WHEN weapon.b_limit IS NULL
+        AND weapon.back_month IS NULL
+        THEN char (weapon.prestore_fee)
+      ELSE weapon.prestore_fee || '+' || weapon.b_limit || '*' || 
+        weapon.back_month
+    END prestore_fee, weapon.PRESTRORE_REACH_ACCOUNT, 
+    weapon.present_busi_month || '*' || weapon.PRESENT_VALUE_PERMON 
+    present_fee, weapon.present_reach_amount, weapon.l_limit || '*' || 
+    weapon.base_month base,
+    CASE
+      WHEN PRESENT_BUSI2_AMOUNT IS NULL
+        THEN '0'
+      WHEN weapon.STANDBY_NUM1 IS NULL
+        THEN char (PRESENT_BUSI2_AMOUNT)
+      ELSE replace ( value (weapon.FIRSTCHARGE, '0') || '+' || value (
+        weapon.PRESENT_BUSI2_AMOUNT, '0') || '*' || value (weapon.STANDBY_NUM1
+        , '0') || '+' || value (weapon.LASTCHARGE, '0'), '--', '0')
+    END present_tick, REFERENCE_PRICE, DATA_BUSI_TYPE || '(' || VALUE_PERMONTH
+    || '*' || OPEN_MONTH || ')' dig_type, GLOBAL_SCORE, level_desc, tag.NAME 
+    goods_names
+  FROM hbsale.sale_order_t so
+    LEFT JOIN hbsale.sale_main_t sm
+    ON CHAR (so.order_id) = CHAR (sm.order_id)
+    LEFT JOIN hbsale.sale_detail_t sd
+    ON CHAR (sm.ID) = CHAR (sd.sale_id)
+    LEFT JOIN hbsale.sale_weapon_t weapon
+    ON CHAR (sd.weapon_id) = CHAR (weapon.ID)
+    LEFT JOIN HBSALE.SALE_TAG_DETAIL_T tag
+    ON weapon.ID = tag.PID</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="LEVEL_ID" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">LEVEL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BATCH_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BATCH_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BATCH_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BATCH_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_MAIN_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_CODE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BEGIN_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">BEGIN_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="END_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">END_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXEAREA" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXEAREA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKTYPE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKTYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESTORE_FEE" maxlength="41" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRESTORE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESTRORE_REACH_ACCOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESTRORE_REACH_ACCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_FEE" maxlength="29" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRESENT_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_REACH_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_REACH_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BASE" maxlength="18" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BASE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_TICK" maxlength="245" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRESENT_TICK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REFERENCE_PRICE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">REFERENCE_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DIG_TYPE" maxlength="1031" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DIG_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GLOBAL_SCORE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">GLOBAL_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_DESC" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GOODS_NAMES" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GOODS_NAMES</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

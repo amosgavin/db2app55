@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETWeaponTagRela" BOName="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" MainField="ID" Title="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" ActBOName="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" Package="com.asiainfo.sale.weapon.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>SALE_FLAG</Name>
+        <BOAttrName>SALE_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" Attr="SALE_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>TAG_ID</Name>
+        <BOAttrName>TAG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TAG_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" Attr="TAG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>WEAPON_ID</Name>
+        <BOAttrName>WEAPON_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WEAPON_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOWeaponTagRela" Attr="WEAPON_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

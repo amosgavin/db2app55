@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSSaleMarketType</Name>
+  <Package>com.asiainfo.sale.weapon.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="0">大众市场</OptionList>
+    <OptionList value="1">流动市场</OptionList>
+    <OptionList value="2">农村市场</OptionList>
+    <OptionList value="3">校园市场</OptionList>
+    <OptionList value="4">中高端市场</OptionList>
+    <OptionList value="5">家庭市场</OptionList>
+    <OptionList value="6">集团市场</OptionList>
+    <OptionList value="QT">其他</OptionList>
+  </DataSet>
+</UIDataSrc>

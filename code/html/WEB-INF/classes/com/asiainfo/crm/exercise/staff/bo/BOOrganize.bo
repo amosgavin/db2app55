@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOOrganize" mainattr="ORGANIZE_ID" remark="组织机构">
+    <mapingenty type="table">ORGANIZE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ORGANIZE_ID" maxlength="6" datatype="Integer" type="PK">
+        <mapingcol datatype="NUMBER">ORGANIZE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DISTRICT_ID" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">DISTRICT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_TYPE_ID" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">ORGANIZE_TYPE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARENT_ORGANIZE_ID" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">PARENT_ORGANIZE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MANAGE_STAFF_ID" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">MANAGE_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTACT" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CONTACT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTACT_TEL" maxlength="15" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CONTACT_TEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAX" maxlength="15" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAX</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EMAIL" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EMAIL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARKS" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REMARKS</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

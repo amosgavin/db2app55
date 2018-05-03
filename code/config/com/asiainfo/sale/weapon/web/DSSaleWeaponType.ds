@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSSaleWeaponType</Name>
+  <Package>com.asiainfo.sale.weapon.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="1">预存话费</OptionList>
+    <OptionList value="2">预存送电子券</OptionList>
+    <OptionList value="3">预存送货品</OptionList>
+    <OptionList value="4">预存送自有业务</OptionList>
+    <OptionList value="5">预存组合赠送</OptionList>
+    <OptionList value="6">预存送终端</OptionList>
+    <OptionList value="7">够终端送话费</OptionList>
+    <OptionList value="8">数据业务营销</OptionList>
+    <OptionList value="9">其他赠送活动</OptionList>
+    <OptionList value="0" />
+  </DataSet>
+</UIDataSrc>

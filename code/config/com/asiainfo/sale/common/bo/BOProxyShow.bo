@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOProxyShow" mainattr="ID">
+    <mapingenty type="query">SELECT P.ID,
+       P.AUTHOR_STAFF_ID,
+       S.STAFF_NAME AUTHOR_NAME,
+       ORG.ORGANIZE_NAME AUTHOR_ORGANIZE_NAME,
+       ORGP.ORGANIZE_NAME AUTHOR_ORGANIZE_NAME_P,
+       P.CREATE_STAFF_ID,
+       P.PROXY_STAFF_ID,
+       S2.STAFF_NAME PROXY_NAME,
+       ORG2.ORGANIZE_NAME PROXY_ORGANIZE_NAME,
+       ORGP2.ORGANIZE_NAME PROXY_ORGANIZE_NAME_P,
+       P.M_FLAG,
+       P.PARENT_ID,
+       P.REMARK,
+       P.PROXY_DATE,
+       P.STATE,
+       P.MODIFY_TIME
+  FROM HBSALE.PROXY_PRIVE_T P
+       LEFT JOIN SECHB.SEC_OPERATOR OP
+          ON P.AUTHOR_STAFF_ID = OP.OPERATOR_ID
+       LEFT JOIN SECHB.SEC_STAFF S
+          ON OP.STAFF_ID = S.STAFF_ID
+       LEFT JOIN SECHB.SEC_ORGANIZE ORG
+          ON S.ORGANIZE_ID = ORG.ORGANIZE_ID
+       LEFT JOIN SECHB.SEC_ORGANIZE ORGP
+          ON subStr(S.ORGANIZE_ID,1,2) = ORGP.ORGANIZE_ID
+       LEFT JOIN SECHB.SEC_OPERATOR OP2
+          ON P.PROXY_STAFF_ID = OP2.OPERATOR_ID
+       LEFT JOIN SECHB.SEC_STAFF S2
+          ON OP2.STAFF_ID = S2.STAFF_ID
+       LEFT JOIN SECHB.SEC_ORGANIZE ORG2
+          ON S2.ORGANIZE_ID = ORG2.ORGANIZE_ID
+       LEFT JOIN SECHB.SEC_ORGANIZE ORGP2
+          ON subStr(S2.ORGANIZE_ID,1,2) = ORGP2.ORGANIZE_ID</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="11" datatype="Long" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AUTHOR_STAFF_ID" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AUTHOR_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AUTHOR_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AUTHOR_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AUTHOR_ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AUTHOR_ORGANIZE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AUTHOR_ORGANIZE_NAME_P" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AUTHOR_ORGANIZE_NAME_P</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_STAFF_ID" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROXY_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROXY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROXY_ORGANIZE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_ORGANIZE_NAME_P" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROXY_ORGANIZE_NAME_P</mapingcol>
+      </attr>
+      <attr floatlength="0" name="M_FLAG" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">M_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARENT_ID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">PARENT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">PROXY_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

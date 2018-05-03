@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOSaleDetailShow" mainattr="ID">
+    <mapingenty type="query">SELECT d.ID,
+       d.SALE_ID,
+       d.SALE_ACTIVE_CODE,
+       d.SALE_ACTIVE_NAME,
+       d.WEAPON_ID,
+       d.SALE_FLAG,
+       (SELECT s.CODE_NAME
+          FROM HBSALE.SALE_STATIC_DATA s
+         WHERE s.CODE_ID = d.SALE_FLAG AND s.CODE_TYPE = 'hdlxs')
+          SALE_FLAG_NAME,
+       d.BRAND_DESC,
+       d.TARGET_LIST_CODE,
+       d.OTHER_USERINFO,
+       d.LEVEL_DESC,
+       d.OPEN_CHANNEL,
+       d.MAX_PERSON,
+       d.PRE_PERSON,
+       d.BACK_PROPORTION,
+       d.PRE_STORE_TO_PRESENT,
+       d.PRE_INCOME,
+       d.PRE_BASE_FEE,
+       d.PRE_DISCOUNT,
+       d.EXCLUDE_DEMAND,
+       d.PUBLICITY_WORD,
+       d.CHANNEL_PAY_POLICY,
+       d.LEVEL_CODE,
+       d.SALETYPE_OTHERSALE,
+       d.SALETYPE_DES_OTHERSALE,
+       d.CREATE_TIME,
+       d.MODIFY_TIME,
+       d.SALE_BACKGROUND,
+       d.SALE_TARGET,
+       d.SALE_CONTENT,
+       d.SALE_SCOPE,
+       d.ISACTIVE_SALE,
+       d.OTHER_BUSI_TARGET,
+       d.ESTIMATE_AD_FEE,
+       d.ESTIMATE_OTHER_FEE,
+       d.COST_TOTAL,
+       d.BEGIN_TIME,
+       d.END_TIME,
+       d.ACTIVE_SALE_SITE,
+       d.PRE_ADD_PERSON,
+       d.CHANNEL_PAY,
+       d.MARKET,
+       (SELECT s.CODE_NAME
+          FROM HBSALE.SALE_STATIC_DATA s
+         WHERE s.CODE_ID = d.MARKET AND s.CODE_TYPE = 'market')
+          market_NAME,
+       d.BUSINESS_DISCOUNT,
+       d.FEE_DISCOUNT,
+       d.MOBILE_COST,
+       d.ELECPAY_COST,
+       d.MOBILEPAY_COST,
+       d.ELECGOODS_COST,
+       d.GOODS_COST,
+       w.WEAPON_NAME,
+       w.MID,
+       w.MARKET_TYPE,
+       (SELECT s.CODE_NAME
+          FROM HBSALE.SALE_STATIC_DATA s
+         WHERE s.CODE_ID = w.MARKET_TYPE AND s.CODE_TYPE = 'market')
+          market_NAME_W,
+       w.NET_AGE,
+       w.PRESTORE_FEE,
+       w.PRESTRORE_REACH_ACCOUNT,
+       w.PRESENT_REACH_AMOUNT,
+       w.BASE_PRICE,
+       w.AGREEMENT_VALUE,
+       w.REFERENCE_PRICE,
+       w.FEE_ACCOUNT_PROPERTY,
+       w.PRESENT_VALUE_PERMON,
+       w.PRESENT_BUSI_MONTH,
+       w.B_LIMIT,
+       w.BACK_MONTH,
+       w.L_LIMIT,
+       w.BASE_MONTH,
+       w.TERM_REAL_FEE,
+       w.GOOD_ADOPT_DIRECTORY,
+       w.BUSI_TYPE,
+       w.PRESENT_BUSI_AMOUNT,
+       w.PRESENT_BUSI2_AMOUNT,
+       w.DATA_FEE,
+       w.DATA_BUSI_TYPE,
+       w.VALUE_PERMONTH,
+       w.OPEN_MONTH,
+       w.GLOBAL_SCORE,
+       w.DYNAMIC_SCORE,
+       w.HOME_SCORE,
+       w.CREATE_TIME,
+       w.MODIFY_TIME,
+       w.SZX_SCORE,
+       w.ZFQ_TYPE,
+       (SELECT s.CODE_NAME
+          FROM HBSALE.SALE_STATIC_DATA s
+         WHERE s.CODE_ID = W.ZFQ_TYPE AND s.CODE_TYPE = 'zfqType')
+          ZFQ_TYPE_NAME,
+       w.REMARK_1,
+       w.REMARK_2,
+       w.REMARK_3,
+       w.REMARK_4,
+       w.REMARK_5,
+       w.PRESENT_BUSI3_AMOUNT,
+       w.PRESENT_BUSI4_AMOUNT,
+       w.PRESENT_BUSI5_AMOUNT,
+       w.TERM_TYPE,
+       w.TERM_GUIDE_FEE,
+       w.TERM_COST_FEE,
+       w.SALE_FLAG,
+       (SELECT s.CODE_NAME
+          FROM HBSALE.SALE_STATIC_DATA s
+         WHERE s.CODE_ID = W.SALE_FLAG AND s.CODE_TYPE = 'hdlxs')
+          SALE_FLAG_NAME_W,
+       w.STATE,
+       w.SUGGEST_DATE,
+       w.MINNET_AGE,
+       w.MAXNET_AGE,
+       w.STAFFID,
+       w.CONFIG_TIME
+  FROM    HBSALE.SALE_DETAIL_T d
+       LEFT JOIN
+          HBSALE.SALE_WEAPON_T w
+       ON d.WEAPON_ID = w.id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WEAPON_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WEAPON_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_FLAG_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BRAND_DESC" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BRAND_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TARGET_LIST_CODE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TARGET_LIST_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHER_USERINFO" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHER_USERINFO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_DESC" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPEN_CHANNEL" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OPEN_CHANNEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAX_PERSON" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">MAX_PERSON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_PERSON" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">PRE_PERSON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BACK_PROPORTION" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">BACK_PROPORTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_STORE_TO_PRESENT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRE_STORE_TO_PRESENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_INCOME" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRE_INCOME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_BASE_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRE_BASE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_DISCOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRE_DISCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXCLUDE_DEMAND" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXCLUDE_DEMAND</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PUBLICITY_WORD" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PUBLICITY_WORD</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHANNEL_PAY_POLICY" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHANNEL_PAY_POLICY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LEVEL_CODE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LEVEL_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALETYPE_OTHERSALE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALETYPE_OTHERSALE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALETYPE_DES_OTHERSALE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALETYPE_DES_OTHERSALE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_BACKGROUND" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_BACKGROUND</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_TARGET" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_TARGET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_CONTENT" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_CONTENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_SCOPE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_SCOPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ISACTIVE_SALE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ISACTIVE_SALE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHER_BUSI_TARGET" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHER_BUSI_TARGET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ESTIMATE_AD_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ESTIMATE_AD_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ESTIMATE_OTHER_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ESTIMATE_OTHER_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COST_TOTAL" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">COST_TOTAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BEGIN_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">BEGIN_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="END_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">END_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACTIVE_SALE_SITE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACTIVE_SALE_SITE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_ADD_PERSON" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">PRE_ADD_PERSON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHANNEL_PAY" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">CHANNEL_PAY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET" maxlength="150" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKET_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSINESS_DISCOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">BUSINESS_DISCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_DISCOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">FEE_DISCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MOBILE_COST" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">MOBILE_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ELECPAY_COST" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ELECPAY_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MOBILEPAY_COST" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">MOBILEPAY_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ELECGOODS_COST" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ELECGOODS_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GOODS_COST" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">GOODS_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WEAPON_NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WEAPON_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET_TYPE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKET_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET_NAME_W" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MARKET_NAME_W</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NET_AGE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESTORE_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESTORE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESTRORE_REACH_ACCOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESTRORE_REACH_ACCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_REACH_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_REACH_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BASE_PRICE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">BASE_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AGREEMENT_VALUE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">AGREEMENT_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REFERENCE_PRICE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">REFERENCE_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_ACCOUNT_PROPERTY" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEE_ACCOUNT_PROPERTY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_VALUE_PERMON" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_VALUE_PERMON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI_MONTH" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">PRESENT_BUSI_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="B_LIMIT" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">B_LIMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BACK_MONTH" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">BACK_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_LIMIT" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">L_LIMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BASE_MONTH" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">BASE_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_REAL_FEE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TERM_REAL_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GOOD_ADOPT_DIRECTORY" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GOOD_ADOPT_DIRECTORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSI_TYPE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI2_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI2_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DATA_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">DATA_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DATA_BUSI_TYPE" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DATA_BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="VALUE_PERMONTH" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">VALUE_PERMONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPEN_MONTH" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">OPEN_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GLOBAL_SCORE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">GLOBAL_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DYNAMIC_SCORE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">DYNAMIC_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HOME_SCORE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">HOME_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SZX_SCORE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SZX_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ZFQ_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ZFQ_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ZFQ_TYPE_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ZFQ_TYPE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_1" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_2" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_3" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_4" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_5" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI3_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI3_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI4_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI4_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI5_AMOUNT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI5_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TERM_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_GUIDE_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">TERM_GUIDE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_COST_FEE" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">TERM_COST_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG_NAME_W" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_FLAG_NAME_W</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUGGEST_DATE" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">SUGGEST_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MINNET_AGE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">MINNET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAXNET_AGE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">MAXNET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFFID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFFID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONFIG_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CONFIG_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<common-tree desc="通用树配置">
+	<nodes desc="树节点">
+	  <tree id="30" type="monitor">
+	    <node id="1" value="CommonTreeNode.serverMonitor" i18nRes="i18n.monitor_resource" use="true" child-node-type="3001" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="2" value="CommonTreeNode.serverInfo" i18nRes="i18n.monitor_resource" use="true" child-node-type="3002" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="3" value="CommonTreeNode.statInfo" i18nRes="i18n.monitor_resource" use="true" child-node-type="0" parent-id="0" web-url="/monitor/statMain.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="4" value="CommonTreeNode.trace" i18nRes="i18n.monitor_resource" use="true" child-node-type="0" parent-id="0" web-url="/monitor/trace/index.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="5" value="CommonTreeNode.analyse" i18nRes="i18n.monitor_resource" use="true" child-node-type="0" parent-id="0" web-url="/monitor/analyse/MonitorLeaveAnalyse.jsp" open-pic="" close-pic="" leaf-pic=""/>
+    </tree>
+	  
+	  <tree id="31" type="stat">
+	    <node id="1" value="CommonTreeNode.call" i18nRes="i18n.monitor_resource" use="true" child-node-type="3101" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="2" value="CommonTreeNode.beCalled" i18nRes="i18n.monitor_resource" use="true" child-node-type="3102" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	  </tree>
+	</nodes>
+ 
+  <node-types desc="通用节点类型">
+	  <node-type id="1" type="root" service-id="com.ai.appframe.CommonTreeService" method="getStaticTreeNode"/>
+	  <node-type id="2" type="static" service-id="com.ai.appframe.CommonTreeService" method="getStaticTreeNode"/>
+	  
+	  <node-type id="3001" type="server_list" service-id="com.ai.appframe.monitor.ServerMonitor" method="getScheduleUrlInfo"/>
+	  <node-type id="3002" type="server_list" service-id="com.ai.appframe.monitor.ServerMonitor" method="getServerUrlInfo"/>
+	  
+	  <node-type id="3101" type="stat_info" service-id="com.ai.appframe.monitor.ServerMonitor" method="getStatInfo"/>
+	  <node-type id="3102" type="stat_info" service-id="com.ai.appframe.monitor.ServerMonitor" method="getStatOppInfo"/>
+  </node-types>
+</common-tree>

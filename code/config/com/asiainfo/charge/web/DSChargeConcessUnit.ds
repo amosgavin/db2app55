@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSChargeConcessUnit</Name>
+  <Package>com.asiainfo.charge.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="条" group="1">条</OptionList>
+  </DataSet>
+</UIDataSrc>

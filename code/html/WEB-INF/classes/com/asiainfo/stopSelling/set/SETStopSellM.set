@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETStopSellM" BOName="com.asiainfo.stopSelling.bo.BOStopSellM" MainField="MAINID" Title="com.asiainfo.stopSelling.bo.BOStopSellM" ActBOName="com.asiainfo.stopSelling.bo.BOStopSellM" Package="com.asiainfo.stopSelling.set">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>APPLY_NAME</Name>
+        <BOAttrName>APPLY_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_NAME</ID>
+        <Title>申请名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="APPLY_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>DESCRIPTION</Name>
+        <BOAttrName>DESCRIPTION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DESCRIPTION</ID>
+        <Title>停售理由及原因</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="DESCRIPTION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>MAINID</Name>
+        <BOAttrName>MAINID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAINID</ID>
+        <Title>工单编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="MAINID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ITEM_TYPE</Name>
+        <BOAttrName>ITEM_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ITEM_TYPE</ID>
+        <Title>工单类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="ITEM_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ORG_ID</Name>
+        <BOAttrName>ORG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORG_ID</ID>
+        <Title>机构id</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="80" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="dsbms" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="ORG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ORG_NAME</Name>
+        <BOAttrName>ORG_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORG_NAME</ID>
+        <Title>机构名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="ORG_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>PRINCIPAL</Name>
+        <BOAttrName>PRINCIPAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRINCIPAL</ID>
+        <Title>申请人操作id</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="80" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="PRINCIPAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>PROP_STAFF</Name>
+        <BOAttrName>PROP_STAFF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROP_STAFF</ID>
+        <Title>申请人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="30" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="PROP_STAFF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>PROP_TIME</Name>
+        <BOAttrName>PROP_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROP_TIME</ID>
+        <Title>申请时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="10" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="PROP_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>REMARK1</Name>
+        <BOAttrName>REMARK1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK1</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="REMARK1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>REMARK2</Name>
+        <BOAttrName>REMARK2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="REMARK2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>REMARK3</Name>
+        <BOAttrName>REMARK3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK3</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="REMARK3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>REMARK4</Name>
+        <BOAttrName>REMARK4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK4</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="REMARK4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>STATE</Name>
+        <BOAttrName>STATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATE</ID>
+        <Title>工单当前状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="gdzt" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="STATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>TEL</Name>
+        <BOAttrName>TEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEL</ID>
+        <Title>申请人手机号码</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="Y" type="0" LSName="com.asiainfo.sale.common.web.DSOperatorBill" hasNull="false">
+          <ListParameter LSPName="id" LSPValue="PRINCIPAL" LSPType="Field" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" Attr="TEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>QUERY_END_TIME</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>QUERY_END_TIME</ID>
+        <Title>截至日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="0" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.stopSelling.bo.BOStopSellM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>IS_DELETE</Name>
+        <BOAttrName>IS_DELETE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_DELETE</ID>
+        <Title>删除标志</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

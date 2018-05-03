@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOProxyPrive" mainattr="ID">
+    <mapingenty type="table">PROXY_PRIVE_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="COL" remark="ID">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AUTHOR_STAFF_ID" maxlength="80" datatype="String" type="COL" remark="权限所有人">
+        <mapingcol datatype="VARCHAR">AUTHOR_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="80" datatype="String" type="COL" remark="授权人">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROXY_STAFF_ID" maxlength="80" datatype="String" type="COL" remark="代理人">
+        <mapingcol datatype="VARCHAR">PROXY_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="M_FLAG" maxlength="2" datatype="String" type="COL" remark="是否允许多级代理，1-允许，0-不允许">
+        <mapingcol datatype="VARCHAR">M_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARENT_ID" maxlength="4" datatype="Integer" type="COL" remark="权限所有人">
+        <mapingcol datatype="INTEGER">PARENT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="80" datatype="String" type="COL" remark="权限所有人">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="6" name="PROXY_DATE" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">PROXY_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="6" name="MODIFY_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

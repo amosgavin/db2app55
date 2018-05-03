@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOAppriseMark" mainattr="STAFF_NAME">
+    <mapingenty type="query">SELECT T3.*,ORG2.ORGANIZE_NAME FROM (									 
+SELECT T2.STAFF_NAME,T2.ORGANIZE_NAME DEPART,T2.ORGANIZE_ID,T1.SEND_TIME,T1.IS_READED,T1.APPRISE_FLAG,T1.READ_TIME,T1.DEAL_TIME FROM 
+(SELECT DISTINCT S.SEND_TIME SEND_TIME,A.WORKFLOW_ID WORKFLOW_ID,A.OPERATOR_ID,A.IS_READED,A.APPRISE_FLAG,A.READ_TIME,A.DEAL_TIME
+								 FROM (SELECT DISTINCT *
+								 FROM HBSALE.SALE_APPRISE_MEMBER_T
+								 WHERE WORKFLOW_ID='HB^10^0000000000000001031' AND LAST_OPERATOR_ID &lt;&gt; 0) A,
+								 HBSALE.SALE_APPRISE_MEMBER_T S
+								 WHERE A.LAST_OPERATOR_ID = S.OPERATOR_ID AND A.WORKFLOW_ID=S.WORKFLOW_ID) T1 
+					LEFT JOIN (  SELECT  STA1.ORGANIZE_ID,
+						 	  	 		 STA1.STAFF_NAME,
+						 	  	 		 OPE1.OPERATOR_ID,
+                                         ORG1.ORGANIZE_NAME
+                                    FROM SECHB.SEC_STAFF STA1,
+                                         SECHB.SEC_ORGANIZE ORG1,
+                                         SECHB.SEC_OPERATOR OPE1
+                                   WHERE STA1.ORGANIZE_ID = TO_CHAR (ORG1.ORGANIZE_ID)
+                                         AND OPE1.STAFF_ID = STA1.STAFF_ID ) T2 ON T1.OPERATOR_ID=T2.OPERATOR_ID) T3,SECHB.SEC_ORGANIZE ORG2 WHERE SUBSTR (T3.ORGANIZE_ID, 1, 2)=TO_CHAR(ORG2.ORGANIZE_ID)</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEPART" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_ID" maxlength="12" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SEND_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">SEND_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_READED" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">IS_READED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPRISE_FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">APPRISE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="READ_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">READ_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEAL_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">DEAL_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_NAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

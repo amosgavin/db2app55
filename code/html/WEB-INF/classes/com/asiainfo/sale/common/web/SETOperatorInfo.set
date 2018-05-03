@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETOperatorInfo" BOName="com.asiainfo.sale.common.bo.BOOperatorInfo" MainField="OPERATOR_ID" Title="com.asiainfo.sale.common.bo.BOOperatorInfo" ActBOName="com.asiainfo.sale.common.bo.BOOperatorInfo" Package="com.asiainfo.sale.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BILL_ID</Name>
+        <BOAttrName>BILL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILL_ID</ID>
+        <Title>手机号码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="BILL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BIRTHDAY</Name>
+        <BOAttrName>BIRTHDAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BIRTHDAY</ID>
+        <Title>生日</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="BIRTHDAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CODE</Name>
+        <BOAttrName>CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE</ID>
+        <Title>操作员编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>EMAIL</Name>
+        <BOAttrName>EMAIL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMAIL</ID>
+        <Title>电子邮件</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="EMAIL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>GENDER</Name>
+        <BOAttrName>GENDER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GENDER</ID>
+        <Title>性别</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="GENDER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>OPERATOR_ID</Name>
+        <BOAttrName>OPERATOR_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPERATOR_ID</ID>
+        <Title>操作员ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="OPERATOR_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>OPSTATE</Name>
+        <BOAttrName>OPSTATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPSTATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="OPSTATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>ORGANIZE_ID</Name>
+        <BOAttrName>ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_ID</ID>
+        <Title>组织机构ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>ORGANIZE_NAME</Name>
+        <BOAttrName>ORGANIZE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_NAME</ID>
+        <Title>组织机构名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="ORGANIZE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>ORG_CODE</Name>
+        <BOAttrName>ORG_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORG_CODE</ID>
+        <Title>组织机构编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="ORG_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>STAFF_ID</Name>
+        <BOAttrName>STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_ID</ID>
+        <Title>员工ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>STAFF_NAME</Name>
+        <BOAttrName>STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_NAME</ID>
+        <Title>姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>STATE</Name>
+        <BOAttrName>STATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="STATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>NOTES</Name>
+        <BOAttrName>NOTES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NOTES</ID>
+        <Title>备注</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="400" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="NOTES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>ORGANIZE_ID_P</Name>
+        <BOAttrName>ORGANIZE_ID_P</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_ID_P</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="ORGANIZE_ID_P" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>ORGANIZE_NAME_P</Name>
+        <BOAttrName>ORGANIZE_NAME_P</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_NAME_P</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOOperatorInfo" Attr="ORGANIZE_NAME_P" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

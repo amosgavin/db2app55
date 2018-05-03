@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOFinishTask" mainattr="WORKFLOW_ID">
+    <mapingenty type="query">SELECT WORKFLOW_ID,
+       TEMPLATE_TAG,
+       WORKFLOW_OBJECT_TYPE,
+       OBJECT_TYPE_NAME,
+       WORKFLOW_OBJECT_ID,
+       CREATE_DATE,
+       LABEL,
+       REGION_ID,
+       create_staff_id,
+       STAFF_NAME,
+       department,
+       org_name,
+       apply_name
+  FROM (SELECT WORKFLOW_ID,
+       TEMPLATE_TAG,
+       WORKFLOW_OBJECT_TYPE,
+       OBJECT_TYPE_NAME,
+       WORKFLOW_OBJECT_ID,
+       CREATE_DATE,
+       LABEL,
+       REGION_ID,
+       create_staff_id,
+       STAFF_NAME,
+       department,
+       org_name
+  FROM (SELECT a.WORKFLOW_ID,
+               a.TEMPLATE_TAG,
+               (CASE
+                   WHEN a.WORKFLOW_OBJECT_TYPE = 'weaponCase'
+                   THEN
+                      '武器申请'
+                   WHEN a.WORKFLOW_OBJECT_TYPE = 'tagCase'
+                   THEN
+                      '促销标签申请'
+                   WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCase'
+                   THEN
+                      '营销活动申请'
+                   WHEN a.WORKFLOW_OBJECT_TYPE = 'saleCaseT'
+                   THEN
+                      '市公司营销活动申请'
+                   WHEN a.WORKFLOW_OBJECT_TYPE = 'chargeCaseT'
+                   THEN
+                      '资费案申请'
+                   ELSE
+                      '其他'
+                END)
+                WORKFLOW_OBJECT_TYPE,
+               a.WORKFLOW_OBJECT_TYPE OBJECT_TYPE_NAME,
+               a.WORKFLOW_OBJECT_ID,
+               a.CREATE_DATE,
+               a.LABEL,
+               a.REGION_ID,
+               a.create_staff_id,
+               (SELECT value (sta.STAFF_NAME, '')
+                  FROM SECHB.SEC_STAFF sta,
+                       SECHB.SEC_OPERATOR ope
+                 WHERE sta.STAFF_ID = ope.STAFF_ID
+                   AND char (ope.OPERATOR_ID) = a.create_staff_id)
+               STAFF_NAME,
+               (SELECT value (org.organize_name, '')
+                  FROM SECHB.SEC_STAFF sta,
+                       SECHB.SEC_OPERATOR ope,
+                       SECHB.SEC_ORGANIZE org
+                 WHERE sta.STAFF_ID = ope.STAFF_ID
+                   AND char (ope.OPERATOR_ID) = value (a.create_staff_id, '0')
+                   AND sta.organize_id = org.organize_id) department,
+               (SELECT value (org.organize_name, '')
+                  FROM SECHB.SEC_ORGANIZE org
+                 WHERE org.organize_id = a.REGION_ID) org_name
+          FROM vm_wf a
+         WHERE a.WORKFLOW_ID IN (SELECT DISTINCT workflow_id
+                                   FROM (SELECT workflow_id
+                                           FROM VM_TASK
+                                          WHERE state &lt;&gt; '5'
+                                         UNION ALL
+                                         SELECT workflow_id
+                                           FROM VM_TASK_TS
+                                          WHERE state &lt;&gt; '5')))
+         ORDER BY CREATE_DATE desc) data01,
+               (SELECT id recordId,
+                       apply_name,
+                       principal,
+                       create_time,
+                       sta.staff_name create_staff_name
+                  FROM SALE_WEAPON_MAIN_T sw,
+                       SECHB.SEC_STAFF sta,
+                       SECHB.SEC_OPERATOR ope
+                 WHERE sw.PRINCIPAL = ope.OPERATOR_ID
+                       AND ope.STAFF_ID = sta.STAFF_ID
+                UNION ALL
+                SELECT id recordId,
+                       sale_main_name apply_name,
+                       principal,
+                       create_time,
+                       sta.staff_name create_staff_name
+                  FROM sale_main_t sm,
+                       SECHB.SEC_STAFF sta,
+                       SECHB.SEC_OPERATOR ope
+                 WHERE sm.PRINCIPAL = ope.OPERATOR_ID
+                       AND sta.STAFF_ID = ope.STAFF_ID
+                UNION ALL
+                SELECT APPLY_ID recordId,
+                       APPLY_NAME apply_name,
+                       principle principal,
+                       APPLY_TIME,
+                       sta.staff_name create_staff_name
+                  FROM charge_apply_main_t sm,
+                       SECHB.SEC_STAFF sta,
+                       SECHB.SEC_OPERATOR ope
+                 WHERE sm.principle = to_char (ope.OPERATOR_ID)
+                       AND to_char (sta.STAFF_ID) = to_char (ope.STAFF_ID)) data02
+         WHERE data01.WORKFLOW_OBJECT_ID = data02.recordId</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="WORKFLOW_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEMPLATE_TAG" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEMPLATE_TAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_TYPE" maxlength="27" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OBJECT_TYPE_NAME" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OBJECT_TYPE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEPARTMENT" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DEPARTMENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORG_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="180" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSaleWeaponSignOrAduit" BOName="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" MainField="ID" Title="SETSaleWeaponSignOrAduit_Title" ActBOName="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Package="com.asiainfo.sale.weapon.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>CREATE_DATE</Name>
+        <BOAttrName>CREATE_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_DATE</ID>
+        <Title>创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="CREATE_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>WID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WID</ID>
+        <Title>工单ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>MARKET_TYPE</Name>
+        <BOAttrName>MARKET_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MARKET_TYPE</ID>
+        <Title>细分市场</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="market" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="MARKET_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>MID</Name>
+        <BOAttrName>MID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MID</ID>
+        <Title>主表ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="MID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>NET_AGE</Name>
+        <BOAttrName>NET_AGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NET_AGE</ID>
+        <Title>网龄</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="NET_AGE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>SALE_FLAG</Name>
+        <BOAttrName>SALE_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_FLAG</ID>
+        <Title>营销活动类别</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="hdlx" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="SALE_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>TASK_TYPE</Name>
+        <BOAttrName>TASK_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TASK_TYPE</ID>
+        <Title>状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="TASK_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>TLABEL</Name>
+        <BOAttrName>TLABEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TLABEL</ID>
+        <Title>工单状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="TLABEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>TASK_TAG</Name>
+        <BOAttrName>TASK_TAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TASK_TAG</ID>
+        <Title>状态环节标识</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="TASK_TAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>TASK_ID</Name>
+        <BOAttrName>TASK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TASK_ID</ID>
+        <Title>工单ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="25" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="TASK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>STATION_ID</Name>
+        <BOAttrName>STATION_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATION_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="30" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="STATION_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>TASK_STAFF_ID</Name>
+        <BOAttrName>TASK_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TASK_STAFF_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="30" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="TASK_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>WEAPON_NAME</Name>
+        <BOAttrName>WEAPON_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WEAPON_NAME</ID>
+        <Title>武器名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="WEAPON_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>WLABEL</Name>
+        <BOAttrName>WLABEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WLABEL</ID>
+        <Title>流程类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponSignOrAduit" Attr="WLABEL" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

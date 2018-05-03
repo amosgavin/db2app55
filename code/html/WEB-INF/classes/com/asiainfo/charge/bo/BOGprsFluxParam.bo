@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOGprsFluxParam" mainattr="PRIVID">
+    <mapingenty type="table">GPRS_FLUX_PARAM</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="PRIVID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIVID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RATEPLANID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RATEPLANID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE1" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE2" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE3" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HALFFLAG" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">HALFFLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GETTYPE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">GETTYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXESQL" maxlength="512" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXESQL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATUS" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATUSDATE" maxlength="4" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">STATUSDATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE4" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GROUPID" maxlength="8" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GROUPID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIVNAME" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIVNAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACC_EXESQL" maxlength="512" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACC_EXESQL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PKGCODE" maxlength="16" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PKGCODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ISCALBYDAY" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ISCALBYDAY</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

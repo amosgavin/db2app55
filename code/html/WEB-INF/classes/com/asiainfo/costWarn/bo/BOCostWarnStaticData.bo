@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOCostWarnStaticData" mainattr="CITY_ID">
+    <mapingenty type="table">COST_WARN_STATIC_DATA</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_ID" maxlength="10" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">CITY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_NAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="DISCOUNT_FEE" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">DISCOUNT_FEE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="ENDPOINT_SUB" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">ENDPOINT_SUB</mapingcol>
+      </attr>
+      <attr floatlength="2" name="RESERVE1" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">RESERVE1</mapingcol>
+      </attr>
+      <attr floatlength="2" name="RESERVE2" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">RESERVE2</mapingcol>
+      </attr>
+      <attr floatlength="2" name="RESERVE3" maxlength="20" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">RESERVE3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERVE4" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERVE4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SESERVE5" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SESERVE5</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

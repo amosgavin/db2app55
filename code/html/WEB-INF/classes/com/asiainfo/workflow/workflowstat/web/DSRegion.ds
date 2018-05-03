@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSRegion</Name>
+  <Package>com.asiainfo.workflow.workflowstat.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="10">省公司</OptionList>
+    <OptionList value="11">武汉</OptionList>
+    <OptionList value="12">黄石</OptionList>
+    <OptionList value="13">鄂州</OptionList>
+    <OptionList value="14">宜昌</OptionList>
+    <OptionList value="15">恩施</OptionList>
+    <OptionList value="16">十堰</OptionList>
+    <OptionList value="17">襄阳</OptionList>
+    <OptionList value="18">江汉</OptionList>
+    <OptionList value="19">咸宁</OptionList>
+    <OptionList value="20">荆州</OptionList>
+    <OptionList value="23">荆门</OptionList>
+    <OptionList value="24">随州</OptionList>
+    <OptionList value="25">黄冈</OptionList>
+    <OptionList value="26">孝感</OptionList>
+    <OptionList value="SY">所有</OptionList>
+  </DataSet>
+</UIDataSrc>

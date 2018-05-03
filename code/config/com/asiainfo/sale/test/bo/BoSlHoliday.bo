@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BoSlHoliday" mainattr="HOLIDAY_ID">
+    <mapingenty type="table">SL_HOLIDAY</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="HOLIDAY_ID" maxlength="4" datatype="Integer" type="PK" remark="">
+        <mapingcol datatype="INTEGER">HOLIDAY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HOLIDAY_NAME" maxlength="30" datatype="String" type="COL" remark="">
+        <mapingcol datatype="VARCHAR">HOLIDAY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HOLIDAY_DATE" maxlength="4" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">HOLIDAY_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="4" datatype="Integer" type="COL" remark="">
+        <mapingcol datatype="INTEGER">STATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

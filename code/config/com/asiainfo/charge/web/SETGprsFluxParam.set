@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETGprsFluxParam" BOName="com.asiainfo.charge.bo.BOGprsFluxParam" MainField="PRIVID" Title="com.asiainfo.charge.bo.BOGprsFluxParam" ActBOName="com.asiainfo.charge.bo.BOGprsFluxParam" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ACC_EXESQL</Name>
+        <BOAttrName>ACC_EXESQL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACC_EXESQL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="512" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="ACC_EXESQL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>EXESQL</Name>
+        <BOAttrName>EXESQL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXESQL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="512" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="EXESQL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>GETTYPE</Name>
+        <BOAttrName>GETTYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GETTYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="GETTYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>GROUPID</Name>
+        <BOAttrName>GROUPID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GROUPID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="8" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+          <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="GROUPID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>HALFFLAG</Name>
+        <BOAttrName>HALFFLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HALFFLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+          <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="HALFFLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>ISCALBYDAY</Name>
+        <BOAttrName>ISCALBYDAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ISCALBYDAY</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+          <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="ISCALBYDAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>PKGCODE</Name>
+        <BOAttrName>PKGCODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PKGCODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="16" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="PKGCODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>PRIVID</Name>
+        <BOAttrName>PRIVID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIVID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="PRIVID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>PRIVNAME</Name>
+        <BOAttrName>PRIVNAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIVNAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="64" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="PRIVNAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>RATEPLANID</Name>
+        <BOAttrName>RATEPLANID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RATEPLANID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="RATEPLANID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>STATUS</Name>
+        <BOAttrName>STATUS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STATUS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>STATUSDATE</Name>
+        <BOAttrName>STATUSDATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUSDATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STATUSDATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>STD_FREE1</Name>
+        <BOAttrName>STD_FREE1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE1</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STD_FREE1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>STD_FREE2</Name>
+        <BOAttrName>STD_FREE2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STD_FREE2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>STD_FREE3</Name>
+        <BOAttrName>STD_FREE3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE3</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STD_FREE3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>STD_FREE4</Name>
+        <BOAttrName>STD_FREE4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE4</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOGprsFluxParam" Attr="STD_FREE4" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

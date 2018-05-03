@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<Project>
+  <basedir>F:\eclipse\projects\db2app55\config</basedir>
+  <pkgdir>F:\eclipse\projects\db2app55\config</pkgdir>
+  <configdir>F:\eclipse\projects\db2app55\config</configdir>
+  <classpath>
+    <classpathentry kind="dir" path="F:\eclipse\projects\db2app55\lib"/>
+    <classpathentry kind="dir" path="F:\eclipse\projects\db2app55\html\WEB-INF\classes"/>
+  </classpath>
+</Project>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOSaleBatchPrestoreList" mainattr="ID">
+    <mapingenty type="query">select s.*,b.organize_name,a.staff_name from hbsale.sale_batch_prestore_t s left join sechb.sec_staff a on s.principal=a.staff_id left join sechb.sec_organize b on s.promote_depart=b.organize_id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSI_TYPE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FUND_RANGE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FUND_RANGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_AMOUNT" maxlength="16" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">APPLY_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_NUMBER" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">USER_NUMBER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SEND_RANGE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SEND_RANGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FUND_REASON" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FUND_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_SEND_TYPE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SMS_SEND_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_CONTENT" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SMS_CONTENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPERATOR_ID" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OPERATOR_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_BEGIN_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_BEGIN_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROVIDE_END_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_END_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BOSS_DONE_CODE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BOSS_DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FILE_NAME" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FILE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSINESS_REVIEW" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BUSINESS_REVIEW</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_MANAGER" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROMOTE_MANAGER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_DEPART" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PROMOTE_DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">DONE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_SUBMIT" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">IS_SUBMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPER_TYPE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">OPER_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARKS" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARKS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT1" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT2" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT3" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT4" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT5" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EXT5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOWFOperator" mainattr="ROLE_ID">
+    <mapingenty type="query">SELECT DISTINCT A.ROLE_ID,
+                c.OPERATOR_ID,
+                C.CODE,
+                E.ORGANIZE_NAME,
+                d.STAFF_ID,
+                d.STAFF_NAME,
+                d.ORGANIZE_ID,
+                d.PARENT_STAFF_ID,
+                d.SHORT_NAME,
+                d.ENGLISH_NAME,
+                d.CARD_TYPE_ID,
+                d.CARD_NO,
+                d.BIRTHDAY,
+                d.MARRY_STATUS,
+                d.GENDER,
+                d.RELIGION,
+                d.NATIONAL_TYPE,
+                d.EDUCATION_LEVEL,
+                d.INCOME_LEVEL,
+                d.POLITICS_FACE,
+                d.JOB_POSITION,
+                d.JOB_COMPANY,
+                d.JOB_DESC,
+                d.HOME_TEL,
+                d.OFFICE_TEL,
+                d.BILL_ID,
+                d.WIRELESS_CALL,
+                d.EMAIL,
+                d.FAMILY_INFO,
+                d.CONTACT_ADDRESS,
+                d.POSTCODE,
+                d.SECURITY_ID,
+                d.CAR_NO,
+                d.CHARACTER_DESC,
+                d.ALARM_BILL_ID,
+                d.FAX_ID,
+                d.STAFF_LEVEL,
+                d.STAFF_TYPE,
+                d.BC_MGR,
+                d.NOTES,
+                d.STATE,
+                d.DONE_CODE,
+                d.CREATE_DATE,
+                d.DONE_DATE,
+                d.VALID_DATE,
+                d.EXPIRE_DATE,
+                d.ORG_ID,
+                d.OP_ID,
+                ORG2.ORGANIZE_NAME ORGANIZE_NAME_P,
+                ORG2.ORGANIZE_ID ORGANIZE_ID_P
+  FROM SECHB.SEC_AUTHOR a
+       LEFT OUTER JOIN SECHB.SEC_OP_STATION b
+          ON     a.OP_STATION_ID = b.OP_STATION_ID
+             AND a.STATE = 1
+             AND b.state = 1
+       LEFT OUTER JOIN SECHB.SEC_OPERATOR c
+          ON b.OPERATOR_ID = c.OPERATOR_ID AND c.STATE = 1
+       LEFT OUTER JOIN SECHB.SEC_STAFF d
+          ON c.STAFF_ID = d.STAFF_ID AND d.STATE = 1
+       LEFT OUTER JOIN SECHB.SEC_ORGANIZE E
+          ON D.ORGANIZE_ID = E.ORGANIZE_ID AND E.STATE = 1
+       LEFT JOIN SECHB.SEC_ORGANIZE ORG2
+          ON subStr (D.ORGANIZE_ID, 1, 2) = ORG2.ORGANIZE_ID</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ROLE_ID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">ROLE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPERATOR_ID" maxlength="20" datatype="Long" type="PK">
+        <mapingcol datatype="BIGINT">OPERATOR_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_ID" maxlength="12" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARENT_STAFF_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">PARENT_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SHORT_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SHORT_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ENGLISH_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ENGLISH_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CARD_TYPE_ID" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">CARD_TYPE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CARD_NO" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CARD_NO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BIRTHDAY" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">BIRTHDAY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARRY_STATUS" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">MARRY_STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GENDER" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">GENDER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RELIGION" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">RELIGION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NATIONAL_TYPE" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">NATIONAL_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EDUCATION_LEVEL" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">EDUCATION_LEVEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INCOME_LEVEL" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">INCOME_LEVEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="POLITICS_FACE" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">POLITICS_FACE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JOB_POSITION" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">JOB_POSITION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JOB_COMPANY" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">JOB_COMPANY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JOB_DESC" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">JOB_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HOME_TEL" maxlength="60" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">HOME_TEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OFFICE_TEL" maxlength="60" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OFFICE_TEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WIRELESS_CALL" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WIRELESS_CALL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EMAIL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EMAIL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAMILY_INFO" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FAMILY_INFO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTACT_ADDRESS" maxlength="60" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CONTACT_ADDRESS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="POSTCODE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">POSTCODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SECURITY_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SECURITY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CAR_NO" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CAR_NO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARACTER_DESC" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHARACTER_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ALARM_BILL_ID" maxlength="60" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ALARM_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAX_ID" maxlength="60" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FAX_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_LEVEL" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">STAFF_LEVEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_TYPE" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">STAFF_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BC_MGR" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BC_MGR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NOTES" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NOTES</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="6" datatype="Integer" type="COL">
+        <mapingcol datatype="SMALLINT">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="VALID_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">VALID_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">EXPIRE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OP_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_NAME_P" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_NAME_P</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_ID_P" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">ORGANIZE_ID_P</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

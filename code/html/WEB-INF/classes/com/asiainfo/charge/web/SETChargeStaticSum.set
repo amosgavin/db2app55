@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETChargeStaticSum" BOName="com.asiainfo.charge.bo.BOChargeStaticSumShow" MainField="ITEM" Title="com.asiainfo.charge.bo.BOChargeStaticSumShow" ActBOName="com.asiainfo.charge.bo.BOChargeStaticSum" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>AFTER_CHANGE</Name>
+        <BOAttrName>AFTER_CHANGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AFTER_CHANGE</ID>
+        <Title>转资费后</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="2">Float</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" Attr="AFTER_CHANGE" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" Attr="AFTER_CHANGE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BEFORE_CHANGE</Name>
+        <BOAttrName>BEFORE_CHANGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BEFORE_CHANGE</ID>
+        <Title>转资费前</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="2">Float</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" Attr="BEFORE_CHANGE" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" Attr="BEFORE_CHANGE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ITEM</Name>
+        <BOAttrName>ITEM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ITEM</ID>
+        <Title>项目</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" Attr="ITEM" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" Attr="ITEM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ORDER_ID</Name>
+        <BOAttrName>ORDER_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORDER_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" Attr="ORDER_ID" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" Attr="ORDER_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>SWITCH_USER</Name>
+        <BOAttrName>SWITCH_USER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SWITCH_USER</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="8" Decimal="0" />
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" Attr="SWITCH_USER" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" Attr="SWITCH_USER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>FLUCTUATE</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>FLUCTUATE</ID>
+        <Title>变化幅度(%)</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="2">Float</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>USER_CHANGE</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>USER_CHANGE</ID>
+        <Title>户均变化</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="2">Float</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>SUM_CHANGE</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>SUM_CHANGE</ID>
+        <Title>总体变化</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Float</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSum" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeStaticSumShow" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

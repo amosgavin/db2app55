@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETStaffSmsInfo" BOName="com.asiainfo.sale.common.bo.BOStaffSmsInfo" MainField="OPERATOR_ID" Title="com.asiainfo.sale.common.bo.BOStaffSmsInfo" ActBOName="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Package="com.asiainfo.sale.common.bo">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ACCT_EFFECT_DATE</Name>
+        <BOAttrName>ACCT_EFFECT_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACCT_EFFECT_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ACCT_EFFECT_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>ACCT_EXPIRE_DATE</Name>
+        <BOAttrName>ACCT_EXPIRE_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACCT_EXPIRE_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ACCT_EXPIRE_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ALARM_BILL_ID</Name>
+        <BOAttrName>ALARM_BILL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ALARM_BILL_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="60" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ALARM_BILL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ALLOW_CHANGE_PASSWORD</Name>
+        <BOAttrName>ALLOW_CHANGE_PASSWORD</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ALLOW_CHANGE_PASSWORD</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ALLOW_CHANGE_PASSWORD" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>BC_MGR</Name>
+        <BOAttrName>BC_MGR</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BC_MGR</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="BC_MGR" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>BILL_ID</Name>
+        <BOAttrName>BILL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILL_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="BILL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>BIRTHDAY</Name>
+        <BOAttrName>BIRTHDAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BIRTHDAY</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="BIRTHDAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>CANCEL_DAYS</Name>
+        <BOAttrName>CANCEL_DAYS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CANCEL_DAYS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CANCEL_DAYS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>CARD_NO</Name>
+        <BOAttrName>CARD_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CARD_NO</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CARD_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>CARD_TYPE_ID</Name>
+        <BOAttrName>CARD_TYPE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CARD_TYPE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CARD_TYPE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>CAR_NO</Name>
+        <BOAttrName>CAR_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CAR_NO</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CAR_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>CHARACTER_DESC</Name>
+        <BOAttrName>CHARACTER_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARACTER_DESC</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CHARACTER_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>CHG_PASSWD_ALARM_DAYS</Name>
+        <BOAttrName>CHG_PASSWD_ALARM_DAYS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHG_PASSWD_ALARM_DAYS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CHG_PASSWD_ALARM_DAYS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>CHG_PASSWD_FLAG</Name>
+        <BOAttrName>CHG_PASSWD_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHG_PASSWD_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CHG_PASSWD_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>CODE</Name>
+        <BOAttrName>CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>CONTACT_ADDRESS</Name>
+        <BOAttrName>CONTACT_ADDRESS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONTACT_ADDRESS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="60" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CONTACT_ADDRESS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>CREATE_DATE</Name>
+        <BOAttrName>CREATE_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="CREATE_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>DONE_CODE</Name>
+        <BOAttrName>DONE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DONE_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="DONE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>DONE_DATE</Name>
+        <BOAttrName>DONE_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DONE_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="DONE_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>EDUCATION_LEVEL</Name>
+        <BOAttrName>EDUCATION_LEVEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EDUCATION_LEVEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="EDUCATION_LEVEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>EMAIL</Name>
+        <BOAttrName>EMAIL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMAIL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="EMAIL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>ENGLISH_NAME</Name>
+        <BOAttrName>ENGLISH_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ENGLISH_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ENGLISH_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>EXPIRE_DATE</Name>
+        <BOAttrName>EXPIRE_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXPIRE_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="EXPIRE_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>FAMILY_INFO</Name>
+        <BOAttrName>FAMILY_INFO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FAMILY_INFO</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="FAMILY_INFO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>FAX_ID</Name>
+        <BOAttrName>FAX_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FAX_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="60" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="FAX_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>GENDER</Name>
+        <BOAttrName>GENDER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GENDER</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="GENDER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>HOME_TEL</Name>
+        <BOAttrName>HOME_TEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HOME_TEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="60" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="HOME_TEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>INCOME_LEVEL</Name>
+        <BOAttrName>INCOME_LEVEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INCOME_LEVEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="INCOME_LEVEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="28" IsEnabled="Y">
+        <Name>IPMAC_FLAG</Name>
+        <BOAttrName>IPMAC_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IPMAC_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="IPMAC_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="29" IsEnabled="Y">
+        <Name>IS_ADMIN</Name>
+        <BOAttrName>IS_ADMIN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_ADMIN</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="IS_ADMIN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="30" IsEnabled="Y">
+        <Name>IS_LOGIN</Name>
+        <BOAttrName>IS_LOGIN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_LOGIN</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="IS_LOGIN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="31" IsEnabled="Y">
+        <Name>IS_VPN_LOGIN_FLAG</Name>
+        <BOAttrName>IS_VPN_LOGIN_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_VPN_LOGIN_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="IS_VPN_LOGIN_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="32" IsEnabled="Y">
+        <Name>JOB_COMPANY</Name>
+        <BOAttrName>JOB_COMPANY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>JOB_COMPANY</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="JOB_COMPANY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="33" IsEnabled="Y">
+        <Name>JOB_DESC</Name>
+        <BOAttrName>JOB_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>JOB_DESC</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="JOB_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="34" IsEnabled="Y">
+        <Name>JOB_POSITION</Name>
+        <BOAttrName>JOB_POSITION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>JOB_POSITION</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="JOB_POSITION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="35" IsEnabled="Y">
+        <Name>LAST_LOGIN_LOG_ID</Name>
+        <BOAttrName>LAST_LOGIN_LOG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LAST_LOGIN_LOG_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="LAST_LOGIN_LOG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="36" IsEnabled="Y">
+        <Name>LOCK_FLAG</Name>
+        <BOAttrName>LOCK_FLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LOCK_FLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="LOCK_FLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="37" IsEnabled="Y">
+        <Name>LOGIN_CHANNEL</Name>
+        <BOAttrName>LOGIN_CHANNEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LOGIN_CHANNEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="LOGIN_CHANNEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="38" IsEnabled="Y">
+        <Name>MARRY_STATUS</Name>
+        <BOAttrName>MARRY_STATUS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MARRY_STATUS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="MARRY_STATUS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="39" IsEnabled="Y">
+        <Name>NATIONAL_TYPE</Name>
+        <BOAttrName>NATIONAL_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NATIONAL_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="NATIONAL_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="40" IsEnabled="Y">
+        <Name>NOTES</Name>
+        <BOAttrName>NOTES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NOTES</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="NOTES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="41" IsEnabled="Y">
+        <Name>OFFICE_TEL</Name>
+        <BOAttrName>OFFICE_TEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OFFICE_TEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="60" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="OFFICE_TEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="42" IsEnabled="Y">
+        <Name>OPERATOR_ID</Name>
+        <BOAttrName>OPERATOR_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPERATOR_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="OPERATOR_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="43" IsEnabled="Y">
+        <Name>OP_ID</Name>
+        <BOAttrName>OP_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OP_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="OP_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="44" IsEnabled="Y">
+        <Name>ORGANIZE_ID</Name>
+        <BOAttrName>ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="45" IsEnabled="Y">
+        <Name>ORG_ID</Name>
+        <BOAttrName>ORG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORG_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="ORG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="46" IsEnabled="Y">
+        <Name>PARENT_STAFF_ID</Name>
+        <BOAttrName>PARENT_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARENT_STAFF_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="PARENT_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="47" IsEnabled="Y">
+        <Name>PASSWORD</Name>
+        <BOAttrName>PASSWORD</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PASSWORD</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="48" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="PASSWORD" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="48" IsEnabled="Y">
+        <Name>PASSWORD_VALID_DATE</Name>
+        <BOAttrName>PASSWORD_VALID_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PASSWORD_VALID_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="PASSWORD_VALID_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="49" IsEnabled="Y">
+        <Name>POLITICS_FACE</Name>
+        <BOAttrName>POLITICS_FACE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>POLITICS_FACE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="POLITICS_FACE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="50" IsEnabled="Y">
+        <Name>POSTCODE</Name>
+        <BOAttrName>POSTCODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>POSTCODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="POSTCODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="51" IsEnabled="Y">
+        <Name>RECENT_PASSWORD</Name>
+        <BOAttrName>RECENT_PASSWORD</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECENT_PASSWORD</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="300" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="RECENT_PASSWORD" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="52" IsEnabled="Y">
+        <Name>RECENT_PASS_TIMES</Name>
+        <BOAttrName>RECENT_PASS_TIMES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECENT_PASS_TIMES</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="RECENT_PASS_TIMES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="53" IsEnabled="Y">
+        <Name>RELIGION</Name>
+        <BOAttrName>RELIGION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RELIGION</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="RELIGION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="54" IsEnabled="Y">
+        <Name>SECURITY_ID</Name>
+        <BOAttrName>SECURITY_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SECURITY_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="30" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="SECURITY_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="55" IsEnabled="Y">
+        <Name>SHORT_NAME</Name>
+        <BOAttrName>SHORT_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SHORT_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="SHORT_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="56" IsEnabled="Y">
+        <Name>STAFF_ID</Name>
+        <BOAttrName>STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="57" IsEnabled="Y">
+        <Name>STAFF_LEVEL</Name>
+        <BOAttrName>STAFF_LEVEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_LEVEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="STAFF_LEVEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="58" IsEnabled="Y">
+        <Name>STAFF_NAME</Name>
+        <BOAttrName>STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="59" IsEnabled="Y">
+        <Name>STAFF_TYPE</Name>
+        <BOAttrName>STAFF_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="STAFF_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="60" IsEnabled="Y">
+        <Name>STATE</Name>
+        <BOAttrName>STATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="STATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="61" IsEnabled="Y">
+        <Name>TRY_TIMES</Name>
+        <BOAttrName>TRY_TIMES</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TRY_TIMES</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="TRY_TIMES" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="62" IsEnabled="Y">
+        <Name>VALID_DATE</Name>
+        <BOAttrName>VALID_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VALID_DATE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="26" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="VALID_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="63" IsEnabled="Y">
+        <Name>WIRELESS_CALL</Name>
+        <BOAttrName>WIRELESS_CALL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WIRELESS_CALL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.common.bo.BOStaffSmsInfo" Attr="WIRELESS_CALL" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

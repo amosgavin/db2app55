@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOApplyInfo" mainattr="RECORDID">
+    <mapingenty type="query">SELECT recordId,
+       apply_name,
+       principal,
+       create_time,
+       create_staff_name,
+       orgName
+  FROM (SELECT id recordId,
+               apply_name,
+               principal,
+               create_time,
+               sta.staff_name create_staff_name,
+               (SELECT org.organize_name
+                  FROM SECHB.sec_organize org
+                 WHERE org.organize_id =
+                          substr (to_char (sta.organize_id), 1, 2))
+                  orgName
+          FROM SALE_WEAPON_MAIN_T sw,
+               SECHB.SEC_STAFF sta,
+               SECHB.SEC_OPERATOR ope
+         WHERE sw.PRINCIPAL = to_char (ope.OPERATOR_ID)
+               AND to_char (ope.STAFF_ID) = to_char (sta.STAFF_ID)
+        UNION ALL
+        SELECT id recordId,
+               sale_main_name apply_name,
+               principal,
+               create_time,
+               sta.staff_name create_staff_name,
+               (SELECT org.organize_name
+                  FROM SECHB.sec_organize org
+                 WHERE org.organize_id =
+                          substr (to_char (sta.organize_id), 1, 2))
+                  orgName
+          FROM sale_main_t sm, SECHB.SEC_STAFF sta, SECHB.SEC_OPERATOR ope
+         WHERE sm.PRINCIPAL = to_char (ope.OPERATOR_ID)
+               AND to_char (sta.STAFF_ID) = to_char (ope.STAFF_ID)
+        UNION ALL
+        SELECT APPLY_ID recordId,
+               APPLY_NAME apply_name,
+               principle principal,
+               APPLY_TIME,
+               sta.staff_name create_staff_name,
+               (SELECT org.organize_name
+                  FROM SECHB.sec_organize org
+                 WHERE org.organize_id =
+                          substr (to_char (sta.organize_id), 1, 2))
+                  orgName
+          FROM charge_apply_main_t sm,
+               SECHB.SEC_STAFF sta,
+               SECHB.SEC_OPERATOR ope
+         WHERE sm.principle = to_char (ope.OPERATOR_ID)
+               AND to_char (sta.STAFF_ID) = to_char (ope.STAFF_ID))</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="RECORDID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RECORDID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="180" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATE_STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGNAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGNAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

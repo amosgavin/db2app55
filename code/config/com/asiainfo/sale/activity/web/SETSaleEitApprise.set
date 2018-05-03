@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSaleEitApprise" BOName="com.asiainfo.sale.activity.bo.BoSaleEitApprise" MainField="ACTIVE_TYPE" Title="com.asiainfo.sale.activity.bo.BoSaleEitApprise" ActBOName="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Package="com.asiainfo.sale.activity.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ACTIVE_TYPE</Name>
+        <BOAttrName>ACTIVE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ACTIVE_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="ACTIVE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>AFTER_BUYEIT_VALID</Name>
+        <BOAttrName>AFTER_BUYEIT_VALID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AFTER_BUYEIT_VALID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="AFTER_BUYEIT_VALID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ALLUSE_VALID_DATE</Name>
+        <BOAttrName>ALLUSE_VALID_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ALLUSE_VALID_DATE</ID>
+        <Title>整体使用截止日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="10" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="ALLUSE_VALID_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>AOM_SMS_CONTENT</Name>
+        <BOAttrName>AOM_SMS_CONTENT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AOM_SMS_CONTENT</ID>
+        <Title>到账短信内容</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="AOM_SMS_CONTENT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ARRIVE_OF_MONEY_SMS</Name>
+        <BOAttrName>ARRIVE_OF_MONEY_SMS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ARRIVE_OF_MONEY_SMS</ID>
+        <Title>是否需要到账短信</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.bi.web.DSBsStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="is_guarantee" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="ARRIVE_OF_MONEY_SMS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>CHANNEL_CHARGE_PROP</Name>
+        <BOAttrName>CHANNEL_CHARGE_PROP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHANNEL_CHARGE_PROP</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="CHANNEL_CHARGE_PROP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>EIT_NAME</Name>
+        <BOAttrName>EIT_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EIT_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="EIT_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ID</ID>
+        <Title>ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>LEVCODE_RELA_LEVID</Name>
+        <BOAttrName>LEVCODE_RELA_LEVID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LEVCODE_RELA_LEVID</ID>
+        <Title>档次名称和档次ID对应关系</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="LEVCODE_RELA_LEVID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>MAX_PROVIDENUM_ONEDAY</Name>
+        <BOAttrName>MAX_PROVIDENUM_ONEDAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAX_PROVIDENUM_ONEDAY</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="MAX_PROVIDENUM_ONEDAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>MAX_RECEIVENUM_INCYCLE</Name>
+        <BOAttrName>MAX_RECEIVENUM_INCYCLE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAX_RECEIVENUM_INCYCLE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="MAX_RECEIVENUM_INCYCLE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>MAX_RECEIVENUM_INLIQUID</Name>
+        <BOAttrName>MAX_RECEIVENUM_INLIQUID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MAX_RECEIVENUM_INLIQUID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="MAX_RECEIVENUM_INLIQUID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>MID</Name>
+        <BOAttrName>MID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="MID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>OFD_SMS_CONTENT</Name>
+        <BOAttrName>OFD_SMS_CONTENT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OFD_SMS_CONTENT</ID>
+        <Title>到期短信内容</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="OFD_SMS_CONTENT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>OUT_OF_DATE_SMS</Name>
+        <BOAttrName>OUT_OF_DATE_SMS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OUT_OF_DATE_SMS</ID>
+        <Title>是否需要到期短信</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.bi.web.DSBsStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="is_guarantee" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="OUT_OF_DATE_SMS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>PARTICIPATE_CYCLE</Name>
+        <BOAttrName>PARTICIPATE_CYCLE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARTICIPATE_CYCLE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PARTICIPATE_CYCLE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>PROVIDE_AREA</Name>
+        <BOAttrName>PROVIDE_AREA</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROVIDE_AREA</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PROVIDE_AREA" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>PROVIDE_BEGIN_DATE</Name>
+        <BOAttrName>PROVIDE_BEGIN_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROVIDE_BEGIN_DATE</ID>
+        <Title>发放起始日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="10" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PROVIDE_BEGIN_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>PROVIDE_CALL</Name>
+        <BOAttrName>PROVIDE_CALL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROVIDE_CALL</ID>
+        <Title>发行方/出资方</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PROVIDE_CALL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>PROVIDE_END_DATE</Name>
+        <BOAttrName>PROVIDE_END_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROVIDE_END_DATE</ID>
+        <Title>发放截止日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="10" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PROVIDE_END_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>PROVIDE_WHOLESALE_NUM</Name>
+        <BOAttrName>PROVIDE_WHOLESALE_NUM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PROVIDE_WHOLESALE_NUM</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="14" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="PROVIDE_WHOLESALE_NUM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>RECEIVE_BUSI_PERSON</Name>
+        <BOAttrName>RECEIVE_BUSI_PERSON</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECEIVE_BUSI_PERSON</ID>
+        <Title>领用商户名单</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="RECEIVE_BUSI_PERSON" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>RECEIVE_BUSI_PROP</Name>
+        <BOAttrName>RECEIVE_BUSI_PROP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECEIVE_BUSI_PROP</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="RECEIVE_BUSI_PROP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>REMARK1</Name>
+        <BOAttrName>REMARK1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK1</ID>
+        <Title>提前多少天进行到期短信提醒</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">Short</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="REMARK1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>REMARK2</Name>
+        <BOAttrName>REMARK2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="REMARK2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>REMARK3</Name>
+        <BOAttrName>REMARK3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK3</ID>
+        <Title>单笔最大金额</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="REMARK3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>REMARK4</Name>
+        <BOAttrName>REMARK4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK4</ID>
+        <Title>活动描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="250" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="REMARK4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>REMARK5</Name>
+        <BOAttrName>REMARK5</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK5</ID>
+        <Title>发放生效日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="500" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="REMARK5" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="28" IsEnabled="Y">
+        <Name>SALE_NAME</Name>
+        <BOAttrName>SALE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="SALE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="29" IsEnabled="Y">
+        <Name>SAMPLE_DEAL_INTERVAL</Name>
+        <BOAttrName>SAMPLE_DEAL_INTERVAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SAMPLE_DEAL_INTERVAL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="SAMPLE_DEAL_INTERVAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="30" IsEnabled="Y">
+        <Name>SAMPLE_EIT_VALID</Name>
+        <BOAttrName>SAMPLE_EIT_VALID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SAMPLE_EIT_VALID</ID>
+        <Title>单张电子券有效期</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="SAMPLE_EIT_VALID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="31" IsEnabled="Y">
+        <Name>TRIGGER_CONDITION</Name>
+        <BOAttrName>TRIGGER_CONDITION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TRIGGER_CONDITION</ID>
+        <Title>触发条件</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="triggerCodition" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="TRIGGER_CONDITION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="32" IsEnabled="Y">
+        <Name>USE_BUSI_PERSON</Name>
+        <BOAttrName>USE_BUSI_PERSON</BOAttrName>
+        <BODisplayAttrName />
+        <ID>USE_BUSI_PERSON</ID>
+        <Title>使用商户名单</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="USE_BUSI_PERSON" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="33" IsEnabled="Y">
+        <Name>USE_BUSI_PROP</Name>
+        <BOAttrName>USE_BUSI_PROP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>USE_BUSI_PROP</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.activity.bo.BoSaleEitApprise" Attr="USE_BUSI_PROP" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

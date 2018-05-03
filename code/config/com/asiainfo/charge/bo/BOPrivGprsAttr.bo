@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOPrivGprsAttr" mainattr="ATTR_ID">
+    <mapingenty type="query">select a.ATTR_ID,
+       a.ATTR_NAME,
+       b.GROUPID,
+       b.HALFFLAG,
+       a.ISCALBYDAY,
+       a.PRIVID,
+       a.PRIVNAME,
+       a.PRIV_COST,
+       a.PRIV_TYPE,
+       a.PRIV_UNIT,
+       a.RATEPLANID,
+       a.STATUS,
+       b.STD_FREE1,
+       b.STD_FREE2,
+       b.STD_FREE3
+  from hbsale.priv_attr_used_param a, hbsale.gprs_flux_param b
+</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ATTR_ID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ATTR_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ATTR_NAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ATTR_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GROUPID" maxlength="8" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GROUPID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HALFFLAG" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">HALFFLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ISCALBYDAY" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">ISCALBYDAY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIVID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIVID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIVNAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIVNAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIV_COST" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">PRIV_COST</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIV_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIV_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIV_UNIT" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIV_UNIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RATEPLANID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RATEPLANID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATUS" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE1" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE2" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STD_FREE3" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STD_FREE3</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

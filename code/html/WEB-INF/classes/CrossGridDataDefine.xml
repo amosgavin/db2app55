@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<CrossGrid>
+                   <!--　格式说明
+                        数据类型（type）：String,Number,Double
+                        维(Dimension)：是数据统计分析的坐标，可以进行排序，分组计算。
+                        		name = "维名称"
+                        		type="数据类型"
+                        量(Meas)：进行计算的数据，要求实际提供的数据集中存在。可以设置是否能够小计。
+                        		name = "维名称"
+                        		type="数据类型"
+                        		canSubTotal ="是否能够小计"
+                        计算量(ComputerMeas)：在提供的数据集中不存在，要通过表达式进行计算产生。可以设置是否能够小计。、
+                        		name = "维名称"
+                        		formual ="进行计算的表达式"
+                        		type="数据类型"
+                        		canSubTotal ="是否能够小计"
+                        格式信息(Pivot)：数据的展现格式定义。
+                        		area ="数据所在的区域" 主要包括三个区域：选择区(0),行区(1),列区(2)。
+                                        dimName ="维名称"  meas特指量区域，不用用作维名称。
+                                        selectValueIndex ="选择区中该维缺省的选中项目序号" 只对area　=　0　有用
+                                        isSubtotal="是否小计"　如果dimName="meas" 则次设置无效，量不能小计
+                                        isSuppress="是否压缩同类项目"
+                        数据行信息(Row) :实际数据集。要求列的顺序要与维，量的顺序一直
+
+                   -->
+
+	 <Dimensions>
+           <Dimension name="地区" type="String" attr="bmh" />
+           <Dimension name="商品" type="String" attr="spbh"/>
+           <Dimension name="年份" type="String" attr="year" />
+           <Dimension name="月份" type="String" attr="month"/>
+ 	</Dimensions>
+ 	<Meass>
+           <Meas name ="数量" attr="sl" type="Integer" canSubTotal="true"/>
+           <Meas name ="单价" attr="dj" type="Double" canSubTotal="false"/>
+ 	</Meass>
+        <ComputerMeass>
+
+                   <ComputerMeas  name="金额" formual="sl * dj" type="Double" canSubTotal="true" />
+           <ComputerMeas  name="总量" formual="group(&quot;bmh&quot;,&quot;sl&quot;)" type="Integer" canSubTotal="true" />
+           <ComputerMeas    name="数量所占比例" formual="round(sl*1.0/group(&quot;bmh&quot;,&quot;sl&quot;),2)" type="Double" canSubTotal="true" subTotalType="1" />
+
+        </ComputerMeass>
+        <Pivots>
+          <Pivot area="0" dimName="地区" selectValueIndex="0" isSubtotal="true" isSuppress="true"/>
+          <Pivot area="1" dimName="商品" selectValueIndex="0" isSubtotal="true" isSuppress="true"/>
+          <Pivot area="1" dimName="年份" selectValueIndex="0" isSubtotal="true" isSuppress="true"/>
+          <Pivot area="2" dimName="月份" selectValueIndex="0" isSubtotal="false" isSuppress="true"/>
+          <Pivot area="2" dimName="量" selectValueIndex="0" isSubtotal="false" isSuppress="true"/>
+        </Pivots>
+        <FetchData>
+          <arglist>
+                    <arg name="TaskId"  datatype="Long"></arg>
+                    <arg name="TaskId2"  datatype="String"></arg>
+          </arglist>
+          <sql>
+           select bmh,to_char(rq,'yyyy') as year, to_char(rq,'mm') as month ,substr(spbh,0,3) as spbh, sum(sl) as sl,100 as dj
+            from order_qh where bmh='0106'
+            group by bmh,substr(spbh,0,3),to_char(rq,'yyyy') , to_char(rq,'mm')
+          </sql>
+        </FetchData>
+</CrossGrid>
+

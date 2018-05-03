@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETTaskDurationCount" BOName="com.asiainfo.bi.bo.BOTaskDurationCount" MainField="REGION_ID" Title="com.asiainfo.bi.bo.BOTaskDurationCount" ActBOName="com.asiainfo.bi.bo.BOTaskDurationCount" Package="com.asiainfo.bi.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>FALSE</Name>
+        <BOAttrName>FALSE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FALSE</ID>
+        <Title>已否决</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="FALSE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>HDPZ</Name>
+        <BOAttrName>HDPZ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HDPZ</ID>
+        <Title>活动配置测试</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="HDPZ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>NBSH</Name>
+        <BOAttrName>NBSH</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NBSH</ID>
+        <Title>部门内部审核</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="NBSH" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>PASS</Name>
+        <BOAttrName>PASS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PASS</ID>
+        <Title>已通过</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="PASS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>QRSX</Name>
+        <BOAttrName>QRSX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>QRSX</ID>
+        <Title>省公司市场部确认上线</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="QRSX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>REGION_ID</Name>
+        <BOAttrName>REGION_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REGION_ID</ID>
+        <Title>地市</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="statisticsArea" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="REGION_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>SCB</Name>
+        <BOAttrName>SCB</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SCB</ID>
+        <Title>省公司市场部审核</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="SCB" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>TOTAL</Name>
+        <BOAttrName>TOTAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TOTAL</ID>
+        <Title>合计</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="TOTAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>WORKFLOW_OBJECT_TYPE</Name>
+        <BOAttrName>WORKFLOW_OBJECT_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WORKFLOW_OBJECT_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="WORKFLOW_OBJECT_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>YZPZ</Name>
+        <BOAttrName>YZPZ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YZPZ</ID>
+        <Title>省公司业支审核配置测试</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOTaskDurationCount" Attr="YZPZ" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

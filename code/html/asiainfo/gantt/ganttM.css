@@ -1,0 +1,23 @@
+.IEfixheader{
+		border: 1 solid yellow;background-color:#AFC0D7;position:relative;top:expression(this.offsetParent.scrollTop -2);
+	}
+.FFfixheader{
+		position:fixed;background-color:#AFC0D7;
+	}
+.DIVfixheader{
+		height: 350px; overflow: auto;
+	}
+.table{
+		border-collapse:collapse; 
+		border-width:1px; 
+		border-color:#E1E1E1;
+		border-style:solid; 
+		width:50px;
+		background-color:#FFFFFF;
+		padding: 5% 5% 5% 5%;
+	}
+.backDiv{
+	margin: 0 0 0 0;
+	padding: 4 0 4 0;
+	background-image: url(./gantt.gif); 
+}	

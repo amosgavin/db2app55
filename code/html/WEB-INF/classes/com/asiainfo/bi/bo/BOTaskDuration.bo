@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOTaskDuration" mainattr="REGION_ID">
+    <mapingenty type="query">select col1.region_id,avg_time1,avg_time2,avg_time3,avg_time4,avg_time5 from (select region_id,dec(avg(timestampdiff(8, char (st1 - create_date))/ 24.0),8,1) avg_time1 from view_process_time where st1 is not null group by region_id ) col1 left join (select region_id,dec(avg(timestampdiff(8, char (st2 - st1))/ 24.0),8,1) avg_time2 from view_process_time where st2 is not null and st1 is not null group by region_id) col2 on col1.region_id=col2.region_id left join (select region_id,dec(avg(timestampdiff(8, char (st3 - st2))/ 24.0),8,1) avg_time3 from view_process_time where st3 is not null and st2 is not null group by region_id) col3 on col1.region_id=col3.region_id left join (select region_id,dec(avg(timestampdiff(8, char (st4 - st3))/ 24.0),8,1) avg_time4 from view_process_time where st4 is not null and st3 is not null group by region_id) col4 on col1.region_id=col4.region_id left join (select region_id,dec(avg(timestampdiff(8, char (st5 - st4))/ 24.0),8,1) avg_time5 from view_process_time where st5 is not null and st4 is not null group by region_id) col5 on col1.region_id=col5.region_id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="1" name="AVG_TIME1" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AVG_TIME1</mapingcol>
+      </attr>
+      <attr floatlength="1" name="AVG_TIME2" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AVG_TIME2</mapingcol>
+      </attr>
+      <attr floatlength="1" name="AVG_TIME3" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AVG_TIME3</mapingcol>
+      </attr>
+      <attr floatlength="1" name="AVG_TIME4" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AVG_TIME4</mapingcol>
+      </attr>
+      <attr floatlength="1" name="AVG_TIME5" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AVG_TIME5</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

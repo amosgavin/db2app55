@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<workflow label="资源变更流程" tasktype="workflow" tasktag="template.ReschangeFlow">
+  <vars name="_TASK_JUGE_RESULT" datatype="java.lang.String" inouttype="inner" description="判断节点结果"/>
+  <vars name="staff" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff01" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff02" datatype="java.lang.String" inouttype="in"/>
+  <vars name="result" datatype="java.lang.String" inouttype="in"/>
+  <task id="1" label="开始" tasktype="start" isstart="true">
+    <uiinfo>74,128,32,32</uiinfo>
+    <gotoitem condition="default" goto="4"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+  </task>
+  <task id="4" label="领导一审批" tasktype="user" tasktag="res001">
+    <description>领导一审批</description>
+    <uiinfo>216,127,32,32</uiinfo>
+    <gotoitem condition="default" goto="6"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="1810" taskuserid=":staff"/>
+  </task>
+  <task id="6" label="领导二审批" tasktype="user" tasktag="res002">
+    <description>领导二审批</description>
+    <uiinfo>354,127,32,32</uiinfo>
+    <gotoitem goto="8"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="1810" taskuserid=":staff"/>
+    <postdeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </postdeal>
+  </task>
+  <task id="7" label="结束" tasktype="finish">
+    <uiinfo>648,126,32,32</uiinfo>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+  </task>
+  <task id="8" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>469,127,32,32</uiinfo>
+    <gotoitem condition="false" goto="9"/>
+    <gotoitem condition="default" goto="10"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="9" label="审核不通过发起人确认" tasktype="user" tasktag="res099">
+    <description>不同意，并退回发起人</description>
+    <uiinfo>469,244,32,32</uiinfo>
+    <gotoitem goto="7"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff01"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.activity.service.interfaces.IResourceChangeSV</servicename>
+      <runclassname>com.asiainfo.sale.activity.service.interfaces.IResourceChangeSV</runclassname>
+      <runfunctionname>changeStateToNoPass</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="10" label="审核通过发起人确认" tasktype="user" tasktag="res003">
+    <description>审核通过发起人确认</description>
+    <uiinfo>468,29,32,32</uiinfo>
+    <gotoitem goto="7"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff01"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.activity.service.interfaces.IResourceChangeSV</servicename>
+      <runclassname>com.asiainfo.sale.activity.service.interfaces.IResourceChangeSV</runclassname>
+      <runfunctionname>changeStateToPass</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <join label="default" isagainst="true">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,90,144,216,143</uiinfo>
+  </join>
+  <join label="default" taska="4" taskb="6">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,232,143,354,143</uiinfo>
+  </join>
+  <join label="default" taska="1" taskb="4">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,90,144,216,143</uiinfo>
+  </join>
+  <join taska="6" taskb="8">
+    <uiinfo>10.0,10.0,500,500,370,143,469,143</uiinfo>
+  </join>
+  <join label="false" taska="8" taskb="9">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,485,143,485,244</uiinfo>
+  </join>
+  <join taska="9" taskb="7">
+    <uiinfo>10.0,10.0,500,500,485,260,648,142</uiinfo>
+  </join>
+  <join label="default" taska="8" taskb="10">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,485,143,484,61</uiinfo>
+  </join>
+  <join taska="10" taskb="7">
+    <uiinfo>10.0,10.0,500,500,484,45,648,142</uiinfo>
+  </join>
+</workflow>

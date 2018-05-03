@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSUsrState</Name>
+  <Package>com.asiainfo.sale.tag.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="5" />
+    <OptionList value="10" />
+    <OptionList />
+  </DataSet>
+</UIDataSrc>

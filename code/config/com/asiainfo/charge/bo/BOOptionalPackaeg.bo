@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOOptionalPackaeg" mainattr="ID">
+    <mapingenty type="table">CHARGE_OPTIONAL_PACKAEG</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="200" datatype="String" type="COL" remark="编码">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="500" datatype="String" type="COL" remark="名称">
+        <mapingcol datatype="VARCHAR">NAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

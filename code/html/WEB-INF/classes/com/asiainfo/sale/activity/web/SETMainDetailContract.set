@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETMainDetailContract" BOName="com.asiainfo.sale.activity.bo.BOMainDetailContract" MainField="SALE_MAIN_CODE" Title="com.asiainfo.sale.activity.bo.BOMainDetailContract" ActBOName="com.asiainfo.sale.activity.bo.BOMainDetailContract" Package="com.asiainfo.sale.activity.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>IS_CONTRACT</Name>
+        <BOAttrName>IS_CONTRACT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_CONTRACT</ID>
+        <Title>终端类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="is_contract" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOMainDetailContract" Attr="IS_CONTRACT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>SALE_ACTIVE_CODE</Name>
+        <BOAttrName>SALE_ACTIVE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_ACTIVE_CODE</ID>
+        <Title>档次编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOMainDetailContract" Attr="SALE_ACTIVE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>SALE_ACTIVE_NAME</Name>
+        <BOAttrName>SALE_ACTIVE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_ACTIVE_NAME</ID>
+        <Title>档次编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOMainDetailContract" Attr="SALE_ACTIVE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>SALE_MAIN_CODE</Name>
+        <BOAttrName>SALE_MAIN_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_MAIN_CODE</ID>
+        <Title>批次编码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOMainDetailContract" Attr="SALE_MAIN_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>SALE_MAIN_NAME</Name>
+        <BOAttrName>SALE_MAIN_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALE_MAIN_NAME</ID>
+        <Title>批次名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.sale.activity.bo.BOMainDetailContract" Attr="SALE_MAIN_NAME" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

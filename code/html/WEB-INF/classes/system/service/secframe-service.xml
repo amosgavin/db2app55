@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<services>
+   <service id="com.ai.secframe.orgmodel.service.interfaces.ISecOpLoginErrSV" invoke="pojo" type="primitive">
+       <property name="interfaceClass" value="com.ai.secframe.orgmodel.service.interfaces.ISecOpLoginErrSV"/>
+       <property name="implClass" value="com.ai.secframe.orgmodel.service.impl.SecOpLoginErrSVImpl"/>
+       <tx>
+         <method name="handlePasswordWrong" txattr="RequiresNew"/>
+       </tx>
+   </service>
+</services>

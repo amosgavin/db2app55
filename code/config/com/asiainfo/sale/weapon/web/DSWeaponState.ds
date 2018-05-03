@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSWeaponState</Name>
+  <Package>com.asiainfo.sale.weapon.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="U">可用</OptionList>
+    <OptionList value="W">配置中</OptionList>
+    <OptionList value="A">新建</OptionList>
+    <OptionList value="C">已提交</OptionList>
+    <OptionList value="N">不可用</OptionList>
+    <OptionList value="P">规划</OptionList>
+    <OptionList value="SY">所有</OptionList>
+  </DataSet>
+</UIDataSrc>

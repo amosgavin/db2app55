@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOSaleWeapon" mainattr="ID">
+    <mapingenty type="table">SALE_WEAPON_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="PK" remark="ID">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WEAPON_NAME" maxlength="500" datatype="String" type="COL" remark="武器名称">
+        <mapingcol datatype="VARCHAR">WEAPON_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MID" maxlength="50" datatype="String" type="COL" remark="MID主信息id">
+        <mapingcol datatype="VARCHAR">MID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MARKET_TYPE" maxlength="1000" datatype="String" type="COL" remark="细分市场">
+        <mapingcol datatype="VARCHAR">MARKET_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NET_AGE" maxlength="10" datatype="String" type="COL" remark="网龄">
+        <mapingcol datatype="VARCHAR">NET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESTORE_FEE" maxlength="20" datatype="Double" type="COL" remark="预存话费金额">
+        <mapingcol datatype="DECIMAL">PRESTORE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESTRORE_REACH_ACCOUNT" maxlength="20" datatype="Double" type="COL" remark="预存一次性到账">
+        <mapingcol datatype="DECIMAL">PRESTRORE_REACH_ACCOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_REACH_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送一次性到账">
+        <mapingcol datatype="DECIMAL">PRESENT_REACH_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="BASE_PRICE" maxlength="20" datatype="Double" type="COL" remark="成本价">
+        <mapingcol datatype="DECIMAL">BASE_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="AGREEMENT_VALUE" maxlength="20" datatype="Double" type="COL" remark="合约价格">
+        <mapingcol datatype="DECIMAL">AGREEMENT_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="REFERENCE_PRICE" maxlength="20" datatype="Double" type="COL" remark="指导价格">
+        <mapingcol datatype="DECIMAL">REFERENCE_PRICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_ACCOUNT_PROPERTY" maxlength="1000" datatype="String" type="COL" remark="话费账号属性">
+        <mapingcol datatype="VARCHAR">FEE_ACCOUNT_PROPERTY</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_VALUE_PERMON" maxlength="20" datatype="Double" type="COL" remark="每月赠送价值">
+        <mapingcol datatype="DECIMAL">PRESENT_VALUE_PERMON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_BUSI_MONTH" maxlength="2" datatype="Integer" type="COL" remark="赠送月数">
+        <mapingcol datatype="SMALLINT">PRESENT_BUSI_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="B_LIMIT" maxlength="4" datatype="Integer" type="COL" remark="返还额度">
+        <mapingcol datatype="INTEGER">B_LIMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BACK_MONTH" maxlength="2" datatype="Integer" type="COL" remark="返还月数">
+        <mapingcol datatype="SMALLINT">BACK_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_LIMIT" maxlength="4" datatype="Integer" type="COL" remark="保底额度">
+        <mapingcol datatype="INTEGER">L_LIMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BASE_MONTH" maxlength="2" datatype="Integer" type="COL" remark="保底月数">
+        <mapingcol datatype="SMALLINT">BASE_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_REAL_FEE" maxlength="1000" datatype="String" type="COL" remark="终端实际购买款">
+        <mapingcol datatype="VARCHAR">TERM_REAL_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GOOD_ADOPT_DIRECTORY" maxlength="1000" datatype="String" type="COL" remark="货品采购目录">
+        <mapingcol datatype="VARCHAR">GOOD_ADOPT_DIRECTORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSI_TYPE" maxlength="1000" datatype="String" type="COL" remark="业务类型">
+        <mapingcol datatype="VARCHAR">BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_BUSI_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送业务总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_BUSI2_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送业务2总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI2_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="DATA_FEE" maxlength="20" datatype="Double" type="COL" remark="数据包总价值">
+        <mapingcol datatype="DECIMAL">DATA_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DATA_BUSI_TYPE" maxlength="1000" datatype="String" type="COL" remark="数据包业务类型">
+        <mapingcol datatype="VARCHAR">DATA_BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="VALUE_PERMONTH" maxlength="20" datatype="Double" type="COL" remark="每月价值">
+        <mapingcol datatype="DECIMAL">VALUE_PERMONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPEN_MONTH" maxlength="2" datatype="Integer" type="COL" remark="开通月数">
+        <mapingcol datatype="SMALLINT">OPEN_MONTH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GLOBAL_SCORE" maxlength="4" datatype="Integer" type="COL" remark="全球通积分">
+        <mapingcol datatype="INTEGER">GLOBAL_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DYNAMIC_SCORE" maxlength="4" datatype="Integer" type="COL" remark="动感地带积分">
+        <mapingcol datatype="INTEGER">DYNAMIC_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HOME_SCORE" maxlength="4" datatype="Integer" type="COL" remark="家庭积分">
+        <mapingcol datatype="INTEGER">HOME_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="6" name="CREATE_TIME" maxlength="10" datatype="DateTime" type="COL" remark="创建时间">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="MODIFY_TIME" maxlength="10" datatype="DateTime" type="COL" remark="最后修改时间">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SZX_SCORE" maxlength="4" datatype="Integer" type="COL" remark="神州行积分">
+        <mapingcol datatype="INTEGER">SZX_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ZFQ_TYPE" maxlength="10" datatype="String" type="COL" remark="支付卷类型">
+        <mapingcol datatype="VARCHAR">ZFQ_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_1" maxlength="1000" datatype="String" type="COL" remark="描述1">
+        <mapingcol datatype="VARCHAR">REMARK_1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_2" maxlength="1000" datatype="String" type="COL" remark="描述2">
+        <mapingcol datatype="VARCHAR">REMARK_2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_3" maxlength="1000" datatype="String" type="COL" remark="描述3">
+        <mapingcol datatype="VARCHAR">REMARK_3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_4" maxlength="1000" datatype="String" type="COL" remark="描述4">
+        <mapingcol datatype="VARCHAR">REMARK_4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_5" maxlength="1000" datatype="String" type="COL" remark="描述5">
+        <mapingcol datatype="VARCHAR">REMARK_5</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_BUSI3_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送业务3总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI3_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_BUSI4_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送业务4总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI4_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PRESENT_BUSI5_AMOUNT" maxlength="20" datatype="Double" type="COL" remark="赠送业务5总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI5_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERM_TYPE" maxlength="10" datatype="String" type="COL" remark="终端类型">
+        <mapingcol datatype="VARCHAR">TERM_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="TERM_GUIDE_FEE" maxlength="20" datatype="Double" type="COL" remark="终端销售指导价格 (元）">
+        <mapingcol datatype="DECIMAL">TERM_GUIDE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="TERM_COST_FEE" maxlength="20" datatype="Double" type="COL" remark="终端成本结算价（元）">
+        <mapingcol datatype="DECIMAL">TERM_COST_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG" maxlength="10" datatype="String" type="COL" remark="活动类型">
+        <mapingcol datatype="VARCHAR">SALE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUGGEST_DATE" maxlength="4" datatype="DateTime" type="COL" remark="建议配置完成时间">
+        <mapingcol datatype="DATE">SUGGEST_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MINNET_AGE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">MINNET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAXNET_AGE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">MAXNET_AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFFID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFFID</mapingcol>
+      </attr>
+      <attr floatlength="6" name="CONFIG_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CONFIG_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FIRSTCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FIRSTCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LASTCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LASTCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RETURN_TYPE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RETURN_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADD_MONTHCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ADD_MONTHCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUBJECT_NAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SUBJECT_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM1" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM2" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM3" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DELETE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_DELETE</mapingcol>
+      </attr>
+       <attr floatlength="0" name="LIM_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LIM_TYPE</mapingcol>
+      </attr>
+	  <attr floatlength="0" name="ADD_MONTHCHARGE_HB" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ADD_MONTHCHARGE_HB</mapingcol>
+      </attr>
+	  <attr floatlength="0" name="RETURN_TYPE_HB" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RETURN_TYPE_HB</mapingcol>
+      </attr>
+	  <attr floatlength="0" name="FIRSTCHARGE_HB" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FIRSTCHARGE_HB</mapingcol>
+      </attr>
+	  <attr floatlength="0" name="LASTCHARGE_HB" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LASTCHARGE_HB</mapingcol>
+      </attr>
+	  <attr floatlength="2" name="PRESENT_BUSI2_AMOUNT_HB" maxlength="20" datatype="Double" type="COL" remark="赠送业务hb总额度">
+        <mapingcol datatype="DECIMAL">PRESENT_BUSI2_AMOUNT_HB</mapingcol>
+      </attr>
+	  <attr floatlength="0" name="STANDBY_NUM1_HB" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM1_HB</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COST_TYPE_ONE" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COST_TYPE_ONE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COST_TYPE_TWO" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COST_TYPE_TWO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEL_FEE_DEDUCTION" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEL_FEE_DEDUCTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEL_FEE_DEDUCTION_TIME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEL_FEE_DEDUCTION_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

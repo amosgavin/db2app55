@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeInfo" mainattr="MID">
+    <mapingenty type="table">CHARGE_INFO_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="MID" maxlength="20" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">MID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_ID" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FEE_MARK" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FEE_MARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHARGE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CASE" maxlength="150" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CASE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NINNER_TOCHARGE_COUNT" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">NINNER_TOCHARGE_COUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="DOOR_DAMNIFY" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">DOOR_DAMNIFY</mapingcol>
+      </attr>
+      <attr floatlength="2" name="EARNING_DAMNIFY" maxlength="30" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">EARNING_DAMNIFY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INTENDING_ACOUNT" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">INTENDING_ACOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INADD_USER_COUNT" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">INADD_USER_COUNT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="DOOR_EARNING" maxlength="30" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">DOOR_EARNING</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EARNING_TOTAL" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">EARNING_TOTAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADD_USER_MARKET" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ADD_USER_MARKET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SPLICE_MUTEX_RULE" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SPLICE_MUTEX_RULE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_SEND_SMS" maxlength="10" datatype="String" type="COL" remark="是否需要短信提醒：0-不需要短信提醒，1-业务受理短信,2-入网短信">
+        <mapingcol datatype="VARCHAR">IS_SEND_SMS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT1" maxlength="10" datatype="String" type="COL" remark="扩展字段1">
+        <mapingcol datatype="VARCHAR">EXT1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT2" maxlength="256" datatype="String" type="COL" remark="扩展字段2">
+        <mapingcol datatype="VARCHAR">EXT2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT3" maxlength="1024" datatype="String" type="COL" remark="扩展字段3(在用)">
+        <mapingcol datatype="VARCHAR">EXT3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT4" maxlength="2000" datatype="String" type="COL" remark="扩展字段4(在用)">
+        <mapingcol datatype="VARCHAR">EXT4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT5" maxlength="2000" datatype="String" type="COL" remark="扩展字段5">
+        <mapingcol datatype="VARCHAR">EXT5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT6" maxlength="4" datatype="Integer" type="COL" remark="扩展字段6">
+        <mapingcol datatype="INTEGER">EXT6</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT7" maxlength="4" datatype="Integer" type="COL" remark="扩展字段7">
+        <mapingcol datatype="INTEGER">EXT7</mapingcol>
+      </attr>
+      <attr floatlength="2" name="EXT8" maxlength="10" datatype="Double" type="COL" remark="扩展字段8">
+        <mapingcol datatype="DECIMAL">EXT8</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PREFERENTIAL_ID1" maxlength="50" datatype="String" type="COL" remark="优惠id1">
+        <mapingcol datatype="VARCHAR">PREFERENTIAL_ID1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PREFERENTIAL_ID2" maxlength="50" datatype="String" type="COL" remark="优惠id2">
+        <mapingcol datatype="VARCHAR">PREFERENTIAL_ID2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PREFERENTIAL_ID3" maxlength="50" datatype="String" type="COL" remark="优惠id3">
+        <mapingcol datatype="VARCHAR">PREFERENTIAL_ID3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PREFERENTIAL_ID4" maxlength="50" datatype="String" type="COL" remark="优惠id4">
+        <mapingcol datatype="VARCHAR">PREFERENTIAL_ID4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PREFERENTIAL_ID5" maxlength="50" datatype="String" type="COL" remark="优惠id5">
+        <mapingcol datatype="VARCHAR">PREFERENTIAL_ID5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_CATEGORY" maxlength="1" datatype="String" type="COL" remark="资费类别">
+        <mapingcol datatype="CHARACTER">CHARGE_CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DIVIDE" maxlength="1" datatype="String" type="COL" remark="是否需要资费分摊">
+        <mapingcol datatype="CHARACTER">IS_DIVIDE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_GROUP" maxlength="1" datatype="String" type="COL" remark="是否集团资费">
+        <mapingcol datatype="CHARACTER">IS_GROUP</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FLOW_CHARGE" maxlength="1" datatype="String" type="COL" remark="流量资费">
+        <mapingcol datatype="CHARACTER">FLOW_CHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DELETE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_DELETE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

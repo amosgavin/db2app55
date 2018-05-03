@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOAuditInfoShow" mainattr="LABEL">
+    <mapingenty type="query">SELECT task.label,
+       org1.organize_name org,
+	     org2.organize_name depart,
+       sf.staff_name,
+       task.decision_result,
+       task.description
+  FROM (SELECT finish_staff_id,
+               label,
+               decision_result,
+               description,
+               create_date
+          FROM hbsale.vm_task
+         WHERE     workflow_id = ''
+               AND task_type = 'user'
+               AND finish_staff_id IS NOT NULL
+        UNION ALL
+        SELECT finish_staff_id,
+               label,
+               decision_result,
+               description,
+               create_date
+          FROM hbsale.h_vm_task
+         WHERE     workflow_id = ''
+               AND task_type = 'user'
+               AND finish_staff_id IS NOT NULL) task
+       LEFT JOIN sechb.sec_operator so
+          ON task.finish_staff_id = so.operator_id
+       LEFT JOIN sechb.sec_staff sf
+          ON so.staff_id = sf.staff_id
+	     left join sechb.sec_organize org1
+	        on substr(sf.organize_id,1,2)=org1.organize_id
+	     left join sechb.sec_organize org2
+	        on sf.organize_id=org2.organize_id
+ORDER BY task.create_date</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="LABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEPART" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DECISION_RESULT" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DECISION_RESULT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="512" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DESCRIPTION</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

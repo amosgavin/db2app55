@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOStatistics" mainattr="ORG_ID">
+    <mapingenty type="query">SELECT org_id, a1, a2, a3, a FROM (SELECT org_id, max (s1) a1, max (s2) a2, max (s3) a3, sum (s1 + s2 + s3) a FROM hbsale.view_weapon_statistics GROUP BY org_id UNION ALL SELECT 2000, sum (s1), sum (s2), sum (s3), sum (s1 + s2 + s3) FROM hbsale.view_weapon_statistics) order BY org_id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ORG_ID" maxlength="11" datatype="Long" type="PK">
+        <mapingcol datatype="INTEGER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="A1" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">A1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="A2" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">A2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="A3" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">A3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="A" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">A</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSOperatorOrg</Name>
+  <Package>com.asiainfo.sale.common.web</Package>
+  <DataSet SetType="SERVICE">
+    <ValueAttr>ORGANIZE_ID</ValueAttr>
+    <TextAttr>ORGANIZE_NAME</TextAttr>
+    <ClassName>com.asiainfo.sale.common.service.interfaces.IOperatorInfoSV</ClassName>
+    <FunctionName>getNameById</FunctionName>
+  </DataSet>
+  <Parameter name="id" DataType="String" />
+</UIDataSrc>

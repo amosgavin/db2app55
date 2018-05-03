@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETFinalShare" BOName="com.asiainfo.charge.bo.BOFinalShare" MainField="BDTHF" Title="com.asiainfo.charge.bo.BOFinalShare" ActBOName="com.asiainfo.charge.bo.BOFinalShare" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BDTHF</Name>
+        <BOAttrName>BDTHF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BDTHF</ID>
+        <Title>本地通话费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="BDTHF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>AMOUNT_ITEM</Name>
+        <BOAttrName>AMOUNT_ITEM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>AMOUNT_ITEM</ID>
+        <Title>账务清单</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="AMOUNT_ITEM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CHARGE_ID</Name>
+        <BOAttrName>CHARGE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGE_ID</ID>
+        <Title>关联资费档次ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="CHARGE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>FINAL</Name>
+        <BOAttrName>FINAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FINAL</ID>
+        <Title>财务项</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="finalItem" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="FINAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CLXXF</Name>
+        <BOAttrName>CLXXF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CLXXF</ID>
+        <Title>彩铃信息费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="CLXXF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>FINAL_RATE</Name>
+        <BOAttrName>FINAL_RATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FINAL_RATE</ID>
+        <Title>占比</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="FINAL_RATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CWT</Name>
+        <BOAttrName>CWT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CWT</ID>
+        <Title>车务通</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="CWT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>FINAL_TAXRATE</Name>
+        <BOAttrName>FINAL_TAXRATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FINAL_TAXRATE</ID>
+        <Title>税率</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="FINAL_TAXRATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>CX_XXF</Name>
+        <BOAttrName>CX_XXF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CX_XXF</ID>
+        <Title>彩信信息费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="CX_XXF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>DXHZ</Name>
+        <BOAttrName>DXHZ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DXHZ</ID>
+        <Title>短信回执</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="DXHZ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>RESERV1</Name>
+        <BOAttrName>RESERV1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERV1</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="RESERV1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>FEIX</Name>
+        <BOAttrName>FEIX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEIX</ID>
+        <Title>飞信</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="FEIX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>RESERV2</Name>
+        <BOAttrName>RESERV2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERV2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="RESERV2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>FMYJBCT</Name>
+        <BOAttrName>FMYJBCT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FMYJBCT</ID>
+        <Title>非漫游基本长途（省内）</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="FMYJBCT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>RESERV3</Name>
+        <BOAttrName>RESERV3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESERV3</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="RESERV3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>GRZX</Name>
+        <BOAttrName>GRZX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GRZX</ID>
+        <Title>个人专线</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="GRZX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>HBGJ</Name>
+        <BOAttrName>HBGJ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HBGJ</ID>
+        <Title>号簿管家</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="HBGJ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>R_ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>R_ID</ID>
+        <Title>主键</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="8" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>IP_SR</Name>
+        <BOAttrName>IP_SR</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IP_SR</ID>
+        <Title>IP电话收入-省内</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="IP_SR" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>JTTXGJ</Name>
+        <BOAttrName>JTTXGJ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>JTTXGJ</ID>
+        <Title>集团通讯管家</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="JTTXGJ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>LDTX</Name>
+        <BOAttrName>LDTX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LDTX</ID>
+        <Title>来电提醒</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="LDTX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>LLF</Name>
+        <BOAttrName>LLF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LLF</ID>
+        <Title>流量费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="LLF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>MM</Name>
+        <BOAttrName>MM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MM</ID>
+        <Title>MM</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="MM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>NXT</Name>
+        <BOAttrName>NXT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NXT</ID>
+        <Title>农信通</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="NXT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>SJB</Name>
+        <BOAttrName>SJB</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJB</ID>
+        <Title>手机报</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJB" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>SJYD</Name>
+        <BOAttrName>SJYD</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJYD</ID>
+        <Title>手机阅读</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJYD" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>SJ_DH</Name>
+        <BOAttrName>SJ_DH</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_DH</ID>
+        <Title>手机导航</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_DH" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>SJ_DM</Name>
+        <BOAttrName>SJ_DM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_DM</ID>
+        <Title>手机动漫</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_DM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>SJ_DX</Name>
+        <BOAttrName>SJ_DX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_DX</ID>
+        <Title>手机电视</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_DX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>SJ_SP</Name>
+        <BOAttrName>SJ_SP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_SP</ID>
+        <Title>手机视频</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_SP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>SJ_YX</Name>
+        <BOAttrName>SJ_YX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_YX</ID>
+        <Title>手机游戏</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_YX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="28" IsEnabled="Y">
+        <Name>SJ_ZF</Name>
+        <BOAttrName>SJ_ZF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_ZF</ID>
+        <Title>手机支付业务</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_ZF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="29" IsEnabled="Y">
+        <Name>SJ_ZQ</Name>
+        <BOAttrName>SJ_ZQ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SJ_ZQ</ID>
+        <Title>手机证券</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SJ_ZQ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="30" IsEnabled="Y">
+        <Name>SNCFMY</Name>
+        <BOAttrName>SNCFMY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SNCFMY</ID>
+        <Title>省内出访漫游长途（省内）</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="SNCFMY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="31" IsEnabled="Y">
+        <Name>WLAN_TXF</Name>
+        <BOAttrName>WLAN_TXF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WLAN_TXF</ID>
+        <Title>WLAN通信费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="WLAN_TXF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="32" IsEnabled="Y">
+        <Name>WNCX</Name>
+        <BOAttrName>WNCX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WNCX</ID>
+        <Title>网内点对点彩信</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="WNCX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="33" IsEnabled="Y">
+        <Name>WNDX</Name>
+        <BOAttrName>WNDX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WNDX</ID>
+        <Title>网内点对点短信</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="WNDX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="34" IsEnabled="Y">
+        <Name>WXYY_CLGNF</Name>
+        <BOAttrName>WXYY_CLGNF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WXYY_CLGNF</ID>
+        <Title>无线音乐:彩铃功能费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="WXYY_CLGNF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="35" IsEnabled="Y">
+        <Name>WXYY_JLB</Name>
+        <BOAttrName>WXYY_JLB</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WXYY_JLB</ID>
+        <Title>无线音乐:俱乐部会费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="WXYY_JLB" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="36" IsEnabled="Y">
+        <Name>YDMS</Name>
+        <BOAttrName>YDMS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YDMS</ID>
+        <Title>移动秘书</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YDMS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="37" IsEnabled="Y">
+        <Name>YDQXZ</Name>
+        <BOAttrName>YDQXZ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YDQXZ</ID>
+        <Title>移动气象站</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YDQXZ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="38" IsEnabled="Y">
+        <Name>YDSJYW_QT</Name>
+        <BOAttrName>YDSJYW_QT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YDSJYW_QT</ID>
+        <Title>移动数据业务收入-其他</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YDSJYW_QT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="39" IsEnabled="Y">
+        <Name>YEWBL</Name>
+        <BOAttrName>YEWBL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YEWBL</ID>
+        <Title>12580</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YEWBL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="40" IsEnabled="Y">
+        <Name>YX_139</Name>
+        <BOAttrName>YX_139</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YX_139</ID>
+        <Title>139邮箱</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YX_139" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="41" IsEnabled="Y">
+        <Name>YY_ZZ</Name>
+        <BOAttrName>YY_ZZ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YY_ZZ</ID>
+        <Title>语音杂志</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YY_ZZ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="42" IsEnabled="Y">
+        <Name>YZF</Name>
+        <BOAttrName>YZF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>YZF</ID>
+        <Title>月租费收入</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="YZF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="43" IsEnabled="Y">
+        <Name>ZJXS</Name>
+        <BOAttrName>ZJXS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ZJXS</ID>
+        <Title>主叫显示</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOFinalShare" Attr="ZJXS" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

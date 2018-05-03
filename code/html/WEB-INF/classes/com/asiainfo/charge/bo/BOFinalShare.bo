@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOFinalShare" mainattr="ID">
+    <mapingenty type="table">CHARGE_FINALLOCATION_SHARE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="8" datatype="Long" type="PK" remark="主键">
+        <mapingcol datatype="BIGINT">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_ID" maxlength="20" datatype="String" type="COL" remark="关联资费档次ID">
+        <mapingcol datatype="VARCHAR">CHARGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FINAL" maxlength="100" datatype="String" type="COL" remark="财务项">
+        <mapingcol datatype="VARCHAR">FINAL</mapingcol>
+      </attr>
+      <attr floatlength="2" name="FINAL_RATE" maxlength="20" datatype="Double" type="COL" remark="占比">
+        <mapingcol datatype="DECIMAL">FINAL_RATE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="FINAL_TAXRATE" maxlength="20" datatype="Double" type="COL" remark="税率">
+        <mapingcol datatype="DECIMAL">FINAL_TAXRATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AMOUNT_ITEM" maxlength="500" datatype="String" type="COL" remark="账务清单">
+        <mapingcol datatype="VARCHAR">AMOUNT_ITEM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERV1" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERV1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERV2" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERV2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERV3" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RESERV3</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

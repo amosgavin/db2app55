@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETPrivGprsAttr" BOName="com.asiainfo.charge.bo.BOPrivGprsAttr" MainField="ATTR_ID" Title="com.asiainfo.charge.bo.BOPrivGprsAttr" ActBOName="com.asiainfo.charge.bo.BOPrivGprsAttr" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ATTR_ID</Name>
+        <BOAttrName>ATTR_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATTR_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="ATTR_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>ATTR_NAME</Name>
+        <BOAttrName>ATTR_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATTR_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="ATTR_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>GROUPID</Name>
+        <BOAttrName>GROUPID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GROUPID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="8" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>   
+           <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="GROUPID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>HALFFLAG</Name>
+        <BOAttrName>HALFFLAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HALFFLAG</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+           <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="HALFFLAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ISCALBYDAY</Name>
+        <BOAttrName>ISCALBYDAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ISCALBYDAY</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+           <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+	     	<ListParameter LSPName="codeType" LSPValue="IS_CHARGE_PROD_EXT" LSPType="Const" />
+	    </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="ISCALBYDAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>PRIVID</Name>
+        <BOAttrName>PRIVID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIVID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="PRIVID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>PRIVNAME</Name>
+        <BOAttrName>PRIVNAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIVNAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="PRIVNAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>PRIV_COST</Name>
+        <BOAttrName>PRIV_COST</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIV_COST</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="PRIV_COST" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>PRIV_TYPE</Name>
+        <BOAttrName>PRIV_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIV_TYPE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="PRIV_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>PRIV_UNIT</Name>
+        <BOAttrName>PRIV_UNIT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRIV_UNIT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="PRIV_UNIT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>RATEPLANID</Name>
+        <BOAttrName>RATEPLANID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RATEPLANID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="RATEPLANID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>STATUS</Name>
+        <BOAttrName>STATUS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="STATUS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>STD_FREE1</Name>
+        <BOAttrName>STD_FREE1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE1</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="STD_FREE1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>STD_FREE2</Name>
+        <BOAttrName>STD_FREE2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE2</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="STD_FREE2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>STD_FREE3</Name>
+        <BOAttrName>STD_FREE3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STD_FREE3</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOPrivGprsAttr" Attr="STD_FREE3" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

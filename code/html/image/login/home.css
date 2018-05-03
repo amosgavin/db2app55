@@ -1,0 +1,26 @@
+@charset "gb2312";
+body {
+	margin:0;
+	font-size:12px;
+	color:#FFFFFF;
+	background-color: #013E98;
+	background-image: url(../../image/login/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+a { color:#FFFFFF;}
+.i1 {
+	border-top:1px solid #1C5197;
+	border-left:1px solid #1C5197;
+	border-right:1px solid #4F87D1;
+	border-bottom:1px solid #4F87D1;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	padding-left:3px;
+	background-attachment: scroll;
+	background-image: url(../../image/login/bg_input.jpg);
+	background-repeat: no-repeat;
+	background-position: 0 top;
+	
+	}

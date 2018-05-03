@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<workflow label="省公司互联网中心营销案流程" tasktype="workflow" tasktag="template.InternetSaleCaseApprove">
+  <vars name="_TASK_JUGE_RESULT" datatype="java.lang.String" inouttype="inner" description="判断节点结果"/>
+  <vars name="result" datatype="java.lang.String" defaultvalue="" inouttype="in"/>
+  <vars name="staff01" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff02" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff03" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff04" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff05" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff06" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff07" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff08" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff09" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff11" datatype="java.lang.String" inouttype="in"/>
+  <vars name="staff10" datatype="java.lang.String" inouttype="in"/>
+  <task id="1" label="开始" tasktype="start" isstart="true">
+    <uiinfo>30,44,32,32</uiinfo>
+    <gotoitem goto="2"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+  </task>
+  <task id="2" label="部门经理审批" tasktype="user" tasktag="I001">
+    <description>发部门经理审批</description>
+    <uiinfo>136,44,32,32</uiinfo>
+    <gotoitem goto="7"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff02</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="15" taskuserid=":staff"/>
+  </task>
+  <task id="3" label="分管副总审批" tasktype="user" tasktag="I002">
+    <description>同意，并发分管副总审批</description>
+    <uiinfo>393,41,32,32</uiinfo>
+    <gotoitem goto="8"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="16" taskuserid=":staff"/>
+  </task>
+  <task id="4" label="发起人确认" tasktype="user" tasktag="I003">
+    <description>不同意，并退回发起人</description>
+    <uiinfo>251,279,32,32</uiinfo>
+    <gotoitem goto="45"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff01" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff01"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.activity.service.interfaces.ISaleOrderSV</servicename>
+      <runclassname>com.asiainfo.sale.activity.service.interfaces.ISaleOrderSV</runclassname>
+      <runfunctionname>changeStsToNo</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="5" label="总经理审批" tasktype="user" tasktag="I004">
+    <description>发总经理审批</description>
+    <uiinfo>525,159,32,32</uiinfo>
+    <gotoitem goto="9"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="17" taskuserid=":staff"/>
+  </task>
+  <task id="7" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>250,44,32,32</uiinfo>
+    <gotoitem condition="false" goto="4"/>
+    <gotoitem condition="default" goto="3"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="8" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>521,44,32,32</uiinfo>
+    <gotoitem condition="sp" goto="5"/>
+    <gotoitem condition="default" goto="10"/>
+    <gotoitem condition="false" goto="4"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="9" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>525,276,32,32</uiinfo>
+    <gotoitem condition="false" goto="4"/>
+    <gotoitem condition="default" goto="10"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="10" label="省公司主办人处理" tasktype="user" tasktag="I005">
+    <description>同意，并发省公司主办人处理</description>
+    <uiinfo>665,43,32,32</uiinfo>
+    <gotoitem goto="11"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff03</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="101425" taskuserid=":staff"/>
+  </task>
+  <task id="11" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>707,189,32,32</uiinfo>
+    <gotoitem condition="default" goto="14"/>
+    <gotoitem condition="false" goto="13"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="12" label="主办人审核" tasktype="user" tasktag="I007">
+    <description>返回会签意见</description>
+    <uiinfo>939,189,32,32</uiinfo>
+    <gotoitem goto="16"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff03"/>
+  </task>
+  <task id="13" label="发起人修改~AE" tasktype="user" tasktag="I008">
+    <description>不同意，并退回发起人修改</description>
+    <uiinfo>917,285,32,32</uiinfo>
+    <gotoitem goto="12"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff01" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff01" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff01"/>
+  </task>
+  <task id="14" label="会签" tasktype="sign" tasktag="SI001">
+    <description>发起会签</description>
+    <uiinfo>854,190,32,32</uiinfo>
+    <gotoitem goto="12"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="15" label="主办人重审" tasktype="user" tasktag="I006">
+    <description>驳回给主办人</description>
+    <uiinfo>714,570,32,32</uiinfo>
+    <gotoitem goto="27"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff03" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff03" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff03"/>
+  </task>
+  <task id="16" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1039,189,32,32</uiinfo>
+    <gotoitem condition="false" goto="13"/>
+    <gotoitem condition="default" goto="17"/>
+    <gotoitem condition="hq" goto="77"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="17" label="市场部领导审批" tasktype="user" tasktag="I009">
+    <description>同意，并发市场部领导审批</description>
+    <uiinfo>1038,304,32,32</uiinfo>
+    <gotoitem goto="18"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff04</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="101412" taskuserid=":staff"/>
+  </task>
+  <task id="18" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>961,399,32,32</uiinfo>
+    <gotoitem condition="hq" goto="22"/>
+    <gotoitem condition="false" goto="13"/>
+    <gotoitem condition="default" goto="71"/>
+    <gotoitem condition="pz" goto="28"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="21" label="市场部领导审批" tasktype="user" tasktag="I010">
+    <description>发市场部领导审批</description>
+    <uiinfo>1140,398,32,32</uiinfo>
+    <gotoitem goto="18"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff04" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff04" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff04"/>
+  </task>
+  <task id="22" label="会签" tasktype="sign" tasktag="SI003">
+    <description>发起会签</description>
+    <uiinfo>1060,466,32,32</uiinfo>
+    <gotoitem goto="21"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="27" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>825,570,32,32</uiinfo>
+    <gotoitem condition="zbr" goto="28"/>
+    <gotoitem condition="default" goto="71"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="28" label="部门经理指定主办人" tasktype="user" tasktag="I014">
+    <description>发互联网中心配置活动</description>
+    <uiinfo>959,570,32,32</uiinfo>
+    <gotoitem goto="29"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff02" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff02" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff02"/>
+  </task>
+  <task id="29" label="主办人发起配置" tasktype="user" tasktag="I015">
+    <description>发主办人处理</description>
+    <uiinfo>956,652,32,32</uiinfo>
+    <gotoitem goto="30"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff05</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="18" taskuserid=":staff"/>
+  </task>
+  <task id="30" label="完成配置" tasktype="user" tasktag="I018">
+    <description>发起配置</description>
+    <uiinfo>956,734,32,32</uiinfo>
+    <gotoitem goto="31"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff06</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="19" taskuserid=":staff"/>
+  </task>
+  <task id="31" label="主办人发起测试" tasktype="user" tasktag="I016">
+    <description>发主办人审核配置</description>
+    <uiinfo>957,809,32,32</uiinfo>
+    <gotoitem goto="49"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="32" label="测试" tasktype="user" tasktag="I019">
+    <description>发起测试</description>
+    <uiinfo>1115,903,32,32</uiinfo>
+    <gotoitem goto="33"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="19" taskuserid=":staff"/>
+  </task>
+  <task id="33" label="主办人指定会签" tasktype="user" tasktag="I020">
+    <description>发主办人审核测试</description>
+    <uiinfo>988,902,32,32</uiinfo>
+    <gotoitem goto="34"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="34" label="会签" tasktype="sign" tasktag="SI004">
+    <description>发起会签</description>
+    <uiinfo>988,1000,32,32</uiinfo>
+    <gotoitem goto="35"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="35" label="主办人审批" tasktype="user" tasktag="I022">
+    <description>返回会签意见</description>
+    <uiinfo>986,1083,32,32</uiinfo>
+    <gotoitem goto="36"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="36" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>879,1084,32,32</uiinfo>
+    <gotoitem condition="default" goto="37"/>
+    <gotoitem condition="false" goto="47"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="37" label="省业支分派" tasktype="user" tasktag="I023">
+    <description>测试通过，并发发省业支审核</description>
+    <uiinfo>878,1222,32,32</uiinfo>
+    <gotoitem goto="38"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="103417" taskuserid=":staff"/>
+  </task>
+  <task id="38" label="审核测试报告" tasktype="user" tasktag="I024">
+    <uiinfo>877,1338,32,32</uiinfo>
+    <gotoitem goto="40"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="103810" taskuserid=":staff"/>
+  </task>
+  <task id="39" label="主办人发起配置" tasktype="user" tasktag="I017">
+    <description>不同意，并发主办人重新配置测试</description>
+    <uiinfo>740,982,32,32</uiinfo>
+    <gotoitem goto="30"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff05" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="40" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>740,1338,32,32</uiinfo>
+    <gotoitem condition="false" goto="39"/>
+    <gotoitem condition="default" goto="41"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="41" label="省公司主办人审核" tasktype="user" tasktag="I026">
+    <description>同意，并发省公司主办人审核</description>
+    <uiinfo>990,1453,32,32</uiinfo>
+    <gotoitem goto="42"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff03" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff03" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff03"/>
+  </task>
+  <task id="42" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1211,1452,32,32</uiinfo>
+    <gotoitem condition="hq" goto="43"/>
+    <gotoitem condition="default" goto="44"/>
+    <gotoitem condition="false" goto="46"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="43" label="会签" tasktype="sign" tasktag="SI005">
+    <description>发起会签</description>
+    <uiinfo>1095,1367,32,32</uiinfo>
+    <gotoitem goto="41"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="44" label="发起人确认" tasktype="user" tasktag="I027">
+    <description>同意，并发发起人确认</description>
+    <uiinfo>1123,1558,32,32</uiinfo>
+    <gotoitem goto="45"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff01" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff01" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff01"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.activity.service.interfaces.ISaleOrderSV</servicename>
+      <runclassname>com.asiainfo.sale.activity.service.interfaces.ISaleOrderSV</runclassname>
+      <runfunctionname>changeStsToAgreen</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="45" label="结束" tasktype="finish">
+    <uiinfo>257,1557,32,32</uiinfo>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+  </task>
+  <task id="46" label="重审测试报告" tasktype="user" tasktag="I025">
+    <description>不同意，并发业支重审测试报告</description>
+    <uiinfo>1209,1337,32,32</uiinfo>
+    <gotoitem goto="38"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="103417" taskuserid=":staff"/>
+  </task>
+  <task id="47" label="重新配置" tasktype="user" tasktag="I021">
+    <description>审核不通过，并发起重新配置</description>
+    <uiinfo>881,980,32,32</uiinfo>
+    <gotoitem goto="31"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff06" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff06" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff06"/>
+  </task>
+  <task id="49" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1115,808,32,32</uiinfo>
+    <gotoitem condition="default" goto="32"/>
+    <gotoitem condition="hlw" goto="50"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="50" label="互联网部门经理处理" tasktype="user" tasktag="I028">
+    <description>存在电子券，发互联网部门经理处理</description>
+    <uiinfo>1236,809,32,32</uiinfo>
+    <gotoitem goto="51"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="15" taskuserid=":staff"/>
+  </task>
+  <task id="51" label="承办人审核" tasktype="user" tasktag="I029">
+    <description>发承办人审核</description>
+    <uiinfo>1351,810,32,32</uiinfo>
+    <gotoitem goto="52"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff08</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="18" taskuserid=":staff"/>
+  </task>
+  <task id="52" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1442,810,32,32</uiinfo>
+    <gotoitem condition="false" goto="54"/>
+    <gotoitem condition="default" goto="53"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="53" label="稽核人员审核" tasktype="user" tasktag="I032">
+    <description>同意，并发稽核人员审核</description>
+    <uiinfo>1440,937,32,32</uiinfo>
+    <gotoitem goto="56"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="18" taskuserid=":staff"/>
+  </task>
+  <task id="54" label="主办人修改" tasktype="user" tasktag="I030">
+    <description>不同意，并发主办人修改</description>
+    <uiinfo>1442,731,32,32</uiinfo>
+    <gotoitem goto="51"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="55" label="承办人重审" tasktype="user" tasktag="I031">
+    <description>不同意，并发承办人重审</description>
+    <uiinfo>1353,938,32,32</uiinfo>
+    <gotoitem goto="52"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff08"/>
+  </task>
+  <task id="56" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1440,1031,32,32</uiinfo>
+    <gotoitem condition="false" goto="55"/>
+    <gotoitem condition="default" goto="57"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="57" label="发放人员发放" tasktype="user" tasktag="I033">
+    <description>同意，并发发放人员发放</description>
+    <uiinfo>1444,1117,32,32</uiinfo>
+    <gotoitem goto="58"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="18" taskuserid=":staff"/>
+  </task>
+  <task id="58" label="承办人审阅" tasktype="user" tasktag="I034">
+    <description>发承办人审阅</description>
+    <uiinfo>1444,1197,32,32</uiinfo>
+    <gotoitem goto="59"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff08"/>
+  </task>
+  <task id="59" label="主办人发起测试" tasktype="user" tasktag="I035">
+    <description>发主办人发起测试</description>
+    <uiinfo>1320,1198,32,32</uiinfo>
+    <gotoitem goto="32"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff05"/>
+  </task>
+  <task id="60" label="市场部领导审批" tasktype="user" tasktag="I036">
+    <description>同意，并发市场部总经理审批</description>
+    <uiinfo>1161,274,32,32</uiinfo>
+    <gotoitem goto="62"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff09</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="101412" taskuserid=":staff"/>
+  </task>
+  <task id="61" label="市场部领导审批" tasktype="user" tasktag="I037">
+    <description>市场部总经理审批</description>
+    <uiinfo>1377,192,32,32</uiinfo>
+    <gotoitem goto="62"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff09"/>
+  </task>
+  <task id="62" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1254,272,32,32</uiinfo>
+    <gotoitem condition="hq" goto="63"/>
+    <gotoitem condition="sp" goto="64"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="63" label="会签" tasktype="sign" tasktag="SI007">
+    <uiinfo>1379,270,32,32</uiinfo>
+    <gotoitem goto="61"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="64" label="省公司领导审批" tasktype="user" tasktag="I038">
+    <description>发省公司领导审批</description>
+    <uiinfo>1376,338,32,32</uiinfo>
+    <gotoitem goto="66"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="65" label="会签" tasktype="sign" tasktag="SI008">
+    <uiinfo>1494,392,32,32</uiinfo>
+    <gotoitem goto="64"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <task id="66" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>1491,262,32,32</uiinfo>
+    <gotoitem condition="hq" goto="65"/>
+    <gotoitem condition="default" goto="61"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="67" label="分派武器配置任务" tasktype="user" tasktag="wp01">
+    <description>省业支配置武器</description>
+    <uiinfo>668,484,32,32</uiinfo>
+    <gotoitem goto="69"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="102007" taskuserid=":staff"/>
+  </task>
+  <task id="68" label="武器配置" tasktype="user" tasktag="wp02">
+    <uiinfo>550,719,32,32</uiinfo>
+    <gotoitem goto="70"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff10</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-2" taskuserid=":staff"/>
+  </task>
+  <task id="69" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>549,570,32,32</uiinfo>
+    <gotoitem condition="default" goto="68"/>
+    <gotoitem condition="false" goto="15"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="70" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>622,720,32,32</uiinfo>
+    <gotoitem condition="default" goto="72"/>
+    <gotoitem condition="back" goto="75"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="71" label="财务定税率" tasktype="user" tasktag="su105">
+    <description>发财务定税率（武器需要配置）</description>
+    <uiinfo>825,484,32,32</uiinfo>
+    <gotoitem goto="67"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>setStaff11</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.util.HashMap" contextvarName="$CONTEXT_MAP" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="103809" taskuserid=":staff"/>
+  </task>
+  <task id="72" label="财务部审核" tasktype="user" tasktag="su106">
+    <uiinfo>712,718,32,32</uiinfo>
+    <gotoitem goto="73"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="103809" taskuserid=":staff"/>
+  </task>
+  <task id="73" label="自动判断" tasktype="autodecision" tasktag="autodecision">
+    <uiinfo>812,642,32,32</uiinfo>
+    <gotoitem condition="default" goto="28"/>
+    <gotoitem condition="false" goto="74"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.util.server.interfaces.IFlowSV</servicename>
+      <runclassname>com.asiainfo.util.server.interfaces.IFlowSV</runclassname>
+      <runfunctionname>result</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="result" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="java.lang.String" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="74" label="重新配置武器" tasktype="user" tasktag="su107">
+    <description>不同意，重新配置</description>
+    <uiinfo>815,717,32,32</uiinfo>
+    <gotoitem goto="72"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</servicename>
+      <runclassname>com.asiainfo.sale.common.service.interfaces.ISendSmsSV</runclassname>
+      <runfunctionname>sendSms</runfunctionname>
+      <vars name="P_0" datatype="java.lang.String" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="staff10" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="staff10" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="-1" taskuserid=":staff10"/>
+  </task>
+  <task id="75" label="分派人重审" tasktype="user" tasktag="su108">
+    <description>驳回给上级领导</description>
+    <uiinfo>621,628,32,32</uiinfo>
+    <gotoitem goto="15"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" organizeid="102007" taskuserid=":staff"/>
+  </task>
+  <task id="77" label="会签" tasktype="sign" tasktag="SI009">
+    <uiinfo>939,118,32,32</uiinfo>
+    <gotoitem goto="12"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staff"/>
+  </task>
+  <join taska="1" taskb="2">
+    <uiinfo>10.0,10.0,500,500,46,60,136,60</uiinfo>
+  </join>
+  <join taska="2" taskb="7">
+    <uiinfo>10.0,10.0,500,500,152,60,250,60</uiinfo>
+  </join>
+  <join label="false" taska="7" taskb="4">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,266,60,267,279</uiinfo>
+  </join>
+  <join label="default" taska="7" taskb="3">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,266,60,393,57</uiinfo>
+  </join>
+  <join taska="3" taskb="8">
+    <uiinfo>10.0,10.0,500,500,409,57,521,60</uiinfo>
+  </join>
+  <join label="sp" taska="8" taskb="5">
+    <condition>sp</condition>
+    <uiinfo>10.0,10.0,500,500,537,60,541,159</uiinfo>
+  </join>
+  <join taska="5" taskb="9">
+    <uiinfo>10.0,10.0,500,500,541,175,541,276</uiinfo>
+  </join>
+  <join label="false" taska="9" taskb="4">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,541,292,283,295</uiinfo>
+  </join>
+  <join label="default" taska="8" taskb="10">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,537,60,665,59</uiinfo>
+  </join>
+  <join label="default" taska="9" taskb="10">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,541,292,665,59</uiinfo>
+  </join>
+  <join label="false" taska="8" taskb="4">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,537,60,283,295</uiinfo>
+  </join>
+  <join taska="10" taskb="11">
+    <uiinfo>10.0,10.0,500,500,681,59,707,205</uiinfo>
+  </join>
+  <join label="default" taska="11" taskb="14">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,723,205,854,206</uiinfo>
+  </join>
+  <join label="false" taska="11" taskb="13">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,723,205,917,301</uiinfo>
+  </join>
+  <join taska="14" taskb="12">
+    <uiinfo>10.0,10.0,500,500,870,206,939,205</uiinfo>
+  </join>
+  <join taska="12" taskb="16">
+    <uiinfo>10.0,10.0,500,500,955,205,1039,205</uiinfo>
+  </join>
+  <join label="false" taska="16" taskb="13" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,1055,205,949,301</uiinfo>
+  </join>
+  <join label="default" taska="16" taskb="17">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1055,205,1054,304</uiinfo>
+  </join>
+  <join taska="17" taskb="18">
+    <uiinfo>10.0,10.0,500,500,1054,320,993,415</uiinfo>
+  </join>
+  <join label="hq" taska="18" taskb="22" isagainst="true">
+    <condition>hq</condition>
+    <uiinfo>10.0,10.0,500,500,977,415,1060,482</uiinfo>
+  </join>
+  <join taska="21" taskb="18" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1156,414,993,415</uiinfo>
+  </join>
+  <join taska="22" taskb="21" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1076,482,1140,414</uiinfo>
+  </join>
+  <join label="zbr" taska="27" taskb="28">
+    <condition>zbr</condition>
+    <uiinfo>10.0,10.0,500,500,841,586,959,586</uiinfo>
+  </join>
+  <join taska="28" taskb="29">
+    <uiinfo>10.0,10.0,500,500,975,586,972,652</uiinfo>
+  </join>
+  <join taska="29" taskb="30">
+    <uiinfo>10.0,10.0,500,500,972,668,972,734</uiinfo>
+  </join>
+  <join taska="30" taskb="31">
+    <uiinfo>10.0,10.0,500,500,972,750,973,809</uiinfo>
+  </join>
+  <join taska="32" taskb="33">
+    <uiinfo>10.0,10.0,500,500,1131,919,1020,918</uiinfo>
+  </join>
+  <join taska="33" taskb="34">
+    <uiinfo>10.0,10.0,500,500,1004,918,1004,1000</uiinfo>
+  </join>
+  <join taska="34" taskb="35">
+    <uiinfo>10.0,10.0,500,500,1004,1016,1002,1083</uiinfo>
+  </join>
+  <join taska="35" taskb="36">
+    <uiinfo>10.0,10.0,500,500,1002,1099,911,1100</uiinfo>
+  </join>
+  <join label="default" taska="36" taskb="37">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,895,1100,894,1222</uiinfo>
+  </join>
+  <join taska="37" taskb="38">
+    <uiinfo>10.0,10.0,500,500,894,1238,893,1338</uiinfo>
+  </join>
+  <join taska="38" taskb="40">
+    <uiinfo>10.0,10.0,500,500,893,1354,772,1354</uiinfo>
+  </join>
+  <join label="false" taska="40" taskb="39" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,756,1354,756,1014</uiinfo>
+  </join>
+  <join taska="39" taskb="30" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,756,998,956,750</uiinfo>
+  </join>
+  <join label="default" taska="40" taskb="41">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,756,1354,990,1469</uiinfo>
+  </join>
+  <join label="hq" taska="42" taskb="43" isagainst="true">
+    <condition>hq</condition>
+    <uiinfo>10.0,10.0,500,500,1227,1468,1127,1383</uiinfo>
+  </join>
+  <join taska="41" taskb="42">
+    <uiinfo>10.0,10.0,500,500,1006,1469,1211,1468</uiinfo>
+  </join>
+  <join label="default" taska="42" taskb="44">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1227,1468,1155,1574</uiinfo>
+  </join>
+  <join taska="4" taskb="45">
+    <uiinfo>10.0,10.0,500,500,267,295,273,1557</uiinfo>
+  </join>
+  <join taska="44" taskb="45">
+    <uiinfo>10.0,10.0,500,500,1139,1574,289,1573</uiinfo>
+  </join>
+  <join taska="43" taskb="41" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1111,1383,1022,1469</uiinfo>
+  </join>
+  <join label="false" taska="42" taskb="46" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,1227,1468,1225,1369</uiinfo>
+  </join>
+  <join taska="47" taskb="31" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,897,996,957,825</uiinfo>
+  </join>
+  <join label="false" taska="36" taskb="47" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,895,1100,897,1012</uiinfo>
+  </join>
+  <join taska="46" taskb="38" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1225,1353,909,1354</uiinfo>
+  </join>
+  <join taska="31" taskb="49">
+    <uiinfo>10.0,10.0,500,500,973,825,1115,824</uiinfo>
+  </join>
+  <join label="default" taska="49" taskb="32">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1131,824,1131,903</uiinfo>
+  </join>
+  <join label="hlw" taska="49" taskb="50">
+    <condition>hlw</condition>
+    <uiinfo>10.0,10.0,500,500,1131,824,1236,825</uiinfo>
+  </join>
+  <join taska="50" taskb="51">
+    <uiinfo>10.0,10.0,500,500,1252,825,1351,826</uiinfo>
+  </join>
+  <join taska="51" taskb="52">
+    <uiinfo>10.0,10.0,500,500,1367,826,1442,826</uiinfo>
+  </join>
+  <join label="false" taska="52" taskb="54" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,1458,826,1458,763</uiinfo>
+  </join>
+  <join label="default" taska="52" taskb="53">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1458,826,1456,937</uiinfo>
+  </join>
+  <join taska="54" taskb="51" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1458,747,1383,826</uiinfo>
+  </join>
+  <join taska="53" taskb="56">
+    <uiinfo>10.0,10.0,500,500,1456,953,1456,1031</uiinfo>
+  </join>
+  <join label="false" taska="56" taskb="55" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,1456,1047,1385,954</uiinfo>
+  </join>
+  <join taska="55" taskb="52" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1369,954,1442,826</uiinfo>
+  </join>
+  <join label="default" taska="56" taskb="57">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1456,1047,1460,1117</uiinfo>
+  </join>
+  <join taska="57" taskb="58">
+    <uiinfo>10.0,10.0,500,500,1460,1133,1460,1197</uiinfo>
+  </join>
+  <join taska="58" taskb="59">
+    <uiinfo>10.0,10.0,500,500,1460,1213,1352,1214</uiinfo>
+  </join>
+  <join taska="59" taskb="32">
+    <uiinfo>10.0,10.0,500,500,1336,1214,1147,919</uiinfo>
+  </join>
+  <join taska="60" taskb="62" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1177,290,1254,288</uiinfo>
+  </join>
+  <join label="hq" taska="62" taskb="63" isagainst="true">
+    <condition>hq</condition>
+    <uiinfo>10.0,10.0,500,500,1270,288,1379,286</uiinfo>
+  </join>
+  <join taska="63" taskb="61" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1395,286,1393,224</uiinfo>
+  </join>
+  <join taska="61" taskb="62" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1393,208,1286,288</uiinfo>
+  </join>
+  <join label="sp" taska="62" taskb="64" isagainst="true">
+    <condition>sp</condition>
+    <uiinfo>10.0,10.0,500,500,1270,288,1376,354</uiinfo>
+  </join>
+  <join taska="64" taskb="66" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1392,354,1491,278</uiinfo>
+  </join>
+  <join label="hq" taska="66" taskb="65" isagainst="true">
+    <condition>hq</condition>
+    <uiinfo>10.0,10.0,500,500,1507,278,1510,392</uiinfo>
+  </join>
+  <join taska="65" taskb="64" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,1510,408,1408,354</uiinfo>
+  </join>
+  <join label="default" taska="66" taskb="61" isagainst="true">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,1507,278,1409,208</uiinfo>
+  </join>
+  <join taska="68" taskb="70">
+    <uiinfo>10.0,10.0,500,500,566,735,622,736</uiinfo>
+  </join>
+  <join taska="67" taskb="69">
+    <uiinfo>10.0,10.0,500,500,684,500,581,586</uiinfo>
+  </join>
+  <join label="default" taska="69" taskb="68">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,565,586,566,719</uiinfo>
+  </join>
+  <join label="false" taska="69" taskb="15">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,565,586,714,586</uiinfo>
+  </join>
+  <join label="default" taska="27" taskb="71" isagainst="true">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,841,586,841,516</uiinfo>
+  </join>
+  <join taska="71" taskb="67">
+    <uiinfo>10.0,10.0,500,500,841,500,700,500</uiinfo>
+  </join>
+  <join label="default" taska="70" taskb="72">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,638,736,712,734</uiinfo>
+  </join>
+  <join taska="72" taskb="73">
+    <uiinfo>10.0,10.0,500,500,728,734,812,658</uiinfo>
+  </join>
+  <join label="default" taska="73" taskb="28">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,828,658,959,586</uiinfo>
+  </join>
+  <join label="false" taska="73" taskb="74" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,828,658,831,717</uiinfo>
+  </join>
+  <join taska="74" taskb="72" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,831,733,744,734</uiinfo>
+  </join>
+  <join label="back" taska="70" taskb="75">
+    <condition>back</condition>
+    <uiinfo>10.0,10.0,500,500,638,736,637,660</uiinfo>
+  </join>
+  <join taska="13" taskb="12">
+    <uiinfo>10.0,10.0,500,500,933,301,939,205</uiinfo>
+  </join>
+  <join label="hq" taska="16" taskb="77" isagainst="true">
+    <condition>hq</condition>
+    <uiinfo>10.0,10.0,500,500,1055,205,971,134</uiinfo>
+  </join>
+  <join taska="77" taskb="12" isagainst="true">
+    <uiinfo>10.0,10.0,500,500,955,134,955,189</uiinfo>
+  </join>
+  <join taska="15" taskb="27">
+    <uiinfo>10.0,10.0,500,500,730,586,825,586</uiinfo>
+  </join>
+  <join taska="75" taskb="15">
+    <uiinfo>10.0,10.0,500,500,637,644,714,586</uiinfo>
+  </join>
+  <join label="false" taska="18" taskb="13" isagainst="true">
+    <condition>false</condition>
+    <uiinfo>10.0,10.0,500,500,977,415,949,301</uiinfo>
+  </join>
+  <join label="default" taska="18" taskb="71">
+    <condition>default</condition>
+    <uiinfo>10.0,10.0,500,500,977,415,857,500</uiinfo>
+  </join>
+  <join label="pz" taska="18" taskb="28">
+    <condition>pz</condition>
+    <uiinfo>10.0,10.0,500,500,977,415,975,570</uiinfo>
+  </join>
+</workflow>

@@ -1,0 +1,137 @@
+<!--
+.speis {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 5px; PADDING-TOP: 0px;
+	text-align:center;
+}
+*{
+	font-size:12px;
+}
+#LoadBox{
+	text-align:center;
+	margin-top:200px;
+}
+
+.box{
+	/*color:rgb(31,51,68);*/
+	font-size:12px;
+	padding:0px 0px 0px 0px;
+	border:0px solid black;
+	clear:left;float:left;
+	text-align:center;
+	position:absolute;
+	word-break:keep-all; 
+	cursor:hand;
+}
+
+body{background-color:white}
+
+.framechar{background-color:white;}
+/*blue*/
+.box_table_blue_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 0;
+	padding-left:20px;
+	font-size:12px;
+}
+.box_table_blue_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-100px 0;
+}
+.box_table_blue_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right 0;
+	font-size:12px;
+}
+/*green*/
+.box_table_green_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -40px;
+	width:60px;
+	font-size:12px;
+}
+.box_table_green_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-10px -40px;
+}
+.box_table_green_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -40px;
+	font-size:12px;
+}
+/*red*/
+.box_table_red_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -80px;
+	font-size:12px;
+}
+.box_table_red_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-10px -80px;
+}
+.box_table_red_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -80px;
+	font-size:12px;
+}
+/*yellow*/
+.box_table_yellow_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -120px;
+	font-size:12px;
+}
+.box_table_yellow_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-10px -120px;
+}
+.box_table_yellow_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -120px;
+	font-size:12px;
+}
+/*cyan*/
+.box_table_cyan_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -160px;
+	font-size:12px;
+}
+.box_table_cyan_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-10px -160px;
+}
+.box_table_cyan_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -160px;
+	font-size:12px;
+}
+/*purple*/
+.box_table_purple_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -200px;
+	font-size:12px;
+}
+.box_table_purple_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-10px -200px;
+}
+.box_table_purple_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -200px;
+	font-size:12px;
+}
+/*gray*/
+.box_table_gray_left{	
+	background:url('../images/lightbluebar.gif');
+	background-position:0 -240px;
+	padding-left:20px;
+	font-size:12px;
+}
+.box_table_gray_mid{	
+	background:url('../images/lightbluebar.gif');
+	background-position:-100px -240px;
+}
+.box_table_gray_right{	
+	background:url('../images/lightbluebar.gif');
+	background-position:right -240px;
+	font-size:12px;
+}
+-->

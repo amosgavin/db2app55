@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSCheckItem</Name>
+  <Package>com.asiainfo.charge.web</Package>
+  <DataSet SetType="STATIC">
+    <OptionList value="01">本次报批资费案</OptionList>
+    <OptionList value="02">已推类似资费案</OptionList>
+    <OptionList value="03">竞争对手类似资费案</OptionList>
+  </DataSet>
+</UIDataSrc>

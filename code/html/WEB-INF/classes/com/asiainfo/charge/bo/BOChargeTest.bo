@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeTest" mainattr="ID">
+    <mapingenty type="table">CHARGE_TEST</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_FACTOR" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_FACTOR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEST_RESULT" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEST_RESULT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REASON" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REASON</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

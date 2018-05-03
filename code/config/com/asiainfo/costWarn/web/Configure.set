@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="Configure" BOName="com.asiainfo.costWarn.bo.BOConfigure" MainField="CITY" Title="com.asiainfo.costWarn.bo.BOConfigure" ActBOName="com.asiainfo.costWarn.bo.BOConfigure" Package="com.asiainfo.costWarn.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BUMEN</Name>
+        <BOAttrName>BUMEN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BUMEN</ID>
+        <Title>部门</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.costWarn.bo.BOConfigure" Attr="BUMEN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CITY</Name>
+        <BOAttrName>CITY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CITY</ID>
+        <Title>地市</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="city" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.costWarn.bo.BOConfigure" Attr="CITY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>STAFFID</Name>
+        <BOAttrName>STAFFID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFFID</ID>
+        <Title>工号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.costWarn.bo.BOConfigure" Attr="STAFFID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>STAFFNAME</Name>
+        <BOAttrName>STAFFNAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFFNAME</ID>
+        <Title>姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.costWarn.bo.BOConfigure" Attr="STAFFNAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>TELPHONE</Name>
+        <BOAttrName>TELPHONE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TELPHONE</ID>
+        <Title>联系电话</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="255" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.costWarn.bo.BOConfigure" Attr="TELPHONE" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

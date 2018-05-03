@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOPromationTag" mainattr="ID">
+    <mapingenty type="table">SALE_TAG_DETAIL_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">PID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_CODE" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_TYPE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="CHARGE" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">CHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CYCLE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CYCLE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="SUMCHARGE" maxlength="12" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">SUMCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_SP" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_SP</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNT_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCOUNT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNT_ROW" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCOUNT_ROW</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FIRSTCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FIRSTCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LASTCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LASTCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RETURN_TYPE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">RETURN_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADD_MONTHCHARGE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ADD_MONTHCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUBJECT_NAME" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SUBJECT_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM1" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM2" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STANDBY_NUM3" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STANDBY_NUM3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK_TAG" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK_TAG</mapingcol>
+      </attr>
+       <attr floatlength="0" name="LIM_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">LIM_TYPE</mapingcol>
+      </attr> 
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

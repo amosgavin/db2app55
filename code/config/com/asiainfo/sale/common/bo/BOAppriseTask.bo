@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOAppriseTask" mainattr="TASK_LABEL">
+    <mapingenty type="query">SELECT ID AID,
+       WORKFLOW_ID,
+       SEND_TIME,
+       WORKFLOW_OBJECT_TYPE,
+       TASK_LABEL,
+       TASK_ID,
+       WF_LABEL,
+       CREATE_DATE,
+       ORGANIZE_NAME,
+       STAFF_NAME,
+       DEPART,
+       APPLY_NAME,
+       IS_READED,
+       APPRISE_FLAG,
+       READ_TIME,
+       DEAL_TIME
+  FROM (SELECT T1.ID,
+               T1.WORKFLOW_ID,
+               T1.SEND_TIME,
+               T1.WORKFLOW_OBJECT_TYPE,
+               T1.TASK_LABEL,
+               T1.TASK_ID,
+               T1.WF_LABEL,
+               T1.CREATE_DATE,
+               T1.REGION_ID,
+               T1.IS_READED,
+               T1.APPRISE_FLAG,
+               T1.READ_TIME,
+               T1.DEAL_TIME,
+               S1.ORGANIZE_NAME,
+               S2.STAFF_NAME,
+               S2.ORGANIZE_NAME DEPART,
+               S3.APPLY_NAME
+          FROM (SELECT D.WORKFLOW_ID WORKFLOW_ID,
+                       WORKFLOW_OBJECT_TYPE,
+                       TASK_LABEL,
+                       TASK_ID,
+                       WF_LABEL,
+                       T_CREATE_DATE,
+                       CREATE_DATE,
+                       SEND_TIME,
+                       CREATE_STAFF_ID,
+                       ID,
+                       IS_READED,
+                       REGION_ID,
+                       APPRISE_FLAG,
+                       READ_TIME,
+                       DEAL_TIME
+                  FROM ((SELECT DISTINCT S.SEND_TIME SEND_TIME,
+                                         T.ID,
+                                         T.IS_READED,
+                                         T.APPRISE_FLAG,
+                                         T.READ_TIME,
+                                         T.DEAL_TIME,
+                                         T.WORKFLOW_ID WORKFLOW_ID
+                           FROM (SELECT DISTINCT *
+                                   FROM HBSALE.SALE_APPRISE_MEMBER_T
+                                  WHERE OPERATOR_ID IN (20004769)
+                                        AND LAST_OPERATOR_ID &lt;&gt; 0) T,
+                                HBSALE.SALE_APPRISE_MEMBER_T S
+                          WHERE T.LAST_OPERATOR_ID = S.OPERATOR_ID
+                                AND T.WORKFLOW_ID = S.WORKFLOW_ID) SS
+                        LEFT JOIN (SELECT TASK.WORKFLOW_ID WORKFLOW_ID,
+                                          TASK.LABEL TASK_LABEL,
+                                          TASK.CREATE_DATE T_CREATE_DATE,
+                                          WF.WORKFLOW_OBJECT_TYPE
+                                             WORKFLOW_OBJECT_TYPE,
+                                          WF.WORKFLOW_OBJECT_ID TASK_ID,
+                                          WF.LABEL WF_LABEL,
+                                          WF.CREATE_DATE CREATE_DATE,
+                                          WF.CREATE_STAFF_ID CREATE_STAFF_ID,
+                                          WF.REGION_ID REGION_ID
+                                     FROM HBSALE.VM_TASK TASK,
+                                          HBSALE.VM_WF WF
+                                    WHERE TASK.WORKFLOW_ID = WF.WORKFLOW_ID
+                                   UNION ALL
+                                   SELECT TASK.WORKFLOW_ID WORKFLOW_ID,
+                                          TASK.LABEL TASK_LABEL,
+                                          TASK.CREATE_DATE T_CREATE_DATE,
+                                          WF.WORKFLOW_OBJECT_TYPE
+                                             WORKFLOW_OBJECT_TYPE,
+                                          WF.WORKFLOW_OBJECT_ID TASK_ID,
+                                          WF.LABEL WF_LABEL,
+                                          WF.CREATE_DATE CREATE_DATE,
+                                          WF.CREATE_STAFF_ID CREATE_STAFF_ID,
+                                          WF.REGION_ID REGION_ID
+                                     FROM HBSALE.H_VM_TASK TASK,
+                                          HBSALE.H_VM_WF WF
+                                    WHERE TASK.WORKFLOW_ID = WF.WORKFLOW_ID) D
+                           ON D.WORKFLOW_ID = SS.WORKFLOW_ID)
+                 WHERE T_CREATE_DATE IN (SELECT MAX (T_CREATE_DATE)
+                                           FROM (SELECT SS.WORKFLOW_ID
+                                                           WORKFLOW_ID,
+                                                        T_CREATE_DATE
+                                                   FROM    (SELECT DISTINCT
+                                                                   T.
+                                                                   WORKFLOW_ID
+                                                                      WORKFLOW_ID
+                                                              FROM (SELECT DISTINCT
+                                                                           *
+                                                                      FROM HBSALE.
+                                                                           SALE_APPRISE_MEMBER_T
+                                                                     WHERE OPERATOR_ID IN
+                                                                              (20004769)
+                                                                           AND LAST_OPERATOR_ID &lt;&gt;
+                                                                                  0) T,
+                                                                   HBSALE.
+                                                                   SALE_APPRISE_MEMBER_T S
+                                                             WHERE T.
+                                                                   LAST_OPERATOR_ID =
+                                                                      S.
+                                                                      OPERATOR_ID
+                                                                   AND T.
+                                                                       WORKFLOW_ID =
+                                                                          S.
+                                                                          WORKFLOW_ID) SS
+                                                        LEFT JOIN
+                                                           (SELECT TASK.
+                                                                   WORKFLOW_ID
+                                                                      WORKFLOW_ID,
+                                                                   TASK.
+                                                                   CREATE_DATE
+                                                                      T_CREATE_DATE
+                                                              FROM HBSALE.
+                                                                   VM_TASK TASK,
+                                                                   HBSALE.
+                                                                   VM_WF WF
+                                                             WHERE TASK.
+                                                                   WORKFLOW_ID =
+                                                                      WF.
+                                                                      WORKFLOW_ID
+                                                            UNION ALL
+                                                            SELECT TASK.
+                                                                   WORKFLOW_ID
+                                                                      WORKFLOW_ID,
+                                                                   TASK.
+                                                                   CREATE_DATE
+                                                                      T_CREATE_DATE
+                                                              FROM HBSALE.
+                                                                   H_VM_TASK TASK,
+                                                                   HBSALE.
+                                                                   H_VM_WF WF
+                                                             WHERE TASK.
+                                                                   WORKFLOW_ID =
+                                                                      WF.
+                                                                      WORKFLOW_ID) D
+                                                        ON D.WORKFLOW_ID =
+                                                              SS.WORKFLOW_ID) E
+                                         GROUP BY E.WORKFLOW_ID)) T1
+               LEFT JOIN SECHB.SEC_ORGANIZE S1
+                  ON TO_CHAR (T1.REGION_ID) = S1.ORGANIZE_ID
+               LEFT JOIN (SELECT STA1.STAFF_ID,
+                                 STA1.STAFF_NAME,
+                                 ORG1.ORGANIZE_NAME
+                            FROM SECHB.SEC_STAFF STA1,
+                                 SECHB.SEC_ORGANIZE ORG1
+                           WHERE STA1.ORGANIZE_ID =
+                                    TO_CHAR (ORG1.ORGANIZE_ID)) S2
+                  ON T1.CREATE_STAFF_ID = S2.STAFF_ID
+               LEFT JOIN (SELECT ID RECORDID, APPLY_NAME
+                            FROM SALE_WEAPON_MAIN_T SW
+                          UNION ALL
+                          SELECT ID RECORDID, SALE_MAIN_NAME APPLY_NAME
+                            FROM SALE_MAIN_T SM
+                          UNION ALL
+                          SELECT APPLY_ID RECORDID, APPLY_NAME APPLY_NAME
+                            FROM CHARGE_APPLY_MAIN_T SM) S3
+                  ON T1.TASK_ID = S3.RECORDID) ORDER
+ BY SEND_TIME DESC</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="AID" maxlength="11" datatype="Long" type="PK">
+        <mapingcol datatype="INTEGER">AID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SEND_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">SEND_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_TYPE" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_LABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_LABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_ID" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WF_LABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WF_LABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ORGANIZE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEPART" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="180" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_READED" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">IS_READED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPRISE_FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">APPRISE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="READ_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">READ_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DEAL_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">DEAL_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

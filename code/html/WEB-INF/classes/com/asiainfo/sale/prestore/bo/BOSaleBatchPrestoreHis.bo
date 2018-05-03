@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleBatchPrestoreHis" mainattr="ID">
+    <mapingenty type="table">SALE_BATCH_PRESTORE_HIS_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="COL" remark="ID">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="200" datatype="String" type="COL" remark="申请名称">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSI_TYPE" maxlength="100" datatype="String" type="COL" remark="申告单类型">
+        <mapingcol datatype="VARCHAR">BUSI_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FUND_RANGE" maxlength="100" datatype="String" type="COL" remark="专款范围">
+        <mapingcol datatype="VARCHAR">FUND_RANGE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="APPLY_AMOUNT" maxlength="14" datatype="Double" type="COL" remark="申请金额(元)">
+        <mapingcol datatype="DECIMAL">APPLY_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_NUMBER" maxlength="100" datatype="String" type="COL" remark="预计用户数量">
+        <mapingcol datatype="VARCHAR">USER_NUMBER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SEND_RANGE" maxlength="100" datatype="String" type="COL" remark="发放范围">
+        <mapingcol datatype="VARCHAR">SEND_RANGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FUND_REASON" maxlength="2000" datatype="String" type="COL" remark="批量预存原因">
+        <mapingcol datatype="VARCHAR">FUND_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_SEND_TYPE" maxlength="100" datatype="String" type="COL" remark="短信发送类型">
+        <mapingcol datatype="VARCHAR">SMS_SEND_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_CONTENT" maxlength="500" datatype="String" type="COL" remark="短信下发内容">
+        <mapingcol datatype="VARCHAR">SMS_CONTENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPERATOR_ID" maxlength="100" datatype="String" type="COL" remark="BOSS操作工号">
+        <mapingcol datatype="VARCHAR">OPERATOR_ID</mapingcol>
+      </attr>
+      <attr floatlength="6" name="PROVIDE_BEGIN_DATE" maxlength="10" datatype="DateTime" type="COL" remark="执行开始时间">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_BEGIN_DATE</mapingcol>
+      </attr>
+      <attr floatlength="6" name="PROVIDE_END_DATE" maxlength="10" datatype="DateTime" type="COL" remark="执行结束时间">
+        <mapingcol datatype="TIMESTAMP">PROVIDE_END_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BOSS_DONE_CODE" maxlength="100" datatype="String" type="COL" remark="BOSS作业号">
+        <mapingcol datatype="VARCHAR">BOSS_DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FILE_NAME" maxlength="2000" datatype="String" type="COL" remark="清单附件">
+        <mapingcol datatype="VARCHAR">FILE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSINESS_REVIEW" maxlength="2000" datatype="String" type="COL" remark="业务复核">
+        <mapingcol datatype="VARCHAR">BUSINESS_REVIEW</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="50" datatype="String" type="COL" remark="负责人">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_MANAGER" maxlength="50" datatype="String" type="COL" remark="发起单位">
+        <mapingcol datatype="VARCHAR">PROMOTE_MANAGER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_DEPART" maxlength="50" datatype="String" type="COL" remark="发起部门">
+        <mapingcol datatype="VARCHAR">PROMOTE_DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_CODE" maxlength="50" datatype="String" type="COL" remark="申请地市">
+        <mapingcol datatype="VARCHAR">AREA_CODE</mapingcol>
+      </attr>
+      <attr floatlength="6" name="CREATE_TIME" maxlength="10" datatype="DateTime" type="COL" remark="创建时间">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="MODIFY_TIME" maxlength="10" datatype="DateTime" type="COL" remark="修改时间">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="DONE_TIME" maxlength="10" datatype="DateTime" type="COL" remark="完成时间">
+        <mapingcol datatype="TIMESTAMP">DONE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_SUBMIT" maxlength="1" datatype="String" type="COL" remark="是否提交流程 1 提交 0 未提交">
+        <mapingcol datatype="CHARACTER">IS_SUBMIT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPER_TYPE" maxlength="1" datatype="String" type="COL" remark="操作类型">
+        <mapingcol datatype="CHARACTER">OPER_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARKS" maxlength="2000" datatype="String" type="COL" remark="备注">
+        <mapingcol datatype="VARCHAR">REMARKS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT1" maxlength="2000" datatype="String" type="COL" remark="扩展字段1">
+        <mapingcol datatype="VARCHAR">EXT1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT2" maxlength="2000" datatype="String" type="COL" remark="扩展字段2">
+        <mapingcol datatype="VARCHAR">EXT2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT3" maxlength="2000" datatype="String" type="COL" remark="扩展字段3">
+        <mapingcol datatype="VARCHAR">EXT3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT4" maxlength="2000" datatype="String" type="COL" remark="扩展字段4">
+        <mapingcol datatype="VARCHAR">EXT4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT5" maxlength="2000" datatype="String" type="COL" remark="扩展字段5">
+        <mapingcol datatype="VARCHAR">EXT5</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

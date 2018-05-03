@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETHPApply" BOName="com.asiainfo.sale.tag.bo.BOHPApply" MainField="RECORDID" Title="com.asiainfo.sale.tag.bo.BOHPApply" ActBOName="com.asiainfo.sale.tag.bo.BOHPApply" Package="com.asiainfo.sale.tag.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>APPLY_NAME</Name>
+        <BOAttrName>APPLY_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_NAME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="80" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.tag.bo.BOHPApply" Attr="APPLY_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>APPLY_TIME</Name>
+        <BOAttrName>APPLY_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_TIME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="6">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.tag.bo.BOHPApply" Attr="APPLY_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>PRINCIPAL</Name>
+        <BOAttrName>PRINCIPAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PRINCIPAL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.tag.bo.BOHPApply" Attr="PRINCIPAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>RECORDID</Name>
+        <BOAttrName>RECORDID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RECORDID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.sale.tag.bo.BOHPApply" Attr="RECORDID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

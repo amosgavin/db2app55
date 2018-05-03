@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOAttach" mainattr="ID">
+    <mapingenty type="table">SALE_ATTACH_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FILENAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FILENAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FILEPATH" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FILEPATH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ITEMID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ITEMID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ITEM_TYPE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ITEM_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SAVENAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SAVENAME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

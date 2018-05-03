@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETOrganize" BOName="com.asiainfo.crm.exercise.staff.bo.BOOrganize" MainField="ORGANIZE_ID" Title="com.asiainfo.crm.exercise.staff.bo.BOOrganize" ActBOName="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Package="com.asiainfo.crm.exercise.staff.web" I18nRes="CRM">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>CONTACT</Name>
+        <BOAttrName>CONTACT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONTACT</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="CONTACT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CONTACT_TEL</Name>
+        <BOAttrName>CONTACT_TEL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONTACT_TEL</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="CONTACT_TEL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>DISTRICT_ID</Name>
+        <BOAttrName>DISTRICT_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DISTRICT_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="DISTRICT_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>EMAIL</Name>
+        <BOAttrName>EMAIL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMAIL</ID>
+        <Title>EAA8000007</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="EMAIL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>FAX</Name>
+        <BOAttrName>FAX</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FAX</ID>
+        <Title>EAA8000006</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="FAX" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>MANAGE_STAFF_ID</Name>
+        <BOAttrName>MANAGE_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MANAGE_STAFF_ID</ID>
+        <Title>EAA8000005</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="MANAGE_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>NAME</Name>
+        <BOAttrName>NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NAME</ID>
+        <Title>EAA8000002</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>ORGANIZE_ID</Name>
+        <BOAttrName>ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_ID</ID>
+        <Title>EAA8000001</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>ORGANIZE_TYPE_ID</Name>
+        <BOAttrName>ORGANIZE_TYPE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_TYPE_ID</ID>
+        <Title>EAA8000003</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="ORGANIZE_TYPE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>PARENT_ORGANIZE_ID</Name>
+        <BOAttrName>PARENT_ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARENT_ORGANIZE_ID</ID>
+        <Title>EAA8000004</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="6" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="PARENT_ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>REMARKS</Name>
+        <BOAttrName>REMARKS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARKS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="REMARKS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>STATE</Name>
+        <BOAttrName>STATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATE</ID>
+        <Title>EAA8000008</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.crm.exercise.staff.web.staff" hasNull="false" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.crm.exercise.staff.bo.BOOrganize" Attr="STATE" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

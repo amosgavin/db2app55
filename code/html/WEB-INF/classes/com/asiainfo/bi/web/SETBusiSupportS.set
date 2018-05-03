@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETBusiSupportS" BOName="com.asiainfo.bi.bo.BOBusiSupportS" MainField="STAFF_NAME" Title="com.asiainfo.bi.bo.BOBusiSupportS" ActBOName="com.asiainfo.bi.bo.BOBusiSupportS" Package="com.asiainfo.bi.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BUSIN</Name>
+        <BOAttrName>BUSIN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BUSIN</ID>
+        <Title>业务变更</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="BUSIN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BUSIY</Name>
+        <BOAttrName>BUSIY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BUSIY</ID>
+        <Title>业务变更</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="BUSIY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CHARGEN</Name>
+        <BOAttrName>CHARGEN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGEN</ID>
+        <Title>资费案</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="CHARGEN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CHARGEY</Name>
+        <BOAttrName>CHARGEY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGEY</ID>
+        <Title>资费案</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="CHARGEY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>DIFF15TO30</Name>
+        <BOAttrName>DIFF15TO30</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DIFF15TO30</ID>
+        <Title>派单时间[15,30)天</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="DIFF15TO30" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>DIFFGT30</Name>
+        <BOAttrName>DIFFGT30</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DIFFGT30</ID>
+        <Title>派单时间&gt;30天</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="DIFFGT30" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>DIFFLS15</Name>
+        <BOAttrName>DIFFLS15</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DIFFLS15</ID>
+        <Title>派单时间[1,15)天</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="DIFFLS15" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>SALEN</Name>
+        <BOAttrName>SALEN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALEN</ID>
+        <Title>营销案</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="SALEN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>SALEY</Name>
+        <BOAttrName>SALEY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SALEY</ID>
+        <Title>营销案</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="SALEY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>TOTAL</Name>
+        <BOAttrName>TOTAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TOTAL</ID>
+        <Title>累计派单数量</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="TOTAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>TOTALN</Name>
+        <BOAttrName>TOTALN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TOTALN</ID>
+        <Title>小计</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="TOTALN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>TOTALY</Name>
+        <BOAttrName>TOTALY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TOTALY</ID>
+        <Title>小计</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="TOTALY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>WEAPONN</Name>
+        <BOAttrName>WEAPONN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WEAPONN</ID>
+        <Title>武器</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="WEAPONN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>WEAPONY</Name>
+        <BOAttrName>WEAPONY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WEAPONY</ID>
+        <Title>武器</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="11" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="WEAPONY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>DISPATCHT</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>DISPATCHT</ID>
+        <Title>分派时间T</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="0" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>DISPATCHF</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>DISPATCHF</ID>
+        <Title>分派时间F</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="0" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>STAFF_NAME</Name>
+        <BOAttrName>STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_NAME</ID>
+        <Title>处理人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.bi.bo.BOBusiSupportS" Attr="STAFF_NAME" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

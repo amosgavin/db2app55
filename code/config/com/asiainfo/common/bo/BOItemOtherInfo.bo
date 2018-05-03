@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOItemOtherInfo" mainattr="ID">
+    <mapingenty type="table">ITEM_OTHER_INFO</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ITEM_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ITEM_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TAG" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_TAG</mapingcol>
+      </attr>
+      <attr floatlength="6" name="ADVISE_DEAL_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">ADVISE_DEAL_TIME</mapingcol>
+      </attr>
+      <attr floatlength="6" name="DATE_1" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">DATE_1</mapingcol>
+      </attr>
+      <attr floatlength="6" name="INSERT_DATE" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">INSERT_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPROVE_FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">APPROVE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DELAY_REASON" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DELAY_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTENT_1" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CONTENT_1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTENT_2" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CONTENT_2</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

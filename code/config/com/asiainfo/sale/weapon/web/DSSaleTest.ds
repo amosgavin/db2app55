@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+  <Name>DSSaleTest</Name>
+  <Package>com.asiainfo.sale.weapon.web</Package>
+  <DataSet SetType="BODATA">
+    <BOName>com.asiainfo.sale.weapon.bo.BOSaleWeaponStaticData</BOName>
+    <ValueAttr>CODE_ID</ValueAttr>
+    <TextAttr>CODE_NAME</TextAttr>
+    <Conditon>code_id in ( select code_id from  SALE_WEAPON_STATIC_DATE  where code_type = :codeType  and market_type = :marketType )  </Conditon>
+  </DataSet>
+  <Parameter name="codeType" DataType="String" />
+  <Parameter name="marketType" DataType="String" />
+</UIDataSrc>

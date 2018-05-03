@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETBillingCheck" BOName="com.asiainfo.charge.bo.BOBillingCheck" MainField="BILLING_CONTENT" Title="com.asiainfo.charge.bo.BOBillingCheck" ActBOName="com.asiainfo.charge.bo.BOBillingCheck" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BILLING_CONTENT</Name>
+        <BOAttrName>BILLING_CONTENT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILLING_CONTENT</ID>
+        <Title>资费内容</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="400" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="BILLING_CONTENT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BILLING_SELLINGPOINT</Name>
+        <BOAttrName>BILLING_SELLINGPOINT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILLING_SELLINGPOINT</ID>
+        <Title>资费卖点</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="400" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="BILLING_SELLINGPOINT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>BRAND</Name>
+        <BOAttrName>BRAND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BRAND</ID>
+        <Title>品牌</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSBrand" hasNull="false" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="BRAND" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CHECK_ITEM</Name>
+        <BOAttrName>CHECK_ITEM</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHECK_ITEM</ID>
+        <Title>对比项目</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.charge.web.DSCheckItem" hasNull="false" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="CHECK_ITEM" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CHARGE_ID</Name>
+        <BOAttrName>CHARGE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGE_ID</ID>
+        <Title>资费ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="CHARGE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>SCHEME_NAME</Name>
+        <BOAttrName>SCHEME_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SCHEME_NAME</ID>
+        <Title>方案名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="SCHEME_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>BILLINGCHECK_ID</Name>
+        <BOAttrName>ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILLINGCHECK_ID</ID>
+        <Title>代理主键</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>SLOGAN</Name>
+        <BOAttrName>SLOGAN</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SLOGAN</ID>
+        <Title>传播口号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="400" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="SLOGAN" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>TARGET_MARKET</Name>
+        <BOAttrName>TARGET_MARKET</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TARGET_MARKET</ID>
+        <Title>目标市场</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSMarket" hasNull="false" />
+        <ActBO Name="com.asiainfo.charge.bo.BOBillingCheck" Attr="TARGET_MARKET" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

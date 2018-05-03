@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="../ext/resources/css/ext-all.css"../>
+<link rel="stylesheet" type="text/css" href="../ext/resources/css/xtheme-slate.css" />
+<link rel="stylesheet" type="text/css" href="../asiainfo/form/file-upload.css"../>
+<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../ext/ext-all.js"></script>
+<script type="text/javascript" src="../asiainfo/Asiainfo.js"></script>
+<script type="text/javascript" src="../asiainfo/data/AsiaInfoJsonStore.js"></script>
+<script type="text/javascript" src="../asiainfo/data/dataManager.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.widget.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.treegrid.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.treegridex.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.form.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.toolbar.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.grid.js"></script>
+<script type="text/javascript" src="../asiainfo/widget/ai.wizard.js"></script>
+<script type="text/javascript">
+var _chargeTreeEdit = {};
+Ext.onReady(function(){
+	
+    var chargeType = "11";
+    var chargeId = "96";
+
+    Ext.QuickTips.init();
+	Ext.BLANK_IMAGE_URL = '../ext/resources/images/default/s.gif';
+	Ext.form.Field.prototype.msgTarget = 'side';
+	dataManager = new Asiainfo.data.dataManager();
+	contextPath = window.location['pathname'].split('/')[1];
+
+	var ds_chargeTree = new Asiainfo.data.AsiaInfoJsonStore({
+		storeId:'ds_chargeTree',
+		initUrl : '/'+contextPath+'/pst/newrecordService',
+		url : '/'+contextPath+'/pst/newrecordService',
+		sql:"SELECT A.SEQUENCE,A.PARENT_ID,A.NODE_ID,A.NODE_NAME,A.NODE_MARK,A.EDIT_FLAG,A.SELECT_FLAG,A.FEE_TYPE,B.ID,B.NODE_VALUE FROM (SELECT SEQUENCE,PARENT_ID,NODE_ID,NODE_NAME,NODE_MARK,EDIT_FLAG,SELECT_FLAG,FEE_TYPE FROM HBSALE.CHARGE_TREE_TEMPLATE_T WHERE MODULE_ID = '"+chargeType+"') A LEFT JOIN (SELECT ID, NODE_ID, NODE_VALUE FROM HBSALE.CHARGE_NODE_DATE_T WHERE CHARGE_ID = '"+chargeId+"') B ON a.NODE_ID = b.NODE_ID ORDER BY A.PARENT_ID, A.SEQUENCE",
+		root : 'root',
+		pageSize:-1,
+		loadDataWhenInit:true
+	});
+
+	var ds_chargeNode=new Asiainfo.data.AsiaInfoJsonStore({
+		storeId:'ds_chargeNode',
+		initUrl : '/'+contextPath+'/pst/newrecordService',
+		url : '/'+contextPath+'/pst/newrecordService',
+		sql:"SELECT CHARGE_ID,NODE_ID,NODE_VALUE FROM HBSALE.CHARGE_NODE_DATE_T WHERE CHARGE_ID = '"+ chargeId +"'",
+		table:'CHARGE_NODE_DATE_T',
+		key:'NODE_ID',
+		root : 'root',
+		pageSize:-1,
+		loadDataWhenInit:true
+	});
+	
+	var nodeNameRender= function (data, metadata, record, rowIndex, columnIndex, store) { 
+		if(record.get('IS_LEAF')==true) return data
+		else return '<b><font color=blue>'+data+'</font>'; 
+  		};
+  		
+  		function treeExpand(store){
+  			for(var i=0;i<store.getCount();i++)
+         			store.expandNode(store.getAt(i));
+  		}
+	
+	function nodeValueFunc(){
+		chargeId = window.parent._fromChargeMainDeFormRowSet.getValue("MID");
+		if("" == chargeId){
+			//if (window.parent.addChargeMainDe()) {
+			//	chargeId = window.parent._fromChargeMainDeFormRowSet.getValue("MID");
+		    //} else {
+            //    return;
+		    //}
+			alert("请先保存资费档次信息");
+			return;
+		}
+		var errMsg = '';
+		for(var i=0;i<ds_chargeTree.getCount();i++){
+                  var curSELECT_FLAG = ds_chargeTree.getAt(i).get('SELECT_FLAG');
+			var curNODE_VALUE =ds_chargeTree.getAt(i).get('NODE_VALUE');
+                  var curNODE_NAME =ds_chargeTree.getAt(i).get('NODE_NAME');
+                  var curLeafNod =ds_chargeTree.getAt(i).get('IS_LEAF');
+			if(curLeafNod && "1" == curSELECT_FLAG && "" == curNODE_VALUE) {
+				errMsg = errMsg + '"'+curNODE_NAME+'" ';
+			}
+		}
+		
+		if (""!=errMsg) {
+			return alert("资费结构信息必填项: "+errMsg+"不能为空!");
+		}
+		
+		var modifiedRecords = ds_chargeTree.getModifiedRecords();
+              //alert("modifiedRecords.length="+modifiedRecords.length);
+              if(modifiedRecords.length > 0){
+                  for(var i=0;i<modifiedRecords.length;i++){
+                      var curId = modifiedRecords[i].get('NODE_ID');
+                      var index = ds_chargeNode.findBy(function(record){
+                          return record.get('NODE_ID') == curId;
+                      });
+                      //alert("index="+index);
+                      if("-1" == index){
+                          var newChargeNode = ds_chargeNode.newRecord();
+                          newChargeNode.set('ID','1');
+                          newChargeNode.set('CHARGE_ID',chargeId);
+                          newChargeNode.set('NODE_ID',modifiedRecords[i].get('NODE_ID'));
+                          newChargeNode.set('NODE_VALUE',modifiedRecords[i].get('NODE_VALUE'));
+                          ds_chargeNode.add(newChargeNode);
+                      }else {
+                          var curVal = modifiedRecords[i].get('NODE_VALUE');
+                          if ("" == curVal){
+                              ds_chargeNode.remove(ds_chargeNode.getAt(index));
+                          } else {
+                              ds_chargeNode.getAt(index).set('NODE_VALUE',modifiedRecords[i].get('NODE_VALUE'));
+                          }
+                      }
+                  }
+                  ds_chargeNode.commit();
+                  window.location.reload();
+              }
+	}
+	
+	_chargeTreeEdit.saveTree = nodeValueFunc;
+	
+	
+          function booleanRender(data, metadata, record){
+          	if(record.get('IS_LEAF')!=true) {
+          		return '';
+          	}
+              return data == '1' ? '是' : '否';
+          }
+	
+	var tbcfg={id:'downDeptbbar',region:'south',width:0,height:60,cfgcode:'',
+		items:[
+			{type:'text',text:'->'}, 
+			{type:'按钮',text:'保存',icon:'save.gif',fn:nodeValueFunc}
+		]};
+	
+	var tbar=new Asiainfo.widget.Toolbar(tbcfg);
+ 
+	var treeexcfg={
+		id:'USERKPISET',
+		split:'',
+		region:'center',
+		width:120,
+		height:120,
+		cfgcode:'',
+		subtype:'gridtree',
+		store:ds_chargeTree,
+		keyname:'NODE_ID',
+		pkeyname:'PARENT_ID',
+		titlename:'NODE_NAME',
+		tbar:tbar.control,
+		columns:[
+                  { "header":"项目名称","width":271,"sortable":false,"dataIndex":"NODE_NAME",renderer:nodeNameRender},
+                  //{ "header":"资费节点ID","width":95,canEdit:false,"sortable":false,"dataIndex":"NODE_ID" },
+                  { "header":"是否必填","width":80,"canEdit":false,"dataIndex":"SELECT_FLAG",renderer:booleanRender},
+                  { "header":"节点值","width":80,"canEdit":true,"dataIndex":"NODE_VALUE" },
+                  { "header":"计价单位","width":80,"canEdit":false,"dataIndex":"FEE_TYPE"},
+                  { "header":"节点描述","width":260,"canEdit":false,"dataIndex":"NODE_MARK" }
+		]
+	};
+	
+	var treegridex=new Asiainfo.widget.TreeGrid(treeexcfg); 
+	
+	//通过EDIT_FLAG来判断此行是否可编辑
+	treegridex.control.on('cellclick',function(grid,rowIndex,columnIndex,e){
+		var record = grid.getStore().getAt(rowIndex);
+		if(record.get("EDIT_FLAG")==1) {
+			if(record.get('IS_LEAF')) {
+                      return true;
+			}
+		}
+		return false;
+	});
+	
+	treeExpand(ds_chargeTree);		
+	
+	var vp = new Ext.Viewport({layout:'border',items:[treegridex.control]});
+});
+</script>
+</head> 
+<body>
+</body>
+</html>
+  

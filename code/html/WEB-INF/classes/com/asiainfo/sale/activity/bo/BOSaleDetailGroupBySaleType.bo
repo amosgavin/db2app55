@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOSaleDetailGroupBySaleType" mainattr="SALE_FLAG">
+    <mapingenty type="query">SELECT SALE_ID, SALE_FLAG, COUNT(1) AS SCOUNT FROM HBSALE.SALE_DETAIL_T T GROUP BY SALE_ID, SALE_FLAG</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="SALE_ID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SALE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_FLAG" maxlength="3" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">SALE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SCOUNT" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SCOUNT</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

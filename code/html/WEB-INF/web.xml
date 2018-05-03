@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<display-name>html</display-name>
+
+	<filter>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<filter-class>com.ai.appframe2.web.filter.LoginFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>ExpireResponseHeaderFilter</filter-name>
+		<filter-class>com.ai.appframe2.web.filter.expire.ExpireResponseHeaderFilter</filter-class>
+	</filter>
+	
+	 <filter>
+         <filter-name>scriptattackfilter</filter-name>
+         <filter-class>com.asiainfo.hb.security.filter.ScriptAttackFilter</filter-class>
+     </filter>
+
+	<!--
+		<filter> <filter-name>SecframeLoginFilter</filter-name>
+		<filter-class>com.ai.secframe.hn.web.filter.LoginFilter</filter-class>
+		</filter> <filter-mapping>
+		<filter-name>SecframeLoginFilter</filter-name>
+		<url-pattern>/boss/cs/*</url-pattern> </filter-mapping>
+	-->
+	
+	 <filter-mapping>
+         <filter-name>scriptattackfilter</filter-name>
+         <url-pattern>/*</url-pattern>
+     </filter-mapping>
+
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/crossgridaction</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/business/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/baseserver</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/listdatasourcequery</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/gridturnpage</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/dbformrefresh</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/dbtreerefresh</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/VerifyCodeLoginServlet</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/dbtreenewservlet</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/ServletUpload</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AppframeFrontFilter</filter-name>
+		<url-pattern>/vertifycodeservlet</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ExpireResponseHeaderFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<listener>
+		<listener-class>com.ai.appframe2.web.BaseListenerServer</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>ListDataSoureQuery</servlet-name>
+		<servlet-class>com.ai.appframe2.web.ListDataSoureQuery</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletIniter</servlet-name>
+		<servlet-class>com.ai.appframe2.web.ServletIniter</servlet-class>
+		<init-param>
+			<param-name>TempPath</param-name>
+			<param-value>/WEB-INF/template</param-value>
+		</init-param>
+		<load-on-startup>60</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>baseserver</servlet-name>
+		<servlet-class>com.ai.appframe2.web.BaseServer</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>gridturnpage</servlet-name>
+		<servlet-class>com.ai.appframe2.web.tag.GridTurnpage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dbformrefresh</servlet-name>
+		<servlet-class>com.ai.appframe2.web.tag.DBFormRefresh</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dbtreerefresh</servlet-name>
+		<servlet-class>com.ai.appframe2.web.tag.DBTreeRefreshServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dbtreenewservlet</servlet-name>
+		<servlet-class>com.ai.appframe2.web.tag.dbtree.DBTreeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CentralControl</servlet-name>
+		<servlet-class>com.ai.appframe2.web.action.CentralControlServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>vertifycodeservlet</servlet-name>
+		<servlet-class>com.ai.frame.loginmgr.webaction.VertifyCodeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>checkpassword</servlet-name>
+		<servlet-class>com.ai.secframe.hn.web.serverlet.LoginCheck</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifyCodeLoginServlet</servlet-name>
+		<servlet-class>com.ai.appframe2.web.filter.VerifyCodeLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>crossgridaction</servlet-name>
+		<servlet-class>com.ai.appframe2.analyse.web.CrossGricAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OperLogServlet</servlet-name>
+		<servlet-class>com.ai.secframe.sysmgr.web.OperLogServlet</servlet-class>
+	</servlet>
+	<!-- Http Server -->
+	<servlet>
+		<servlet-name>HttpServiceStarter</servlet-name>
+		<servlet-class>com.asiainfo.httpserver.SaleHttpServer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>OperLogServlet</servlet-name>
+		<url-pattern>/servlet/OperLogServlet</url-pattern>
+	</servlet-mapping>
+
+	<!--
+		Quartz configuration <servlet>
+		<servlet-name>QuartzInitializer</servlet-name> <display-name>Quartz
+		Initializer Servlet</display-name>
+		<servlet-class>org.quartz.ee.servlet.QuartzInitializerServlet</servlet-class>
+		<init-param> <param-name>config-file</param-name>
+		<param-value>/quartz.properties</param-value> </init-param>
+		<init-param> <param-name>shutdown-on-unload</param-name>
+		<param-value>true</param-value> </init-param>
+
+		<load-on-startup>1</load-on-startup> </servlet>
+	-->
+	<servlet-mapping>
+		<servlet-name>crossgridaction</servlet-name>
+		<url-pattern>/crossgridaction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CentralControl</servlet-name>
+		<url-pattern>/business/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>baseserver</servlet-name>
+		<url-pattern>/baseserver</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListDataSoureQuery</servlet-name>
+		<url-pattern>/listdatasourcequery</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>gridturnpage</servlet-name>
+		<url-pattern>/gridturnpage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dbformrefresh</servlet-name>
+		<url-pattern>/dbformrefresh</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dbtreerefresh</servlet-name>
+		<url-pattern>/dbtreerefresh</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifyCodeLoginServlet</servlet-name>
+		<url-pattern>/VerifyCodeLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dbtreenewservlet</servlet-name>
+		<url-pattern>/dbtreenewservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>vertifycodeservlet</servlet-name>
+		<url-pattern>/vertifycodeservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>checkpassword</servlet-name>
+		<url-pattern>/checkpassword</url-pattern>
+	</servlet-mapping>
+	<mime-mapping>
+		<extension>doc</extension>
+		<mime-type>application/msword</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>htc</extension>
+		<mime-type>text/x-component</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>pdf</extension>
+		<mime-type>application/pdf</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ppt</extension>
+		<mime-type>application/vnd.ms-powerpoint</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xls</extension>
+		<mime-type>application/msexcel</mime-type>
+	</mime-mapping>
+
+	<!--
+		pst <servlet> <servlet-name>mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>999</load-on-startup> </servlet> <servlet-mapping>
+		<servlet-name>mvc</servlet-name> <url-pattern>/pst/*</url-pattern>
+		</servlet-mapping>
+	-->
+
+	 <error-page> 
+        <error-code>404</error-code> 
+        <location>/error.jsp</location> 
+    </error-page> 
+    
+     <error-page> 
+        <error-code>400</error-code> 
+        <location>/error.jsp</location> 
+    </error-page> 
+    
+     <error-page> 
+        <error-code>500</error-code> 
+        <location>/error.jsp</location> 
+    </error-page> 
+
+</web-app>

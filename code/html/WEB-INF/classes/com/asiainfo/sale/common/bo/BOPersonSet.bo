@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOPersonSet" mainattr="ID">
+    <mapingenty type="table">PERSON_SET_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OPERATOR_ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">OPERATOR_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RECEIVE_SMS_FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">RECEIVE_SMS_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SYS_SMS_FLAG" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">SYS_SMS_FLAG</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOAssignUrl" mainattr="ID">
+    <mapingenty type="table">MENU_PRIVE_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FLOW_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FLOW_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NODE_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NODE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NODE_TAG" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NODE_TAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="URL" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">URL</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

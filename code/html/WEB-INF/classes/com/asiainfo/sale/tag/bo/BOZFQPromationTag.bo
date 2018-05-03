@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsaledb" name="BOZFQPromationTag" mainattr="ID">
+    <mapingenty type="table">SALE_ZFQTAG_DETAIL_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PID" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">PID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_CODE" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_TYPE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="CHARGE" maxlength="10" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">CHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CYCLE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">CYCLE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="SUMCHARGE" maxlength="12" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">SUMCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

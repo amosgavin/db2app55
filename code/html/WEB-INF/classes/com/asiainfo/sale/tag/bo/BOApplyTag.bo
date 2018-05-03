@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOApplyTag" mainattr="ID">
+    <mapingenty type="table">SALE_TAG_APPLY_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="20" datatype="String" type="COL" remark="负责人">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_MANAGER" maxlength="30" datatype="String" type="COL" remark="发起单位">
+        <mapingcol datatype="VARCHAR">PROMOTE_MANAGER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROMOTE_DEPART" maxlength="30" datatype="String" type="COL" remark="发起部门">
+        <mapingcol datatype="VARCHAR">PROMOTE_DEPART</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CASE" maxlength="600" datatype="String" type="COL" remark="申请说明">
+        <mapingcol datatype="VARCHAR">CASE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FLOW_STATE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FLOW_STATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

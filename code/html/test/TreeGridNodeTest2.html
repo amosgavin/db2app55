@@ -1,0 +1,156 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TreeGrid</title>
+<link rel="stylesheet" type="text/css" href="../ext/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="../ext/resources/css/xtheme-slate.css" />
+    <link rel="stylesheet" type="text/css" href="../asiainfo/form/file-upload.css"/>
+    <script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../asiainfo/Asiainfo.js"></script>
+    <script type="text/javascript" src="../asiainfo/data/AsiaInfoJsonStore.js"></script>
+    <script type="text/javascript" src="../asiainfo/data/dataManager.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.widget.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.treegrid.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.treegridex.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.form.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.toolbar.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.grid.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.wizard.js"></script>
+   <script type="text/javascript" src="hrabase.js"></script>  
+    <script type="text/javascript"> 
+        Ext.onReady(function(){
+        
+            Ext.QuickTips.init();
+            Ext.BLANK_IMAGE_URL = '../ext/resources/images/default/s.gif';
+            Ext.form.Field.prototype.msgTarget = 'side';
+            dataManager = new Asiainfo.data.dataManager();
+            contextPath = window.location['pathname'].split('/')[1];
+
+            var ds_chargeTree = new Asiainfo.data.AsiaInfoJsonStore({
+                storeId:'ds_chargeTree',
+                initUrl : '/'+contextPath+'/pst/newrecordService',
+                url : '/'+contextPath+'/pst/newrecordService',
+                sql:"SELECT A.NODE_NAME,                         "+
+                    "       A.NODE_ID,                           "+
+                    "       A.PARENT_ID,                         "+
+                    "       A.NODE_MARK,                         "+
+                    "       A.EDIT_FLAG,                         "+
+                    "       A.SELECT_FLAG,                       "+
+                    "       A.FEE_TYPE,                          "+
+                    "       B.MID,                               "+
+                    "       B.NODE_VALUE                         "+
+                    "  FROM    HBSALE.CHARGE_TREE_TEMPLATE_T A   "+
+                    "       LEFT JOIN                            "+
+                    "          HBSALE.CHARGE_NODE_DATE_T B       "+
+                    "       ON A.NODE_ID = B.NODE_ID             "+
+                    "  WHERE A.MODULE_ID = '1'                   "+
+                    "  ORDER BY A.PARENT_ID,A.NODE_ID            ",
+                root : 'root',
+                pageSize:-1,
+                loadDataWhenInit:true
+            });
+            
+            var ds_chargeNode=new Asiainfo.data.AsiaInfoJsonStore({
+                storeId:'ds_chargeNode',
+                initUrl : '/'+contextPath+'/pst/newrecordService',
+                url : '/'+contextPath+'/pst/newrecordService',
+                sql:"select MID,NODE_ID,NODE_VALUE from hbsale.charge_node_date_t",
+                table:'CHARGE_NODE_DATE_T',
+                key:'NODE_ID',
+                root : 'root',
+                pageSize:-1,
+                loadDataWhenInit:true
+            });
+            var nodeNameRender= function (data, metadata, record, rowIndex, columnIndex, store) { 
+                if(record.get('IS_LEAF')==true) return data
+                else return '<b><font color=blue>'+data+'</font>'; 
+            };
+            
+            function treeExpand(store){
+                for(var i=0;i<store.getCount();i++)
+                    store.expandNode(store.getAt(i));
+            }
+            
+            function nodeValueFunc(){
+                var modifiedRecords = ds_chargeTree.getModifiedRecords();
+                alert("modifiedRecords.length == "+modifiedRecords.length);
+                if(modifiedRecords.length>0){
+                	
+	                for(var i=0;i<modifiedRecords.length;i++){
+	                    var curId = modifiedRecords[i].get('NODE_ID');
+	                    if(curId == ''){
+	                        var newChargeNode = ds_chargeNode.newRecord();
+	                        newChargeNode.set('ID','1');
+	                        newChargeNode.set('MID','1');
+	                        newChargeNode.set('NODE_ID',modifiedRecords[i].get('NODE_ID'));
+	                        newChargeNode.set('NODE_VALUE',modifiedRecords[i].get('NODE_VALUE'));
+	                        ds_chargeNode.add(newChargeNode);
+	                    }else{
+	                        var index = ds_chargeNode.findBy(function(record){
+	                            return record.get('NODE_ID') == curId;
+	                        });
+	                        
+	                        ds_chargeNode.getAt(index).set('NODE_VALUE',modifiedRecords[i].get('NODE_VALUE'));
+	                    }
+	                }
+	                var t= ds_chargeNode;
+	                ds_chargeNode.commit();
+	                window.location.reload();
+                }
+            }
+            
+            
+            
+            var tbcfg={id:'downDeptbbar',region:'south',width:0,height:60,cfgcode:'',
+                items:[   
+                    {type:'text',text:'->'}, 
+                    {type:'按钮',text:'删除',icon:'delete.gif'},
+                    {type:'按钮',text:'保存',icon:'save.gif',fn:nodeValueFunc}
+                ]};
+            var tbar=new Asiainfo.widget.Toolbar(tbcfg);
+   
+            var treeexcfg={
+                id:'USERKPISET',
+                split:'',
+                region:'center',
+                width:120,
+                height:120,
+                cfgcode:'',
+                subtype:'gridtree',
+                store:ds_chargeTree,
+                keyname:'NODE_ID',
+                pkeyname:'PARENT_ID',
+                titlename:'NODE_NAME',
+                tbar:tbar.control,
+                columns:[
+                    { "header":"节点名称","width":271,"sortable":true,"dataIndex":"NODE_NAME",renderer:nodeNameRender},
+                    { "header":"资费节点ID","width":95,canEdit:false,"sortable":true,"dataIndex":"NODE_ID" },
+                    { "header":"节点描述","width":95,"canEdit":false,"dataIndex":"NODE_MARK" },
+                    { "header":"计价单位","width":95,"canEdit":true,"dataIndex":"FEE_TYPE"},
+                    { "header":"节点值","width":95,"canEdit":true,"dataIndex":"NODE_VALUE" }
+                ]
+            };
+            var treegridex=new Asiainfo.widget.TreeGrid(treeexcfg); 
+            
+            //通过EDIT_FLAG来判断此行是否可编辑
+            treegridex.control.on('cellclick',function(grid,rowIndex,columnIndex,e){
+                var record = grid.getStore().getAt(rowIndex);
+                if(record.get("EDIT_FLAG")==1) {
+                    if(record.get('IS_LEAF')) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+            
+            treeExpand(ds_chargeTree);      
+            
+            var vp = new Ext.Viewport({layout:'border',items:[treegridex.control]});
+        });
+    </script>
+</head> 
+<body>
+</body>
+</html>
+  

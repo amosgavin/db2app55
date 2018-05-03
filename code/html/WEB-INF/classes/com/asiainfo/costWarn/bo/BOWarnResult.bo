@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOWarnResult" mainattr="CITY_CODE">
+    <mapingenty type="table">WARN_RESULT</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_CODE" maxlength="5" datatype="String" type="COL" remark="营销资源使用地市编码">
+        <mapingcol datatype="VARCHAR">CITY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_MAIN_CODE" maxlength="50" datatype="String" type="COL" remark="营销活动批次编码">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_MAIN_NAME" maxlength="256" datatype="String" type="COL" remark="营销活动批次名称">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_CODE" maxlength="50" datatype="String" type="COL" remark="营销活动档次编码">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_NAME" maxlength="256" datatype="String" type="COL" remark="营销活动档次名称">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="2" name="TERMINAL_COST" maxlength="16" datatype="Double" type="COL" remark="当月终端补贴">
+        <mapingcol datatype="DECIMAL">TERMINAL_COST</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PER_TERMINAL_COST" maxlength="16" datatype="Double" type="COL" remark="当月终端补贴百分比">
+        <mapingcol datatype="DECIMAL">PER_TERMINAL_COST</mapingcol>
+      </attr>
+      <attr floatlength="2" name="ACTION_OUT" maxlength="16" datatype="Double" type="COL" remark="当月折扣使用">
+        <mapingcol datatype="DECIMAL">ACTION_OUT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PER_ACTION_OUT" maxlength="16" datatype="Double" type="COL" remark="当月折扣使用百分比">
+        <mapingcol datatype="DECIMAL">PER_ACTION_OUT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PROMOTE_SCORE" maxlength="16" datatype="Double" type="COL" remark="当月促销积分">
+        <mapingcol datatype="DECIMAL">PROMOTE_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PER_PROMOTE_SCORE" maxlength="16" datatype="Double" type="COL" remark="当月促销积分百分比">
+        <mapingcol datatype="DECIMAL">PER_PROMOTE_SCORE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="SALE_POINT" maxlength="16" datatype="Double" type="COL" remark="当月积分使用">
+        <mapingcol datatype="DECIMAL">SALE_POINT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="PER_SALE_POINT" maxlength="16" datatype="Double" type="COL" remark="当月积分使用百分比">
+        <mapingcol datatype="DECIMAL">PER_SALE_POINT</mapingcol>
+      </attr>
+      <attr floatlength="10" name="INSERT_TIME" maxlength="12" datatype="DateTime" type="COL" remark="创建时间">
+        <mapingcol datatype="TIMESTAMP">INSERT_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_DELETE" maxlength="1" datatype="String" type="COL" remark="删除标志">
+        <mapingcol datatype="VARCHAR">IS_DELETE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK1" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK2" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK3" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK4" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK4</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

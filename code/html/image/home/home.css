@@ -1,0 +1,14 @@
+@charset "gb2312";
+body {
+	background-color: #006699;
+	margin:0;
+	scrollbar-face-color:#D3E0F5; 
+	scrollbar-shadow-color:#fff; 
+	scrollbar-highlight-color: #fff; 
+	scrollbar-3dlight-color:#B9C5E3; 
+	scrollbar-darkshadow-color:#88AAE4; 
+	scrollbar-track-color: #EDF2FB; 
+	scrollbar-arrow-color: #88AAE4; 
+	font-size:12px;
+}
+

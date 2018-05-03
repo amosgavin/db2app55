@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="HPRowPromationTag" mainattr="ATID">
+    <mapingenty type="query">select a.id as atid, a.sale_id,a.remark1, a.remark2, a.remark3,b.* from HBSALE.RELATE_GOODS2SALE_T a, "HBSALE"."SALE_HPTAG_DETAIL_T" b where b.id=a.tag_id</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ATID" maxlength="11" datatype="Long" type="PK">
+        <mapingcol datatype="INTEGER">ATID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">SALE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK1" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">REMARK1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK2" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK3" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PID" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">PID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_CODE" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TAG_TYPE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TAG_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">CHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CYCLE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">CYCLE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUMCHARGE" maxlength="14" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">SUMCHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">AREA</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_SP" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_SP</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACCOUNT_TYPE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ACCOUNT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">CREATE_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_TIME" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">MODIFY_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STOCK_NUMBER" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STOCK_NUMBER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STOCK_CHARGE" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">STOCK_CHARGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FILL" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FILL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SHOW_FLAG" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SHOW_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STOCK_FLAG" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STOCK_FLAG</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

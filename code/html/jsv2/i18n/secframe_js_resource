@@ -1,0 +1,405 @@
+var secframe_mo= {
+     //secframe/sysmgr/privilege/secmomanage.jsp
+sec_mo_selectdelete:"请选择需要删除的行！",
+sec_mo_deleterecord:"请选择一条要删除的记录",
+sec_mo_selectstyle:"请选择类型！",
+sec_mo_totleattb:"请填写完整属性信息！",
+sec_mo_totleaopp:"请填写完整操作属性信息！",
+sec_mo_nottitle:"父结点非目录结构！",
+sec_mo_firstdata:"请先删除当前结点下数据！",
+sec_mo_suredelete:"确认删除？",
+sec_mo_successdelete:"删除成功！",
+sec_mo_seletemo:"请选择MO信息！",
+sec_mo_newDir:"新建资源包",
+sec_mo_newMo:"新建MO文件",
+sec_mo_delOper:"删除"
+};
+
+var secframe_common = {
+	sec_common_saveok:"保存成功",
+	sec_common_savefail:"保存失败",
+	sec_common_savefail_msg:"保存失败，原因：{0}",
+	sec_common_nochange:"数据尚未修改，无需保存！",
+	condition_empty:"请输入条件！"
+};
+
+var sec_entitymanager= {
+     //secframe/sysmgr/entity/EntityManager.jsp
+sec_entitymanager_inputcod:"请输入条件",
+sec_entitymanager_select:"请在列表中选择一条实体！",
+sec_entitymanager_notnull:"实体名称不能为空！",
+sec_entitymanager_classnotnull:"实体类名称不能为空！",
+sec_entitymanager_unupdate:'数据尚未修改,无需保存!',
+sec_entitymanager_savesuccess:"实体信息保存成功!",
+sec_entitymanager_deletesuccess:"实体信息删除成功!"
+};
+
+var sec_privmanager= {
+     //secframe/sysmgr/entity/PrivManager.jsp
+sec_privmanager_inputcod:"请输入条件",
+sec_privmanager_select:"请在列表中选择一条行为权限！",
+sec_privmanager_notnull:"权限行为名称不能为空！",
+sec_privmanager_namenotnull:"操作实体类名称不能为空！",
+sec_privmanager_unupdate:'数据尚未修改,无需保存!',
+sec_privmanager_savesuccess:"权限行为信息保存成功!",
+sec_privmanager_deletesuccess:"权限行为信息删除成功!"
+};
+
+var sec_entityclassmanager= {
+     //secframe/sysmgr/entity/EntityClassManager.jsp
+sec_entityclassmanager_inputcod:"请输入查询条件",
+sec_entityclassmanager_select:"请在列表中选择一条实体类！",
+sec_entityclassmanager_notnull:"实体类名称不能为空！",
+sec_entityclassmanager_notupdate:'数据尚未修改,无需保存!',
+sec_entityclassmanager_savesuccess:"实体类信息保存成功!",
+sec_entityclassmanager_deletesuccess:"实体类信息删除成功!"
+};
+
+
+var sec_secmodirectory= {
+     //secframe/sysmgr/privilege/secmodirectory.jsp
+sec_secmodirectory_writename:"请填写资源包名称！"
+};
+
+var sec_qsecstaffselec= {
+     //secframe/sysmgr/privilege/QSecStaffSelect.jsp
+sec_qsecstaffselect_nonote:"没有选择的记录",
+sec_qsecstaffselect_inputcod:"请输入条件"
+};
+
+var sec_moselect= {
+     //secframe/sysmgr/privilege/MoSelect.jsp
+sec_moselect_select:"请选择一个被管对象操作属性！",
+sec_moselect_alreadyexist:"该MO操作属性已经存在！"
+};
+
+var sec_secmo= {
+     //secframe/sysmgr/privilege/secmo.jsp
+sec_secmo_writename:"请填写资源文件名称！"
+};
+
+
+var sec_roleselect= {
+     //secframe/sysmgr/privilege/RoleSelect.jsp
+sec_roleselect_input:"请输入条件",
+sec_roleselect_select:"请在列表中选择一条角色！",
+sec_roleselect_noupdate:'数据尚未修改,无需保存!',
+sec_roleselect_save:"角色信息保存成功!"
+};
+
+var secframe_privilege = {
+     //secframe/sysmgr/privilege/Privilege.jsp
+sec_privilege_notexist:"当前MO不存在或者操作名称错误！",
+sec_privilege_notactive:"按MO授权或者按组织授权的TAB页未被激活！",
+sec_privilege_selectobj:"请选择一个赋权对象，请检查！"
+};
+
+
+
+var secframe_staff = {
+     //secframe/sysmgr/privilege/staff.jsp
+sec_staff_suredelete:"你确定要删除所属员工",
+sec_staff_what:"吗?"
+};
+
+var secframe_role_mo = {
+     //secframe/sysmgr/privilege/role.jsp
+secframe_role_mo_sureselect:"你确定要删除所属角色",
+secframe_role_mo_what:"吗?"
+};
+
+var secframe_stationa = {
+     //secframe/sysmgr/privilege/station.jsp
+sec_stationa_sureselect:"你确定要删除所属岗位",
+sec_stationa_what:"吗?"
+};
+
+
+
+
+var secframe_stationselect = {
+     //secframe/sysmgr/privilege/stationselect.jsp
+sec_stationselect_only:"只能选择一个岗位做为查询条件",
+sec_stationselect_select:"请选择组织！"
+};
+
+var secframe_moopadd = {
+     //secframe/sysmgr/privilege/moopadd.jsp
+sec_moopadd_must:"必须输入操作名称"
+};
+
+
+var secframe_station = {
+	///secframe/js/orgmodel/stationtype/stationtype_js
+	sec_stationtype_notselect:"请选择菜单中的某一功能！",
+	sec_stationtype_confirm_deletekind:"是否确定要删除该岗位类型分类？",
+	sec_stationtype_deletekindok:"岗位类型分类数据删除成功！",
+	sec_stationtype_confirm_deletetype:"是否确定要删除该岗位类型？",
+	sec_stationtype_deletetypeok:"岗位类型删除成功！",
+	sec_stationtype_nochange:"未做任何修改！",
+	sec_stationtype_kindname_empty:"分类名称不能为空，请填写分类名称！",
+	sec_stationtype_kindname_invalid:"分类名称录入非法字符，只能录入中文、字母和数字！",
+	sec_stationtype_sort_invalid:"序号只能为数字！",
+	sec_stationtype_sort_checklength:"序号的长度必须小于等于{0}位！",
+	sec_stationtype_savekindok:"岗位类型分类数据保存成功！",
+	sec_stationtype_kindid_empty:"岗位类型编码不能为空，请填写岗位类型编码！",
+	sec_stationtype_code_invalid:"岗位类型代码录入非法字符，只能录入字母、数字、下划线和横杠！",
+	sec_stationtype_kindname_empty:"岗位类型名称不能为空，请填写岗位类型名称！",
+	sec_stationtype_name_invalid:"岗位类型名称录入非法字符，只能录入中文、字母和数字！",
+	sec_stationtype_savetypeok:"岗位类型数据保存成功！",
+    sec_stationtype_no:"否",
+	// Station_js
+	sec_station_notselect:"请选择岗位后查询！",
+	sec_station_code_empty:"第{0}行的岗位代码不能为空,请填写岗位代码！",
+	sec_station_name_empty:"第{0}行的岗位名称不能为空,请填写岗位名称！",
+	sec_station_type_empty:"第{0}行的岗位类型不能为空,请选择岗位类型！",
+	sec_station_name_invalid:"第{0}行的岗位名称录入非法字符，只能录入中文、字母和数字！",
+	sec_station_organize_empty:"第{0}行的所属组织不能为空,请选择岗位所属组织！",
+	sec_station_saveok:"保存成功！",
+	sec_station_save_err:"岗位数据保存失败,错误信息:{0}",
+	sec_station_save_exception:"岗位数据保存失败,未知的错误代码:{0}",
+	sec_station_delete_notselect:"请先选择要删除的岗位！",
+	sec_station_delete_confirm:"是否确定要删除这些岗位？",
+	sec_station_deleteok:"岗位删除成功！",
+	sec_station_delete_notok:"岗位删除失败，失败原因是：{0}"
+};
+
+var secframe_log = {
+	sec_log_query_date_null:"开始时间和结束时间不能为空",
+	sec_log_sysdate_null:"未能获取系统时间,请自行选择任务查询的起始时间!",
+	sec_log_staffcode_invalid:"员工工号中间不允许有空字符或者‘&’字符存在!",
+	sec_log_comparedate_err:"查询的结束时间不能小于开始时间!"	
+};
+
+var secframe_operator = {
+	sec_operator_condition_empty:"请输入条件",
+	sec_operator_station_notselect:"错误：没有选择岗位！",
+	sec_operator_organize_select_required:"请先选择归属组织！",
+	sec_operator_defaultstation_miss:"该操作员不存在默认岗位！",
+	sec_operator_defaultstation_required:"请为操作员选择默认岗位！",
+	sec_operator_saveok:"操作员与员工信息保存成功！",
+	passwd_reset_ok:"重置操作员密码成功！",
+	passwd_reset_fail:"操作员编号为空，不能为操作员重置密码！",
+	author_clean_ok:"清空权限成功！",
+	author_clean_fail:"操作员编号为空，不能为操作员清空权限！",
+	code_empty:"工号不能为空！",
+	code_duplicate:"该工号已被使用，请重新输入！",
+	code_valid:"恭喜，该工号可以使用！",
+	passwd_empty:"密码不能为空！",
+	passwd_length_short:"密码长度不能小于6位！",
+	passwd_confirm_fail:"确认密码与密码必须一致！",
+	effect_date_empty:"帐号生效日期不可为空！",
+	expire_date_empty:"帐号失效日期不可为空！",
+	passwd_valid_date_empty:"密码生效日期不可为空！",
+	expire_date_check_fail:"日期输入错误,失效日期不应小于或者等于生效日期！",
+	try_times_empty:"失败尝试次数不能为空！",
+	try_times_lesszero:"失败尝试次数不能为负数！",
+	staff_name_empty:"姓名不可为空！",
+	billid_empty:"手机号不能为空！",
+	billid_invalid:"手机号码不合法，请重新输入！",
+	organize_empty:"归属组织不能为空！",
+	station_empty:"默认岗位不能为空，请选择！",
+	idcard_empty:"身份证号不能为空！",
+	idcard_invalid:"身份证号不合法！",
+	more_info:"+更多信息",
+	hide_info:"--隐藏信息"
+};
+
+var secframe_opstation = {
+	sec_opstation_operator_select:"请选择一位操作员！",
+	sec_opstation_record_select:"请选择一条记录！",
+	sec_opstation_not_select:"没有选择岗位,无需保存！"
+};
+
+var secframe_author = {
+	sec_station_select:"请选择一条上岗记录！",
+	sec_author_select:"请选择一条授权记录！",
+	sec_author_role_notselect:"没有选择角色,无需保存！",
+	sec_batchauthor_station_empty:"选中的岗位上还没有上岗的操作员，请先执行上岗操作再授权！",
+	function_list:"授权菜单列表"
+}
+
+var secframe_ipmacband = {
+     //secframe/orgmodel/ipmacband/IPMACBandManager.jsp
+sec_ipmacband_select_operator:"请先在左侧选择一位操作员！",
+sec_ipmacband_save_success:"保存成功！",
+sec_ipmacband_save_failure:"保存失败！",
+sec_ipmacband_select_record:"请选择一条记录！",
+sec_ipmacband_ip_notnull:"IP地址不能为空！",
+sec_ipmacband_mac_notnull:"MAC地址不能为空！",
+sec_ipmacband_ip_illegal:"IP地址不合法！",
+sec_ipmacband_endip_illegal:"终止IP地址不合法！",
+sec_ipmacband_mac_illegal:"MAC地址不合法，只能输入数字与A-F（a-f）的组合，中间以冒号分隔，如'01:2D:3C:BA:5F:9E'！",
+sec_ipmacband_ip_begin:"开始IP",
+sec_ipmacband_ip_end:"结束IP",
+sec_ipmacband_ip_address:"IP地址",
+sec_ipmacband_mac_address:"MAC地址",
+sec_ipmacband_bandtype_notnull:"绑定类型不能为空！"
+}
+
+
+var secframe_operatorlist = {
+     //secframe/orgmodel/operator/OperatorList.jsp
+sec_operatorlist_input_condition:"请输入条件"
+}
+
+var secframe_function = {
+sec_function_no_change:"未做任何修改!",
+sec_function_save_ok:"保存成功!",
+sec_function_select_func:"请选择菜单中的某一功能！",
+sec_function_notdel_root:"不可删除根节点！",
+sec_function_confirm_del:"是否确定要删除该功能模块?",
+sec_function_del_success:"删除成功！",
+sec_function_notdel_farnode:"对不起！菜单目录下不能再新增菜单"
+};
+
+var secframe_role = {
+sec_role_condition:"请输入条件!",
+sec_role_sel_one_role:"请在列表中选择一条角色!",
+sec_rolename_notnull:"角色名称不能为空！",
+sec_roletype_notnull:"角色类型不能为空！",
+sec_roledistrict_notnull:"角色所属地市不能为空!",
+sec_roledomain_notnull:"角色所属域不能为空！",
+sec_role_save_ok:"角色信息保存成功！",
+sec_role_del_ok:"角色信息删除成功！",
+sec_role_nochange:"数据尚未修改,无需保存!"
+};
+
+var secframe_role_exclude = {
+sec_role_exclude_select:"请选择!",
+sec_role_exclude_selexclude:"请选择要添加的互斥角色!",
+sec_role_exclude_delexclude:"请选择要删除的互斥角色记录！",
+sec_role_exclude_nochance:"数据尚未修改,无需保存！",
+sec_role_exclude_save_ok:"互斥角色信息保存成功!"
+};
+
+var secframe_role_extend = {
+sec_role_extend_select:"请选择!",
+sec_role_extend_selexclude:"请选择要添加的继承角色!",
+sec_role_extend_delexclude:"请选择要删除的继承角色记录！",
+sec_role_extend_nochance:"数据尚未修改,无需保存！",
+sec_role_extend_save_ok:"继承角色信息保存成功!"
+};
+
+var secframe_role_function = {
+sec_role_function_catcherror:"获取菜单IDS出错!",
+sec_role_function_confirmsel:"是否确定要选择子功能?",
+sec_role_function_confirmdel:"是否确定要取消子功能?",
+sec_role_function_selrole:"请您先单击选择要查看的角色!",
+sec_role_function_save_ok:"保存数据成功!"
+};
+
+var secframe_role_entity = {
+sec_role_entity_seladdentity:"请选择要添加的实体权限!",
+sec_role_entity_seldelentity:"请选择要删除的实体权限!",
+sec_role_entity_nochange:"数据尚未修改,无需保存!",
+sec_role_entity_save_ok:"角色关联实体信息保存成功!"
+};
+
+var secframe_select_entityclassdialog = {
+sec_select_entityclassdialog_select:"请选择一条记录!",
+sec_select_entityclassdialog_onlyone:"一次请选择一条记录!",
+sec_select_entityclassdialog_paramerror:"参数传递错误!"
+};
+
+var secframe_stationmoauthor = {
+secframe_stationmoauthor_saveok:"保存成功!",
+secframe_stationmoauthor_saveerror:"保存失败!",
+secframe_stationmoauthor_change:"请您先单击选择要查看的岗位!",
+secframe_stationmoauthor_selstation:"请选择一个岗位!"
+};
+
+var secframe_rolemoauthor = {
+secframe_rolemoauthor_saveok:"保存成功!",
+secframe_rolemoauthor_saveerror:"保存失败!",
+secframe_rolemoauthor_selrole:"请选择一个角色!"
+};
+
+var secframe_orgdetail = {
+secframe_orgdetail_selfarorg:"请选择一个所属的上级组织!",
+secframe_orgdetail_catchcodeerror:"获取regCode失败！",
+secframe_orgdetail_inputorgname:"请输入组织名称!",
+secframe_orgdetail_email:"请输入正确的Email格式，形如:test@test.com",
+secframe_orgdetail_phone:"请输入正确的普通电话格式，形如:+86-021-12345678",
+secframe_orgdetail_fax:"请输入正确的传真格式，形如:+86-021-12345678",
+secframe_orgdetail_tel:"请输入正确的手机号码格式，形如:13900000000",
+secframe_orgdetail_cardtype:"请填入正确的联系人证件号码",
+secframe_orgdetail_cardid:"请输入15位或者18位的身份证号码!",
+secframe_orgdetail_nochange:"当前的数据尚未被修改，不需要保存!",
+secframe_orgdetail_uodatesucc:"组织更新成功!",
+secframe_orgdetail_error:"操作失败!",
+secframe_orgdetail_onlydelorg:"只能删除有效的组织!",
+secframe_orgdetail_onlydoorg:"只能启用失效的组织!",
+secframe_orgdetail_dosucc:"启用成功!",
+secframe_orgdetail_inputcountryid:"请选择县区!"
+};
+
+var secframe_orglist = {
+secframe_orglist_delerror:"对不起，该组织存在下属组织，不能删除!",
+secframe_orglis_confirmdel:"确实要删除",
+secframe_orglist_what:"吗？",
+secframe_orglist_delsucc:"删除成功!",
+secframe_orglist_delfailed:"删除失败!"
+};
+
+var secframe_stationlist = {
+secframe_stationlist_selstation:"请选择要添加的岗位！",
+secframe_stationlist_seldelstation:"请选择要删除的岗位!",
+secframe_stationlist_nochange:"数据尚未修改,无需保存",
+secframe_stationlist_save_ok:"岗位信息保存成功!"
+};
+
+var secframe_stationrelat = {
+secframe_stationrelat_selstation:"请选择一个岗位！"
+};
+
+var secframe_orgrelat = {
+secframe_orgrelat_selorg:"请选择组织！"
+};
+
+var secframe_districtselectdialog = {
+secframe_districtselectdialog_seldistrict:"请选择区域！"
+};
+
+var secframe_changepassword = {
+secframe_changepassword_updatesucc:"操作员密码修改成功！",
+secframe_changepassword_codenotnull:"登陆名不能为空！",
+secframe_changepassword_oldpwdnotnull:"旧密码不能为空！",
+secframe_changepassword_newpwdnotold:"新密码与密码不能相同！",
+secframe_changepassword_newpwdnotnull:"新密码,密码确认不能为空！",
+secframe_changepassword_pwdlength:"密码长度不能超过12位！",
+secframe_changepassword_pwdcondition:"密码中间不允许有空字符或者‘&’,‘^’字符存在！",
+secframe_changepassword_list6bit:"密码长度必须是六位以上！",
+secframe_changepassword_pwdup:"密码必须是大小写字母和数字的组合！",
+secframe_changepassword_diff:"两次密码输入不同！",
+secframe_changepassword_pwdupdatesucc:"密码设定成功！"
+};
+
+var secframe_funcselectdialog = {
+secframe_funcselectdialog_func:"请选择菜单！"
+};
+
+var secframe_moopadd = {
+secframe_moopadd_leaf:"只能选择叶子节点！"
+};
+
+var secframe_orgselectdialog = {
+secframe_orgselectdialog_selorg:"请选择组织！"
+};
+
+var secframe_changestationdialog = {
+secframe_changestationdialog_selstation:"请您先选择要切换岗位！",
+secframe_changestationdialog_makebasestation_succ:"设置默认岗位成功!",
+secframe_changestationdialog_selbasestation:"请您选择要设置的默认岗位！"
+};
+
+var secframe_getpswd = {
+	loginname_not_null:"登陆名不能为空！",
+	mobilenumber_not_null:"手机号码不能为空，请先获取手机号码。"
+};
+
+var secframe_roleselect = {
+    // /secframe/sysmgr/role/RoleSelect.jsp
+	copy_privilege_success:"拷贝权限成功。",
+	copy_privilege_failure:"拷贝权限失败。"
+};

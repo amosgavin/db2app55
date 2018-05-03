@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETChargeInfo" BOName="com.asiainfo.charge.bo.BOChargeInfo" MainField="MID" Title="com.asiainfo.charge.bo.BOChargeInfo" ActBOName="com.asiainfo.charge.bo.BOChargeInfo" Package="com.asiainfo.charge.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>APPLY_ID</Name>
+        <BOAttrName>APPLY_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_ID</ID>
+        <Title>资费主信息ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="APPLY_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ADD_USER_MARKET</Name>
+        <BOAttrName>ADD_USER_MARKET</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ADD_USER_MARKET</ID>
+        <Title>套餐内</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="ADD_USER_MARKET" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BACK_GROUND</Name>
+        <BOAttrName>BACK_GROUND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BACK_GROUND</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="150" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="BACK_GROUND" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CASE</Name>
+        <BOAttrName>CASE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CASE</ID>
+        <Title>驱动因素</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="CASE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CHARGE_TYPE</Name>
+        <BOAttrName>CHARGE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGE_TYPE</ID>
+        <Title>资费类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="feetype" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="CHARGE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>CONSUME_ANALYSE</Name>
+        <BOAttrName>CONSUME_ANALYSE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONSUME_ANALYSE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="150" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="CONSUME_ANALYSE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>CHARGE_CATEGORY</Name>
+        <BOAttrName>CHARGE_CATEGORY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHARGE_CATEGORY</ID>
+        <Title>资费类别</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="chargeCategory" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="CHARGE_CATEGORY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>DOOR_DAMNIFY</Name>
+        <BOAttrName>DOOR_DAMNIFY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DOOR_DAMNIFY</ID>
+        <Title>月使用费</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="8" Decimal="0">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="DOOR_DAMNIFY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>DOOR_EARNING</Name>
+        <BOAttrName>DOOR_EARNING</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DOOR_EARNING</ID>
+        <Title>静态损益总和</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="28" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="DOOR_EARNING" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>EARNING_DAMNIFY</Name>
+        <BOAttrName>EARNING_DAMNIFY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EARNING_DAMNIFY</ID>
+        <Title>动态损益总和</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="28" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EARNING_DAMNIFY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>EXT1</Name>
+        <BOAttrName>EXT1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT1</ID>
+        <Title>扩展字段1</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>EARNING_TOTAL</Name>
+        <BOAttrName>EARNING_TOTAL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EARNING_TOTAL</ID>
+        <Title>套餐显示</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EARNING_TOTAL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>EXT2</Name>
+        <BOAttrName>EXT2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT2</ID>
+        <Title>扩展字段2</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>FEE_MARK</Name>
+        <BOAttrName>FEE_MARK</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEE_MARK</ID>
+        <Title>资费描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="400" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="FEE_MARK" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>INADD_USER_COUNT</Name>
+        <BOAttrName>INADD_USER_COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INADD_USER_COUNT</ID>
+        <Title>预计用户新增数</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="INADD_USER_COUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>EXT3</Name>
+        <BOAttrName>EXT3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT3</ID>
+        <Title>扩展字段3</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>FEE_NAME</Name>
+        <BOAttrName>FEE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FEE_NAME</ID>
+        <Title>资费名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="FEE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>EXT4</Name>
+        <BOAttrName>EXT4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT4</ID>
+        <Title>扩展字段4</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>INTENDING_ACOUNT</Name>
+        <BOAttrName>INTENDING_ACOUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INTENDING_ACOUNT</ID>
+        <Title>影响网内用户群体</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="INTENDING_ACOUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>EXT5</Name>
+        <BOAttrName>EXT5</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT5</ID>
+        <Title>扩展字段5</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="2000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT5" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>MID</Name>
+        <BOAttrName>MID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>MID</ID>
+        <Title>资费信息ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="MID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>SPLICE_MUTEX_RULE</Name>
+        <BOAttrName>SPLICE_MUTEX_RULE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SPLICE_MUTEX_RULE</ID>
+        <Title>套餐外</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="SPLICE_MUTEX_RULE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>EXT6</Name>
+        <BOAttrName>EXT6</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT6</ID>
+        <Title>是否发布电子渠道</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="trueOrFalse" LSPType="Const" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT6" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>NINNER_TOCHARGE_COUNT</Name>
+        <BOAttrName>NINNER_TOCHARGE_COUNT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NINNER_TOCHARGE_COUNT</ID>
+        <Title>资费业务类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="11" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="zfbusitype" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="NINNER_TOCHARGE_COUNT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>EXT7</Name>
+        <BOAttrName>EXT7</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT7</ID>
+        <Title>扩展字段7</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT7" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>USER_CIRCS</Name>
+        <BOAttrName>USER_CIRCS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>USER_CIRCS</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="150" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="USER_CIRCS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>EXT8</Name>
+        <BOAttrName>EXT8</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXT8</ID>
+        <Title>扩展字段8</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="2">Double</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="EXT8" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>IS_SEND_SMS</Name>
+        <BOAttrName>IS_SEND_SMS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_SEND_SMS</ID>
+        <Title>是否需要短信提醒：0-不需要短信提醒，1-入网短信，2-业务受理短信</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="10" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="IS_SEND_SMS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>FLOW_CHARGE</Name>
+        <BOAttrName>FLOW_CHARGE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FLOW_CHARGE</ID>
+        <Title>流量资费</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="flowCharge" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="FLOW_CHARGE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>PREFERENTIAL_ID1</Name>
+        <BOAttrName>PREFERENTIAL_ID1</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PREFERENTIAL_ID1</ID>
+        <Title>优惠id1</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="PREFERENTIAL_ID1" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>IS_DIVIDE</Name>
+        <BOAttrName>IS_DIVIDE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_DIVIDE</ID>
+        <Title>是否需要资费分摊</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="isDivide" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="IS_DIVIDE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>PREFERENTIAL_ID2</Name>
+        <BOAttrName>PREFERENTIAL_ID2</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PREFERENTIAL_ID2</ID>
+        <Title>优惠id2</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="PREFERENTIAL_ID2" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>IS_GROUP</Name>
+        <BOAttrName>IS_GROUP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_GROUP</ID>
+        <Title>是否集团资费</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="1" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="isGroup" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="IS_GROUP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>PREFERENTIAL_ID3</Name>
+        <BOAttrName>PREFERENTIAL_ID3</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PREFERENTIAL_ID3</ID>
+        <Title>优惠id3</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="PREFERENTIAL_ID3" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>PREFERENTIAL_ID4</Name>
+        <BOAttrName>PREFERENTIAL_ID4</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PREFERENTIAL_ID4</ID>
+        <Title>优惠id4</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="PREFERENTIAL_ID4" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>PREFERENTIAL_ID5</Name>
+        <BOAttrName>PREFERENTIAL_ID5</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PREFERENTIAL_ID5</ID>
+        <Title>优惠id5</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.charge.bo.BOChargeInfo" Attr="PREFERENTIAL_ID5" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

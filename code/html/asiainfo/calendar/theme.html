@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='redmond/theme.css' />
+
+ 	<link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css" />
+ <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
+	<script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="../../ext/ext-all.js"></script>
+	<!-- Sets the basepath for the library if not in same directory -->
+	 <script type="text/javascript" src="../Asiainfo.js"></script>
+   <script type="text/javascript" src="../data/AsiaInfoJsonStore.js"></script>
+<script type='text/javascript' src='jquery/jquery.js'></script>
+<script type='text/javascript' src='jquery/ui.core.js'></script>
+<script type='text/javascript' src='jquery/ui.draggable.js'></script>
+<script type='text/javascript' src='jquery/ui.resizable.js'></script>
+<script type='text/javascript' src='fullcalendar.js'></script>
+<script type='text/javascript'>
+	function openEventInfo(eventType,eventCode){
+		alert(eventType+','+eventCode);
+	}
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	  	Ext.BLANK_IMAGE_URL = '../ext/resources/images/default/s.gif';
+      Ext.form.Field.prototype.msgTarget = 'side';
+      contextPath = window.location['pathname'].split('/')[1];
+      var ly_1 = new Ext.Viewport({
+	     layout:'border',
+	     items:[createtoolbar(),createCalend()]
+      });
+  function createtoolbar(){
+  	var ds_fd_user= new Asiainfo.data.AsiaInfoJsonStore({
+     sql:"select usecnname ID from md.metauser union all select '全部' as ID from (values('1')) a",
+     loadDataWhenInit:true,
+     root:'root',
+     initUrl:'/'+contextPath+'/newrecordService',
+     url:'/'+contextPath+'/newrecordService' });
+
+    var fd_user = new Ext.form.ComboBox({
+	     width:124,
+	     height:21,
+	     mode: 'remote',
+      	 triggerAction:'all',
+     	 store:ds_fd_user,
+      	 valueField: 'ID',displayField: 'ID',
+      	 allowBlank:false
+    });
+    var ds_fd_eventtype= new Asiainfo.data.AsiaInfoJsonStore({
+     sql:"select flowcode ID,flowname VALUE from md.devwkflow where state='在用' union all select 'all' as ID,'全部' as VALUE from (values('1')) a",
+     loadDataWhenInit:true,
+     root:'root',
+     initUrl:'/'+contextPath+'/newrecordService',
+     url:'/'+contextPath+'/newrecordService' });
+
+    var fd_eventtype = new Ext.form.ComboBox({
+	     width:124,
+	     height:21,
+	     mode: 'remote',
+      	 triggerAction:'all',
+     	 store:ds_fd_eventtype,
+      	 valueField: 'ID',displayField: 'VALUE',
+      	 allowBlank:false
+    });
+    var tb_query = new Ext.Toolbar({ autoWidth:true,autoShow:true,region:'north', 
+	     items:['人员',fd_user,'任务类别',fd_eventtype,'-','查询']
+    });
+    return tb_query;
+  };
+  function createCalend(){
+  	var fmCanlender = new Ext.Panel({ frame:true,  region:'center', contentEl:'calendar', autoScroll:true
+	   });
+	   loaddata();
+	  return fmCanlender
+  } 
+  function loaddata() {
+  	var ds_event=new Asiainfo.data.AsiaInfoJsonStore({
+	     sql:"select reqname,reqcode,developer,planstartdate,planenddate from md.devreq order by reqcode desc",
+	     initUrl:'/'+contextPath+'/newrecordService',
+	     url:'/'+contextPath+'/newrecordService',
+	     root:'root',
+	     pageSize:50,
+	     table:'MD.LDCREPORT',
+	     loadDataWhenInit:true,
+	     key:'REPCODE'
+      });
+    var allevents=[]; 
+  	for(var i=0;i<ds_event.getCount();i++){
+  		var r=ds_event.getAt(i);
+  		var myevent={
+			  	id: r.get('REQCODE'),
+					title:  r.get('REQNAME'),
+					start: r.get('PLANSTARTDATE'),
+					end: r.get('PLANSTARTDATE'),
+					url: 'javascript:openEventInfo("REQ","'+r.get('REQCODE')+'")'
+			  };
+			 allevents.push(myevent);
+  	};
+	  
+		 
+		
+		$('#calendar').fullCalendar({
+			theme: true,
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			editable: true,
+			events: allevents
+		});
+		
+	};
+	
+});
+  
+
+
+
+</script>
+<style type='text/css'>
+
+	body {
+		margin-top: 40px;
+	  height:100%;
+		text-align: center;
+		font-size: 13px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+ 
+
+#calendar {
+    margin-right: 10px;  
+		margin-top: 10px;  
+		 margin: 0 auto;
+		}
+	
+</style>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>

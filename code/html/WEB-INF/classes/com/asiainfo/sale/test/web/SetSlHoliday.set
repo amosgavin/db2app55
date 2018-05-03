@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SetSlHoliday" BOName="com.asiainfo.sale.test.bo.BoSlHoliday" MainField="HOLIDAY_ID" Title="com.asiainfo.sale.test.bo.BoSlHoliday" ActBOName="com.asiainfo.sale.test.bo.BoSlHoliday" Package="com.asiainfo.sale.test.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>HOLIDAY_DATE</Name>
+        <BOAttrName>HOLIDAY_DATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HOLIDAY_DATE</ID>
+        <Title>节假日日期</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="4" Decimal="0">DateTime</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.test.bo.BoSlHoliday" Attr="HOLIDAY_DATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>HOLIDAY_ID</Name>
+        <BOAttrName>HOLIDAY_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HOLIDAY_ID</ID>
+        <Title>节假日编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.sale.test.bo.BoSlHoliday" Attr="HOLIDAY_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>HOLIDAY_NAME</Name>
+        <BOAttrName>HOLIDAY_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HOLIDAY_NAME</ID>
+        <Title>节假日名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="30" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.test.bo.BoSlHoliday" Attr="HOLIDAY_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>STATE</Name>
+        <BOAttrName>STATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATE</ID>
+        <Title>状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.sale.test.bo.BoSlHoliday" Attr="STATE" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

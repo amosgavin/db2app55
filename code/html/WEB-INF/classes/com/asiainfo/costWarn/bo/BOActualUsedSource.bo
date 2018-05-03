@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOActualUsedSource" mainattr="CITY_ID">
+    <mapingenty type="query">SELECT s1.CITY_ID,
+       s1.CITY_NAME,
+       double (s1.DISCOUNT_FEE) pre_fee,
+       double (t1.hf_charge / 10000) used_fee,
+       double ( (t1.hf_charge / (s1.DISCOUNT_FEE * 10000)) * 100) progress_fee,
+       double (yxcb_charge / 10000) used_salebase,
+       double (
+            value (s1.endpoint_sub, 0)
+          + value (s1.RESERVE1, 0)
+          + value (s1.RESERVE2, 0)
+          + value (s1.RESERVE3, 0))
+          pre_endpoint,
+       double (t1.zd_charge / 10000) used_endpoint,
+       double (
+          ( (t1.zd_charge / 10000)
+           / (  value (s1.endpoint_sub, 0)
+              + value (s1.RESERVE1, 0)
+              + value (s1.RESERVE2, 0)
+              + value (s1.RESERVE3, 0)))
+          * 100)
+          progress_endpoint,
+       decimal (t1.zdbt, 20, 4) zdbt,
+       t1.jt_zd_user_cnt jt_zd_user_cnt
+  FROM    hbsale.cost_warn_static_data s1
+       LEFT JOIN
+          (SELECT CASE WHEN b.area_id IS NULL THEN 'HB' ELSE B.AREA_ID END
+                     CITY_CODE,
+                  sum (hf_charge) hf_charge,
+                  sum (zd_charge) zd_charge,
+                  CASE
+                     WHEN sum (zd_user_cnt) = 0 THEN 0
+                     ELSE double (sum (zd_charge) / sum (zd_user_cnt))
+                  END
+                     zdbt,
+                  sum (jt_zd_user_cnt) jt_zd_user_cnt,
+                  sum (yxcb_charge) yxcb_charge
+             FROM (SELECT substr (channel_id, 1, 5) area_id,
+                          fee_id,
+                          sum (
+                             CASE
+                                WHEN active_type_id = '话费'
+                                THEN
+                                   bill_charge
+                                ELSE
+                                   0
+                             END)
+                             AS hf_charge,
+                          sum (
+                             CASE
+                                WHEN active_type_id = '终端'
+                                THEN
+                                   bill_charge
+                                ELSE
+                                   0
+                             END)
+                             AS zd_charge,
+                          sum (
+                             CASE
+                                WHEN active_type_id = '终端' THEN user_cnt
+                                ELSE 0
+                             END)
+                             AS zd_user_cnt,
+                          sum (
+                             CASE
+                                WHEN active_type_id IN ('集团终端')
+                                THEN
+                                   user_cnt
+                                ELSE
+                                   0
+                             END)
+                             AS jt_zd_user_cnt,
+                          sum (
+                             CASE
+                                WHEN active_type_id IN
+                                        ('促销品', '电子券')
+                                THEN
+                                   bill_charge
+                                ELSE
+                                   0
+                             END)
+                             AS yxcb_charge
+                     FROM MSTR.DM_ACTIVE_WARN_M b
+                    WHERE MONTH_ID LIKE '2013%' AND channel_id IS NOT NULL
+                   GROUP BY substr (channel_id, 1, 5), fee_id) b
+           GROUP BY ROLLUP (b.area_id)) t1
+       ON t1.city_code = s1.city_code</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_ID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_NAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_FEE" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">PRE_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USED_FEE" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">USED_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROGRESS_FEE" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">PROGRESS_FEE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USED_SALEBASE" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">USED_SALEBASE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_ENDPOINT" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">PRE_ENDPOINT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USED_ENDPOINT" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">USED_ENDPOINT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROGRESS_ENDPOINT" maxlength="22" type="COL">
+        <mapingcol datatype="DOUBLE">PROGRESS_ENDPOINT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ZDBT" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ZDBT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JT_ZD_USER_CNT" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">JT_ZD_USER_CNT</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

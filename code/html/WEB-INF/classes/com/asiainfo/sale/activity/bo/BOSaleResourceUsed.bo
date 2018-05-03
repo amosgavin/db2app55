@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleResourceUsed" mainattr="CITY_NAME">
+    <mapingenty type="query">SELECT a.CITY_name, decimal((b.P_TERM/a.P_TERM)/100,6,2) p_term_used, decimal((b.P_DISC/a.P_DISC)/100,6,2) p_disc_used, decimal((b.p_jf/a.P_POINTS)/200,6,2) p_jf_used, decimal((b.p_fjf/a.P_POINTS)/200,6,2) p_fjf_used, decimal((b.P_PROMT/a.P_PROMT)/100,6,2) p_promt_used, decimal((b.l_TERM/a.l_TERM)/100,6,2) l_term_used, decimal((b.l_DISC/a.l_DISC)/100,6,2) l_disc_used, decimal((b.L_jf/a.l_POINTS)/200,6,2) l_jf_used, decimal((b.L_fjf/a.l_POINTS)/200,6,2) l_fjf_used, decimal((b.l_PROMT/a.l_PROMT)/100,6,2) l_promt_used FROM hbsale.resource_allot a LEFT JOIN (SELECT value (city_code, 'HB') city_code, sum (p_term) p_term, sum (L_term) L_term, sum (p_disc) p_disc, sum (L_disc) L_disc, sum (p_jf) p_jf, sum (L_jf) L_jf, sum (p_fjf) p_fjf, sum (L_fjf) L_fjf, sum (p_promt) p_promt, sum (L_promt) L_promt FROM (SELECT city_code, CASE WHEN createorg = 'HB' THEN terminal_cost_year ELSE 0 END p_term, CASE WHEN createorg &lt;&gt; 'HB' THEN terminal_cost_year ELSE 0 END L_term, CASE WHEN createorg = 'HB' THEN action_out_year ELSE 0 END p_disc, CASE WHEN createorg &lt;&gt; 'HB' THEN action_out_year ELSE 0 END L_disc, CASE WHEN createorg = 'HB' THEN jf_DZQ_COST_YEAR ELSE 0 END p_jf, CASE WHEN createorg &lt;&gt; 'HB' THEN jf_DZQ_COST_YEAR ELSE 0 END L_jf, CASE WHEN createorg = 'HB' THEN fjf_DZQ_COST_YEAR ELSE 0 END p_fjf, CASE WHEN createorg &lt;&gt; 'HB' THEN fjf_DZQ_COST_YEAR ELSE 0 END L_fjf, CASE WHEN createorg = 'HB' THEN cxp_cost_year ELSE 0 END p_promt, CASE WHEN createorg &lt;&gt; 'HB' THEN cxp_cost_year ELSE 0 END L_promt FROM priv_cost_new_201608 WHERE city_code IS NOT NULL AND createorg IS NOT NULL) group by city_code with rollup) b on a.CITY_CODE=b.CITY_CODE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_NAME" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CITY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="P_TERM_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">P_TERM_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="P_DISC_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">P_DISC_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="P_JF_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">P_JF_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="P_FJF_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">P_FJF_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="P_PROMT_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">P_PROMT_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_TERM_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">L_TERM_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_DISC_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">L_DISC_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_JF_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">L_JF_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_FJF_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">L_FJF_USED</mapingcol>
+      </attr>
+      <attr floatlength="0" name="L_PROMT_USED" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">L_PROMT_USED</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

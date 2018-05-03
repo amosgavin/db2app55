@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleDetailExt" mainattr="E_ID">
+    <mapingenty type="table">SALE_DETAIL_EXT</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="E_ID" maxlength="8" datatype="Long" type="PK">
+        <mapingcol datatype="BIGINT">E_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_DATE" maxlength="4" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">MODIFY_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="4" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_ID" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="F_DETAIL_ID" maxlength="50" datatype="String" type="COL" remark="关联SALE_DETAIL_T中的ID">
+        <mapingcol datatype="VARCHAR">F_DETAIL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATUS" maxlength="1" datatype="String" type="COL" remark="1：有效  0：未生效  2：删除状态">
+        <mapingcol datatype="CHARACTER">STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BOSS_ID" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">BOSS_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT1" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT2" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT3" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT4" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT4</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT5" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT5</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT6" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT6</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT7" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT7</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT8" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT8</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT9" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT9</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT10" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT10</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT11" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT11</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT12" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT12</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT13" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT13</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT14" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT14</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT15" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT15</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT16" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT16</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT17" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT17</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT18" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT18</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT19" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT19</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT20" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT20</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT21" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT21</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT22" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT22</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT23" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT23</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT24" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT24</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT25" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT25</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT26" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT26</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT27" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT27</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT28" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT28</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT29" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT29</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT30" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT30</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT31" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT31</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT32" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT32</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT33" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT33</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT34" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT34</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT35" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT35</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT36" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT36</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT37" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT37</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT38" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT38</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT39" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT39</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXT40" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHARACTER">EXT40</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

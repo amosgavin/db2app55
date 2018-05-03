@@ -1,0 +1,231 @@
+﻿<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TreeConfig</title>
+<link rel="stylesheet" type="text/css" href="../ext/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="../ext/resources/css/xtheme-slate.css" />
+    <link rel="stylesheet" type="text/css" href="../asiainfo/form/file-upload.css"/>
+    <script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../asiainfo/Asiainfo.js"></script>
+    <script type="text/javascript" src="../asiainfo/data/AsiaInfoJsonStore.js"></script>
+    <script type="text/javascript" src="../asiainfo/data/dataManager.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.widget.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.treegrid.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.treegridex.js"></script>
+    <script type="text/javascript" src="../asiainfo/widget/ai.form.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.toolbar.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.grid.js"></script>
+   <script type="text/javascript" src="../asiainfo/widget/ai.wizard.js"></script>
+   <script type="text/javascript" src="hrabase.js"></script>
+
+	<script type="text/javascript">
+	
+			var module_id = 0;
+		    Ext.onReady(function(){
+				var combo = new Ext.form.ComboBox({
+						    width:160,
+						    height:150,
+						    renderTo:Ext.getBody(),
+						    mode:'local',
+						    triggerAction:'all',
+						    id:'filiale',
+						    //name:'filiale',
+						    typeAhead : true,
+						    allowBlank: false,
+						    handleHeight:10,
+						    hiddenName:'drug.title',
+						    listWidth :250,
+						    maxHeight:400,
+						    readOnly:true,
+						    emptyText :'请选择..',
+						    valueFiled:'fid',
+						    displayField:'title',
+						    queryParam :'drug.title',
+						    fieldLabel:'套餐',
+						    store: new Ext.data.JsonStore({
+                                    fields : ['fid', 'title'],
+                                    data : [{
+                                                fid : '0',
+                                                title : '请选择..'
+                                            }, {
+                                                fid : '11',
+                                                title : '神州行幸福卡'
+                                            }, {
+                                                fid : '12',
+                                                title : '神州行家园卡'
+                                            }, {
+                                                fid : '13',
+                                                title : '神州行轻松卡'
+                                            }, {
+                                                fid : '14',
+                                                title : '神州行畅聊卡'
+                                            }, {
+                                                fid : '15',
+                                                title : '神州行致富卡'
+                                            }, {
+                                            	fid : '16',
+                                                title : '神州行大众卡'
+                                            }, {
+                                                fid : '21',
+                                                title : '动感地带上网套餐'
+                                            }, {
+                                            	fid : '22',
+                                                title : '动感地带上网套餐(校园版)'
+                                            }, {
+                                            	fid : '23',
+                                                title : '动感地带短信套餐'
+                                            }]
+                                }),
+						    listeners:{
+						        "select":function(combo,record,index){
+              						//alert(combo.getValue());
+              						//alert(record.get('fid'));
+              						module_id=record.get('fid');
+									Ext.form.Field.prototype.msgTarget = 'side';
+									//Ext.getBody().remove();
+									dataManager = new Asiainfo.data.dataManager();
+									contextPath = window.location['pathname'].split('/')[1];
+									
+									var ds_chargeTree = new Asiainfo.data.AsiaInfoJsonStore({
+										storeId:'ds_chargeTree',
+										initUrl : '/' + contextPath + '/pst/newrecordService',
+										url : '/' + contextPath + '/pst/newrecordService',
+										sql:"select * from charge_tree_template_tmp A where module_id="+module_id+" order by parent_id,sequence",
+										table:'charge_tree_template_tmp',
+										key:'NODE_ID',
+										root : 'root',
+										pageSize:-1,
+										loadDataWhenInit:true
+									});
+									
+									var form_chargeTree = new Asiainfo.widget.Form({
+										id:'form_chargeTree',
+										subtype:'exttabform',
+										store:ds_chargeTree,
+										frame:true,
+										region:'center',
+										width:400,
+										height:330,
+										labelWidth:80,
+										fields:[
+											[{xtype:'combo',fieldLabel:'父结点',name:'PARENT_ID',id:'F_PARENT_ID',anchor:'98%',storesql:'select node_id,node_name from charge_tree_template_tmp'}],
+						                    [{xtype:'textfield',fieldLabel:'节点编号',name:'NODE_ID',id:'F_NODE_ID',anchor:'98%'}],
+						                    [{xtype:'textfield',fieldLabel:'结点名称',name:'NODE_NAME',anchor:'98%'}],
+						                    [{xtype:'combo',fieldLabel:'可否编辑',name:'EDIT_FLAG',id:'F_EDIT_FLAG',anchor:'98%',storesql:"['1','是'],['0','否']"}],
+						                    [{xtype:'combo',fieldLabel:'是否可视',name:'VISIBLE',id:'F_VISIBLE',anchor:'98%',storesql:"['1','是'],['0','否']"}],
+						                    [{xtype:'textfield',fieldLabel:'排列序列',name:'SEQUENCE',id:'F_SEQUENCE',anchor:'98%'}],
+						                    [{xtype:'textfield',fieldLabel:'计价单位',name:'FEE_TYPE',id:'F_FEE_TYPE',anchor:'98%'}],
+						                    [{xtype:'textfield',fieldLabel:'模板ID',name:'MODULE_ID',id:'F_MODULE_ID',anchor:'98%'}],
+						                    [{xtype:'textarea',fieldLabel:'节点描述',height:'80',name:'NODE_REMARK',anchor:'97%'}]
+						                ]
+									});
+									
+									var nodeNameRender= function (data, metadata, record, rowIndex, columnIndex, store) { 
+										if(record.get('IS_LEAF')==true) {
+											return data;
+										} else {
+											return '<b><font color=blue>'+data+'</font></b>'; 
+										}
+						    		};
+						    		
+						    		var nodeEditRender = function (data, metadata, record, rowIndex, columnIndex, store) { 
+						    			
+						    			if(record.get('SELECT_FLAG')==1){
+						    				
+						    				return '<b><font color=red>'+data+'</font></b>';
+						    			} else{
+						    				return data;
+						    			}
+						    		};
+						    		
+						    		function treeExpand(store){
+						    			for(var i=0;i<store.getCount();i++)
+						           			store.expandNode(store.getAt(i));
+						    		}
+						    		
+						    		function addFunc(){
+						                var _parentId = ds_chargeTree.curRecord.get('NODE_ID');
+						                //var test = Asiainfo.getStore("WITH TMP(NODE_ID) AS (SELECT NODE_ID FROM TABLE(FUN_GETEXTENDNODE('1'))) SELECT * FROM TMP");
+						                var myEtStroe = Asiainfo.getStore("SELECT MAX(NODE_ID) NUM FROM HBSALE.charge_tree_template_tmp WHERE module_id="+module_id+" and PARENT_ID='" + _parentId+"'");
+						                var autoId = myEtStroe.getAt(0).get("NUM");
+						                if(null == autoId || ''==autoId){
+						                	autoId = _parentId + '01';
+						                } else {
+						                    autoId = (autoId.toString()).substr(0,1) + (parseInt((autoId.toString()).substr(1))+1);
+						                }
+						                var seq = (autoId.toString()).substr((autoId.toString()).length-2,2);
+						                //alert(seq);
+						                Asiainfo.widget.actfun('openform','form_chargeTree,ds_chargeTree,add');
+						                Ext.getCmp('F_PARENT_ID').setValue(_parentId);
+						                Ext.getCmp('F_NODE_ID').setValue(autoId);
+						                Ext.getCmp('F_EDIT_FLAG').setValue('1');
+						                Ext.getCmp('F_VISIBLE').setValue('1');
+						                Ext.getCmp('F_SEQUENCE').setValue(seq);
+						                Ext.getCmp('F_MODULE_ID').setValue(module_id);
+						            }
+									
+									var tbcfg={id:'downDeptbbar',region:'south',width:0,height:60,cfgcode:'',
+										items:[   
+											{type:'text',text:'->'},
+											{type:'按钮',text:'增加',icon:'add.gif',fn:addFunc}, 
+											{type:'按钮',text:'删除',icon:'delete.gif',clickfun:'delete',clickpara:'ds_chargeTree'},
+											{type:'按钮',text:'保存',icon:'save.gif',clickfun:'save',clickpara:'ds_chargeTree'}
+										]};
+									var tbar=new Asiainfo.widget.Toolbar(tbcfg);
+									
+									function booleanRender(v){
+										return v == '1' ? '是' : '否';
+									}
+						   
+									var treeexcfg={
+										id:'USERKPISET',
+										split:'',
+										region:'center',
+										width:120,
+										height:120,
+										enableDragDrop : false,
+										cfgcode:'',
+										subtype:'gridtree',
+										store:ds_chargeTree,
+										keyname:'NODE_ID',
+										pkeyname:'PARENT_ID',
+										titlename:'NODE_NAME',
+										tbar:tbar.control,
+										columns:[
+											{ "header":"节点名称","width":271,"sortable":true,"dataIndex":"NODE_NAME",renderer:nodeNameRender},
+											//{ "header":"资费节点ID","width":95,canEdit:false,"sortable":true,"dataIndex":"NODE_ID" },
+											{ "header":"可否编辑","width":95,"canEdit":true,"dataIndex":"EDIT_FLAG",renderer:booleanRender},
+											{ "header":"是否可视","width":95,"canEdit":true,"dataIndex":"VISIBLE",renderer:booleanRender},
+											{ "header":"排列序列","width":95,"canEdit":true,"dataIndex":"SEQUENCE" },
+											{ "header":"计价单位","width":95,"canEdit":true,"dataIndex":"FEE_TYPE"},
+											{ "header":"节点描述","width":95,"canEdit":true,"dataIndex":"NODE_MARK" },
+											{ "header":"是否必选","width":95,"canEdit":true,"dataIndex":"SELECT_FLAG",renderer:nodeEditRender},
+											{ "header":"模板ID","width":95,"canEdit":true,"dataIndex":"MODULE_ID" }
+										]
+									};
+									var treegridex=new Asiainfo.widget.TreeGrid(treeexcfg); 
+									
+									//通过EDIT_FLAG来判断此行是否可编辑
+									treegridex.control.on('cellclick',function(grid,rowIndex,columnIndex,e){
+										var record = grid.getStore().getAt(rowIndex);
+										return true;
+										//if(record.get("EDIT_FLAG")!=1 || record.get('IS_LEAF')==false) return false;
+									});
+									
+									//treeExpand(ds_chargeTree);		
+									
+									var vp = new Ext.Viewport({layout:'border',items:[treegridex.control]});
+									//dataManager.fresh(ds_chargeTree,null,ds_chargeTree.itemIndex);
+								}
+							}
+					});
+			});
+	</script>
+</head> 
+<body>
+
+</body>
+</html>
+  

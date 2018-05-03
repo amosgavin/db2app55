@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOSaleResourceAllot" mainattr="CITY_ID">
+    <mapingenty type="table">RESOURCE_ALLOT</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_ID" maxlength="3" datatype="String" type="PK" remark="地市id">
+        <mapingcol datatype="VARCHAR">CITY_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_CODE" maxlength="5" datatype="String" type="COL" remark="地市编码">
+        <mapingcol datatype="VARCHAR">CITY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CITY_NAME" maxlength="30" datatype="String" type="COL" remark="地市名">
+        <mapingcol datatype="VARCHAR">CITY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_TERM" maxlength="20" datatype="Double" type="COL" remark="终端补贴-省资源">
+        <mapingcol datatype="DECIMAL">P_TERM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_DISC" maxlength="20" datatype="Double" type="COL" remark="折扣折让-省资源">
+        <mapingcol datatype="DECIMAL">P_DISC</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_POINTS" maxlength="20" datatype="Double" type="COL" remark="促销积分-省资源">
+        <mapingcol datatype="DECIMAL">P_POINTS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="P_PROMT" maxlength="20" datatype="Double" type="COL" remark="促销费-省资源">
+        <mapingcol datatype="DECIMAL">P_PROMT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_TERM" maxlength="20" datatype="Double" type="COL" remark="终端补贴-地市资源">
+        <mapingcol datatype="DECIMAL">L_TERM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_DISC" maxlength="20" datatype="Double" type="COL" remark="折扣折让-地市资源">
+        <mapingcol datatype="DECIMAL">L_DISC</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_POINTS" maxlength="20" datatype="Double" type="COL" remark="促销积分-地市资源">
+        <mapingcol datatype="DECIMAL">L_POINTS</mapingcol>
+      </attr>
+      <attr floatlength="2" name="L_PROMT" maxlength="20" datatype="Double" type="COL" remark="促销费-地市资源">
+        <mapingcol datatype="DECIMAL">L_PROMT</mapingcol>
+      </attr>
+      <attr floatlength="2" name="THRESHOLD_V1" maxlength="6" datatype="Double" type="COL" remark="阀值1">
+        <mapingcol datatype="DECIMAL">THRESHOLD_V1</mapingcol>
+      </attr>
+      <attr floatlength="2" name="THRESHOLD_V2" maxlength="6" datatype="Double" type="COL" remark="阀值2">
+        <mapingcol datatype="DECIMAL">THRESHOLD_V2</mapingcol>
+      </attr>
+      <attr floatlength="2" name="THRESHOLD_V3" maxlength="6" datatype="Double" type="COL" remark="阀值3">
+        <mapingcol datatype="DECIMAL">THRESHOLD_V3</mapingcol>
+      </attr>
+      <attr floatlength="2" name="THRESHOLD_V4" maxlength="6" datatype="Double" type="COL" remark="阀值4">
+        <mapingcol datatype="DECIMAL">THRESHOLD_V4</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

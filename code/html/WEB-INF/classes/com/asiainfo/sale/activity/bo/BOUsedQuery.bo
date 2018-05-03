@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOUsedQuery" mainattr="CITY_CODE">
+    <mapingenty type="query">SELECT a.CITY_CODE,
+       PRIVSETID_NAME,
+       CREATEORG,
+       user_num,
+       TERMINAL_COST_YEAR,
+       ACTION_OUT_YEAR,
+       jf_DZQ_COST_YEAR,
+       fjf_DZQ_COST_YEAR,
+       CXP_COST_YEAR,
+       TERMINAL_COST_YEAR
+       /  (b.p_term*100)
+          TERMINAL_COST_YEAR_per,
+       ACTION_OUT_YEAR
+       / (b.P_DISC*100)
+          ACTION_OUT_YEAR_per,
+       jf_DZQ_COST_YEAR
+       / (b.P_JF*100)
+          jf_DZQ_COST_YEAR_per,
+       fjf_DZQ_COST_YEAR
+       / (b.p_fjf*100)
+          fjf_DZQ_COST_YEAR_per,
+       CXP_COST_YEAR / (b.p_promt*100)
+          CXP_COST_YEAR_per
+  FROM PRIV_COST_NEW_201606 a LEFT JOIN (
+  SELECT value (city_code, 'HB') city_code,
+              sum (p_term) p_term,
+              sum (L_term) L_term,
+              sum (p_disc) p_disc,
+              sum (L_disc) L_disc,
+              sum (p_jf) p_jf,
+              sum (L_jf) L_jf,
+              sum (p_fjf) p_fjf,
+              sum (L_fjf) L_fjf,
+              sum (p_promt) p_promt,
+              sum (L_promt) L_promt
+         FROM (SELECT city_code,
+                      CASE WHEN createorg = 'HB' THEN terminal_cost_year ELSE 0 END
+                         p_term,
+                      CASE WHEN createorg &lt;&gt; 'HB' THEN terminal_cost_year ELSE 0 END
+                         L_term,
+                      CASE WHEN createorg = 'HB' THEN action_out_year ELSE 0 END
+                         p_disc,
+                      CASE WHEN createorg &lt;&gt; 'HB' THEN action_out_year ELSE 0 END
+                         L_disc,
+                      CASE WHEN createorg = 'HB' THEN jf_DZQ_COST_YEAR ELSE 0 END
+                         p_jf,
+                      CASE WHEN createorg &lt;&gt; 'HB' THEN jf_DZQ_COST_YEAR ELSE 0 END
+                         L_jf,
+                      CASE WHEN createorg = 'HB' THEN fjf_DZQ_COST_YEAR ELSE 0 END
+                         p_fjf,
+                      CASE WHEN createorg &lt;&gt; 'HB' THEN fjf_DZQ_COST_YEAR ELSE 0 END
+                         L_fjf,
+                      CASE
+                         WHEN createorg = 'HB' THEN cxp_cost_year
+                         ELSE 0
+                      END
+                         p_promt,
+                      CASE
+                         WHEN createorg &lt;&gt; 'HB' THEN cxp_cost_year
+                         ELSE 0
+                      END
+                         L_promt
+                 FROM  PRIV_COST_NEW_201606
+                WHERE city_code IS NOT NULL AND createorg IS NOT NULL) group
+by city_code with rollup
+  ) b on a.CITY_CODE=b.CITY_CODE</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="CITY_CODE" maxlength="5" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">CITY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIVSETID_NAME" maxlength="128" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRIVSETID_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATEORG" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CREATEORG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_NUM" maxlength="14" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">USER_NUM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERMINAL_COST_YEAR" maxlength="18" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">TERMINAL_COST_YEAR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACTION_OUT_YEAR" maxlength="18" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ACTION_OUT_YEAR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JF_DZQ_COST_YEAR" maxlength="18" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">JF_DZQ_COST_YEAR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FJF_DZQ_COST_YEAR" maxlength="18" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">FJF_DZQ_COST_YEAR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CXP_COST_YEAR" maxlength="18" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">CXP_COST_YEAR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TERMINAL_COST_YEAR_PER" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">TERMINAL_COST_YEAR_PER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACTION_OUT_YEAR_PER" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">ACTION_OUT_YEAR_PER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="JF_DZQ_COST_YEAR_PER" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">JF_DZQ_COST_YEAR_PER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FJF_DZQ_COST_YEAR_PER" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">FJF_DZQ_COST_YEAR_PER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CXP_COST_YEAR_PER" maxlength="33" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">CXP_COST_YEAR_PER</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

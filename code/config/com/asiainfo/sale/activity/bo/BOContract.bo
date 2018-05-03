@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOContract" mainattr="SALE_MAIN_CODE">
+    <mapingenty type="query">SELECT a.sale_main_code,
+       a.sale_main_name,
+       b.sale_active_code,
+       b.sale_active_name,
+       b.RESERVE2,
+       b.IS_CONTRACT
+  FROM sale_main_t a, sale_detail_t b
+ WHERE a.id = b.sale_id
+ and b.RESERVE2=1</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="SALE_MAIN_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_MAIN_NAME" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_MAIN_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_CODE" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SALE_ACTIVE_NAME" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SALE_ACTIVE_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESERVE2" maxlength="22" datatype="Long" type="COL">
+        <mapingcol datatype="DECIMAL">RESERVE2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_CONTRACT" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">IS_CONTRACT</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

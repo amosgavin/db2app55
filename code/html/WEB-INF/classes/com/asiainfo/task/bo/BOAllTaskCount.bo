@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOAllTaskCount" mainattr="WORKFLOW_ID">
+    <mapingenty type="query">SELECT workflow_id,
+       TASK_TAG,
+       TASK_ID,
+       LABEL AS TLABEL,
+       CREATE_DATE AS TASK_DATE,
+       STATE,
+       STATION_ID,
+       TASK_STAFF_ID,
+       task_type,
+       description ERROR_MESSAGE,
+       task_template_id,
+       FINISH_STAFF_ID,
+       FINISH_DATE,
+       description
+  FROM VM_TASK
+ WHERE     workflow_id = 'HB^10^0000000000000001085'
+       AND task_type IN ('user', 'start')
+       AND state IN ('3', '5')
+UNION ALL
+SELECT workflow_id,
+       TASK_TAG,
+       TASK_ID,
+       LABEL AS TLABEL,
+       CREATE_DATE AS TASK_DATE,
+       STATE,
+       STATION_ID,
+       TASK_STAFF_ID,
+       task_type,
+       description ERROR_MESSAGE,
+       task_template_id,
+       FINISH_STAFF_ID,
+       FINISH_DATE,
+       description
+  FROM VM_TASK_TS
+ WHERE     workflow_id = 'HB^10^0000000000000001085'
+       AND task_type IN ('user', 'sign')
+       AND state IN ('3', '5')
+       AND ( (FINISH_STAFF_ID = TASK_STAFF_ID) OR FINISH_STAFF_ID IS NULL)</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="WORKFLOW_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TAG" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_TAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_ID" maxlength="25" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TLABEL" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TLABEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">TASK_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="11" datatype="Long" type="COL">
+        <mapingcol datatype="INTEGER">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATION_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">STATION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TYPE" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TASK_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ERROR_MESSAGE" maxlength="512" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ERROR_MESSAGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_TEMPLATE_ID" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="BIGINT">TASK_TEMPLATE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FINISH_STAFF_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">FINISH_STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FINISH_DATE" maxlength="26" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">FINISH_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="512" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">DESCRIPTION</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

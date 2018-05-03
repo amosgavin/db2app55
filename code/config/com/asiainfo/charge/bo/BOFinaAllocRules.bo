@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOFinaAllocRules" mainattr="ID">
+    <mapingenty type="table">CHARGE_FINALLOCATION_RULES</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="50" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHARGE_ID" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CHARGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MONTHFIXED_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MONTHFIXED_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MONTHFIXED_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MONTHFIXED_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SMS_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">SMS_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INCOMINGSHOW_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">INCOMINGSHOW_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="INCOMINGSHOW_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">INCOMINGSHOW_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WLAN" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WLAN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WLAN_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WLAN_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPGPRS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPGPRS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPGPRS_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPGPRS_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPSMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPSMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WAPSMS_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WAPSMS_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MMS_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MMS_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MMS_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">MMS_EXPENSE_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS1_NAME" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS1_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS1_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS1_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS2_NAME" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS2_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS2_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS2_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS3_NAME" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS3_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS3_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS3_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS4_NAME" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS4_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OTHERS4_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">OTHERS4_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CALLING_EXPENSE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CALLING_EXPENSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CALLING_EXPENSE_VALUE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">CALLING_EXPENSE_VALUE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

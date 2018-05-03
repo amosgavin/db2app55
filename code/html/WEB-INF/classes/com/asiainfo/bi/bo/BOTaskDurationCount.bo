@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOTaskDurationCount" mainattr="REGION_ID">
+    <mapingenty type="table">VIEW_WORKFLOW_CIRCLE_QUERY</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="WORKFLOW_OBJECT_TYPE" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">WORKFLOW_OBJECT_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NBSH" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">NBSH</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SCB" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">SCB</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HDPZ" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">HDPZ</mapingcol>
+      </attr>
+      <attr floatlength="0" name="YZPZ" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">YZPZ</mapingcol>
+      </attr>
+      <attr floatlength="0" name="QRSX" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">QRSX</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PASS" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">PASS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FALSE" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">FALSE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TOTAL" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">TOTAL</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

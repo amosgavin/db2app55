@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>浏览文件夹</title>
+		<link rel="stylesheet" type="text/css" href="../../ext-2.0.2/resources/css/ext-all.css" />
+	 	<script type="text/javascript" src="../../ext-2.0.2/adapter/ext/ext-base.js"></script>
+	    <script type="text/javascript" src="../../ext-2.0.2/ext-all.js"></script>
+	    <script type="text/javascript" src="../../explorer/util/browser/GLOBAL_PARAM.js"></script>
+	    <script type="text/javascript" src="../../explorer/util/funcs/handlerset.js"></script>
+	    <script type="text/javascript" src="../../explorer/util/funcs/exp_imp_util.js"></script>
+		<link rel="stylesheet" type="text/css" href="../ext-2.0.2/UploadDialog/css/Ext.ux.UploadDialog.css"/>
+	    <script type="text/javascript" src="../../ext-2.0.2/UploadDialog/Ext.ux.UploadDialog.js"></script>
+	   
+    </head>
+    <body>
+     	<div id="download_btn_db2"></div>
+    </body>
+</html>
+
+<script type="text/javascript">
+Ext.onReady(function(){
+	/**导出为IXF格式
+	db2Export('defaultDB','select * from FLOW_IDMANAGER','/FLOW_IDMANAGER_IXF.txt','IXF',{
+		success:function(r,o){
+			alert(r.responseText);
+		},
+		failure:function(r,o){
+			alert(r.responseText);
+		}
+	});
+	*/
+	/**导出为DEL格式
+	db2Export('defaultDB','select * from FLOW_IDMANAGER','/FLOW_IDMANAGER_DEL.txt','DEL',{
+		success:function(r,o){
+			alert(r.responseText);
+		}
+	});
+	*/
+});
+</script>

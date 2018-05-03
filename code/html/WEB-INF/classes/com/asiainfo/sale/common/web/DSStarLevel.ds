@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIDataSrc DisType="SelectBox" NeedCache="Y">
+  <Name>DSStarLevel</Name>
+  <Package>com.asiainfo.sale.common.web</Package>
+  <DataSet SetType="SERVICE">
+    <ValueAttr>CODE_ID</ValueAttr>
+    <TextAttr>CODE_NAME</TextAttr>
+    <ClassName>com.asiainfo.sale.common.service.interfaces.ISaleStaticDataSV</ClassName>
+    <FunctionName>getStarLevel</FunctionName>
+  </DataSet>
+</UIDataSrc>

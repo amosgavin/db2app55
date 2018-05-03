@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOChargeStaticSum" mainattr="ORDER_ID">
+    <mapingenty type="table">CHARGE_STATIC_SUM_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ORDER_ID" maxlength="4" datatype="Integer" type="PK">
+        <mapingcol datatype="INTEGER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ITEM" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">ITEM</mapingcol>
+      </attr>
+      <attr floatlength="2" name="BEFORE_CHANGE" maxlength="12" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">BEFORE_CHANGE</mapingcol>
+      </attr>
+      <attr floatlength="2" name="AFTER_CHANGE" maxlength="12" datatype="Double" type="COL">
+        <mapingcol datatype="DECIMAL">AFTER_CHANGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SWITCH_USER" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="INTEGER">SWITCH_USER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GRAND_ID" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">GRAND_ID</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

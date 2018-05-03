@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="hbsale" name="BOHPApply" mainattr="RECORDID">
+    <mapingenty type="table">PRODUCT_BOSSID_APPLY_T</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="RECORDID" maxlength="20" datatype="String" type="PK">
+        <mapingcol datatype="VARCHAR">RECORDID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="APPLY_NAME" maxlength="80" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">APPLY_NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRINCIPAL" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">PRINCIPAL</mapingcol>
+      </attr>
+      <attr floatlength="6" name="APPLY_TIME" maxlength="10" datatype="DateTime" type="COL">
+        <mapingcol datatype="TIMESTAMP">APPLY_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>
