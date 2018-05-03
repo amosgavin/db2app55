@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<UIDataSrc DisType="SelectBox" NeedCache="N">
-  <Name>DSZfqType</Name>
-  <Package>com.asiainfo.sale.weapon.web</Package>
-  <DataSet SetType="STATIC">
-    <OptionList value="1">电子购物卡</OptionList>
-    <OptionList value="2">手机支付红包</OptionList>
-  </DataSet>
-</UIDataSrc>
