@@ -84,6 +84,10 @@ public class BOSaleWeaponSBean extends DataContainer implements DataContainerInt
   public final static  String S_LastchargeHb = "LASTCHARGE_HB";
   public final static  String S_PresentBusi2AmountHb = "PRESENT_BUSI2_AMOUNT_HB";
   public final static  String S_StandbyNum1Hb = "STANDBY_NUM1_HB";
+  
+  public final static String S_CostTypeOne = "COST_TYPE_ONE";//费用一级分类
+  public final static String S_CostTypeTwo = "COST_TYPE_TWO";//费用二级分类
+  public final static String S_TelFeeDeductionTime = "TEL_FEE_DEDUCTION_TIME";//话费抵扣的时间范围
 
   public static ObjectType S_TYPE = null;
   static{
@@ -1354,5 +1358,52 @@ public class BOSaleWeaponSBean extends DataContainer implements DataContainerInt
 	        return DataType.getAsString(this.getOldObj(S_StandbyNum1Hb));
 	      }
  
+	  public void initCostTypeOne(String value){
+			this.initProperty(S_CostTypeOne,value);
+		}
+		public  void setCostTypeOne(String value){
+			this.set(S_CostTypeOne,value);
+		}
+		public  void setCostTypeOneNull(){
+			this.set(S_CostTypeOne,null);
+		}
+		public String getCostTypeOne(){
+			return DataType.getAsString(this.get(S_CostTypeOne));
+		}
+		public String getCostTypeOneInitialValue(){
+			return DataType.getAsString(this.getOldObj(S_CostTypeOne));
+		}
+		
+		public void initCostTypeTwo(String value){
+			this.initProperty(S_CostTypeTwo,value);
+		}
+		public  void setCostTypeTwo(String value){
+			this.set(S_CostTypeTwo,value);
+		}
+		public  void setCostTypeTwoNull(){
+			this.set(S_CostTypeTwo,null);
+		}
+		public String getCostTypeTwo(){
+			return DataType.getAsString(this.get(S_CostTypeTwo));
+		}
+		public String getCostTypeTwoInitialValue(){
+			return DataType.getAsString(this.getOldObj(S_CostTypeTwo));
+		}
+		
+		public void initTelFeeDeductionTime(String value){
+			this.initProperty(S_TelFeeDeductionTime,value);
+		}
+		public  void setTelFeeDeductionTime(String value){
+			this.set(S_TelFeeDeductionTime,value);
+		}
+		public  void setTelFeeDeductionTimeNull(){
+			this.set(S_TelFeeDeductionTime,null);
+		}
+		public String getTelFeeDeductionTime(){
+			return DataType.getAsString(this.get(S_TelFeeDeductionTime));
+		}
+		public String getTelFeeDeductionTimeInitialValue(){
+			return DataType.getAsString(this.getOldObj(S_TelFeeDeductionTime));
+		}
  }
 

@@ -223,6 +223,7 @@
     <ai:contractitem>
     	<ai:button id="bt_addUserScale" text="新增" onclick="addUserScale()"/>
     	<ai:button id="bt_delUserScale" text="删除（勾选项）" onclick="doWork('delUserScale()')"/>
+    	<span class="font_red">有全网/湖北以全网/湖北为准,无全网/湖北时为地市总和</span>
     </ai:contractitem>
     <ai:table
         tableid="userScaleListTable"
@@ -809,6 +810,31 @@ function initPage()
 
 function saveSaleDetail(saveFlag)
 {
+	var region = '';
+	var maxUser = 0;
+	var allUser = 0;
+    if (_userScaleListTab.getTotalRowCount()> 0) {
+    	for (var k=0; k<_userScaleListTab.getTotalRowCount(); ++k) {
+    		region = _userScaleListTab.getValue(k,"REGION");
+	    	if (_userScaleListTab.getValue(k,"REGION") == ""
+	    	    || _userScaleListTab.getValue(k,"MAX_USERS") == "") {
+	    		return alert("用户规模不能为空！");
+	    	}
+	    	if(allUser < 0 || maxUser < 0 ){
+		    	return alert("请正确填写最大办理量！");
+	    	}
+	    	if(region == '999' || region == '000' ){//全网和全省
+	    		allUser += parseInt(_userScaleListTab.getValue(k,"MAX_USERS"),10);
+	    	}else{
+	    		maxUser += parseInt(_userScaleListTab.getValue(k,"MAX_USERS"),10);
+	    	}
+    	}
+    	if(allUser > 0){
+	    	saleDetailForm.setValue("PRE_PERSON",allUser);
+    	}else{
+    		saleDetailForm.setValue("PRE_PERSON",maxUser);
+    	}
+    }
 	var curRow = _include_fromSaleMainTabRowSet().getCurRowIndex();
 	var mainId = _include_fromSaleMainTabRowSet().getValue(curRow, "MAINID");
 	var saleFlag = saleDetailForm.getValue("SALE_FLAG");
@@ -892,7 +918,7 @@ function saveSaleDetail(saveFlag)
     }
     if ("" == saleDetailForm.getValue("PRE_PERSON"))
     {
-        note = note + "“预计用户规模”";
+        note = note + "“用户规模”";
         checkFlag++;
     }*/
     if ("" == saleDetailForm.getValue("WEAPON_ID"))
@@ -934,7 +960,7 @@ function saveSaleDetail(saveFlag)
 	    	if (_userScaleListTab.getValue(k,"REGION") == ""
 	    	    || _userScaleListTab.getValue(k,"MAX_USERS") == ""
 	    	  ) {
-	    		return alert("规模信息不能为空！");
+	    		return alert("用户规模不能为空！");
 	    	}
     	}
     }
@@ -1101,7 +1127,6 @@ function selectStaff()
 		var text;
    		for(var i=0;i < result.elements.length;i++)
   		{
-  			alert(result.elements[i].value+"~"+result.elements[i].text);
   			if (i == 0)
   			{
 	  			value = result.elements[i].value;
@@ -1136,7 +1161,7 @@ function weaponSelect(){
         return;
     }
 	if("" == saleDetailForm.getValue("PRE_PERSON")){
-		//alert("在选择武器前，请先填写“预计用户规模”！");
+		//alert("在选择武器前，请先填写“用户规模”！");
 		//saleDetailForm.setFocus("PRE_PERSON");
 		//return;
 	}
@@ -1179,6 +1204,32 @@ function refreshWeapon(weaponId){
     	saleDetailForm.setValue("PRE_DISCOUNT", ((presentTotal/baseTotal)*100).toFixed(2));
     }
     compute4weapon();
+    showCheckBox();
+}
+
+function showCheckBox(){
+	var weaponSelectForm = _include_formWeaponSelectFormRowSet();
+   	var costTypeOne = weaponSelectForm.getValue("COST_TYPE_ONE");
+   	var costOne = costTypeOne.split(",");
+   	for(var i=0 ;i<costOne.length; i++){
+		if(costOne[i] != ''){
+			document.getElementById("check_one_input"+costOne[i]).checked=true;
+	   	}
+   	}
+   	var costTypeTwo = weaponSelectForm.getValue("COST_TYPE_TWO");
+   	var costTwo = costTypeTwo.split(",");
+   	for(var i=0 ;i<costTwo.length; i++){
+	   	if(costTwo[i] != ''){
+		   	if(i+1 == costTwo.length && costTwo[i].indexOf("___")){
+			   	var textTwo = costTwo[i].split("___");
+			   	document.getElementById("check_two"+textTwo[0]).checked=true;
+			   	document.getElementById("check_two15").innerHTML = textTwo[1];
+		   	}else{
+			   	document.getElementById("check_two"+costTwo[i]).checked=true;
+			   	document.getElementById("check_two15").innerHTML = "";
+		   	}
+	   	}
+   	}
 }
 
 function compute4weapon(){
@@ -1296,6 +1347,7 @@ function setButtonDisabled(){
 <script type="text/javascript">
 function doWork(fun){ 
     beginAIWaitBanner(fun,"正在处理，请稍后...");
+    endAIWaitBanner();
 }
 </script>
 

@@ -93,6 +93,73 @@
 	           	<td colspan="3"><ai:dbformfield formid="weaponSelectForm1" fieldname="WEAPON_NAME" width="550" height="50"/>
 	          </td>
 	        </tr>
+	        
+	        <tr id="trFeeLevel">
+				<td class="td_font">话费可否抵扣：</td>
+				<td colspan="3">
+					<ai:dbformfield formid="weaponSelectForm1" fieldname="COST_TYPE_ONE" width="10" visible="false"/>
+					<div style="float:left;width:20%">
+						<span>一级分类</span><br/>
+						<input type="checkbox" id="check_one_input0" disabled="ture" value="0"/>套餐及固定费&nbsp;<br/>
+						<input type="checkbox" id="check_one_input1" disabled="ture" value="1" />语音通信费&nbsp;<br/>
+						<input type="checkbox" id="check_one_input2" disabled="ture" value="2"/>上网费&nbsp;<br/>
+						<input type="checkbox" id="check_one_input3" disabled="ture" value="3"/>短彩信费&nbsp;<br/>
+						<input type="checkbox" id="check_one_input4" disabled="ture" value="4"/>自有增值业务费用&nbsp;<br/>
+						<input type="checkbox" id="check_one_input5" disabled="ture" value="5"/>代收费业务费用&nbsp;<br/>
+						<input type="checkbox" id="check_one_input6" disabled="ture" value="6"/>保底费用&nbsp;<br/>
+						<input type="checkbox" id="check_one_input7" disabled="ture" value="7"/>政企费用&nbsp;<br/>
+						<input type="checkbox" id="check_one_input8" disabled="ture" value="8"/>宽带费用&nbsp;<br/>
+						<input type="checkbox" id="check_one_input9" disabled="ture" value="9"/>专项费用
+					</div>
+					<div style="float:left;width:80%">
+						<ai:dbformfield formid="weaponSelectForm1" fieldname="COST_TYPE_TWO" width="10" visible="false"/>
+						<span>二级分类</span><br/>
+						<div id="check_two_input0">
+							<input type="checkbox" id="check_two0" disabled="ture" value="0" />主套餐月租费&nbsp;
+							<input type="checkbox" id="check_two1" disabled="ture" value="1" />国内流量套餐月租费&nbsp;
+							<input type="checkbox" id="check_two2" disabled="ture" value="2" />国际流量套餐月租费&nbsp;
+							<input type="checkbox" id="check_two3" disabled="ture" value="3" />除主套餐、流量套餐以外的月租费&nbsp;<br/>
+						</div>
+						<div id="check_two_input1">
+							<input type="checkbox" id="check_two4" disabled="ture" value="4" />国内语音通信费&nbsp;
+							<input type="checkbox" id="check_two5" disabled="ture" value="5" />国际及港澳台语音通信费&nbsp;<br/>
+						</div>
+						<div id="check_two_input2">
+							<input type="checkbox" id="check_two6" disabled="ture" value="6" />国内上网通信费&nbsp;
+							<input type="checkbox" id="check_two7" disabled="ture" value="7" />国际及港澳台上网通信费&nbsp;<br/>
+						</div>
+						<div id="check_two_input3">
+							<input type="checkbox" id="check_two8" disabled="ture" value="8" />国内短彩信通信费&nbsp;
+							<input type="checkbox" id="check_two9" disabled="ture" value="9" />国内短彩信通信费&nbsp;<br/>
+						</div>
+						<div id="check_two_input4">
+							<input type="checkbox" id="check_two10" disabled="ture" value="10" />自有增值业务费用&nbsp;<br/>
+						</div>
+						<div id="check_two_input5">
+							<input type="checkbox" id="check_two11" disabled="ture" value="11" />代收费业务费用&nbsp;<br/>
+						</div>
+						<div id="check_two_input6">
+							<input type="checkbox" id="check_two12" disabled="ture" value="12" />保底费用&nbsp;<br/>
+						</div>
+						<div id="check_two_input7">
+							<input type="checkbox" id="check_two13" disabled="ture" value="13" />政企费用&nbsp;<br/>
+						</div>
+						<div id="check_two_input8">
+							<input type="checkbox" id="check_two14" disabled="ture" value="14" />宽带费用&nbsp;<br/>
+						</div>
+						<div id="check_two_input9">
+							<textarea class="dbform_disable_style" id="check_two15" disabled="disabled"
+							style="OVERFLOW-X: auto; OVERFLOW-Y: auto;height:40px;width:240px"></textarea>
+						</div>
+					</div>
+				</td>
+			</tr>
+	        <tr id="trFee">
+				<td class="td_font">话费抵扣的时间范围：</td>
+				<td>
+					<ai:dbformfield formid="weaponSelectForm1" fieldname="TEL_FEE_DEDUCTION_TIME" width="150" />
+				</td>
+			</tr>
 		    <tr id="tr1">
 	         	<td  colspan="2"><b>预存：</b></td>
 	           	<td class="td_font">预存专款范围费用组：</td>
@@ -392,7 +459,6 @@
 	
 </ai:contractframe>	
 <script type="text/javascript">
-
 var table00 = g_TableRowSetManager.get("table00");
 function showApplyMain(oldIndex,newIndex){
 	var weaponSelectForm1 = g_FormRowSetManager.get("weaponSelectForm1");
@@ -407,7 +473,34 @@ function showApplyMain(oldIndex,newIndex){
 	weaponSelectForm1.refresh("&id="+applyid);
 	_tableTagDetailRowSet.refresh("&weaponId=" + applyid);
 	//initAttachCfgOpt(weaponSelectForm1.getValue("STANDBY_NUM3"));
+	showCheckBox();
 }
+
+function showCheckBox(){
+	var weaponSelectForm1 = g_FormRowSetManager.get("weaponSelectForm1");
+   	var costTypeOne = weaponSelectForm1.getValue("COST_TYPE_ONE");
+   	var costOne = costTypeOne.split(",");
+   	for(var i=0 ;i<costOne.length; i++){
+		if(costOne[i] != ''){
+			document.getElementById("check_one_input"+costOne[i]).checked=true;
+	   	}
+   	}
+   	var costTypeTwo = weaponSelectForm1.getValue("COST_TYPE_TWO");
+   	var costTwo = costTypeTwo.split(",");
+   	for(var i=0 ;i<costTwo.length; i++){
+	   	if(costTwo[i] != ''){
+		   	if(i+1 == costTwo.length && costTwo[i].indexOf("___")){
+			   	var textTwo = costTwo[i].split("___");
+			   	document.getElementById("check_two"+textTwo[0]).checked=true;
+			   	document.getElementById("check_two15").innerHTML = textTwo[1];
+		   	}else{
+			   	document.getElementById("check_two"+costTwo[i]).checked=true;
+			   	document.getElementById("check_two15").innerHTML = "";
+		   	}
+	   	}
+   	}
+}
+
 	
 function initPage(){
 //var paraObj = window.dialogArguments;
@@ -423,13 +516,16 @@ function initPage(){
    weaponSelectForm1.refresh("&id="+ID);
    table00.refresh("&mainId="+wid);
    _tableTagDetailRowSet.refresh("&weaponId=" + ID);
+   showCheckBox();
 }
 
 function initDate(){
     for(var i=1;i<21;i++){
-    var num="tr"+i;
-    document.getElementById(num).style.display="none";
+	    var num="tr"+i;
+	    document.getElementById(num).style.display="none";
     }
+    document.getElementById("trFee").style.display="none";
+   	document.getElementById("trFeeLevel").style.display="none";
 }
 
 
@@ -456,6 +552,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr19").style.display="block";
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr201").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   }else  if(saleType==14){
 	   document.getElementById("tr1").style.display="block";
 	   document.getElementById("tr2").style.display="block";
@@ -467,6 +565,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr19").style.display="block";
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr201").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   }else  if(saleType==15){
 	   document.getElementById("tr1").style.display="block";
 	   document.getElementById("tr2").style.display="block";
@@ -483,6 +583,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr19").style.display="block";
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr201").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   }else  if(saleType==21){
 	   document.getElementById("tr1").style.display="block";
 	   document.getElementById("tr2").style.display="block";
@@ -494,6 +596,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr19").style.display="block";
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr201").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   }
 	   else  if(saleType==22){
 	   document.getElementById("tr4").style.display="block";
@@ -505,6 +609,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr19").style.display="block";
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr201").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   } else  if(saleType==31){
 	   document.getElementById("tr4").style.display="block";
 	   document.getElementById("tr5").style.display="block";
@@ -515,6 +621,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr16").style.display="block";
 	   document.getElementById("tr17").style.display="block";
 	    document.getElementById("tr18").style.display="block";
+	    document.getElementById("trFee").style.display="block";
+		   document.getElementById("trFeeLevel").style.display="block";
 	   }else if(saleType==41){
 	   document.getElementById("tr4").style.display="block";
 	   document.getElementById("tr5").style.display="block";
@@ -526,6 +634,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr16").style.display="block";
 	   document.getElementById("tr17").style.display="block";
 	   document.getElementById("tr18").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   } else{
 	   document.getElementById("tr1").style.display="block";
 	   document.getElementById("tr2").style.display="block";
@@ -536,6 +646,8 @@ function onSaleTypeChange(saleType)
 	   document.getElementById("tr20").style.display="block";
 	   document.getElementById("tr21").style.display="block";
 	   document.getElementById("tr18").style.display="block";
+	   document.getElementById("trFee").style.display="block";
+	   document.getElementById("trFeeLevel").style.display="block";
 	   }
 	   if (saleType==17 || saleType==23 || saleType==41) {
 		   document.getElementById("jfl_tr").style.display="block";

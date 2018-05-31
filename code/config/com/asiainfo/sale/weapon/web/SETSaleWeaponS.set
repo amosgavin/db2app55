@@ -952,6 +952,53 @@
         <IsPk>N</IsPk>
         <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeaponS" Attr="STANDBY_NUM1_HB" />
       </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="44" IsEnabled="Y">
+        <Name>COST_TYPE_ONE</Name>
+        <BOAttrName>COST_TYPE_ONE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COST_TYPE_ONE</ID>
+        <Title>费用一级分类</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="COST_TYPE_ONE" />
+      </Field>
+      
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="45" IsEnabled="Y">
+        <Name>COST_TYPE_TWO</Name>
+        <BOAttrName>COST_TYPE_TWO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COST_TYPE_TWO</ID>
+        <Title>费用二级分类</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="COST_TYPE_TWO" />
+      </Field>
+      
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="47" IsEnabled="Y">
+        <Name>TEL_FEE_DEDUCTION_TIME</Name>
+        <BOAttrName>TEL_FEE_DEDUCTION_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEL_FEE_DEDUCTION_TIME</ID>
+        <Title>话费抵扣的时间范围</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
+          <ListParameter LSPName="codeType" LSPValue="telFeeDeductionTime" LSPType="Const" />
+        </ListDataSource>
+        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="TEL_FEE_DEDUCTION_TIME" />
+      </Field>
     </FieldList>
     <ChildFieldTypeSet />
   </FieldTypeSet>

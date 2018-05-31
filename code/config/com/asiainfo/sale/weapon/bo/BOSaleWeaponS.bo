@@ -196,7 +196,16 @@
        <attr floatlength="0" name="LIM_TYPE" maxlength="10" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">LIM_TYPE</mapingcol>
       </attr>
-	  	  <attr floatlength="0" name="ADD_MONTHCHARGE_HB" maxlength="50" datatype="String" type="COL">
+      <attr floatlength="0" name="COST_TYPE_ONE" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COST_TYPE_ONE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COST_TYPE_TWO" maxlength="500" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">COST_TYPE_TWO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEL_FEE_DEDUCTION_TIME" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR">TEL_FEE_DEDUCTION_TIME</mapingcol>
+      </attr>
+  	  <attr floatlength="0" name="ADD_MONTHCHARGE_HB" maxlength="50" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">ADD_MONTHCHARGE_HB</mapingcol>
       </attr>
 	  <attr floatlength="0" name="RETURN_TYPE_HB" maxlength="50" datatype="String" type="COL">

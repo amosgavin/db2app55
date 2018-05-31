@@ -971,13 +971,10 @@
         <Title>费用一级分类</Title>
         <Authority>U</Authority>
         <EditType>DBEdit</EditType>
-        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
         <IsNull>Y</IsNull>
         <IsPk>N</IsPk>
         <IDDataType MaxLength="0" Decimal="0" />
-        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
-          <ListParameter LSPName="codeType" LSPValue="costTypeOne" LSPType="Const" />
-        </ListDataSource>
         <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="COST_TYPE_ONE" />
       </Field>
       
@@ -989,32 +986,11 @@
         <Title>费用二级分类</Title>
         <Authority>U</Authority>
         <EditType>DBEdit</EditType>
-        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
         <IsNull>Y</IsNull>
         <IsPk>N</IsPk>
         <IDDataType MaxLength="0" Decimal="0" />
-        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
-          <ListParameter LSPName="codeType" LSPValue="costTypeTwo" LSPType="Const" />
-        </ListDataSource>
         <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="COST_TYPE_TWO" />
-      </Field>
-      
-      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="46" IsEnabled="Y">
-        <Name>TEL_FEE_DEDUCTION</Name>
-        <BOAttrName>TEL_FEE_DEDUCTION</BOAttrName>
-        <BODisplayAttrName />
-        <ID>TEL_FEE_DEDUCTION</ID>
-        <Title>话费是否可抵扣这类费用</Title>
-        <Authority>U</Authority>
-        <EditType>DBEdit</EditType>
-        <DataType MaxLength="1000" Decimal="0">String</DataType>
-        <IsNull>Y</IsNull>
-        <IsPk>N</IsPk>
-        <IDDataType MaxLength="0" Decimal="0" />
-        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.sale.common.web.DSSaleStaticData" hasNull="false">
-          <ListParameter LSPName="codeType" LSPValue="telFeeDeduction" LSPType="Const" />
-        </ListDataSource>
-        <ActBO Name="com.asiainfo.sale.weapon.bo.BOSaleWeapon" Attr="TEL_FEE_DEDUCTION" />
       </Field>
       
       <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="47" IsEnabled="Y">
@@ -1024,8 +1000,8 @@
         <ID>TEL_FEE_DEDUCTION_TIME</ID>
         <Title>话费抵扣的时间范围</Title>
         <Authority>U</Authority>
-        <EditType>DBEdit</EditType>
-        <DataType MaxLength="1000" Decimal="0">String</DataType>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
         <IsNull>Y</IsNull>
         <IsPk>N</IsPk>
         <IDDataType MaxLength="0" Decimal="0" />

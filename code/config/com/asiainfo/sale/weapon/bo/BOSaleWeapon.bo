@@ -208,16 +208,13 @@
 	  <attr floatlength="0" name="STANDBY_NUM1_HB" maxlength="100" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">STANDBY_NUM1_HB</mapingcol>
       </attr>
-      <attr floatlength="0" name="COST_TYPE_ONE" maxlength="100" datatype="String" type="COL">
+      <attr floatlength="0" name="COST_TYPE_ONE" maxlength="20" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">COST_TYPE_ONE</mapingcol>
       </attr>
-      <attr floatlength="0" name="COST_TYPE_TWO" maxlength="100" datatype="String" type="COL">
+      <attr floatlength="0" name="COST_TYPE_TWO" maxlength="500" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">COST_TYPE_TWO</mapingcol>
       </attr>
-      <attr floatlength="0" name="TEL_FEE_DEDUCTION" maxlength="100" datatype="String" type="COL">
-        <mapingcol datatype="VARCHAR">TEL_FEE_DEDUCTION</mapingcol>
-      </attr>
-      <attr floatlength="0" name="TEL_FEE_DEDUCTION_TIME" maxlength="100" datatype="String" type="COL">
+      <attr floatlength="0" name="TEL_FEE_DEDUCTION_TIME" maxlength="2" datatype="String" type="COL">
         <mapingcol datatype="VARCHAR">TEL_FEE_DEDUCTION_TIME</mapingcol>
       </attr>
     </attrlist>

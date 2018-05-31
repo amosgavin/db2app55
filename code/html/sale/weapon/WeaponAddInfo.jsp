@@ -226,10 +226,6 @@
 							<ai:dbformfield formid="weaponSelectForm1"
 								fieldname="DYNAMIC_SCORE" width="150" />
 							</td>
-								<!-- <td>预存专款范围账目项：<img id="selectOrgTypeYCZK" border="0"
-								src="<%=request.getContextPath()%>/webframe/images/query.gif"
-								alt="" onClick="ycTagItem()" align="absmiddle"
-								style="cursor: hand;" /></td> -->
 					</tr>
 					<tr id="tr2">
 						<td class="td_font">
@@ -264,6 +260,73 @@
 						<td>
 							<ai:dbformfield formid="weaponSelectForm1" fieldname="BACK_MONTH"
 								width="150" />
+						</td>
+					</tr>
+					<tr id="trFeeLevel">
+						<td class="td_font">话费可否抵扣：</td>
+						<td colspan="3">
+							<ai:dbformfield formid="weaponSelectForm1" fieldname="COST_TYPE_ONE" width="10" visible="false"/>
+							<div style="float:left;width:20%">
+								<span>一级分类</span><br/>
+								<input type="checkbox" id="check_one_input0" checked="checked" name="checkOne" value="0" onclick="showCheckBoxTwo(0);"  />套餐及固定费&nbsp;<br/>
+								<input type="checkbox" id="check_one_input1" checked="checked" name="checkOne" value="1" onclick="showCheckBoxTwo(1);"  />语音通信费&nbsp;<br/>
+								<input type="checkbox" id="check_one_input2" checked="checked" name="checkOne" value="2" onclick="showCheckBoxTwo(2);"  />上网费&nbsp;<br/>
+								<input type="checkbox" id="check_one_input3" checked="checked" name="checkOne" value="3" onclick="showCheckBoxTwo(3);"  />短彩信费&nbsp;<br/>
+								<input type="checkbox" id="check_one_input4" checked="checked" name="checkOne" value="4" onclick="showCheckBoxTwo(4);"  />自有增值业务费用&nbsp;<br/>
+								<input type="checkbox" id="check_one_input5" checked="checked" name="checkOne" value="5" onclick="showCheckBoxTwo(5);"  />代收费业务费用&nbsp;<br/>
+								<input type="checkbox" id="check_one_input6" checked="checked" name="checkOne" value="6" onclick="showCheckBoxTwo(6);"  />保底费用&nbsp;<br/>
+								<input type="checkbox" id="check_one_input7" checked="checked" name="checkOne" value="7" onclick="showCheckBoxTwo(7);"  />政企费用&nbsp;<br/>
+								<input type="checkbox" id="check_one_input8" checked="checked" name="checkOne" value="8" onclick="showCheckBoxTwo(8);"  />宽带费用&nbsp;<br/>
+								<input type="checkbox" id="check_one_input9" checked="checked" name="checkOne" value="9" onclick="showCheckBoxTwo(9);"  />专项费用
+							</div>
+							<div style="float:left;width:80%">
+								<ai:dbformfield formid="weaponSelectForm1" fieldname="COST_TYPE_TWO" width="10" visible="false"/>
+								<span>二级分类</span><br/>
+								<div id="check_two_input0">
+									<input type="checkbox" id="check_two0" checked="checked" onclick="checkParent(this)" name="checkTwo" value="0" />主套餐月租费&nbsp;
+									<input type="checkbox" id="check_two1" checked="checked" onclick="checkParent(this)" name="checkTwo" value="1" />国内流量套餐月租费&nbsp;
+									<input type="checkbox" id="check_two2" checked="checked" onclick="checkParent(this)" name="checkTwo" value="2" />国际流量套餐月租费&nbsp;
+									<input type="checkbox" id="check_two3" checked="checked" onclick="checkParent(this)" name="checkTwo" value="3" />除主套餐、流量套餐以外的月租费&nbsp;<br/>
+								</div>
+								<div id="check_two_input1">
+									<input type="checkbox" id="check_two4" checked="checked" onclick="checkParent(this)" name="checkTwo" value="4" />国内语音通信费&nbsp;
+									<input type="checkbox" id="check_two5" checked="checked" onclick="checkParent(this)" name="checkTwo" value="5" />国际及港澳台语音通信费&nbsp;<br/>
+								</div>
+								<div id="check_two_input2">
+									<input type="checkbox" id="check_two6" checked="checked" onclick="checkParent(this)" name="checkTwo" value="6" />国内上网通信费&nbsp;
+									<input type="checkbox" id="check_two7" checked="checked" onclick="checkParent(this)" name="checkTwo" value="7" />国际及港澳台上网通信费&nbsp;<br/>
+								</div>
+								<div id="check_two_input3">
+									<input type="checkbox" id="check_two8" checked="checked" onclick="checkParent(this)" name="checkTwo" value="8" />国内短彩信通信费&nbsp;
+									<input type="checkbox" id="check_two9" checked="checked" onclick="checkParent(this)" name="checkTwo" value="9" />国内短彩信通信费&nbsp;<br/>
+								</div>
+								<div id="check_two_input4">
+									<input type="checkbox" id="check_two10" checked="checked" onclick="checkParent(this)" name="checkTwo" value="10" />自有增值业务费用&nbsp;<br/>
+								</div>
+								<div id="check_two_input5">
+									<input type="checkbox" id="check_two11" checked="checked" onclick="checkParent(this)" name="checkTwo" value="11" />代收费业务费用&nbsp;<br/>
+								</div>
+								<div id="check_two_input6">
+									<input type="checkbox" id="check_two12" checked="checked" onclick="checkParent(this)" name="checkTwo" value="12" />保底费用&nbsp;<br/>
+								</div>
+								<div id="check_two_input7">
+									<input type="checkbox" id="check_two13" checked="checked" onclick="checkParent(this)" name="checkTwo" value="13" />政企费用&nbsp;<br/>
+								</div>
+								<div id="check_two_input8">
+									<input type="checkbox" id="check_two14" checked="checked" onclick="checkParent(this)" name="checkTwo" value="14" />宽带费用&nbsp;<br/>
+								</div>
+								<div id="check_two_input9">
+									<textarea class="dbform_textarea_style" id="check_two15" onfocus="hideText()" onblur="showText()"
+									style="OVERFLOW-X: auto; OVERFLOW-Y: auto;height:40px;width:240px"></textarea>
+									<span class="font_red">(如有需要请手工填写)</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr id="trFee">
+						<td class="td_font">话费抵扣的时间范围：</td>
+						<td>
+							<ai:dbformfield formid="weaponSelectForm1" fieldname="TEL_FEE_DEDUCTION_TIME" width="150" />
 						</td>
 					</tr>
 					<tr id="tr4">
@@ -830,7 +893,7 @@
 
 <ai:loginuser />
 <script type="text/javascript">
-  
+
 var weaponSelectForm = g_FormRowSetManager.get("weaponSelectForm");
 var weaponSelectForm1 = g_FormRowSetManager.get("weaponSelectForm1");
 var saleWeaponMainframe = g_FormRowSetManager.get("saleWeaponMainframe");
@@ -859,6 +922,7 @@ function initpage() {
 	document.getElementById("tr18").style.display = "block";
 	weaponSelectForm.refreshListBox("MARKET_TYPE", "codeType=markets", true);
 	weaponSelectForm.refreshListBox("SALE_FLAG", "codeType=hdlxs", true);
+	//weaponSelectForm.refreshListBox("TEL_FEE_DEDUCTION_TIME", "codeType=telFeeDeductionTime", true);
 	weaponSelectForm.setColEditSts("WEAPON_NAME", false);//0920
 	weaponSelectForm1.setColEditSts("REMARK_2", false);
 	weaponSelectForm1.setColEditSts("REMARK_3", false);
@@ -870,6 +934,7 @@ function initpage() {
 	// weaponSelectForm1.setColEditSts("FIRSTCHARGE",false);
 	// weaponSelectForm1.setColEditSts("LASTCHARGE",false);
 	// weaponSelectForm1.setColEditSts("STANDBY_NUM1",false);
+	showText();
 }
 
 initpage();
@@ -936,12 +1001,33 @@ function prepCondition() {
 
 }
 
+function hideText(){
+	var testareaText = document.getElementById("check_two15");
+	if(document.getElementById("check_one_input9").checked){
+		if(testareaText.value =="包含所有专项费用"){
+			testareaText.innerHTML = "";
+		}
+	}else{
+		testareaText.innerHTML = "";
+	}
+}
+
+function showText(){
+	var testareaText = document.getElementById("check_two15");
+	if(document.getElementById("check_one_input9").checked){
+		if(testareaText.value.replace(/^\s+|\s+$/gm,'') ==""){
+			testareaText.innerHTML = "包含所有专项费用";
+		}
+	}else{
+		testareaText.innerHTML = "";
+	}
+}
+
 function baseCondition() {
 	var tagType = "1";
 	var returnBd = window.showModalDialog(
 			"<%=request.getContextPath()%>/sale/promationTag/promationTag.jsp?tagType="
 					+ tagType + "&orgid=" + orgid, "", "dialogWidth=800px");
-		//alert(returnBd);
 	if (returnBd != null) {
 		weaponSelectForm1.setValue("L_LIMIT", returnBd.split(",")[1]);
 		weaponSelectForm1.setValue("BASE_MONTH", returnBd.split(",")[0]);
@@ -1249,6 +1335,22 @@ function feehpCondition() {
 	}
 }
 
+function getCheckVal(checkElmt){
+	var val = '';
+	if(checkElmt =='' || checkElmt == undefined){
+		return '';
+	}
+	for(var i=0; i < checkElmt.length;i++){
+		if(checkElmt[i].checked){
+			if(val !=''){
+				val += ","
+			}
+			val += checkElmt[i].value;
+		}
+	}
+	return val;
+}
+
 function addWeaponInfo() {
 	var saleFlag = weaponSelectForm.getValue("SALE_FLAG");
 	var netage1 = weaponSelectForm.getValue("MINNET_AGE");
@@ -1271,17 +1373,41 @@ function addWeaponInfo() {
 	var remark2 = weaponSelectForm1.getValue("REMARK_2");
 	var remark3 = weaponSelectForm1.getValue("REMARK_3");
 	var lim_type = weaponSelectForm1.getValue("LIM_TYPE");
-	//var attachCfgOpt = getAttachCfgOpt();
+	var telFeeDeductionTime = weaponSelectForm1.getValue("TEL_FEE_DEDUCTION_TIME");
+	var costTypeOne = getCheckVal(document.getElementsByName("checkOne"));
+	var costTypeTwo = getCheckVal(document.getElementsByName("checkTwo"));
+	var text = document.getElementById("check_two15").innerHTML;
+	if(text!= ''){
+		if(text.indexOf("___")){//截取字符串标记
+			return alert("专项费用中不要包含\"_\"符号");
+		}else{
+			costTypeTwo += "___"+text;
+		}
+	}
+	weaponSelectForm1.setValue("COST_TYPE_ONE",costTypeOne);
+	weaponSelectForm1.setValue("COST_TYPE_TWO",costTypeTwo);
 	weaponSelectForm1.setValue("STANDBY_NUM3", weaponSelectForm.getValue("STANDBY_NUM3"));
 	if (saleFlag == "11" || saleFlag == "15") {
 		if (remark2 == "" || remark3 == "") {
 			return alert("请选择预存或者赠送的专款范围！");
 		}
-	}
+	}	
 	if (saleFlag == "13" || saleFlag == "12" || saleFlag == "14"
 			|| saleFlag == "21" || saleFlag == "17" || saleFlag == "18") {
 		if (remark3 == "") {
 			return alert("请选择预存的专款范围！");
+		}
+	}
+	
+	if(saleFlag != "23"){
+		if(costTypeOne == ""){
+			return alert("请选择一级用户费用！");
+		}
+		if(costTypeTwo == ""){
+			return alert("请选择二级用户费用！");
+		}
+		if(telFeeDeductionTime == ""){
+			return alert("请选择话费抵扣的时间范围！");
 		}
 	}
 
@@ -1499,6 +1625,8 @@ function initDate() {
 		document.getElementById("tr6_hb").style.display = "none";
 		document.getElementById("tr24_hb").style.display = "none";
 		document.getElementById("tr25_hb").style.display = "none";
+		document.getElementById("trFee").style.display="none";
+	   	document.getElementById("trFeeLevel").style.display="none";
 	}
 }
 function movebusi() {
@@ -1558,6 +1686,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
 			document.getElementById("tr24").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		}else if (saleType == 18) {
 			weaponSelectForm1.setValue("RETURN_TYPE_HB", "1");
 			document.getElementById("tdzshb").style.display = "block";
@@ -1569,6 +1699,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
 			document.getElementById("tr24_hb").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 13 || saleType == 16) {
 			if (saleType == 16) {
 				document.getElementById("tdzshp").style.display = "none";
@@ -1585,6 +1717,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			//document.getElementById("tr9").style.display="block";
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 14) {
 			document.getElementById("tr1").style.display = "block";
 			document.getElementById("tryc").style.display = "block";
@@ -1594,6 +1728,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr16").style.display = "block";
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 15) {
 			weaponSelectForm.setColEditSts("WEAPON_NAME", true); //0920
 			document.getElementById("clearBusi").style.display = "block";
@@ -1626,6 +1762,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr24_hb").style.display = "block";
 			document.getElementById("tr25").style.display = "block";
 			document.getElementById("tr25_hb").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 21) {
 			weaponSelectForm.setColEditSts("WEAPON_NAME", true);//0920
 			document.getElementById("tr1").style.display = "block";
@@ -1638,6 +1776,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr12").style.display = "block";
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 22 || saleType == 23) {
 			weaponSelectForm.setColEditSts("WEAPON_NAME", true);//0920
 			document.getElementById("tr4").style.display = "block";
@@ -1650,12 +1790,16 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
 			if (saleType == 23) {
+				document.getElementById("trFee").style.display = "none";
+				document.getElementById("trFeeLevel").style.display = "none";
 				document.getElementById("jfl_tr").style.display = "block";
 				document.getElementById("tr5").style.display = "none";
 				document.getElementById("trzs").style.display = "none";
 				document.getElementById("tr18").style.display = "none"
 			} else {
 				document.getElementById("tdzs").style.display = "block";
+				document.getElementById("trFee").style.display = "block";
+				document.getElementById("trFeeLevel").style.display = "block";
 			}
 
 		} else if (saleType == 31) {
@@ -1682,7 +1826,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr24_hb").style.display = "block";
 			document.getElementById("tr25").style.display = "block";
 			document.getElementById("tr25_hb").style.display = "block";
-
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 41) {
 			document.getElementById("clearBusi").style.display = "block";
 			document.getElementById("sjyw1").style.display = "block";
@@ -1705,6 +1850,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr25").style.display = "block";
 			document.getElementById("tr25_hb").style.display = "block";
 			document.getElementById("jfl_tr").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else if (saleType == 17) {
 			//document.getElementById("tdzs").style.display = "block";
 			document.getElementById("tr1").style.display = "block";
@@ -1719,6 +1866,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("jfl_tr").style.display = "block";
 			//document.getElementById("tr18").style.display="block";
 			document.getElementById("tdzs").style.display = "none";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		} else {
 			weaponSelectForm.setValue("SALE_FLAG", 11);
 			document.getElementById("tdzs").style.display = "block";
@@ -1732,6 +1881,8 @@ function onSaleTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 			document.getElementById("tr19").style.display = "block";
 			document.getElementById("tr20").style.display = "block";
 			document.getElementById("tr18").style.display = "block";
+			document.getElementById("trFee").style.display = "block";
+			document.getElementById("trFeeLevel").style.display = "block";
 		}
 	}
 	var newMainid = saleWeaponMainframe.getValue("ID");
@@ -1804,6 +1955,49 @@ function onReturnTypeChange(pFieldName, pOldVal, pOldText, pNewVal, pNewText) {
 		var newMainid = saleWeaponMainframe.getValue("ID");
 		weaponSelectForm1.setValue("MID", newMainid);
 		weaponSelectForm.setValue("MID", newMainid);
+	}
+			//var sel = weaponSelectForm1.getId("COST_TYPE_TWO");
+			//var sel = document.getElementById("FormRowSet_weaponSelectForm1_COST_TYPE_TWO").childNodes;
+			//alert(sel.length);
+			//alert(sel[0]);
+}
+
+function showCheckBoxTwo(index){
+	var parentFee = document.getElementById("check_one_input"+index);
+	var childFee = document.getElementById("check_two_input"+index).childNodes;
+	if(parentFee.checked){
+		for(var i = 0;i <childFee.length; i++){
+			if(childFee[i].tagName=='INPUT'){
+				childFee[i].checked = true;
+			}else if(childFee[i].tagName=='TEXTAREA'){
+				showText();
+			}
+		}
+	}else{
+		for(var i = 0;i <childFee.length; i++){
+			if(childFee[i].tagName=='INPUT'){
+				childFee[i].checked = false;
+			}else if(childFee[i].tagName=='TEXTAREA'){
+				hideText();
+			}
+		}
+	}
+}
+
+function checkParent(obj){
+	var childCheck= obj.parentNode.childNodes;
+	var flag = false;
+	for(var i = 0;i <childCheck.length; i++){
+		if(childCheck[i].tagName=='INPUT' && childCheck[i].checked == true){
+			flag = true;
+			break;
+		}
+	}
+	var index = obj.parentNode.id;
+	if(!flag){
+		document.getElementById(index.replace('two','one')).checked = false;
+	}else{
+		document.getElementById(index.replace('two','one')).checked = true;
 	}
 }
 

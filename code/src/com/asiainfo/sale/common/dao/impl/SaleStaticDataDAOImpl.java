@@ -68,32 +68,6 @@ public class SaleStaticDataDAOImpl
 		return iob;
 	  }
   
-  public IBOSaleStaticDataValue[] getSaleStaticDatas(String codeType ,String extern_code ,String name) throws Exception{
-	    HashMap parameter = new HashMap();
-	    StringBuffer condition = new StringBuffer(" 1 = 1 ");
-	    if(StringUtils.isNotBlank(codeType)){
-	    	condition.append(" AND " + IBOSaleStaticDataValue.S_CodeType
-					+ " = :codeType");
-			parameter.put("codeType", codeType);
-	    }
-	    if(StringUtils.isNotBlank(extern_code)){
-	    	condition.append(" AND " + IBOSaleStaticDataValue.S_ExternCode
-					+ " = :externCode");
-			parameter.put("extern_code", extern_code);
-	    }
-	    if(StringUtils.isNotBlank(name)){
-	    	String namea=URLDecoder.decode(name,"utf-8");
-	    	condition.append(" AND " + IBOSaleStaticDataValue.S_CodeName
-					+ " like :name");
-			parameter.put("name", "%" + namea + "%");
-	    }
-		condition.append(" order by sort_id ");
-	    Object[] object = new Object[] { condition.toString(), parameter };
-	    IBOSaleStaticDataValue[] iob = BOSaleStaticDataEngine.getBeans(null,
-				(String) object[0], (Map) object[1], -1, -1, false);
-		return iob;
-	  }
-  
   public int queryStaticDateCount(String codeType ,String name)throws Exception{
 	  return getSaleStaticDatas(codeType , name).length;
   }

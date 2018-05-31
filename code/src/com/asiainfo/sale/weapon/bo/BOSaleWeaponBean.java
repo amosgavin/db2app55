@@ -1,20 +1,18 @@
 package com.asiainfo.sale.weapon.bo;
 
-import java.sql.*;
-import com.ai.appframe2.bo.DataContainer;
-import com.ai.appframe2.common.DataContainerInterface;
-import com.ai.appframe2.common.AIException;
-import com.ai.appframe2.common.ServiceManager;
-import com.ai.appframe2.common.ObjectType;
-import com.ai.appframe2.common.DataType;
+import java.sql.Timestamp;
 
-import com.asiainfo.sale.weapon.ivalues.*;
+import com.ai.appframe2.bo.DataContainer;
+import com.ai.appframe2.common.AIException;
+import com.ai.appframe2.common.DataContainerInterface;
+import com.ai.appframe2.common.DataType;
+import com.ai.appframe2.common.ObjectType;
+import com.ai.appframe2.common.ServiceManager;
+import com.asiainfo.sale.weapon.ivalues.IBOSaleWeaponValue;
 
 public class BOSaleWeaponBean extends DataContainer implements DataContainerInterface,IBOSaleWeaponValue{
 
-  private static String  m_boName = "com.asiainfo.sale.weapon.bo.BOSaleWeapon";
-
-
+	private static String  m_boName = "com.asiainfo.sale.weapon.bo.BOSaleWeapon";
 
   public final static  String S_ValuePermonth = "VALUE_PERMONTH";
   public final static  String S_Staffid = "STAFFID";
@@ -87,7 +85,6 @@ public class BOSaleWeaponBean extends DataContainer implements DataContainerInte
   
   public final static String S_CostTypeOne = "COST_TYPE_ONE";//费用一级分类
   public final static String S_CostTypeTwo = "COST_TYPE_TWO";//费用二级分类
-  public final static String S_TelFeeDeduction = "TEL_FEE_DEDUCTION";//话费是否可抵扣这类费用
   public final static String S_TelFeeDeductionTime = "TEL_FEE_DEDUCTION_TIME";//话费抵扣的时间范围
 
   public static ObjectType S_TYPE = null;
@@ -1374,22 +1371,6 @@ public class BOSaleWeaponBean extends DataContainer implements DataContainerInte
 	}
 	public String getCostTypeTwoInitialValue(){
 		return DataType.getAsString(this.getOldObj(S_CostTypeTwo));
-	}
-	
-	public void initTelFeeDeduction(String value){
-		this.initProperty(S_TelFeeDeduction,value);
-	}
-	public  void setTelFeeDeduction(String value){
-		this.set(S_TelFeeDeduction,value);
-	}
-	public  void setTelFeeDeductionNull(){
-		this.set(S_TelFeeDeduction,null);
-	}
-	public String getTelFeeDeduction(){
-		return DataType.getAsString(this.get(S_TelFeeDeduction));
-	}
-	public String getTelFeeDeductionInitialValue(){
-		return DataType.getAsString(this.getOldObj(S_TelFeeDeduction));
 	}
 	
 	public void initTelFeeDeductionTime(String value){

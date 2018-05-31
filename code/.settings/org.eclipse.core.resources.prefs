@@ -1,8 +1,16 @@
 eclipse.preferences.version=1
+encoding//config/com/asiainfo/charge/web/SETChargeApplyMain.set=UTF-8
 encoding//config/com/asiainfo/sale/access/web/SETBusiChange.set=UTF-8
+encoding//config/com/asiainfo/sale/activity/web/SETSaleDetail.set=UTF-8
+encoding//config/com/asiainfo/sale/activity/web/SETSaleMainShow.set=UTF-8
+encoding//config/com/asiainfo/sale/activity/web/SETUserScale.set=UTF-8
 encoding//config/com/asiainfo/sale/common/bo/BOSaleStaticData.bo=UTF-8
 encoding//config/com/asiainfo/sale/common/web/SETSaleStaticDate.set=UTF-8
 encoding//config/com/asiainfo/sale/weapon/bo=UTF-8
 encoding//config/com/asiainfo/sale/weapon/web/SETSaleWeapon.set=UTF-8
+encoding//config/com/asiainfo/sale/weapon/web/SETSaleWeaponMain.set=UTF-8
 encoding//config/com/asiainfo/stopSelling/set/SETStopSellD.set=UTF-8
+encoding//html/jsv2/AIWaitBanner.js=GBK
+encoding//html/jsv2/DataSource_v2.js=GBK
+encoding//html/sale/activity/js/computeCost4saleDetail.js=GBK
 encoding/<project>=GBK

@@ -38,7 +38,5 @@ public interface ISaleStaticDataDAO {
 	 //²éÑ¯×¨¿î
 	 public IBOSaleStaticDataValue[] getSaleStaticDatas( String codeType ,String name) throws Exception;
 	 
-	 public IBOSaleStaticDataValue[] getSaleStaticDatas(String codeType ,String extern_code ,String name) throws Exception;
-	 
 	 public int queryStaticDateCount(String codeType ,String name)throws Exception;
 }
