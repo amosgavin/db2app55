@@ -74,7 +74,8 @@ public class OperatorInfoDAOImpl implements IOperatorInfoDAO {
 		if (null != orgId && !"".equals(orgId) && !"null".equals(orgId)) {
 			if (roleId.equals("101405")) {
 				condition = condition + " and ORGANIZE_ID = :orgId ";
-			} else if (roleId.equals("101408") || roleId.equals("101410")) {
+			//确定能够让渠道 中心的部门经理能够选择省公司市场部分管领导,而非渠道的地市人员不能选择省公司市场部分管领导
+			} else if ((roleId.equals("101408") || roleId.equals("101410")) && !orgId.startsWith("29")) {
 				condition = condition
 						+ " AND (subStr (ORGANIZE_ID,1,2) = subStr( :orgId , 1 , 2 )) ";
 			} else {
@@ -109,7 +110,8 @@ public class OperatorInfoDAOImpl implements IOperatorInfoDAO {
 		if (null != orgId && !"".equals(orgId) && !"null".equals(orgId)) {
 			if (roleId.equals("101405")) {
 				condition = condition + " and ORGANIZE_ID = :orgId ";
-			} else if (roleId.equals("101408") || roleId.equals("101410")) {
+			//确定能够让渠道 中心的部门经理能够选择省公司市场部分管领导,而非渠道的地市人员不能选择省公司市场部分管领导
+			} else if ((roleId.equals("101408") || roleId.equals("101410")) && !orgId.startsWith("29")) {
 				condition = condition
 						+ " AND (subStr (ORGANIZE_ID,1,2) = subStr( :orgId , 1 , 2 )) ";
 			} else {
